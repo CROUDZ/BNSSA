@@ -34,6 +34,9 @@ export function QuizSession({
   const [confirmed, setConfirmed] = useState(false);
   const [results, setResults] = useState<QuestionResult[]>([]);
   const [direction, setDirection] = useState(1);
+  const [explanations, setExplanations] = useState<Record<number, string>>({});
+  const [explainErrors, setExplainErrors] = useState<Record<number, string>>({});
+  const [explainLoadingId, setExplainLoadingId] = useState<number | null>(null);
 
   const question = questions[index];
   const answerKeys = Object.keys(question.answers) as AnswerKey[];
@@ -114,6 +117,55 @@ export function QuizSession({
   };
 
   const progress = ((index + (confirmed ? 1 : 0)) / questions.length) * 100;
+  const canExplain = revealAnswers && confirmed && mode !== 'exam';
+  const currentExplanation = explanations[question.id];
+  const currentExplainError = explainErrors[question.id];
+  const isExplainLoading = explainLoadingId === question.id;
+
+  const handleExplain = async () => {
+    if (!canExplain || isExplainLoading) return;
+    setExplainLoadingId(question.id);
+    setExplainErrors((prev) => ({ ...prev, [question.id]: '' }));
+
+    const answerPayload = answerKeys.reduce<Record<AnswerKey, string>>((acc, key) => {
+      const value = question.answers[key];
+      if (value) acc[key] = value;
+      return acc;
+    }, {} as Record<AnswerKey, string>);
+
+    try {
+      const response = await fetch('/.netlify/functions/qcm-explain', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          quizTitle: quiz.title,
+          question: question.question,
+          answers: answerPayload,
+          correctAnswers: question.correctAnswers,
+          selectedAnswers: selected,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Explain request failed');
+      }
+
+      const data = (await response.json()) as { explanation?: string };
+      const explanation = data.explanation?.trim();
+      if (!explanation) {
+        throw new Error('Missing explanation');
+      }
+
+      setExplanations((prev) => ({ ...prev, [question.id]: explanation }));
+    } catch {
+      setExplainErrors((prev) => ({
+        ...prev,
+        [question.id]: "Impossible d'obtenir une explication pour le moment.",
+      }));
+    } finally {
+      setExplainLoadingId(null);
+    }
+  };
 
   return (
     <main className="min-h-screen bg-zinc-950 p-4 text-white md:p-6">
@@ -228,6 +280,37 @@ export function QuizSession({
                   </m.div>
                 )}
               </AnimatePresence>
+            )}
+
+            {canExplain && (
+              <div className="mt-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 px-5 py-4">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                    Explication IA
+                  </span>
+                  <button
+                    onClick={handleExplain}
+                    disabled={isExplainLoading}
+                    className="rounded-full border border-zinc-700 px-3 py-1 text-xs font-semibold text-zinc-200 transition hover:border-zinc-500 hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {currentExplanation ? 'Regenerer' : 'Demander une explication'}
+                  </button>
+                </div>
+
+                {isExplainLoading && (
+                  <p className="mt-3 text-sm text-zinc-400">Analyse en cours...</p>
+                )}
+
+                {currentExplainError && (
+                  <p className="mt-3 text-sm text-red-300">{currentExplainError}</p>
+                )}
+
+                {currentExplanation && (
+                  <p className="mt-3 whitespace-pre-wrap text-sm text-zinc-200">
+                    {currentExplanation}
+                  </p>
+                )}
+              </div>
             )}
           </m.div>
         </AnimatePresence>
