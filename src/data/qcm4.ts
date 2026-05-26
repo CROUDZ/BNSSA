@@ -32,7 +32,7 @@ export const qcm4: Question[] = [
       C: "Des sauveteurs sur la plage",
       D: "Une signalisation en place",
     },
-    correctAnswers: ["B", "C", "D"],
+    correctAnswers: ["B"],
   },
 
   {
@@ -77,7 +77,7 @@ export const qcm4: Question[] = [
       C: "La limite la zone de baignade",
       D: "Le côté gauche d'un chenal traversier lorsque je regarde de la plage",
     },
-    correctAnswers: ["A", "C"],
+    correctAnswers: ["A", "D"],
   },
 
   {
@@ -103,7 +103,7 @@ export const qcm4: Question[] = [
       C: "A la place du cône orange, on peut hisser un drapeau Rouge et Blanc",
       D: "On le hisse dès que la force du vent atteint 2 beauforts",
     },
-    correctAnswers: ["A", "B", "C"],
+    correctAnswers: ["A", "B"],
   },
 
   {
@@ -199,7 +199,7 @@ export const qcm4: Question[] = [
       B: "Peut exercer en piscine uniquement l'été avec une dérogation du préfet",
       C: "Exerce uniquement en centre de vacances",
     },
-    correctAnswers: ["A"],
+    correctAnswers: ["C"],
   },
 
   {
@@ -211,7 +211,7 @@ export const qcm4: Question[] = [
       B: "Toute l'année sans dérogation",
       C: "Uniquement s'il a réussi un concours dans la fonction publique",
     },
-    correctAnswers: ["A"],
+    correctAnswers: ["B"],
   },
 
   {
@@ -222,7 +222,7 @@ export const qcm4: Question[] = [
       B: "Pour être autorisé à faire des cours de natation",
       C: "Dans le temps appelé « dérogation », pour exercer en autonomie, elle n'existe plus",
     },
-    correctAnswers: ["A"],
+    correctAnswers: ["C"],
   },
 
   {
@@ -247,7 +247,7 @@ export const qcm4: Question[] = [
       B: "Sans permis, quelle que soit la puissance du moteur, car c'est un engin de secours",
       D: "Uniquement avec un permis",
     },
-    correctAnswers: ["A"],
+    correctAnswers: ["D"],
   },
 
   // THEME : ORGANISATION ADMINISTRATIVE
@@ -261,7 +261,7 @@ export const qcm4: Question[] = [
       C: "Par l'Agence Régionale de la Santé",
       D: "Par le maire responsable d'une zone de baignade",
     },
-    correctAnswers: ["A", "C", "D"],
+    correctAnswers: ["A", "D"],
   },
 
   {
@@ -298,7 +298,7 @@ export const qcm4: Question[] = [
       C: "Non car seul le Maire est responsable devant la justice",
       D: "Sur avis de la DDCSPP",
     },
-    correctAnswers: ["A", "D"],
+    correctAnswers: ["A"],
   },
 
   {
@@ -311,7 +311,7 @@ export const qcm4: Question[] = [
       C: "Il doit se conformer à une visite des pompiers",
       D: "Il doit installer un poste de secours",
     },
-    correctAnswers: ["A", "D"],
+    correctAnswers: ["A","B","D"],
   },
 
   {
@@ -323,7 +323,7 @@ export const qcm4: Question[] = [
       B: "Toute la période estivale",
       C: "Le gérant doit uniquement informer ces clients de l'absence de surveillance",
     },
-    correctAnswers: ["B"],
+    correctAnswers: ["C"],
   },
 
   {
@@ -387,7 +387,7 @@ export const qcm4: Question[] = [
       D: "Les protocoles d'intervention",
       E: "Les horaires d'ouverture",
     },
-    correctAnswers: ["A", "B", "D"],
+    correctAnswers: ["A", "B", "D", "E"],
   },
 
   // THEME : LA SURVEILLANCE ET SECURITE DES ACTIVITES SPECIFIQUES
@@ -410,7 +410,7 @@ export const qcm4: Question[] = [
       B: "Uniquement hors de la zone de baignade",
       C: "Dans une zone délimitée par un drapeau à damier noir et blanc",
     },
-    correctAnswers: ["C"],
+    correctAnswers: ["B", "C"],
   },
 
   {
@@ -422,7 +422,7 @@ export const qcm4: Question[] = [
       C: "Uniquement en dehors de la zone de baignade",
       D: "Uniquement en dehors de la bande des 300m",
     },
-    correctAnswers: ["C"],
+    correctAnswers: ["A", "C"],
   },
 
   {
@@ -433,7 +433,7 @@ export const qcm4: Question[] = [
       B: "Doit être de structure rigide pour évoluer au delà des 300m",
       C: "Doit disposer d'un dispositif permettant le remorquage",
     },
-    correctAnswers: ["C"],
+    correctAnswers: ["B","C"],
   },
 
   {
@@ -470,7 +470,7 @@ export const qcm4: Question[] = [
       C: "Lorsque vous êtes en présence d'un stade 2, la victime est inconsciente",
       D: "Des difficultés respiratoires avec une inconscience caractérisent le stade 3",
     },
-    correctAnswers: ["A", "B", "D"],
+    correctAnswers: ["A", "D"],
   },
 
   {
@@ -482,7 +482,7 @@ export const qcm4: Question[] = [
       C: "Un des facteurs aggravants peut être l'hypothermie",
       D: "Il est possible de procéder à deux sauveteurs à une extraction sur planche dorsale",
     },
-    correctAnswers: ["B", "C", "D"],
+    correctAnswers: ["B", "C"],
   },
 
   {
@@ -494,6 +494,6 @@ export const qcm4: Question[] = [
       C: "Peut entraîner des difficultés respiratoires",
       D: "Réduire la durée du bain peut en limiter le risque",
     },
-    correctAnswers: ["A", "C", "D"],
+    correctAnswers: ["A", "B", "C", "D"],
   },
 ];

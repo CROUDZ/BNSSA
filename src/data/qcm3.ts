@@ -61,7 +61,7 @@ export const qcm3: Question[] = [
       B: "Comporte des drapeaux de délimitation de zone",
       C: "Des marques transversales",
     },
-    correctAnswers: ["A", "B", "C"],
+    correctAnswers: ["A", "B"],
   },
 
   {
@@ -83,7 +83,7 @@ export const qcm3: Question[] = [
       B: "Le rouge est la couleur dominante du haut du corps",
       C: "La mention « SAUVETEUR – LIFEGUARD » doit figurer dans le dos",
     },
-    correctAnswers: ["A", "B", "C"],
+    correctAnswers: ["A", "C"],
   },
 
   {
@@ -141,7 +141,7 @@ export const qcm3: Question[] = [
       B: "Doit satisfaire à une formation continue du BNSSA tous les 5 ans",
       C: "Peux me présenter en candidat libre",
     },
-    correctAnswers: ["A", "B", "C"],
+    correctAnswers: ["A", "B"],
   },
 
   {
@@ -198,7 +198,7 @@ export const qcm3: Question[] = [
       B: "La catégorie C définit la navigation à proximité des côtes",
       C: "Un bateau peut affronter toutes les conditions de mer",
     },
-    correctAnswers: ["B"],
+    correctAnswers: ["A", "B"],
   },
 
   {
@@ -287,7 +287,7 @@ export const qcm3: Question[] = [
       B: "Abaissent le drapeau",
       C: "Font évacuer la baignade",
     },
-    correctAnswers: ["B", "C"],
+    correctAnswers: ["B"],
   },
 
   {
@@ -343,7 +343,7 @@ export const qcm3: Question[] = [
       B: "Un périmètre doit délimiter la zone de bain",
       C: "Un BNSSA peut surveiller ce genre de public",
     },
-    correctAnswers: ["B", "C"],
+    correctAnswers: ["A", "B", "C"],
   },
 
   {
@@ -410,7 +410,7 @@ export const qcm3: Question[] = [
       B: "Un pavillon Rouge et Blanc nommé « Croix de St André »",
       C: "Un pavillon Rouge barré d’une bande blanche nommé « CMAS »",
     },
-    correctAnswers: ["A", "B"],
+    correctAnswers: ["A", "B", "C"],
   },
 
   {
@@ -432,7 +432,7 @@ export const qcm3: Question[] = [
       B: "D’une bouteille d’air comprimé",
       C: "D’un défibrillateur",
     },
-    correctAnswers: ["A", "B", "C"],
+    correctAnswers: ["A", "C"],
   },
 
   {
@@ -455,6 +455,6 @@ export const qcm3: Question[] = [
       B: "Le sauveteur contrôle la ventilation, l’inconscience, la circulation",
       C: "Le Bilan des REGARDS inclut l’évaluation des fonctions vitales",
     },
-    correctAnswers: ["A", "C"],
+    correctAnswers: ["C"],
   },
 ];

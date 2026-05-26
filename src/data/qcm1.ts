@@ -53,7 +53,7 @@ export const qcm1: Question[] = [
       C: "Peuvent être autorisés à la baignade",
       D: "Ne font pas l'objet d'une surveillance spécifique",
     },
-    correctAnswers: ["A", "B"],
+    correctAnswers: ["A", "D"],
   },
 
   {
@@ -98,7 +98,7 @@ export const qcm1: Question[] = [
       B: "Une piscine d'accès payant",
       C: "Un Accueil Collectif de Mineurs dans une piscine privée du centre",
     },
-    correctAnswers: ["A"],
+    correctAnswers: ["A","B", "C"],
   },
 
   {
@@ -144,7 +144,7 @@ export const qcm1: Question[] = [
       B: "Oui à la condition d'avoir obtenu une dérogation préfectorale",
       C: "Oui, depuis un arrêté publié en juin 2023",
     },
-    correctAnswers: ["B"],
+    correctAnswers: ["C"],
   },
 
   {
@@ -167,7 +167,7 @@ export const qcm1: Question[] = [
       B: "2 mois mini à 6 mois maxi",
       C: "1 an maxi",
     },
-    correctAnswers: ["B"],
+    correctAnswers: ["A"],
   },
 
   {
@@ -178,7 +178,7 @@ export const qcm1: Question[] = [
       B: "Dans le cadre d'un Accueil Collectif de Mineurs",
       C: "Toute l'année comme salarié",
     },
-    correctAnswers: ["A", "B"],
+    correctAnswers: ["B"],
   },
 
   {
@@ -237,7 +237,7 @@ export const qcm1: Question[] = [
       B: "2 catégories de baignades",
       C: "3 catégories de baignades",
     },
-    correctAnswers: ["B"],
+    correctAnswers: ["C"],
   },
 
   {
@@ -339,7 +339,7 @@ export const qcm1: Question[] = [
       B: "Après le rangement de tout le matériel",
       C: "A l'heure fixée par les horaires de surveillance",
     },
-    correctAnswers: ["B"],
+    correctAnswers: ["A", "C"],
   },
 
   {
@@ -409,7 +409,7 @@ export const qcm1: Question[] = [
       B: "5 nœuds",
       C: "Non limitée",
     },
-    correctAnswers: ["A"],
+    correctAnswers: ["B"],
   },
 
   {
@@ -431,7 +431,7 @@ export const qcm1: Question[] = [
       B: "Evoluent si elle existe dans une zone délimitée par un drapeau à damier noir et blanc",
       C: "Doivent interrompre leur activité si le drapeau des baignades est rouge",
     },
-    correctAnswers: ["B", "C"],
+    correctAnswers: ["A", "B"],
   },
 
   // THEME : CONDUITE A TENIR EN CAS D'ACCIDENT, PREMIERS SOINS

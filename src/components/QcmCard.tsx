@@ -99,6 +99,14 @@ export function QcmCard({ quiz, progress, onStart, onReset }: Props) {
           </m.button>
         )}
 
+        <a
+          href={`/api/qcm-pdf/${quiz.id}`}
+          download
+          className="w-full rounded-2xl border border-soft px-4 py-3 text-center text-sm font-semibold text-slate-200 transition hover:border-emerald-300/40 hover:text-white"
+        >
+          Telecharger le PDF officiel
+        </a>
+
         {isCompleted && (
           <button
             onClick={onReset}

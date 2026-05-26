@@ -153,7 +153,7 @@ export const qcm2: Question[] = [
       B: "Je peux passer le permis plaisance en eaux intérieures",
       C: "Je dois attendre d'avoir 18 ans pour passer l'un de ces deux permis",
     },
-    correctAnswers: ["B"],
+    correctAnswers: ["A", "B"],
   },
 
   {
@@ -234,7 +234,7 @@ export const qcm2: Question[] = [
       B: "Peut se voir qualifié d'usurpation de titre",
       C: "Expose son contrevenant à 15 000 € d'amende et 1 an d'emprisonnement",
     },
-    correctAnswers: ["B", "C"],
+    correctAnswers: ["B"],
   },
 
   {
@@ -268,7 +268,7 @@ export const qcm2: Question[] = [
       B: "Peut organiser une baignade pour mineurs sur une plage non surveillée",
       C: "Ne peut assurer la surveillance de mineurs qu'en assistance d'un MNS",
     },
-    correctAnswers: ["A"],
+    correctAnswers: ["A", "B"],
   },
 
   {
@@ -360,7 +360,7 @@ export const qcm2: Question[] = [
       B: "L'information au public de l'absence de surveillance",
       C: "La présence d'un appareil d'oxygénothérapie",
     },
-    correctAnswers: ["A"],
+    correctAnswers: ["B"],
   },
 
   {
@@ -405,7 +405,7 @@ export const qcm2: Question[] = [
       B: "Peut se faire en autonomie si le BNSSA dispose du TPF «coach fitness dans l'eau »",
       C: "L'encadrement de séances collectives d'animation en aquafitness doit se dérouler dans un bassin d'une profondeur maximale de 1,30 m et sous la surveillance d'un BNSSA ou d'un MNS.",
     },
-    correctAnswers: ["B", "C"],
+    correctAnswers: ["C"],
   },
 
   {
