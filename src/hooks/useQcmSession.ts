@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useCallback, useEffect, useState } from 'react';
-import type { SessionData, QcmProgress } from '@/types/qcm';
+import { useCallback, useEffect, useState } from "react";
+import type { SessionData, QcmProgress } from "@/types/qcm";
 
-const SESSION_KEY = 'bnssa_progress';
+const SESSION_KEY = "bnssa_progress";
 
 function loadSession(): SessionData {
-  if (typeof window === 'undefined') return {};
+  if (typeof window === "undefined") return {};
   try {
     const raw = sessionStorage.getItem(SESSION_KEY);
     return raw ? JSON.parse(raw) : {};
@@ -16,7 +16,7 @@ function loadSession(): SessionData {
 }
 
 function saveSession(data: SessionData) {
-  if (typeof window === 'undefined') return;
+  if (typeof window === "undefined") return;
   try {
     sessionStorage.setItem(SESSION_KEY, JSON.stringify(data));
   } catch {}
@@ -34,16 +34,13 @@ export function useQcmSession() {
     [session],
   );
 
-  const saveProgress = useCallback(
-    (progress: QcmProgress) => {
-      setSession((prev) => {
-        const next = { ...prev, [progress.qcmId]: progress };
-        saveSession(next);
-        return next;
-      });
-    },
-    [],
-  );
+  const saveProgress = useCallback((progress: QcmProgress) => {
+    setSession((prev) => {
+      const next = { ...prev, [progress.qcmId]: progress };
+      saveSession(next);
+      return next;
+    });
+  }, []);
 
   const clearProgress = useCallback((qcmId: number) => {
     setSession((prev) => {

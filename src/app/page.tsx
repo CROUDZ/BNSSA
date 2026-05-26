@@ -1,45 +1,65 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { m } from 'framer-motion';
-import { useQcmSession } from '@/hooks/useQcmSession';
-import { QcmCard } from '@/components/QcmCard';
-import { ProgressBanner } from '@/components/ProgressBanner';
-import { QuizSession } from '@/components/QuizSession';
-import { ResultsScreen } from '@/components/ResultsScreen';
-import { qcm1 } from '@/data/qcm1';
-import { qcm2 } from '@/data/qcm2';
-import { qcm3 } from '@/data/qcm3';
-import { qcm4 } from '@/data/qcm4';
-import type { QcmData, QuestionResult } from '@/types/qcm';
+import { useState } from "react";
+import { m } from "framer-motion";
+import { useQcmSession } from "@/hooks/useQcmSession";
+import { QcmCard } from "@/components/QcmCard";
+import { ProgressBanner } from "@/components/ProgressBanner";
+import { QuizSession } from "@/components/QuizSession";
+import { ResultsScreen } from "@/components/ResultsScreen";
+import { qcm1 } from "@/data/qcm1";
+import { qcm2 } from "@/data/qcm2";
+import { qcm3 } from "@/data/qcm3";
+import { qcm4 } from "@/data/qcm4";
+import type { QcmData, QuestionResult } from "@/types/qcm";
 
 const quizzes: QcmData[] = [
-  { id: 1, title: 'QCM 1', description: 'Connaissance du milieu · Diplômes · Organisation', questions: qcm1 },
-  { id: 2, title: 'QCM 2', description: 'Milieu · Compétences · Contexte juridique', questions: qcm2 },
-  { id: 3, title: 'QCM 3', description: 'Réglementation · Surveillance · Secourisme', questions: qcm3 },
-  { id: 4, title: 'QCM 4', description: 'Milieu · Administration · Activités spécifiques', questions: qcm4 },
+  {
+    id: 1,
+    title: "QCM 1",
+    description: "Connaissance du milieu · Diplômes · Organisation",
+    questions: qcm1,
+  },
+  {
+    id: 2,
+    title: "QCM 2",
+    description: "Milieu · Compétences · Contexte juridique",
+    questions: qcm2,
+  },
+  {
+    id: 3,
+    title: "QCM 3",
+    description: "Réglementation · Surveillance · Secourisme",
+    questions: qcm3,
+  },
+  {
+    id: 4,
+    title: "QCM 4",
+    description: "Milieu · Administration · Activités spécifiques",
+    questions: qcm4,
+  },
 ];
 
 type ActiveSession = {
   quiz: QcmData;
-  mode: 'all' | 'retry' | 'exam';
+  mode: "all" | "retry" | "exam";
 };
 
-type Screen = 'home' | 'quiz' | 'results';
+type Screen = "home" | "quiz" | "results";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? '';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
 
 export default function HomePage() {
   const organization: Record<string, unknown> = {
-    '@type': 'Organization',
-    name: 'BNSSA QCM',
+    "@type": "Organization",
+    name: "BNSSA QCM",
     description:
       "Site cree pour reviser le BNSSA avec la FNMNS. Les 4 QCM sont ceux de l'examen officiel FNMNS du BNSSA.",
   };
   const website: Record<string, unknown> = {
-    '@type': 'WebSite',
-    name: 'BNSSA QCM',
-    inLanguage: 'fr-FR',
+    "@type": "WebSite",
+    name: "BNSSA QCM",
+    inLanguage: "fr-FR",
   };
 
   if (siteUrl) {
@@ -48,22 +68,28 @@ export default function HomePage() {
   }
 
   const jsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': [organization, website],
+    "@context": "https://schema.org",
+    "@graph": [organization, website],
   };
 
-  const { session, getProgress, saveProgress, clearProgress, clearAll } = useQcmSession();
-  const [screen, setScreen] = useState<Screen>('home');
-  const [activeSession, setActiveSession] = useState<ActiveSession | null>(null);
+  const { session, getProgress, saveProgress, clearProgress, clearAll } =
+    useQcmSession();
+  const [screen, setScreen] = useState<Screen>("home");
+  const [activeSession, setActiveSession] = useState<ActiveSession | null>(
+    null,
+  );
   const [pendingResults, setPendingResults] = useState<QuestionResult[]>([]);
-  const totalQuestions = quizzes.reduce((sum, quiz) => sum + quiz.questions.length, 0);
+  const totalQuestions = quizzes.reduce(
+    (sum, quiz) => sum + quiz.questions.length,
+    0,
+  );
 
-  const handleStart = (quiz: QcmData, mode: 'all' | 'retry' | 'exam') => {
-    if (mode === 'all' || mode === 'exam') {
+  const handleStart = (quiz: QcmData, mode: "all" | "retry" | "exam") => {
+    if (mode === "all" || mode === "exam") {
       clearProgress(quiz.id);
     }
     setActiveSession({ quiz, mode });
-    setScreen('quiz');
+    setScreen("quiz");
   };
 
   const handleComplete = (results: QuestionResult[]) => {
@@ -74,7 +100,7 @@ export default function HomePage() {
 
     // Merge retry results with previous full run if applicable
     let allResults: QuestionResult[];
-    if (mode === 'retry' && existing) {
+    if (mode === "retry" && existing) {
       // replace only the retried questions
       allResults = existing.results.map(
         (r) => results.find((nr) => nr.questionId === r.questionId) ?? r,
@@ -94,11 +120,11 @@ export default function HomePage() {
     });
 
     setPendingResults(results); // show only current run in results screen
-    setScreen('results');
+    setScreen("results");
   };
 
   const handleHome = () => {
-    setScreen('home');
+    setScreen("home");
     setActiveSession(null);
     setPendingResults([]);
   };
@@ -108,23 +134,23 @@ export default function HomePage() {
     clearProgress(activeSession.quiz.id);
     setActiveSession({
       quiz: activeSession.quiz,
-      mode: activeSession.mode === 'exam' ? 'exam' : 'all',
+      mode: activeSession.mode === "exam" ? "exam" : "all",
     });
     setPendingResults([]);
-    setScreen('quiz');
+    setScreen("quiz");
   };
 
   const handleRetryWrong = () => {
     if (!activeSession) return;
-    setActiveSession({ quiz: activeSession.quiz, mode: 'retry' });
+    setActiveSession({ quiz: activeSession.quiz, mode: "retry" });
     setPendingResults([]);
-    setScreen('quiz');
+    setScreen("quiz");
   };
 
   // ── Quiz screen ────────────────────────────────────────────────────
-  if (screen === 'quiz' && activeSession) {
+  if (screen === "quiz" && activeSession) {
     const wrongIds =
-      activeSession.mode === 'retry'
+      activeSession.mode === "retry"
         ? (getProgress(activeSession.quiz.id)?.results ?? [])
             .filter((r) => !r.correct)
             .map((r) => r.questionId)
@@ -135,7 +161,7 @@ export default function HomePage() {
         quiz={activeSession.quiz}
         questionIds={wrongIds}
         mode={activeSession.mode}
-        revealAnswers={activeSession.mode !== 'exam'}
+        revealAnswers={activeSession.mode !== "exam"}
         onComplete={handleComplete}
         onBack={handleHome}
       />
@@ -143,7 +169,7 @@ export default function HomePage() {
   }
 
   // ── Results screen ─────────────────────────────────────────────────
-  if (screen === 'results' && activeSession) {
+  if (screen === "results" && activeSession) {
     return (
       <ResultsScreen
         quiz={activeSession.quiz}
@@ -186,8 +212,8 @@ export default function HomePage() {
                 <span className="text-emerald-200">BNSSA</span> (FNMNS)
               </h1>
               <p className="mt-4 text-base text-muted md:text-lg">
-                Site créé pour réviser le BNSSA avec la FNMNS. Les 4 QCM sont ceux de l'examen
-                officiel FNMNS du BNSSA.
+                Site créé pour réviser le BNSSA avec la FNMNS. Les 4 QCM sont
+                ceux de l'examen officiel FNMNS du BNSSA.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <span className="rounded-full border border-soft bg-surface-veil px-3 py-1 text-xs uppercase tracking-[0.2em] text-muted">
@@ -220,9 +246,13 @@ export default function HomePage() {
           <section id="qcm-grid" className="space-y-6">
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-muted">Choix rapide</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-muted">
+                  Choix rapide
+                </p>
                 <h2 className="mt-2 font-display text-3xl">Choisis ton QCM</h2>
-                <p className="mt-2 text-sm text-muted">Clique et lance une session.</p>
+                <p className="mt-2 text-sm text-muted">
+                  Clique et lance une session.
+                </p>
               </div>
               <div className="inline-flex items-center gap-2 rounded-full border border-soft bg-surface-veil px-3 py-1 text-xs text-muted">
                 <span className="h-2 w-2 rounded-full bg-emerald-300" />
@@ -248,7 +278,11 @@ export default function HomePage() {
               ))}
             </div>
           </section>
-          <ProgressBanner session={session} quizzes={quizzes} onClearAll={clearAll} />
+          <ProgressBanner
+            session={session}
+            quizzes={quizzes}
+            onClearAll={clearAll}
+          />
         </div>
       </main>
     </>

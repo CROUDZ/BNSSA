@@ -1,20 +1,19 @@
-'use client';
+"use client";
 
-import { m } from 'framer-motion';
-import type { QcmData } from '@/types/qcm';
-import type { QcmProgress } from '@/types/qcm';
+import { m } from "framer-motion";
+import type { QcmData } from "@/types/qcm";
+import type { QcmProgress } from "@/types/qcm";
 
 type Props = {
   quiz: QcmData;
   progress: QcmProgress | null;
-  onStart: (mode: 'all' | 'retry' | 'exam') => void;
+  onStart: (mode: "all" | "retry" | "exam") => void;
   onReset: () => void;
 };
 
 export function QcmCard({ quiz, progress, onStart, onReset }: Props) {
   const isCompleted = !!progress?.completedAt;
-  const hasWrong =
-    isCompleted && progress.results.some((r) => !r.correct);
+  const hasWrong = isCompleted && progress.results.some((r) => !r.correct);
   const pct = isCompleted
     ? Math.round((progress.score / progress.total) * 100)
     : null;
@@ -31,9 +30,9 @@ export function QcmCard({ quiz, progress, onStart, onReset }: Props) {
         className={`absolute inset-x-0 top-0 h-1 rounded-t-3xl ${
           isCompleted
             ? passed
-              ? 'bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300'
-              : 'bg-gradient-to-r from-rose-400 to-amber-300'
-            : 'bg-slate-700/80'
+              ? "bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300"
+              : "bg-gradient-to-r from-rose-400 to-amber-300"
+            : "bg-slate-700/80"
         }`}
       />
 
@@ -44,7 +43,9 @@ export function QcmCard({ quiz, progress, onStart, onReset }: Props) {
         <span className="text-xs font-mono text-slate-400">#{quiz.id}</span>
       </div>
 
-      <h2 className="font-display text-2xl font-black tracking-tight">{quiz.title}</h2>
+      <h2 className="font-display text-2xl font-black tracking-tight">
+        {quiz.title}
+      </h2>
       <p className="mt-1 text-sm text-muted">{quiz.description}</p>
 
       {isCompleted && pct !== null && (
@@ -52,7 +53,7 @@ export function QcmCard({ quiz, progress, onStart, onReset }: Props) {
           <div className="mb-1 flex items-baseline justify-between">
             <span className="text-xs text-muted">Score</span>
             <span
-              className={`text-sm font-bold ${passed ? 'text-emerald-300' : 'text-rose-300'}`}
+              className={`text-sm font-bold ${passed ? "text-emerald-300" : "text-rose-300"}`}
             >
               {progress.score}/{progress.total} — {pct}%
             </span>
@@ -60,7 +61,7 @@ export function QcmCard({ quiz, progress, onStart, onReset }: Props) {
           <div className="h-2 w-full overflow-hidden rounded-full bg-slate-800/80">
             <div
               className={`h-full rounded-full transition-all ${
-                passed ? 'bg-emerald-300' : 'bg-rose-300'
+                passed ? "bg-emerald-300" : "bg-rose-300"
               }`}
               style={{ width: `${pct}%` }}
             />
@@ -71,15 +72,15 @@ export function QcmCard({ quiz, progress, onStart, onReset }: Props) {
       <div className="mt-auto flex flex-col gap-3 pt-6">
         <m.button
           whileTap={{ scale: 0.97 }}
-          onClick={() => onStart('all')}
+          onClick={() => onStart("all")}
           className="w-full rounded-2xl bg-emerald-300 px-4 py-3 text-sm font-bold text-slate-900 transition hover:bg-emerald-200"
         >
-          {isCompleted ? 'Recommencer' : 'Commencer'}
+          {isCompleted ? "Recommencer" : "Commencer"}
         </m.button>
 
         <m.button
           whileTap={{ scale: 0.97 }}
-          onClick={() => onStart('exam')}
+          onClick={() => onStart("exam")}
           className="w-full rounded-2xl border border-soft px-4 py-3 text-sm font-semibold text-slate-200 transition hover:border-emerald-300/40 hover:text-white"
         >
           Mode examen
@@ -88,7 +89,7 @@ export function QcmCard({ quiz, progress, onStart, onReset }: Props) {
         {isCompleted && hasWrong && (
           <m.button
             whileTap={{ scale: 0.97 }}
-            onClick={() => onStart('retry')}
+            onClick={() => onStart("retry")}
             className="w-full rounded-2xl border border-soft px-4 py-3 text-sm font-semibold text-slate-200 transition hover:border-rose-300/40 hover:text-white"
           >
             Revoir les erreurs

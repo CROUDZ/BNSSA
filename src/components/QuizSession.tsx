@@ -1,26 +1,26 @@
-'use client';
+"use client";
 
-import { useState, useCallback } from 'react';
-import { m, AnimatePresence } from 'framer-motion';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import { AnswerButton } from '@/components/AnswerButton';
-import type { QcmData, AnswerKey, QuestionResult } from '@/types/qcm';
+import { useState, useCallback } from "react";
+import { m, AnimatePresence } from "framer-motion";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { AnswerButton } from "@/components/AnswerButton";
+import type { QcmData, AnswerKey, QuestionResult } from "@/types/qcm";
 
 type Props = {
   quiz: QcmData;
   questionIds?: number[]; // if set, only show those question ids (retry mode)
-  mode?: 'all' | 'retry' | 'exam';
+  mode?: "all" | "retry" | "exam";
   revealAnswers?: boolean;
   onComplete: (results: QuestionResult[]) => void;
   onBack: () => void;
 };
 
-type AnswerState = 'idle' | 'selected' | 'correct' | 'wrong' | 'missed';
+type AnswerState = "idle" | "selected" | "correct" | "wrong" | "missed";
 
 export function QuizSession({
   quiz,
   questionIds,
-  mode = 'all',
+  mode = "all",
   revealAnswers = true,
   onComplete,
   onBack,
@@ -35,7 +35,9 @@ export function QuizSession({
   const [results, setResults] = useState<QuestionResult[]>([]);
   const [direction, setDirection] = useState(1);
   const [explanations, setExplanations] = useState<Record<number, string>>({});
-  const [explainErrors, setExplainErrors] = useState<Record<number, string>>({});
+  const [explainErrors, setExplainErrors] = useState<Record<number, string>>(
+    {},
+  );
   const [explainLoadingId, setExplainLoadingId] = useState<number | null>(null);
 
   const question = questions[index];
@@ -46,17 +48,17 @@ export function QuizSession({
   const getState = useCallback(
     (key: AnswerKey): AnswerState => {
       if (!confirmed) {
-        return selected.includes(key) ? 'selected' : 'idle';
+        return selected.includes(key) ? "selected" : "idle";
       }
       if (!revealAnswers) {
-        return selected.includes(key) ? 'selected' : 'idle';
+        return selected.includes(key) ? "selected" : "idle";
       }
       const isCorrect = question.correctAnswers.includes(key);
       const wasSelected = selected.includes(key);
-      if (isCorrect && wasSelected) return 'correct';
-      if (!isCorrect && wasSelected) return 'wrong';
-      if (isCorrect && !wasSelected) return 'missed';
-      return 'idle';
+      if (isCorrect && wasSelected) return "correct";
+      if (!isCorrect && wasSelected) return "wrong";
+      if (isCorrect && !wasSelected) return "missed";
+      return "idle";
     },
     [confirmed, selected, question.correctAnswers, revealAnswers],
   );
@@ -117,7 +119,7 @@ export function QuizSession({
   };
 
   const progress = ((index + (confirmed ? 1 : 0)) / questions.length) * 100;
-  const canExplain = revealAnswers && confirmed && mode !== 'exam';
+  const canExplain = revealAnswers && confirmed && mode !== "exam";
   const currentExplanation = explanations[question.id];
   const currentExplainError = explainErrors[question.id];
   const isExplainLoading = explainLoadingId === question.id;
@@ -125,18 +127,21 @@ export function QuizSession({
   const handleExplain = async () => {
     if (!canExplain || isExplainLoading) return;
     setExplainLoadingId(question.id);
-    setExplainErrors((prev) => ({ ...prev, [question.id]: '' }));
+    setExplainErrors((prev) => ({ ...prev, [question.id]: "" }));
 
-    const answerPayload = answerKeys.reduce<Record<AnswerKey, string>>((acc, key) => {
-      const value = question.answers[key];
-      if (value) acc[key] = value;
-      return acc;
-    }, {} as Record<AnswerKey, string>);
+    const answerPayload = answerKeys.reduce<Record<AnswerKey, string>>(
+      (acc, key) => {
+        const value = question.answers[key];
+        if (value) acc[key] = value;
+        return acc;
+      },
+      {} as Record<AnswerKey, string>,
+    );
 
     try {
-      const response = await fetch('/api/qcm-explain', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("/api/qcm-explain", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           quizTitle: quiz.title,
           question: question.question,
@@ -147,13 +152,13 @@ export function QuizSession({
       });
 
       if (!response.ok) {
-        throw new Error('Explain request failed');
+        throw new Error("Explain request failed");
       }
 
       const data = (await response.json()) as { explanation?: string };
       const explanation = data.explanation?.trim();
       if (!explanation) {
-        throw new Error('Missing explanation');
+        throw new Error("Missing explanation");
       }
 
       setExplanations((prev) => ({ ...prev, [question.id]: explanation }));
@@ -181,15 +186,15 @@ export function QuizSession({
           </button>
 
           <div className="flex items-center gap-3">
-            {mode !== 'all' && (
+            {mode !== "all" && (
               <span
                 className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                  mode === 'retry'
-                    ? 'bg-red-500/20 text-red-400'
-                    : 'bg-amber-500/20 text-amber-300'
+                  mode === "retry"
+                    ? "bg-red-500/20 text-red-400"
+                    : "bg-amber-500/20 text-amber-300"
                 }`}
               >
-                {mode === 'retry' ? 'Mode erreurs' : 'Mode examen'}
+                {mode === "retry" ? "Mode erreurs" : "Mode examen"}
               </span>
             )}
             <span className="font-mono text-sm text-zinc-500">
@@ -204,7 +209,7 @@ export function QuizSession({
           <m.div
             className="h-full rounded-full bg-white"
             animate={{ width: `${progress}%` }}
-            transition={{ ease: 'easeOut', duration: 0.3 }}
+            transition={{ ease: "easeOut", duration: 0.3 }}
           />
         </div>
 
@@ -257,25 +262,34 @@ export function QuizSession({
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
                     className={`mt-4 rounded-2xl border px-5 py-4 text-sm font-semibold ${
-                      results.length > 0 || selected.every((k) => question.correctAnswers.includes(k)) && selected.length === question.correctAnswers.length
+                      results.length > 0 ||
+                      (selected.every((k) =>
+                        question.correctAnswers.includes(k),
+                      ) &&
+                        selected.length === question.correctAnswers.length)
                         ? (() => {
                             const correct =
-                              selected.length === question.correctAnswers.length &&
-                              selected.every((k) => question.correctAnswers.includes(k));
+                              selected.length ===
+                                question.correctAnswers.length &&
+                              selected.every((k) =>
+                                question.correctAnswers.includes(k),
+                              );
                             return correct
-                              ? 'border-emerald-700 bg-emerald-900/30 text-emerald-300'
-                              : 'border-red-700 bg-red-900/30 text-red-300';
+                              ? "border-emerald-700 bg-emerald-900/30 text-emerald-300"
+                              : "border-red-700 bg-red-900/30 text-red-300";
                           })()
-                        : 'border-emerald-700 bg-emerald-900/30 text-emerald-300'
+                        : "border-emerald-700 bg-emerald-900/30 text-emerald-300"
                     }`}
                   >
                     {(() => {
                       const correct =
                         selected.length === question.correctAnswers.length &&
-                        selected.every((k) => question.correctAnswers.includes(k));
+                        selected.every((k) =>
+                          question.correctAnswers.includes(k),
+                        );
                       return correct
-                        ? '✓ Bonne réponse !'
-                        : `✗ Mauvaise réponse. La bonne réponse était : ${question.correctAnswers.join(', ')}`;
+                        ? "✓ Bonne réponse !"
+                        : `✗ Mauvaise réponse. La bonne réponse était : ${question.correctAnswers.join(", ")}`;
                     })()}
                   </m.div>
                 )}
@@ -293,16 +307,22 @@ export function QuizSession({
                     disabled={isExplainLoading}
                     className="rounded-full border border-zinc-700 px-3 py-1 text-xs font-semibold text-zinc-200 transition hover:border-zinc-500 hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    {currentExplanation ? 'Regenerer' : 'Demander une explication'}
+                    {currentExplanation
+                      ? "Regenerer"
+                      : "Demander une explication"}
                   </button>
                 </div>
 
                 {isExplainLoading && (
-                  <p className="mt-3 text-sm text-zinc-400">Analyse en cours...</p>
+                  <p className="mt-3 text-sm text-zinc-400">
+                    Analyse en cours...
+                  </p>
                 )}
 
                 {currentExplainError && (
-                  <p className="mt-3 text-sm text-red-300">{currentExplainError}</p>
+                  <p className="mt-3 text-sm text-red-300">
+                    {currentExplainError}
+                  </p>
                 )}
 
                 {currentExplanation && (
@@ -339,7 +359,9 @@ export function QuizSession({
               onClick={handleNext}
               className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-white px-5 py-3 text-sm font-bold text-black transition hover:bg-zinc-200"
             >
-              {index === questions.length - 1 ? 'Voir les résultats' : 'Suivant'}
+              {index === questions.length - 1
+                ? "Voir les résultats"
+                : "Suivant"}
               <FaArrowRight className="text-xs" />
             </button>
           )}

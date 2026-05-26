@@ -1,4 +1,4 @@
-export type AnswerKey = 'A' | 'B' | 'C' | 'D' | 'E';
+export type AnswerKey = "A" | "B" | "C" | "D" | "E";
 
 export type Question = {
   id: number;

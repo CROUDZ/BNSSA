@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { m } from 'framer-motion';
-import type { QcmData, QuestionResult } from '@/types/qcm';
+import { m } from "framer-motion";
+import type { QcmData, QuestionResult } from "@/types/qcm";
 
 type Props = {
   quiz: QcmData;
@@ -11,7 +11,13 @@ type Props = {
   onHome: () => void;
 };
 
-export function ResultsScreen({ quiz, results, onRetry, onRetryWrong, onHome }: Props) {
+export function ResultsScreen({
+  quiz,
+  results,
+  onRetry,
+  onRetryWrong,
+  onHome,
+}: Props) {
   const score = results.filter((r) => r.correct).length;
   const total = results.length;
   const pct = Math.round((score / total) * 100);
@@ -30,7 +36,7 @@ export function ResultsScreen({ quiz, results, onRetry, onRetryWrong, onHome }: 
         <div className="mb-8 flex flex-col items-center text-center">
           <div
             className={`flex h-36 w-36 items-center justify-center rounded-full border-4 ${
-              passed ? 'border-emerald-500' : 'border-red-500'
+              passed ? "border-emerald-500" : "border-red-500"
             }`}
           >
             <div>
@@ -38,23 +44,30 @@ export function ResultsScreen({ quiz, results, onRetry, onRetryWrong, onHome }: 
             </div>
           </div>
           <h1 className="mt-6 text-3xl font-black">
-            {passed ? '✓ Réussi !' : '✗ Insuffisant'}
+            {passed ? "✓ Réussi !" : "✗ Insuffisant"}
           </h1>
           <p className="mt-2 text-zinc-400">
             {score}/{total} bonnes réponses sur {quiz.title}
           </p>
-          <p className={`mt-1 text-sm font-semibold ${passed ? 'text-emerald-400' : 'text-red-400'}`}>
-            {passed ? 'Seuil de 75% atteint' : 'Seuil de 75% non atteint'}
+          <p
+            className={`mt-1 text-sm font-semibold ${passed ? "text-emerald-400" : "text-red-400"}`}
+          >
+            {passed ? "Seuil de 75% atteint" : "Seuil de 75% non atteint"}
           </p>
         </div>
 
         {/* Per-question breakdown */}
         <div className="mb-6 rounded-3xl border border-zinc-800 bg-zinc-900 divide-y divide-zinc-800 overflow-hidden">
           {results.map((r, i) => (
-            <div key={r.questionId} className="flex items-center justify-between px-5 py-3">
+            <div
+              key={r.questionId}
+              className="flex items-center justify-between px-5 py-3"
+            >
               <span className="text-sm text-zinc-400">Q{i + 1}</span>
-              <span className={`text-xs font-bold ${r.correct ? 'text-emerald-400' : 'text-red-400'}`}>
-                {r.correct ? '✓ Correct' : '✗ Incorrect'}
+              <span
+                className={`text-xs font-bold ${r.correct ? "text-emerald-400" : "text-red-400"}`}
+              >
+                {r.correct ? "✓ Correct" : "✗ Incorrect"}
               </span>
             </div>
           ))}
@@ -67,7 +80,7 @@ export function ResultsScreen({ quiz, results, onRetry, onRetryWrong, onHome }: 
               onClick={onRetryWrong}
               className="w-full rounded-2xl bg-white px-5 py-4 font-bold text-black transition hover:bg-zinc-200"
             >
-              Revoir les {wrongCount} erreur{wrongCount > 1 ? 's' : ''}
+              Revoir les {wrongCount} erreur{wrongCount > 1 ? "s" : ""}
             </button>
           )}
           <button

@@ -1,9 +1,9 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
-export const runtime = 'nodejs';
+export const runtime = "nodejs";
 
-const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
-const GEMINI_MODEL = 'gemini-1.5-flash';
+const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
+const GEMINI_MODEL = "gemini-1.5-flash";
 
 type ExplainPayload = {
   quizTitle?: string;
@@ -20,17 +20,17 @@ const jsonResponse = (status: number, payload: Record<string, unknown>) =>
 
 const formatAnswers = (answers: Record<string, string> | undefined) =>
   Object.entries(answers ?? {})
-    .filter(([, text]) => typeof text === 'string' && text.trim().length > 0)
+    .filter(([, text]) => typeof text === "string" && text.trim().length > 0)
     .map(([key, text]) => `${key}: ${text}`)
-    .join('\n');
+    .join("\n");
 
 const buildPrompt = (payload: ExplainPayload) => {
-  const quiz = payload.quizTitle ? `QCM: ${payload.quizTitle}\n` : '';
+  const quiz = payload.quizTitle ? `QCM: ${payload.quizTitle}\n` : "";
   const answers = formatAnswers(payload.answers);
-  const correct = payload.correctAnswers.join(', ');
+  const correct = payload.correctAnswers.join(", ");
   const selected = payload.selectedAnswers?.length
-    ? payload.selectedAnswers.join(', ')
-    : 'Aucune';
+    ? payload.selectedAnswers.join(", ")
+    : "Aucune";
 
   return (
     `${quiz}` +
@@ -38,36 +38,36 @@ const buildPrompt = (payload: ExplainPayload) => {
     `Propositions:\n${answers}\n\n` +
     `Reponses correctes: ${correct}\n` +
     `Reponses de l'utilisateur: ${selected}\n\n` +
-    'Explique la regle ou le principe qui justifie chaque bonne reponse. ' +
+    "Explique la regle ou le principe qui justifie chaque bonne reponse. " +
     "Si l'utilisateur s'est trompe, indique en une phrase pourquoi ses choix ne conviennent pas. " +
-    'Apporte au moins un element concret (regle, seuil, definition ou condition). ' +
-    'Reponse en francais, ton pedagogique, 3 a 5 phrases courtes maximum. ' +
-    'Ne repete pas la question ni les propositions. ' +
-    'Ne mentionne pas que tu es une IA.'
+    "Apporte au moins un element concret (regle, seuil, definition ou condition). " +
+    "Reponse en francais, ton pedagogique, 3 a 5 phrases courtes maximum. " +
+    "Ne repete pas la question ni les propositions. " +
+    "Ne mentionne pas que tu es une IA."
   );
 };
 
 const callGroq = async (prompt: string) => {
   const apiKey = process.env.GROQ_API_KEY;
-  if (!apiKey) throw new Error('Missing GROQ_API_KEY');
+  if (!apiKey) throw new Error("Missing GROQ_API_KEY");
 
   const response = await fetch(GROQ_URL, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: 'llama-3.1-8b-instant',
+      model: "llama-3.1-8b-instant",
       temperature: 0.3,
       max_tokens: 320,
       messages: [
         {
-          role: 'system',
+          role: "system",
           content:
-            'Tu es un formateur BNSSA. Tu donnes des explications claires, factuelles et non paraphrasees.',
+            "Tu es un formateur BNSSA. Tu donnes des explications claires, factuelles et non paraphrasees.",
         },
-        { role: 'user', content: prompt },
+        { role: "user", content: prompt },
       ],
     }),
   });
@@ -79,20 +79,20 @@ const callGroq = async (prompt: string) => {
 
   const data = await response.json();
   const content = data?.choices?.[0]?.message?.content?.trim();
-  if (!content) throw new Error('Groq empty response');
+  if (!content) throw new Error("Groq empty response");
   return content;
 };
 
 const callGemini = async (prompt: string) => {
   const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) throw new Error('Missing GEMINI_API_KEY');
+  if (!apiKey) throw new Error("Missing GEMINI_API_KEY");
 
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${encodeURIComponent(apiKey)}`;
   const response = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      contents: [{ role: 'user', parts: [{ text: prompt }] }],
+      contents: [{ role: "user", parts: [{ text: prompt }] }],
       generationConfig: {
         temperature: 0.3,
         maxOutputTokens: 320,
@@ -107,14 +107,16 @@ const callGemini = async (prompt: string) => {
 
   const data = await response.json();
   const content = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
-  if (!content) throw new Error('Gemini empty response');
+  if (!content) throw new Error("Gemini empty response");
   return content;
 };
 
-const isValidPayload = (payload: ExplainPayloadInput): payload is ExplainPayload =>
-  typeof payload.question === 'string' &&
+const isValidPayload = (
+  payload: ExplainPayloadInput,
+): payload is ExplainPayload =>
+  typeof payload.question === "string" &&
   payload.question.trim().length > 0 &&
-  typeof payload.answers === 'object' &&
+  typeof payload.answers === "object" &&
   payload.answers !== null &&
   !Array.isArray(payload.answers) &&
   Array.isArray(payload.correctAnswers) &&
@@ -126,24 +128,24 @@ export async function POST(request: Request) {
   try {
     payload = (await request.json()) as ExplainPayloadInput;
   } catch {
-    return jsonResponse(400, { error: 'Invalid JSON payload' });
+    return jsonResponse(400, { error: "Invalid JSON payload" });
   }
 
   if (!isValidPayload(payload)) {
-    return jsonResponse(400, { error: 'Invalid request body' });
+    return jsonResponse(400, { error: "Invalid request body" });
   }
 
   const prompt = buildPrompt(payload);
 
   try {
     const explanation = await callGroq(prompt);
-    return jsonResponse(200, { explanation, provider: 'groq' });
+    return jsonResponse(200, { explanation, provider: "groq" });
   } catch {
     try {
       const explanation = await callGemini(prompt);
-      return jsonResponse(200, { explanation, provider: 'gemini' });
+      return jsonResponse(200, { explanation, provider: "gemini" });
     } catch {
-      return jsonResponse(502, { error: 'AI providers unavailable' });
+      return jsonResponse(502, { error: "AI providers unavailable" });
     }
   }
 }

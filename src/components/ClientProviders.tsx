@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { LazyMotion, domAnimation } from 'framer-motion';
-import { useState } from 'react';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { LazyMotion, domAnimation } from "framer-motion";
+import { useState } from "react";
 
 export default function ClientProviders({
   children,
