@@ -72,13 +72,9 @@ export function QuizSession({
 
   const handleSelect = (key: AnswerKey) => {
     if (confirmed) return;
-    if (isMulti) {
-      setSelected((prev) =>
-        prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key],
-      );
-    } else {
-      setSelected([key]);
-    }
+    setSelected((prev) =>
+      prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key],
+    );
   };
 
   const handleExamSelect = (questionId: number, key: AnswerKey) => {

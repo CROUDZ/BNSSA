@@ -190,8 +190,8 @@ export default function HomePage() {
       />
       <main className="relative min-h-screen overflow-hidden bg-hero text-slate-50">
         <div className="pointer-events-none absolute inset-0 bg-grid opacity-[0.08]" />
-        <div className="pointer-events-none absolute -top-40 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-emerald-400/20 blur-[140px]" />
-        <div className="pointer-events-none absolute top-24 right-[-120px] h-[360px] w-[360px] rounded-full bg-amber-300/20 blur-[130px]" />
+        <div className="pointer-events-none absolute -top-40 left-1/2 h-105 w-105 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-[140px]" />
+        <div className="pointer-events-none absolute top-24 right-30 h-90 w-90 rounded-full bg-amber-300/20 blur-[130px]" />
 
         <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 pb-14 pt-10 md:px-6">
           <m.div
@@ -206,7 +206,7 @@ export default function HomePage() {
             </div>
 
             <div className="max-w-3xl">
-              <h1 className="font-display text-4xl leading-[1] md:text-6xl">
+              <h1 className="font-display text-4xl leading-none md:text-6xl">
                 QCM officiels
                 <br />
                 <span className="text-emerald-200">BNSSA</span> (FNMNS)
