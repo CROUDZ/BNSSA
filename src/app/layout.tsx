@@ -74,7 +74,30 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="antialiased">
-        <ClientProviders>{children}</ClientProviders>
+        <ClientProviders>
+          <div className="flex min-h-screen flex-col">
+            <div className="flex-1">{children}</div>
+            <footer className="border-t border-soft bg-surface-veil">
+              <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-4 py-6 text-xs text-muted opacity-90 sm:text-sm md:flex-row md:items-center md:justify-between md:gap-6 md:px-6">
+                <div className="flex flex-col gap-1">
+                  <p>Site non officiel indépendant de la FNMNS</p>
+                  <p>
+                    Les contenus pédagogiques restent la propriété de leurs
+                    auteurs respectifs
+                  </p>
+                </div>
+                <a
+                  href="https://formation.fnmns.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-emerald-200/90 transition hover:text-emerald-100"
+                >
+                  Pour la formation officielle
+                </a>
+              </div>
+            </footer>
+          </div>
+        </ClientProviders>
       </body>
     </html>
   );

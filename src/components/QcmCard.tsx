@@ -30,8 +30,8 @@ export function QcmCard({ quiz, progress, onStart, onReset }: Props) {
         className={`absolute inset-x-0 top-0 h-1 rounded-t-3xl ${
           isCompleted
             ? passed
-              ? "bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300"
-              : "bg-gradient-to-r from-rose-400 to-amber-300"
+              ? "bg-linear-to-r from-emerald-400 via-teal-300 to-amber-300"
+              : "bg-linear-to-r from-rose-400 to-amber-300"
             : "bg-slate-700/80"
         }`}
       />
@@ -98,14 +98,6 @@ export function QcmCard({ quiz, progress, onStart, onReset }: Props) {
             </span>
           </m.button>
         )}
-
-        <a
-          href={`/api/qcm-pdf/${quiz.id}`}
-          download
-          className="w-full rounded-2xl border border-soft px-4 py-3 text-center text-sm font-semibold text-slate-200 transition hover:border-emerald-300/40 hover:text-white"
-        >
-          Telecharger le PDF officiel
-        </a>
 
         {isCompleted && (
           <button

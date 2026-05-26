@@ -81,18 +81,12 @@ export function QuizSession({
     }
   };
 
-  const handleExamSelect = (
-    questionId: number,
-    key: AnswerKey,
-    multi: boolean,
-  ) => {
+  const handleExamSelect = (questionId: number, key: AnswerKey) => {
     setExamAnswers((prev) => {
       const current = prev[questionId] ?? [];
-      const next = multi
-        ? current.includes(key)
-          ? current.filter((k) => k !== key)
-          : [...current, key]
-        : [key];
+      const next = current.includes(key)
+        ? current.filter((k) => k !== key)
+        : [...current, key];
       return { ...prev, [questionId]: next };
     });
   };
@@ -267,9 +261,7 @@ export function QuizSession({
                         answerKey={key}
                         value={item.answers[key]!}
                         state={itemSelected.includes(key) ? "selected" : "idle"}
-                        onClick={() =>
-                          handleExamSelect(item.id, key, itemMulti)
-                        }
+                        onClick={() => handleExamSelect(item.id, key)}
                         disabled={false}
                       />
                     ))}
