@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
@@ -12,10 +12,14 @@ const PDF_MAP: Record<string, string> = {
 };
 
 export async function GET(
-  _request: Request,
-  { params }: { params: { id: string } },
+  _request: NextRequest,
+  context: { params: Promise<Record<string, string | string[] | undefined>> },
 ) {
-  const filename = PDF_MAP[params.id];
+  const params = await context.params;
+  const id = params?.id;
+  const filename = PDF_MAP[
+    typeof id === "string" ? id : Array.isArray(id) ? id[0] : ""
+  ];
   if (!filename) {
     return NextResponse.json({ error: "QCM introuvable" }, { status: 404 });
   }
