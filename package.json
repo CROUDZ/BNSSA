@@ -14,7 +14,7 @@
   "dependencies": {
     "@tanstack/react-query": "^5.87.1",
     "framer-motion": "^12.20.2",
-    "next": "15.3.4",
+    "next": "15.3.8",
     "prettier": "^3.6.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
