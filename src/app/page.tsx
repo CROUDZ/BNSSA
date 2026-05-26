@@ -79,7 +79,7 @@ export default function HomePage() {
     null,
   );
   const [pendingResults, setPendingResults] = useState<QuestionResult[]>([]);
-  
+
   const handleStart = (quiz: QcmData, mode: "all" | "retry" | "exam") => {
     if (mode === "all" || mode === "exam") {
       clearProgress(quiz.id);

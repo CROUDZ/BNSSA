@@ -98,7 +98,7 @@ export const qcm1: Question[] = [
       B: "Une piscine d'accès payant",
       C: "Un Accueil Collectif de Mineurs dans une piscine privée du centre",
     },
-    correctAnswers: ["A","B", "C"],
+    correctAnswers: ["A", "B", "C"],
   },
 
   {

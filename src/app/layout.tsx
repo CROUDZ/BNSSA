@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ClientProviders from "@/components/ClientProviders";
 import ThemeToggle from "@/components/ThemeToggle";
 import "@/styles/globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -83,6 +84,7 @@ export default function RootLayout({
             __html: `(function(){try{var stored=sessionStorage.getItem("bnssa-theme");if(stored==="light"||stored==="dark"){document.documentElement.dataset.theme=stored;}}catch(e){}})();`,
           }}
         />
+        <SpeedInsights />
         <ClientProviders>
           <ThemeToggle />
           <div className="flex min-h-screen flex-col">

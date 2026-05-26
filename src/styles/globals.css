@@ -180,11 +180,7 @@
         var(--hero-spotlight-warm),
         transparent 45%
       ),
-      linear-gradient(
-        180deg,
-        var(--hero-base) 0%,
-        var(--hero-fade) 100%
-      );
+      linear-gradient(180deg, var(--hero-base) 0%, var(--hero-fade) 100%);
   }
 
   .bg-grid {

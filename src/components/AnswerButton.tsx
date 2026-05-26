@@ -24,7 +24,8 @@ const stateStyles: Record<Props["state"], string> = {
 
 const badgeStyles: Record<Props["state"], string> = {
   idle: "text-muted-strong",
-  selected: "border-transparent ring-2 ring-[color:var(--foreground)] text-foreground",
+  selected:
+    "border-transparent ring-2 ring-[color:var(--foreground)] text-foreground",
   correct: "border-transparent ring-2 ring-emerald-400 text-emerald-200",
   wrong: "border-transparent ring-2 ring-red-400 text-red-200",
   missed: "border-transparent ring-2 ring-emerald-600 text-emerald-300",

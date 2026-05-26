@@ -311,7 +311,7 @@ export const qcm4: Question[] = [
       C: "Il doit se conformer à une visite des pompiers",
       D: "Il doit installer un poste de secours",
     },
-    correctAnswers: ["A","B","D"],
+    correctAnswers: ["A", "B", "D"],
   },
 
   {
@@ -433,7 +433,7 @@ export const qcm4: Question[] = [
       B: "Doit être de structure rigide pour évoluer au delà des 300m",
       C: "Doit disposer d'un dispositif permettant le remorquage",
     },
-    correctAnswers: ["B","C"],
+    correctAnswers: ["B", "C"],
   },
 
   {

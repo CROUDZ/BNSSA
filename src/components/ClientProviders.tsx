@@ -12,10 +12,10 @@ export default function ClientProviders({
   const [queryClient] = useState(() => new QueryClient());
 
   useEffect(() => {
-      console.log(
-        "%cCréer par giovweb : https://giovweb.com",
-        "font-size: 20px; font-weight: 900; color: #10b981; text-shadow: 0 0 6px rgba(16, 185, 129, 0.75);",
-      );
+    console.log(
+      "%cCréer par giovweb : https://giovweb.com",
+      "font-size: 20px; font-weight: 900; color: #10b981; text-shadow: 0 0 6px rgba(16, 185, 129, 0.75);",
+    );
   }, []);
 
   return (

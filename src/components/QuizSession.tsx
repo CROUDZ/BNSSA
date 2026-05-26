@@ -34,9 +34,9 @@ export function QuizSession({
   const [confirmed, setConfirmed] = useState(false);
   const [results, setResults] = useState<QuestionResult[]>([]);
   const [direction, setDirection] = useState(1);
-  const [examAnswers, setExamAnswers] = useState<
-    Record<number, AnswerKey[]>
-  >({});
+  const [examAnswers, setExamAnswers] = useState<Record<number, AnswerKey[]>>(
+    {},
+  );
   const [explanations, setExplanations] = useState<Record<number, string>>({});
   const [explainErrors, setExplainErrors] = useState<Record<number, string>>(
     {},
@@ -258,9 +258,8 @@ export function QuizSession({
           <div className="mt-8 flex flex-col gap-3">
             {remainingCount > 0 && (
               <p className="text-center text-sm text-muted">
-                {remainingCount} question{remainingCount > 1 ? "s" : ""}
-                {" "}restante{remainingCount > 1 ? "s" : ""} avant de
-                valider.
+                {remainingCount} question{remainingCount > 1 ? "s" : ""}{" "}
+                restante{remainingCount > 1 ? "s" : ""} avant de valider.
               </p>
             )}
             <button
@@ -321,9 +320,9 @@ export function QuizSession({
               {index + 1}
               <span className="text-muted-strong">/{questions.length}</span>
             </span>
-                            <span className="rounded-full bg-surface-veil px-3 py-1 text-xs font-semibold uppercase tracking-widest text-muted">
-                  {quiz.title}
-                </span>
+            <span className="rounded-full bg-surface-veil px-3 py-1 text-xs font-semibold uppercase tracking-widest text-muted">
+              {quiz.title}
+            </span>
           </div>
         </div>
 
@@ -346,9 +345,9 @@ export function QuizSession({
             exit={{ opacity: 0, x: direction * -40 }}
             transition={{ duration: 0.2 }}
           >
-              <h2 className="text-xl font-black leading-snug md:text-2xl mb-5 rounded-3xl border border-soft bg-surface-strong p-6">
-                {question.id}) {question.question}
-              </h2>
+            <h2 className="text-xl font-black leading-snug md:text-2xl mb-5 rounded-3xl border border-soft bg-surface-strong p-6">
+              {question.id}) {question.question}
+            </h2>
 
             {/* Answers */}
             <div className="flex flex-col gap-3">
