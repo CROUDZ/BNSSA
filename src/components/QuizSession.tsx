@@ -195,12 +195,12 @@ export function QuizSession({
     const canSubmit = remainingCount === 0 && questions.length > 0;
 
     return (
-      <main className="min-h-screen bg-zinc-950 p-4 text-white md:p-6">
+      <main className="min-h-screen bg-background p-4 text-foreground md:p-6">
         <div className="mx-auto max-w-4xl">
           <div className="mb-6 flex items-center justify-between gap-4">
             <button
               onClick={onBack}
-              className="flex items-center gap-2 rounded-2xl border border-zinc-800 bg-zinc-900 px-4 py-2.5 text-sm font-medium transition hover:bg-zinc-800"
+              className="flex items-center gap-2 rounded-2xl border border-soft bg-surface-strong px-4 py-2.5 text-sm font-medium transition hover:bg-surface-veil"
             >
               <FaArrowLeft className="text-xs" />
               Retour
@@ -210,16 +210,16 @@ export function QuizSession({
               <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-semibold text-amber-300">
                 Mode examen
               </span>
-              <span className="font-mono text-sm text-zinc-500">
+              <span className="font-mono text-sm text-muted">
                 {answeredCount}
-                <span className="text-zinc-700">/{questions.length}</span>
+                <span className="text-muted-strong">/{questions.length}</span>
               </span>
             </div>
           </div>
 
-          <div className="mb-8 h-1.5 overflow-hidden rounded-full bg-zinc-800">
+          <div className="mb-8 h-1.5 overflow-hidden rounded-full bg-surface-strong">
             <m.div
-              className="h-full rounded-full bg-white"
+              className="h-full rounded-full bg-foreground"
               animate={{ width: `${progress}%` }}
               transition={{ ease: "easeOut", duration: 0.3 }}
             />
@@ -234,14 +234,14 @@ export function QuizSession({
               return (
                 <div
                   key={item.id}
-                  className="rounded-3xl border border-zinc-800 bg-zinc-900 p-6"
+                  className="rounded-3xl border border-soft bg-surface-strong p-6"
                 >
                   <div className="mb-3 flex items-center justify-between">
-                    <span className="rounded-full bg-zinc-800 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-zinc-400">
+                    <span className="rounded-full bg-surface-veil px-3 py-1 text-xs font-semibold uppercase tracking-widest text-muted">
                       Question {questionIndex + 1}
                     </span>
                     {itemMulti && (
-                      <span className="rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-400">
+                      <span className="rounded-full border border-soft px-3 py-1 text-xs text-muted">
                         Plusieurs réponses
                       </span>
                     )}
@@ -269,7 +269,7 @@ export function QuizSession({
 
           <div className="mt-8 flex flex-col gap-3">
             {remainingCount > 0 && (
-              <p className="text-center text-sm text-zinc-400">
+              <p className="text-center text-sm text-muted">
                 {remainingCount} question{remainingCount > 1 ? "s" : ""}
                 {" "}restante{remainingCount > 1 ? "s" : ""} avant de
                 valider.
@@ -294,7 +294,7 @@ export function QuizSession({
                 onComplete(newResults);
               }}
               disabled={!canSubmit}
-              className="w-full rounded-2xl bg-white px-5 py-4 text-sm font-bold text-black transition hover:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-40"
+              className="w-full rounded-2xl bg-foreground px-5 py-4 text-sm font-bold text-background transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
             >
               Valider l'examen
             </button>
@@ -305,13 +305,13 @@ export function QuizSession({
   }
 
   return (
-    <main className="min-h-screen bg-zinc-950 p-4 text-white md:p-6">
+    <main className="min-h-screen bg-background p-4 text-foreground md:p-6">
       <div className="mx-auto max-w-2xl">
         {/* Header */}
         <div className="mb-6 flex items-center justify-between gap-4">
           <button
             onClick={onBack}
-            className="flex items-center gap-2 rounded-2xl border border-zinc-800 bg-zinc-900 px-4 py-2.5 text-sm font-medium transition hover:bg-zinc-800"
+            className="flex items-center gap-2 rounded-2xl border border-soft bg-surface-strong px-4 py-2.5 text-sm font-medium transition hover:bg-surface-veil"
           >
             <FaArrowLeft className="text-xs" />
             Retour
@@ -329,17 +329,17 @@ export function QuizSession({
                 {mode === "retry" ? "Mode erreurs" : "Mode examen"}
               </span>
             )}
-            <span className="font-mono text-sm text-zinc-500">
+            <span className="font-mono text-sm text-muted">
               {index + 1}
-              <span className="text-zinc-700">/{questions.length}</span>
+              <span className="text-muted-strong">/{questions.length}</span>
             </span>
           </div>
         </div>
 
         {/* Progress bar */}
-        <div className="mb-6 h-1.5 overflow-hidden rounded-full bg-zinc-800">
+        <div className="mb-6 h-1.5 overflow-hidden rounded-full bg-surface-strong">
           <m.div
-            className="h-full rounded-full bg-white"
+            className="h-full rounded-full bg-foreground"
             animate={{ width: `${progress}%` }}
             transition={{ ease: "easeOut", duration: 0.3 }}
           />
@@ -355,13 +355,13 @@ export function QuizSession({
             exit={{ opacity: 0, x: direction * -40 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="mb-5 rounded-3xl border border-zinc-800 bg-zinc-900 p-6">
+            <div className="mb-5 rounded-3xl border border-soft bg-surface-strong p-6">
               <div className="mb-3 flex items-center justify-between">
-                <span className="rounded-full bg-zinc-800 px-3 py-1 text-xs font-semibold tracking-widest text-zinc-400 uppercase">
+                <span className="rounded-full bg-surface-veil px-3 py-1 text-xs font-semibold uppercase tracking-widest text-muted">
                   {quiz.title}
                 </span>
                 {isMulti && (
-                  <span className="rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-400">
+                  <span className="rounded-full border border-soft px-3 py-1 text-xs text-muted">
                     Plusieurs réponses
                   </span>
                 )}
@@ -429,15 +429,15 @@ export function QuizSession({
             )}
 
             {canExplain && (
-              <div className="mt-4 rounded-2xl border border-zinc-800 bg-zinc-900/60 px-5 py-4">
+              <div className="mt-4 rounded-2xl border border-soft bg-surface-veil px-5 py-4">
                 <div className="flex flex-wrap items-center justify-between gap-3">
-                  <span className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-muted">
                     Explication IA
                   </span>
                   <button
                     onClick={handleExplain}
                     disabled={isExplainLoading}
-                    className="rounded-full border border-zinc-700 px-3 py-1 text-xs font-semibold text-zinc-200 transition hover:border-zinc-500 hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+                    className="rounded-full border border-soft px-3 py-1 text-xs font-semibold text-muted-strong transition hover:border-emerald-300/40 hover:text-foreground disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {currentExplanation
                       ? "Regenerer"
@@ -446,9 +446,7 @@ export function QuizSession({
                 </div>
 
                 {isExplainLoading && (
-                  <p className="mt-3 text-sm text-zinc-400">
-                    Analyse en cours...
-                  </p>
+                  <p className="mt-3 text-sm text-muted">Analyse en cours...</p>
                 )}
 
                 {currentExplainError && (
@@ -458,7 +456,7 @@ export function QuizSession({
                 )}
 
                 {currentExplanation && (
-                  <p className="mt-3 whitespace-pre-wrap text-sm text-zinc-200">
+                  <p className="mt-3 whitespace-pre-wrap text-sm text-foreground">
                     {currentExplanation}
                   </p>
                 )}
@@ -472,7 +470,7 @@ export function QuizSession({
           <button
             onClick={handlePrev}
             disabled={index === 0}
-            className="flex items-center gap-2 rounded-2xl border border-zinc-800 px-5 py-3 text-sm transition hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-30"
+            className="flex items-center gap-2 rounded-2xl border border-soft px-5 py-3 text-sm transition hover:bg-surface-veil disabled:cursor-not-allowed disabled:opacity-30"
           >
             <FaArrowLeft className="text-xs" />
             Précédent
@@ -482,14 +480,14 @@ export function QuizSession({
             <button
               onClick={handleConfirm}
               disabled={selected.length === 0}
-              className="flex-1 rounded-2xl bg-white px-5 py-3 text-sm font-bold text-black transition hover:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-30"
+              className="flex-1 rounded-2xl bg-foreground px-5 py-3 text-sm font-bold text-background transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30"
             >
               Valider
             </button>
           ) : (
             <button
               onClick={handleNext}
-              className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-white px-5 py-3 text-sm font-bold text-black transition hover:bg-zinc-200"
+              className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-foreground px-5 py-3 text-sm font-bold text-background transition hover:opacity-90"
             >
               {index === questions.length - 1
                 ? "Voir les résultats"

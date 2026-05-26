@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
 import ClientProviders from "@/components/ClientProviders";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -63,7 +64,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport = {
-  themeColor: "#0b1220",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b1220" },
+  ],
 };
 
 export default function RootLayout({
@@ -74,7 +78,13 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="antialiased">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var stored=sessionStorage.getItem("bnssa-theme");if(stored==="light"||stored==="dark"){document.documentElement.dataset.theme=stored;}}catch(e){}})();`,
+          }}
+        />
         <ClientProviders>
+          <ThemeToggle />
           <div className="flex min-h-screen flex-col">
             <div className="flex-1">{children}</div>
             <footer className="border-t border-soft bg-surface-veil">

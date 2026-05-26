@@ -28,12 +28,12 @@ export function ProgressBanner({ session, quizzes, onClearAll }: Props) {
           <p className="text-xs uppercase tracking-widest text-muted">
             Progression
           </p>
-          <p className="text-lg font-black text-slate-100">
+          <p className="text-lg font-black text-foreground">
             {completed}
-            <span className="text-slate-400">/{total} QCM</span>
+            <span className="text-muted-strong">/{total} QCM</span>
           </p>
         </div>
-        <div className="hidden h-10 w-px bg-white/10 sm:block" />
+        <div className="hidden h-10 w-px bg-border sm:block" />
         <div>
           <p className="text-xs uppercase tracking-widest text-muted">
             Moyenne
@@ -49,7 +49,7 @@ export function ProgressBanner({ session, quizzes, onClearAll }: Props) {
       </div>
       <button
         onClick={onClearAll}
-        className="rounded-xl border border-soft bg-surface px-4 py-2 text-xs font-semibold text-muted transition hover:border-emerald-300/40 hover:text-slate-100"
+        className="rounded-xl border border-soft bg-surface px-4 py-2 text-xs font-semibold text-muted transition hover:border-emerald-300/40 hover:text-foreground"
       >
         Tout réinitialiser
       </button>

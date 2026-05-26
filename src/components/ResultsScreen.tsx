@@ -25,7 +25,7 @@ export function ResultsScreen({
   const wrongCount = results.filter((r) => !r.correct).length;
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-zinc-950 p-6 text-white">
+    <main className="flex min-h-screen items-center justify-center bg-background p-6 text-foreground">
       <m.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -46,7 +46,7 @@ export function ResultsScreen({
           <h1 className="mt-6 text-3xl font-black">
             {passed ? "✓ Réussi !" : "✗ Insuffisant"}
           </h1>
-          <p className="mt-2 text-zinc-400">
+          <p className="mt-2 text-muted">
             {score}/{total} bonnes réponses sur {quiz.title}
           </p>
           <p
@@ -57,13 +57,15 @@ export function ResultsScreen({
         </div>
 
         {/* Per-question breakdown */}
-        <div className="mb-6 rounded-3xl border border-zinc-800 bg-zinc-900 divide-y divide-zinc-800 overflow-hidden">
+        <div className="mb-6 overflow-hidden rounded-3xl border border-soft bg-surface-strong">
           {results.map((r, i) => (
             <div
               key={r.questionId}
-              className="flex items-center justify-between px-5 py-3"
+              className={`flex items-center justify-between px-5 py-3 ${
+                i < results.length - 1 ? "border-b border-soft" : ""
+              }`}
             >
-              <span className="text-sm text-zinc-400">Q{i + 1}</span>
+              <span className="text-sm text-muted">Q{i + 1}</span>
               <span
                 className={`text-xs font-bold ${r.correct ? "text-emerald-400" : "text-red-400"}`}
               >
@@ -78,20 +80,20 @@ export function ResultsScreen({
           {wrongCount > 0 && (
             <button
               onClick={onRetryWrong}
-              className="w-full rounded-2xl bg-white px-5 py-4 font-bold text-black transition hover:bg-zinc-200"
+              className="w-full rounded-2xl bg-foreground px-5 py-4 font-bold text-background transition hover:opacity-90"
             >
               Revoir les {wrongCount} erreur{wrongCount > 1 ? "s" : ""}
             </button>
           )}
           <button
             onClick={onRetry}
-            className="w-full rounded-2xl border border-zinc-700 px-5 py-4 font-semibold text-zinc-300 transition hover:border-zinc-500 hover:text-white"
+            className="w-full rounded-2xl border border-soft px-5 py-4 font-semibold text-muted-strong transition hover:border-emerald-300/40 hover:text-foreground"
           >
             Tout recommencer
           </button>
           <button
             onClick={onHome}
-            className="w-full rounded-2xl px-5 py-4 text-sm text-zinc-500 transition hover:text-zinc-300"
+            className="w-full rounded-2xl px-5 py-4 text-sm text-muted transition hover:text-foreground"
           >
             ← Retour aux QCM
           </button>

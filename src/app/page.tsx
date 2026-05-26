@@ -188,7 +188,7 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main className="relative min-h-screen overflow-hidden bg-hero text-slate-50">
+      <main className="relative min-h-screen overflow-hidden bg-hero text-foreground">
         <div className="pointer-events-none absolute inset-0 bg-grid opacity-[0.08]" />
         <div className="pointer-events-none absolute -top-40 left-1/2 h-105 w-105 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-[140px]" />
         <div className="pointer-events-none absolute top-24 right-30 h-90 w-90 rounded-full bg-amber-300/20 blur-[130px]" />

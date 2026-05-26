@@ -32,7 +32,7 @@ export function QcmCard({ quiz, progress, onStart, onReset }: Props) {
             ? passed
               ? "bg-linear-to-r from-emerald-400 via-teal-300 to-amber-300"
               : "bg-linear-to-r from-rose-400 to-amber-300"
-            : "bg-slate-700/80"
+            : "bg-surface-strong"
         }`}
       />
 
@@ -40,7 +40,7 @@ export function QcmCard({ quiz, progress, onStart, onReset }: Props) {
         <span className="rounded-full border border-soft bg-surface-veil px-3 py-1 text-xs font-semibold uppercase tracking-widest text-muted">
           {quiz.questions.length} questions
         </span>
-        <span className="text-xs font-mono text-slate-400">#{quiz.id}</span>
+        <span className="text-xs font-mono text-muted-strong">#{quiz.id}</span>
       </div>
 
       <h2 className="font-display text-2xl font-black tracking-tight">
@@ -58,7 +58,7 @@ export function QcmCard({ quiz, progress, onStart, onReset }: Props) {
               {progress.score}/{progress.total} — {pct}%
             </span>
           </div>
-          <div className="h-2 w-full overflow-hidden rounded-full bg-slate-800/80">
+          <div className="h-2 w-full overflow-hidden rounded-full bg-surface-strong">
             <div
               className={`h-full rounded-full transition-all ${
                 passed ? "bg-emerald-300" : "bg-rose-300"
@@ -81,7 +81,7 @@ export function QcmCard({ quiz, progress, onStart, onReset }: Props) {
         <m.button
           whileTap={{ scale: 0.97 }}
           onClick={() => onStart("exam")}
-          className="w-full rounded-2xl border border-soft px-4 py-3 text-sm font-semibold text-slate-200 transition hover:border-emerald-300/40 hover:text-white"
+          className="w-full rounded-2xl border border-soft px-4 py-3 text-sm font-semibold text-foreground transition hover:border-emerald-300/40 hover:text-foreground"
         >
           Mode examen
         </m.button>
@@ -90,7 +90,7 @@ export function QcmCard({ quiz, progress, onStart, onReset }: Props) {
           <m.button
             whileTap={{ scale: 0.97 }}
             onClick={() => onStart("retry")}
-            className="w-full rounded-2xl border border-soft px-4 py-3 text-sm font-semibold text-slate-200 transition hover:border-rose-300/40 hover:text-white"
+            className="w-full rounded-2xl border border-soft px-4 py-3 text-sm font-semibold text-foreground transition hover:border-rose-300/40 hover:text-foreground"
           >
             Revoir les erreurs
             <span className="ml-2 rounded-full bg-rose-500/20 px-2 py-0.5 text-xs text-rose-200">
@@ -102,7 +102,7 @@ export function QcmCard({ quiz, progress, onStart, onReset }: Props) {
         {isCompleted && (
           <button
             onClick={onReset}
-            className="w-full rounded-2xl border border-soft px-4 py-2.5 text-xs text-muted transition hover:border-white/20 hover:text-slate-200"
+            className="w-full rounded-2xl border border-soft px-4 py-2.5 text-xs text-muted transition hover:border-emerald-300/40 hover:text-foreground"
           >
             Réinitialiser ce QCM
           </button>

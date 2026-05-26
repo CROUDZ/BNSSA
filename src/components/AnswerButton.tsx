@@ -11,20 +11,23 @@ type Props = {
   disabled: boolean;
 };
 
+const baseButtonStyles =
+  "border-soft bg-surface-strong hover:border-emerald-300/30 hover:bg-surface-veil";
+
 const stateStyles: Record<Props["state"], string> = {
-  idle: "border-zinc-800 bg-zinc-950 hover:border-zinc-600 hover:bg-zinc-900",
-  selected: "border-white bg-white text-black",
-  correct: "border-emerald-500 bg-emerald-500/10 text-emerald-300",
-  wrong: "border-red-500 bg-red-500/10 text-red-300",
-  missed: "border-emerald-700 bg-emerald-900/20 text-emerald-500",
+  idle: baseButtonStyles,
+  selected: baseButtonStyles,
+  correct: baseButtonStyles,
+  wrong: baseButtonStyles,
+  missed: baseButtonStyles,
 };
 
 const badgeStyles: Record<Props["state"], string> = {
-  idle: "bg-zinc-800 text-zinc-300",
-  selected: "bg-black text-white",
-  correct: "bg-emerald-500 text-black",
-  wrong: "bg-red-500 text-white",
-  missed: "bg-emerald-700 text-white",
+  idle: "border border-soft bg-surface-veil text-muted-strong",
+  selected: "border-transparent ring-2 ring-[color:var(--foreground)] text-foreground",
+  correct: "border-transparent ring-2 ring-emerald-400 text-emerald-200",
+  wrong: "border-transparent ring-2 ring-red-400 text-red-200",
+  missed: "border-transparent ring-2 ring-emerald-600 text-emerald-300",
 };
 
 export function AnswerButton({
@@ -43,7 +46,7 @@ export function AnswerButton({
     >
       <div className="flex items-center gap-4">
         <div
-          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-black ${badgeStyles[state]}`}
+          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-black transition-all duration-200 ${badgeStyles[state]}`}
         >
           {answerKey}
         </div>
