@@ -134,7 +134,7 @@ export function QuizSession({
     }, {} as Record<AnswerKey, string>);
 
     try {
-      const response = await fetch('/.netlify/functions/qcm-explain', {
+      const response = await fetch('/api/qcm-explain', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

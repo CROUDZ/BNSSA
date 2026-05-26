@@ -12,7 +12,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@netlify/plugin-nextjs": "^5.15.11",
     "@tanstack/react-query": "^5.87.1",
     "framer-motion": "^12.20.2",
     "next": "15.3.4",

@@ -1,21 +1,30 @@
-'use strict';
+import { NextResponse } from 'next/server';
+
+export const runtime = 'nodejs';
 
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
 const GEMINI_MODEL = 'gemini-1.5-flash';
 
-const jsonResponse = (statusCode, payload) => ({
-  statusCode,
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(payload),
-});
+type ExplainPayload = {
+  quizTitle?: string;
+  question: string;
+  answers: Record<string, string>;
+  correctAnswers: string[];
+  selectedAnswers?: string[];
+};
 
-const formatAnswers = (answers) =>
-  Object.entries(answers || {})
+type ExplainPayloadInput = Partial<ExplainPayload>;
+
+const jsonResponse = (status: number, payload: Record<string, unknown>) =>
+  NextResponse.json(payload, { status });
+
+const formatAnswers = (answers: Record<string, string> | undefined) =>
+  Object.entries(answers ?? {})
     .filter(([, text]) => typeof text === 'string' && text.trim().length > 0)
     .map(([key, text]) => `${key}: ${text}`)
     .join('\n');
 
-const buildPrompt = (payload) => {
+const buildPrompt = (payload: ExplainPayload) => {
   const quiz = payload.quizTitle ? `QCM: ${payload.quizTitle}\n` : '';
   const answers = formatAnswers(payload.answers);
   const correct = payload.correctAnswers.join(', ');
@@ -35,7 +44,7 @@ const buildPrompt = (payload) => {
   );
 };
 
-const callGroq = async (prompt) => {
+const callGroq = async (prompt: string) => {
   const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) throw new Error('Missing GROQ_API_KEY');
 
@@ -71,7 +80,7 @@ const callGroq = async (prompt) => {
   return content;
 };
 
-const callGemini = async (prompt) => {
+const callGemini = async (prompt: string) => {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) throw new Error('Missing GEMINI_API_KEY');
 
@@ -99,24 +108,25 @@ const callGemini = async (prompt) => {
   return content;
 };
 
-exports.handler = async (event) => {
-  if (event.httpMethod !== 'POST') {
-    return jsonResponse(405, { error: 'Method not allowed' });
-  }
+const isValidPayload = (payload: ExplainPayloadInput): payload is ExplainPayload =>
+  typeof payload.question === 'string' &&
+  payload.question.trim().length > 0 &&
+  typeof payload.answers === 'object' &&
+  payload.answers !== null &&
+  !Array.isArray(payload.answers) &&
+  Array.isArray(payload.correctAnswers) &&
+  payload.correctAnswers.length > 0;
 
-  let payload;
+export async function POST(request: Request) {
+  let payload: ExplainPayloadInput;
+
   try {
-    payload = JSON.parse(event.body || '');
+    payload = (await request.json()) as ExplainPayloadInput;
   } catch {
     return jsonResponse(400, { error: 'Invalid JSON payload' });
   }
 
-  if (
-    !payload?.question ||
-    !payload?.answers ||
-    !Array.isArray(payload?.correctAnswers) ||
-    payload.correctAnswers.length === 0
-  ) {
+  if (!isValidPayload(payload)) {
     return jsonResponse(400, { error: 'Invalid request body' });
   }
 
@@ -133,4 +143,4 @@ exports.handler = async (event) => {
       return jsonResponse(502, { error: 'AI providers unavailable' });
     }
   }
-};
+}
