@@ -158,7 +158,7 @@ export function QuizSession({
     try {
       const response = await fetch("/api/qcm-explain", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "x-use-cache": "1" },
         body: JSON.stringify({
           quizTitle: quiz.title,
           question: question.question,
@@ -169,16 +169,38 @@ export function QuizSession({
       });
 
       if (!response.ok) {
-        throw new Error("Explain request failed");
+        const errorText = await response.text();
+        throw new Error(errorText || "Explain request failed");
       }
 
-      const data = (await response.json()) as { explanation?: string };
-      const explanation = data.explanation?.trim();
-      if (!explanation) {
+      if (!response.body) {
+        const fallbackText = (await response.text()).trim();
+        if (!fallbackText) throw new Error("Missing explanation");
+        setExplanations((prev) => ({ ...prev, [question.id]: fallbackText }));
+        return;
+      }
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let aggregated = "";
+
+      setExplanations((prev) => ({ ...prev, [question.id]: "" }));
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        aggregated += decoder.decode(value, { stream: true });
+        setExplanations((prev) => ({ ...prev, [question.id]: aggregated }));
+      }
+
+      aggregated += decoder.decode();
+
+      const finalText = aggregated.trim();
+      if (!finalText) {
         throw new Error("Missing explanation");
       }
 
-      setExplanations((prev) => ({ ...prev, [question.id]: explanation }));
+      setExplanations((prev) => ({ ...prev, [question.id]: finalText }));
     } catch {
       setExplainErrors((prev) => ({
         ...prev,
@@ -412,15 +434,15 @@ export function QuizSession({
                   <span className="text-xs font-semibold uppercase tracking-widest text-muted">
                     Explication IA
                   </span>
-                  <button
-                    onClick={handleExplain}
-                    disabled={isExplainLoading}
-                    className="rounded-full border border-soft px-3 py-1 text-xs font-semibold text-muted-strong transition hover:border-emerald-300/40 hover:text-foreground disabled:cursor-not-allowed disabled:opacity-60"
-                  >
-                    {currentExplanation
-                      ? "Regenerer"
-                      : "Demander une explication"}
-                  </button>
+                  {!currentExplanation && (
+                    <button
+                      onClick={handleExplain}
+                      disabled={isExplainLoading}
+                      className="rounded-full border border-soft px-3 py-1 text-xs font-semibold text-muted-strong transition hover:border-emerald-300/40 hover:text-foreground disabled:cursor-not-allowed disabled:opacity-60"
+                    >
+                      Demander une explication
+                    </button>
+                  )}
                 </div>
 
                 {isExplainLoading && (

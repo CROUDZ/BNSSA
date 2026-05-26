@@ -13,7 +13,7 @@ export const qcm3: Question[] = [
     question: "Une noyade",
     answers: {
       A: "Peut être provoquée par un malaise dans l’eau",
-      B: "Peut être provoquée un traumatisme violent",
+      B: "Peut être provoquée par un traumatisme violent",
       C: "Est toujours le fait d’un mauvais nageur",
     },
     correctAnswers: ["A", "B"],
@@ -33,7 +33,7 @@ export const qcm3: Question[] = [
   {
     id: 3,
     question:
-      "Lorsqu’aucun drapeau n’est hissé durant les heures de surveillance",
+      "Lorsqu’aucun drapeau n’est pas hissé durant les heures de surveillance",
     answers: {
       A: "La baignade n’est plus surveillée",
       B: "Tous les sauveteurs sont peut-être en intervention",
