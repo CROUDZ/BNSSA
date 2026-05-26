@@ -56,6 +56,9 @@ export const metadata: Metadata = {
     },
   },
   category: 'education',
+};
+
+export const viewport = {
   themeColor: '#0b1220',
 };
 
