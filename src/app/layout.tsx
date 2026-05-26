@@ -3,6 +3,7 @@ import ClientProviders from "@/components/ClientProviders";
 import ThemeToggle from "@/components/ThemeToggle";
 import "@/styles/globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next"
 
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -85,6 +86,7 @@ export default function RootLayout({
           }}
         />
         <SpeedInsights />
+        <Analytics />
         <ClientProviders>
           <ThemeToggle />
           <div className="flex min-h-screen flex-col">
