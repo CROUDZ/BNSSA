@@ -38,8 +38,11 @@ const buildPrompt = (payload: ExplainPayload) => {
     `Propositions:\n${answers}\n\n` +
     `Reponses correctes: ${correct}\n` +
     `Reponses de l'utilisateur: ${selected}\n\n` +
-    'Explique pourquoi les bonnes reponses sont correctes et, si besoin, pourquoi les mauvaises le sont moins. ' +
-    'Reponse en francais, ton pedagogique, 4 a 6 phrases courtes maximum. ' +
+    'Explique la regle ou le principe qui justifie chaque bonne reponse. ' +
+    "Si l'utilisateur s'est trompe, indique en une phrase pourquoi ses choix ne conviennent pas. " +
+    'Apporte au moins un element concret (regle, seuil, definition ou condition). ' +
+    'Reponse en francais, ton pedagogique, 3 a 5 phrases courtes maximum. ' +
+    'Ne repete pas la question ni les propositions. ' +
     'Ne mentionne pas que tu es une IA.'
   );
 };
@@ -62,7 +65,7 @@ const callGroq = async (prompt: string) => {
         {
           role: 'system',
           content:
-            'Tu es un formateur BNSSA. Tu expliques clairement et sans digression.',
+            'Tu es un formateur BNSSA. Tu donnes des explications claires, factuelles et non paraphrasees.',
         },
         { role: 'user', content: prompt },
       ],
