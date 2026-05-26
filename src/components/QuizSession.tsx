@@ -9,13 +9,22 @@ import type { QcmData, AnswerKey, QuestionResult } from '@/types/qcm';
 type Props = {
   quiz: QcmData;
   questionIds?: number[]; // if set, only show those question ids (retry mode)
+  mode?: 'all' | 'retry' | 'exam';
+  revealAnswers?: boolean;
   onComplete: (results: QuestionResult[]) => void;
   onBack: () => void;
 };
 
 type AnswerState = 'idle' | 'selected' | 'correct' | 'wrong' | 'missed';
 
-export function QuizSession({ quiz, questionIds, onComplete, onBack }: Props) {
+export function QuizSession({
+  quiz,
+  questionIds,
+  mode = 'all',
+  revealAnswers = true,
+  onComplete,
+  onBack,
+}: Props) {
   const questions = questionIds
     ? quiz.questions.filter((q) => questionIds.includes(q.id))
     : quiz.questions;
@@ -36,6 +45,9 @@ export function QuizSession({ quiz, questionIds, onComplete, onBack }: Props) {
       if (!confirmed) {
         return selected.includes(key) ? 'selected' : 'idle';
       }
+      if (!revealAnswers) {
+        return selected.includes(key) ? 'selected' : 'idle';
+      }
       const isCorrect = question.correctAnswers.includes(key);
       const wasSelected = selected.includes(key);
       if (isCorrect && wasSelected) return 'correct';
@@ -43,7 +55,7 @@ export function QuizSession({ quiz, questionIds, onComplete, onBack }: Props) {
       if (isCorrect && !wasSelected) return 'missed';
       return 'idle';
     },
-    [confirmed, selected, question.correctAnswers],
+    [confirmed, selected, question.correctAnswers, revealAnswers],
   );
 
   const handleSelect = (key: AnswerKey) => {
@@ -117,9 +129,15 @@ export function QuizSession({ quiz, questionIds, onComplete, onBack }: Props) {
           </button>
 
           <div className="flex items-center gap-3">
-            {questionIds && (
-              <span className="rounded-full bg-red-500/20 px-3 py-1 text-xs font-semibold text-red-400">
-                Mode erreurs
+            {mode !== 'all' && (
+              <span
+                className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                  mode === 'retry'
+                    ? 'bg-red-500/20 text-red-400'
+                    : 'bg-amber-500/20 text-amber-300'
+                }`}
+              >
+                {mode === 'retry' ? 'Mode erreurs' : 'Mode examen'}
               </span>
             )}
             <span className="font-mono text-sm text-zinc-500">
@@ -179,36 +197,38 @@ export function QuizSession({ quiz, questionIds, onComplete, onBack }: Props) {
             </div>
 
             {/* Feedback */}
-            <AnimatePresence>
-              {confirmed && (
-                <m.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0 }}
-                  className={`mt-4 rounded-2xl border px-5 py-4 text-sm font-semibold ${
-                    results.length > 0 || selected.every((k) => question.correctAnswers.includes(k)) && selected.length === question.correctAnswers.length
-                      ? (() => {
-                          const correct =
-                            selected.length === question.correctAnswers.length &&
-                            selected.every((k) => question.correctAnswers.includes(k));
-                          return correct
-                            ? 'border-emerald-700 bg-emerald-900/30 text-emerald-300'
-                            : 'border-red-700 bg-red-900/30 text-red-300';
-                        })()
-                      : 'border-emerald-700 bg-emerald-900/30 text-emerald-300'
-                  }`}
-                >
-                  {(() => {
-                    const correct =
-                      selected.length === question.correctAnswers.length &&
-                      selected.every((k) => question.correctAnswers.includes(k));
-                    return correct
-                      ? '✓ Bonne réponse !'
-                      : `✗ Mauvaise réponse. La bonne réponse était : ${question.correctAnswers.join(', ')}`;
-                  })()}
-                </m.div>
-              )}
-            </AnimatePresence>
+            {revealAnswers && (
+              <AnimatePresence>
+                {confirmed && (
+                  <m.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    className={`mt-4 rounded-2xl border px-5 py-4 text-sm font-semibold ${
+                      results.length > 0 || selected.every((k) => question.correctAnswers.includes(k)) && selected.length === question.correctAnswers.length
+                        ? (() => {
+                            const correct =
+                              selected.length === question.correctAnswers.length &&
+                              selected.every((k) => question.correctAnswers.includes(k));
+                            return correct
+                              ? 'border-emerald-700 bg-emerald-900/30 text-emerald-300'
+                              : 'border-red-700 bg-red-900/30 text-red-300';
+                          })()
+                        : 'border-emerald-700 bg-emerald-900/30 text-emerald-300'
+                    }`}
+                  >
+                    {(() => {
+                      const correct =
+                        selected.length === question.correctAnswers.length &&
+                        selected.every((k) => question.correctAnswers.includes(k));
+                      return correct
+                        ? '✓ Bonne réponse !'
+                        : `✗ Mauvaise réponse. La bonne réponse était : ${question.correctAnswers.join(', ')}`;
+                    })()}
+                  </m.div>
+                )}
+              </AnimatePresence>
+            )}
           </m.div>
         </AnimatePresence>
 

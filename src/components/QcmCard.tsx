@@ -7,10 +7,11 @@ import type { QcmProgress } from '@/types/qcm';
 type Props = {
   quiz: QcmData;
   progress: QcmProgress | null;
-  onStart: (mode: 'all' | 'retry') => void;
+  onStart: (mode: 'all' | 'retry' | 'exam') => void;
+  onReset: () => void;
 };
 
-export function QcmCard({ quiz, progress, onStart }: Props) {
+export function QcmCard({ quiz, progress, onStart, onReset }: Props) {
   const isCompleted = !!progress?.completedAt;
   const hasWrong =
     isCompleted && progress.results.some((r) => !r.correct);
@@ -74,6 +75,14 @@ export function QcmCard({ quiz, progress, onStart }: Props) {
           {isCompleted ? 'Recommencer' : 'Commencer'}
         </m.button>
 
+        <m.button
+          whileTap={{ scale: 0.97 }}
+          onClick={() => onStart('exam')}
+          className="w-full rounded-2xl border border-zinc-700 px-4 py-3 text-sm font-semibold text-zinc-300 transition hover:border-zinc-500 hover:text-white"
+        >
+          Mode examen
+        </m.button>
+
         {isCompleted && hasWrong && (
           <m.button
             whileTap={{ scale: 0.97 }}
@@ -85,6 +94,15 @@ export function QcmCard({ quiz, progress, onStart }: Props) {
               {progress.results.filter((r) => !r.correct).length}
             </span>
           </m.button>
+        )}
+
+        {isCompleted && (
+          <button
+            onClick={onReset}
+            className="w-full rounded-2xl border border-zinc-800 px-4 py-2.5 text-xs text-zinc-500 transition hover:border-zinc-600 hover:text-zinc-300"
+          >
+            Réinitialiser ce QCM
+          </button>
         )}
       </div>
     </m.div>

@@ -22,7 +22,7 @@ const quizzes: QcmData[] = [
 
 type ActiveSession = {
   quiz: QcmData;
-  mode: 'all' | 'retry';
+  mode: 'all' | 'retry' | 'exam';
 };
 
 type Screen = 'home' | 'quiz' | 'results';
@@ -33,8 +33,8 @@ export default function HomePage() {
   const [activeSession, setActiveSession] = useState<ActiveSession | null>(null);
   const [pendingResults, setPendingResults] = useState<QuestionResult[]>([]);
 
-  const handleStart = (quiz: QcmData, mode: 'all' | 'retry') => {
-    if (mode === 'all') {
+  const handleStart = (quiz: QcmData, mode: 'all' | 'retry' | 'exam') => {
+    if (mode === 'all' || mode === 'exam') {
       clearProgress(quiz.id);
     }
     setActiveSession({ quiz, mode });
@@ -81,7 +81,10 @@ export default function HomePage() {
   const handleRetry = () => {
     if (!activeSession) return;
     clearProgress(activeSession.quiz.id);
-    setActiveSession({ quiz: activeSession.quiz, mode: 'all' });
+    setActiveSession({
+      quiz: activeSession.quiz,
+      mode: activeSession.mode === 'exam' ? 'exam' : 'all',
+    });
     setPendingResults([]);
     setScreen('quiz');
   };
@@ -106,6 +109,8 @@ export default function HomePage() {
       <QuizSession
         quiz={activeSession.quiz}
         questionIds={wrongIds}
+        mode={activeSession.mode}
+        revealAnswers={activeSession.mode !== 'exam'}
         onComplete={handleComplete}
         onBack={handleHome}
       />
@@ -165,6 +170,7 @@ export default function HomePage() {
                 quiz={quiz}
                 progress={getProgress(quiz.id)}
                 onStart={(mode) => handleStart(quiz, mode)}
+                onReset={() => clearProgress(quiz.id)}
               />
             </m.div>
           ))}
