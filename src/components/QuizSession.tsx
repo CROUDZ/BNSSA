@@ -225,7 +225,7 @@ export function QuizSession({
           </div>
 
           <div className="flex flex-col gap-6">
-            {questions.map((item, questionIndex) => {
+            {questions.map((item) => {
               const itemKeys = Object.keys(item.answers) as AnswerKey[];
               const itemSelected = examAnswers[item.id] ?? [];
 
@@ -234,13 +234,8 @@ export function QuizSession({
                   key={item.id}
                   className="rounded-3xl border border-soft bg-surface-strong p-6"
                 >
-                  <div className="mb-3 flex items-center justify-between">
-                    <span className="rounded-full bg-surface-veil px-3 py-1 text-xs font-semibold uppercase tracking-widest text-muted">
-                      Question {questionIndex + 1}
-                    </span>
-                  </div>
                   <h2 className="text-xl font-black leading-snug md:text-2xl">
-                    {item.question}
+                    {item.id}) {item.question}
                   </h2>
 
                   <div className="mt-4 flex flex-col gap-3">
@@ -352,7 +347,7 @@ export function QuizSession({
             transition={{ duration: 0.2 }}
           >
               <h2 className="text-xl font-black leading-snug md:text-2xl mb-5 rounded-3xl border border-soft bg-surface-strong p-6">
-                {question.question}
+                {question.id}) {question.question}
               </h2>
 
             {/* Answers */}
