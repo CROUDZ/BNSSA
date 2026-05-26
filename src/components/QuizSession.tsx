@@ -34,6 +34,9 @@ export function QuizSession({
   const [confirmed, setConfirmed] = useState(false);
   const [results, setResults] = useState<QuestionResult[]>([]);
   const [direction, setDirection] = useState(1);
+  const [examAnswers, setExamAnswers] = useState<
+    Record<number, AnswerKey[]>
+  >({});
   const [explanations, setExplanations] = useState<Record<number, string>>({});
   const [explainErrors, setExplainErrors] = useState<Record<number, string>>(
     {},
@@ -44,6 +47,10 @@ export function QuizSession({
   const answerKeys = Object.keys(question.answers) as AnswerKey[];
   const isMulti = question.correctAnswers.length > 1;
   const canConfirm = selected.length > 0 && !confirmed;
+  const answeredCount = questions.reduce(
+    (count, q) => count + ((examAnswers[q.id] ?? []).length > 0 ? 1 : 0),
+    0,
+  );
 
   const getState = useCallback(
     (key: AnswerKey): AnswerState => {
@@ -72,6 +79,22 @@ export function QuizSession({
     } else {
       setSelected([key]);
     }
+  };
+
+  const handleExamSelect = (
+    questionId: number,
+    key: AnswerKey,
+    multi: boolean,
+  ) => {
+    setExamAnswers((prev) => {
+      const current = prev[questionId] ?? [];
+      const next = multi
+        ? current.includes(key)
+          ? current.filter((k) => k !== key)
+          : [...current, key]
+        : [key];
+      return { ...prev, [questionId]: next };
+    });
   };
 
   const handleConfirm = () => {
@@ -118,7 +141,12 @@ export function QuizSession({
     setResults((r) => r.slice(0, -1));
   };
 
-  const progress = ((index + (confirmed ? 1 : 0)) / questions.length) * 100;
+  const progress =
+    mode === "exam"
+      ? questions.length
+        ? (answeredCount / questions.length) * 100
+        : 0
+      : ((index + (confirmed ? 1 : 0)) / questions.length) * 100;
   const canExplain = revealAnswers && confirmed && mode !== "exam";
   const currentExplanation = explanations[question.id];
   const currentExplainError = explainErrors[question.id];
@@ -171,6 +199,122 @@ export function QuizSession({
       setExplainLoadingId(null);
     }
   };
+
+  if (mode === "exam") {
+    const remainingCount = questions.length - answeredCount;
+    const canSubmit = remainingCount === 0 && questions.length > 0;
+
+    return (
+      <main className="min-h-screen bg-zinc-950 p-4 text-white md:p-6">
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-6 flex items-center justify-between gap-4">
+            <button
+              onClick={onBack}
+              className="flex items-center gap-2 rounded-2xl border border-zinc-800 bg-zinc-900 px-4 py-2.5 text-sm font-medium transition hover:bg-zinc-800"
+            >
+              <FaArrowLeft className="text-xs" />
+              Retour
+            </button>
+
+            <div className="flex items-center gap-3">
+              <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-semibold text-amber-300">
+                Mode examen
+              </span>
+              <span className="font-mono text-sm text-zinc-500">
+                {answeredCount}
+                <span className="text-zinc-700">/{questions.length}</span>
+              </span>
+            </div>
+          </div>
+
+          <div className="mb-8 h-1.5 overflow-hidden rounded-full bg-zinc-800">
+            <m.div
+              className="h-full rounded-full bg-white"
+              animate={{ width: `${progress}%` }}
+              transition={{ ease: "easeOut", duration: 0.3 }}
+            />
+          </div>
+
+          <div className="flex flex-col gap-6">
+            {questions.map((item, questionIndex) => {
+              const itemKeys = Object.keys(item.answers) as AnswerKey[];
+              const itemMulti = item.correctAnswers.length > 1;
+              const itemSelected = examAnswers[item.id] ?? [];
+
+              return (
+                <div
+                  key={item.id}
+                  className="rounded-3xl border border-zinc-800 bg-zinc-900 p-6"
+                >
+                  <div className="mb-3 flex items-center justify-between">
+                    <span className="rounded-full bg-zinc-800 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-zinc-400">
+                      Question {questionIndex + 1}
+                    </span>
+                    {itemMulti && (
+                      <span className="rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-400">
+                        Plusieurs réponses
+                      </span>
+                    )}
+                  </div>
+                  <h2 className="text-xl font-black leading-snug md:text-2xl">
+                    {item.question}
+                  </h2>
+
+                  <div className="mt-4 flex flex-col gap-3">
+                    {itemKeys.map((key) => (
+                      <AnswerButton
+                        key={key}
+                        answerKey={key}
+                        value={item.answers[key]!}
+                        state={itemSelected.includes(key) ? "selected" : "idle"}
+                        onClick={() =>
+                          handleExamSelect(item.id, key, itemMulti)
+                        }
+                        disabled={false}
+                      />
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-8 flex flex-col gap-3">
+            {remainingCount > 0 && (
+              <p className="text-center text-sm text-zinc-400">
+                {remainingCount} question{remainingCount > 1 ? "s" : ""}
+                {" "}restante{remainingCount > 1 ? "s" : ""} avant de
+                valider.
+              </p>
+            )}
+            <button
+              onClick={() => {
+                if (!canSubmit) return;
+                const newResults = questions.map((item) => {
+                  const selectedAnswers = examAnswers[item.id] ?? [];
+                  const correct =
+                    selectedAnswers.length === item.correctAnswers.length &&
+                    selectedAnswers.every((k) =>
+                      item.correctAnswers.includes(k),
+                    );
+                  return {
+                    questionId: item.id,
+                    selectedAnswers,
+                    correct,
+                  };
+                });
+                onComplete(newResults);
+              }}
+              disabled={!canSubmit}
+              className="w-full rounded-2xl bg-white px-5 py-4 text-sm font-bold text-black transition hover:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              Valider l'examen
+            </button>
+          </div>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-zinc-950 p-4 text-white md:p-6">
