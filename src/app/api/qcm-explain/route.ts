@@ -70,13 +70,16 @@ const buildPrompt = (payload: ExplainPayload) => {
     `Propositions:\n${answers}\n\n` +
     `Reponses correctes: ${correct}\n` +
     `Reponses de l'utilisateur: ${selected}\n\n` +
+    "Adresse-toi directement a l'utilisateur en le tutoyant. " +
+    "Cite au moins une lettre de ses choix et une lettre des bonnes reponses. " +
     "Explique la regle ou le principe qui justifie chaque bonne reponse. " +
     "Si l'utilisateur s'est trompe, indique en une phrase pourquoi ses choix ne conviennent pas. " +
     "Apporte au moins un element concret (regle, seuil, definition ou condition). " +
     "Contraintes: ne developpe pas les sigles, n'invente pas d'intitules ou de diplome, reste factuel et coherent. " +
+    "Utilise seulement les lettres des propositions, ne recopie pas leurs intitules. " +
     "Si plusieurs bonnes reponses, justifie chacune en une phrase courte. " +
     "Reponse en francais, ton pedagogique, 3 a 5 phrases courtes maximum. " +
-    "Ne repete pas la question ni les propositions. " +
+    "Ne repete pas la question. " +
     "Ne mentionne pas que tu es une IA."
   );
 };
@@ -271,7 +274,7 @@ const fetchGroqStream = async (
           {
             role: "system",
             content:
-              "Tu es un formateur BNSSA. Tu donnes des explications claires, factuelles et non paraphrasees. N'invente pas d'informations et ne developpe pas les sigles.",
+              "Tu es un formateur BNSSA. Tu t'adresses directement a l'utilisateur en le tutoyant. Tu expliques brievement pourquoi ses choix sont bons ou mauvais. Tu donnes des explications claires, factuelles et non paraphrasees. N'invente pas d'informations et ne developpe pas les sigles.",
           },
           { role: "user", content: prompt },
         ],
