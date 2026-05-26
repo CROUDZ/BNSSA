@@ -1,0 +1,247 @@
+'use client';
+
+import { useState, useCallback } from 'react';
+import { m, AnimatePresence } from 'framer-motion';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { AnswerButton } from '@/components/AnswerButton';
+import type { QcmData, AnswerKey, QuestionResult } from '@/types/qcm';
+
+type Props = {
+  quiz: QcmData;
+  questionIds?: number[]; // if set, only show those question ids (retry mode)
+  onComplete: (results: QuestionResult[]) => void;
+  onBack: () => void;
+};
+
+type AnswerState = 'idle' | 'selected' | 'correct' | 'wrong' | 'missed';
+
+export function QuizSession({ quiz, questionIds, onComplete, onBack }: Props) {
+  const questions = questionIds
+    ? quiz.questions.filter((q) => questionIds.includes(q.id))
+    : quiz.questions;
+
+  const [index, setIndex] = useState(0);
+  const [selected, setSelected] = useState<AnswerKey[]>([]);
+  const [confirmed, setConfirmed] = useState(false);
+  const [results, setResults] = useState<QuestionResult[]>([]);
+  const [direction, setDirection] = useState(1);
+
+  const question = questions[index];
+  const answerKeys = Object.keys(question.answers) as AnswerKey[];
+  const isMulti = question.correctAnswers.length > 1;
+  const canConfirm = selected.length > 0 && !confirmed;
+
+  const getState = useCallback(
+    (key: AnswerKey): AnswerState => {
+      if (!confirmed) {
+        return selected.includes(key) ? 'selected' : 'idle';
+      }
+      const isCorrect = question.correctAnswers.includes(key);
+      const wasSelected = selected.includes(key);
+      if (isCorrect && wasSelected) return 'correct';
+      if (!isCorrect && wasSelected) return 'wrong';
+      if (isCorrect && !wasSelected) return 'missed';
+      return 'idle';
+    },
+    [confirmed, selected, question.correctAnswers],
+  );
+
+  const handleSelect = (key: AnswerKey) => {
+    if (confirmed) return;
+    if (isMulti) {
+      setSelected((prev) =>
+        prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key],
+      );
+    } else {
+      setSelected([key]);
+    }
+  };
+
+  const handleConfirm = () => {
+    if (!canConfirm) return;
+    setConfirmed(true);
+  };
+
+  const handleNext = () => {
+    // Save result
+    const correct =
+      selected.length === question.correctAnswers.length &&
+      selected.every((k) => question.correctAnswers.includes(k));
+
+    const newResults = [
+      ...results,
+      { questionId: question.id, selectedAnswers: selected, correct },
+    ];
+
+    if (index < questions.length - 1) {
+      setDirection(1);
+      setResults(newResults);
+      setIndex((i) => i + 1);
+      setSelected([]);
+      setConfirmed(false);
+    } else {
+      onComplete(newResults);
+    }
+  };
+
+  const handlePrev = () => {
+    if (index === 0) return;
+    setDirection(-1);
+    setIndex((i) => i - 1);
+    // Restore previous answer if available
+    const prev = results[index - 1];
+    if (prev) {
+      setSelected(prev.selectedAnswers);
+      setConfirmed(true);
+    } else {
+      setSelected([]);
+      setConfirmed(false);
+    }
+    // Pop last result
+    setResults((r) => r.slice(0, -1));
+  };
+
+  const progress = ((index + (confirmed ? 1 : 0)) / questions.length) * 100;
+
+  return (
+    <main className="min-h-screen bg-zinc-950 p-4 text-white md:p-6">
+      <div className="mx-auto max-w-2xl">
+        {/* Header */}
+        <div className="mb-6 flex items-center justify-between gap-4">
+          <button
+            onClick={onBack}
+            className="flex items-center gap-2 rounded-2xl border border-zinc-800 bg-zinc-900 px-4 py-2.5 text-sm font-medium transition hover:bg-zinc-800"
+          >
+            <FaArrowLeft className="text-xs" />
+            Retour
+          </button>
+
+          <div className="flex items-center gap-3">
+            {questionIds && (
+              <span className="rounded-full bg-red-500/20 px-3 py-1 text-xs font-semibold text-red-400">
+                Mode erreurs
+              </span>
+            )}
+            <span className="font-mono text-sm text-zinc-500">
+              {index + 1}
+              <span className="text-zinc-700">/{questions.length}</span>
+            </span>
+          </div>
+        </div>
+
+        {/* Progress bar */}
+        <div className="mb-6 h-1.5 overflow-hidden rounded-full bg-zinc-800">
+          <m.div
+            className="h-full rounded-full bg-white"
+            animate={{ width: `${progress}%` }}
+            transition={{ ease: 'easeOut', duration: 0.3 }}
+          />
+        </div>
+
+        {/* Question card */}
+        <AnimatePresence mode="wait" custom={direction}>
+          <m.div
+            key={question.id}
+            custom={direction}
+            initial={{ opacity: 0, x: direction * 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: direction * -40 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="mb-5 rounded-3xl border border-zinc-800 bg-zinc-900 p-6">
+              <div className="mb-3 flex items-center justify-between">
+                <span className="rounded-full bg-zinc-800 px-3 py-1 text-xs font-semibold tracking-widest text-zinc-400 uppercase">
+                  {quiz.title}
+                </span>
+                {isMulti && (
+                  <span className="rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-400">
+                    Plusieurs réponses
+                  </span>
+                )}
+              </div>
+              <h2 className="text-xl font-black leading-snug md:text-2xl">
+                {question.question}
+              </h2>
+            </div>
+
+            {/* Answers */}
+            <div className="flex flex-col gap-3">
+              {answerKeys.map((key) => (
+                <AnswerButton
+                  key={key}
+                  answerKey={key}
+                  value={question.answers[key]!}
+                  state={getState(key)}
+                  onClick={() => handleSelect(key)}
+                  disabled={confirmed}
+                />
+              ))}
+            </div>
+
+            {/* Feedback */}
+            <AnimatePresence>
+              {confirmed && (
+                <m.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className={`mt-4 rounded-2xl border px-5 py-4 text-sm font-semibold ${
+                    results.length > 0 || selected.every((k) => question.correctAnswers.includes(k)) && selected.length === question.correctAnswers.length
+                      ? (() => {
+                          const correct =
+                            selected.length === question.correctAnswers.length &&
+                            selected.every((k) => question.correctAnswers.includes(k));
+                          return correct
+                            ? 'border-emerald-700 bg-emerald-900/30 text-emerald-300'
+                            : 'border-red-700 bg-red-900/30 text-red-300';
+                        })()
+                      : 'border-emerald-700 bg-emerald-900/30 text-emerald-300'
+                  }`}
+                >
+                  {(() => {
+                    const correct =
+                      selected.length === question.correctAnswers.length &&
+                      selected.every((k) => question.correctAnswers.includes(k));
+                    return correct
+                      ? '✓ Bonne réponse !'
+                      : `✗ Mauvaise réponse. La bonne réponse était : ${question.correctAnswers.join(', ')}`;
+                  })()}
+                </m.div>
+              )}
+            </AnimatePresence>
+          </m.div>
+        </AnimatePresence>
+
+        {/* Navigation */}
+        <div className="mt-6 flex items-center justify-between gap-3">
+          <button
+            onClick={handlePrev}
+            disabled={index === 0}
+            className="flex items-center gap-2 rounded-2xl border border-zinc-800 px-5 py-3 text-sm transition hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-30"
+          >
+            <FaArrowLeft className="text-xs" />
+            Précédent
+          </button>
+
+          {!confirmed ? (
+            <button
+              onClick={handleConfirm}
+              disabled={selected.length === 0}
+              className="flex-1 rounded-2xl bg-white px-5 py-3 text-sm font-bold text-black transition hover:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-30"
+            >
+              Valider
+            </button>
+          ) : (
+            <button
+              onClick={handleNext}
+              className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-white px-5 py-3 text-sm font-bold text-black transition hover:bg-zinc-200"
+            >
+              {index === questions.length - 1 ? 'Voir les résultats' : 'Suivant'}
+              <FaArrowRight className="text-xs" />
+            </button>
+          )}
+        </div>
+      </div>
+    </main>
+  );
+}

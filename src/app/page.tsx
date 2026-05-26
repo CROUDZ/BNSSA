@@ -1,341 +1,174 @@
 'use client';
 
-import { useMemo, useState } from 'react';
-import { m, AnimatePresence } from 'framer-motion';
-import {
-  FaCheckCircle,
-  FaTimesCircle,
-  FaArrowLeft,
-  FaArrowRight,
-} from 'react-icons/fa';
+import { useState } from 'react';
+import { m } from 'framer-motion';
+import { useQcmSession } from '@/hooks/useQcmSession';
+import { QcmCard } from '@/components/QcmCard';
+import { ProgressBanner } from '@/components/ProgressBanner';
+import { QuizSession } from '@/components/QuizSession';
+import { ResultsScreen } from '@/components/ResultsScreen';
+import { qcm1 } from '@/data/qcm1';
+import { qcm2 } from '@/data/qcm2';
+import { qcm3 } from '@/data/qcm3';
+import { qcm4 } from '@/data/qcm4';
+import type { QcmData, QuestionResult } from '@/types/qcm';
 
-type AnswerKey = 'A' | 'B' | 'C' | 'D' | 'E';
-
-type Question = {
-  id: number;
-  question: string;
-  answers: Record<AnswerKey, string>;
-  correct: AnswerKey;
-};
-
-type Quiz = {
-  id: number;
-  title: string;
-  description: string;
-  questions: Question[];
-};
-
-const createQuestions = (quizId: number): Question[] => {
-  return Array.from({ length: 40 }, (_, index) => ({
-    id: index + 1,
-    question: `Question ${index + 1} du QCM ${quizId}`,
-    answers: {
-      A: 'Réponse A',
-      B: 'Réponse B',
-      C: 'Réponse C',
-      D: 'Réponse D',
-      E: 'Réponse E',
-    },
-    correct: 'A',
-  }));
-};
-
-const quizzes: Quiz[] = [
-  {
-    id: 1,
-    title: 'QCM 1',
-    description: 'Révision générale',
-    questions: createQuestions(1),
-  },
-  {
-    id: 2,
-    title: 'QCM 2',
-    description: 'Réglementation',
-    questions: createQuestions(2),
-  },
-  {
-    id: 3,
-    title: 'QCM 3',
-    description: 'Secourisme',
-    questions: createQuestions(3),
-  },
-  {
-    id: 4,
-    title: 'QCM 4',
-    description: 'Surveillance',
-    questions: createQuestions(4),
-  },
+const quizzes: QcmData[] = [
+  { id: 1, title: 'QCM 1', description: 'Connaissance du milieu · Diplômes · Organisation', questions: qcm1 },
+  { id: 2, title: 'QCM 2', description: 'Milieu · Compétences · Contexte juridique', questions: qcm2 },
+  { id: 3, title: 'QCM 3', description: 'Réglementation · Surveillance · Secourisme', questions: qcm3 },
+  { id: 4, title: 'QCM 4', description: 'Milieu · Administration · Activités spécifiques', questions: qcm4 },
 ];
 
+type ActiveSession = {
+  quiz: QcmData;
+  mode: 'all' | 'retry';
+};
+
+type Screen = 'home' | 'quiz' | 'results';
+
 export default function HomePage() {
-  const [selectedQuiz, setSelectedQuiz] = useState<Quiz | null>(null);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState<Record<number, AnswerKey>>({});
-  const [showResults, setShowResults] = useState(false);
+  const { session, getProgress, saveProgress, clearProgress, clearAll } = useQcmSession();
+  const [screen, setScreen] = useState<Screen>('home');
+  const [activeSession, setActiveSession] = useState<ActiveSession | null>(null);
+  const [pendingResults, setPendingResults] = useState<QuestionResult[]>([]);
 
-  const currentQuestion = selectedQuiz?.questions[currentQuestionIndex];
-
-  const score = useMemo(() => {
-    if (!selectedQuiz) return 0;
-
-    return selectedQuiz.questions.filter(
-      (question) => answers[question.id] === question.correct,
-    ).length;
-  }, [answers, selectedQuiz]);
-
-  const handleSelectAnswer = (answer: AnswerKey) => {
-    if (!currentQuestion) return;
-
-    setAnswers((prev) => ({
-      ...prev,
-      [currentQuestion.id]: answer,
-    }));
+  const handleStart = (quiz: QcmData, mode: 'all' | 'retry') => {
+    if (mode === 'all') {
+      clearProgress(quiz.id);
+    }
+    setActiveSession({ quiz, mode });
+    setScreen('quiz');
   };
 
-  const nextQuestion = () => {
-    if (!selectedQuiz) return;
+  const handleComplete = (results: QuestionResult[]) => {
+    if (!activeSession) return;
 
-    if (currentQuestionIndex < selectedQuiz.questions.length - 1) {
-      setCurrentQuestionIndex((prev) => prev + 1);
-      return;
+    const { quiz, mode } = activeSession;
+    const existing = getProgress(quiz.id);
+
+    // Merge retry results with previous full run if applicable
+    let allResults: QuestionResult[];
+    if (mode === 'retry' && existing) {
+      // replace only the retried questions
+      allResults = existing.results.map(
+        (r) => results.find((nr) => nr.questionId === r.questionId) ?? r,
+      );
+    } else {
+      allResults = results;
     }
 
-    setShowResults(true);
+    const score = allResults.filter((r) => r.correct).length;
+
+    saveProgress({
+      qcmId: quiz.id,
+      results: allResults,
+      completedAt: new Date().toISOString(),
+      score,
+      total: quiz.questions.length,
+    });
+
+    setPendingResults(results); // show only current run in results screen
+    setScreen('results');
   };
 
-  const previousQuestion = () => {
-    if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex((prev) => prev - 1);
-    }
+  const handleHome = () => {
+    setScreen('home');
+    setActiveSession(null);
+    setPendingResults([]);
   };
 
-  const resetQuiz = () => {
-    setSelectedQuiz(null);
-    setCurrentQuestionIndex(0);
-    setAnswers({});
-    setShowResults(false);
+  const handleRetry = () => {
+    if (!activeSession) return;
+    clearProgress(activeSession.quiz.id);
+    setActiveSession({ quiz: activeSession.quiz, mode: 'all' });
+    setPendingResults([]);
+    setScreen('quiz');
   };
 
-  if (!selectedQuiz) {
+  const handleRetryWrong = () => {
+    if (!activeSession) return;
+    setActiveSession({ quiz: activeSession.quiz, mode: 'retry' });
+    setPendingResults([]);
+    setScreen('quiz');
+  };
+
+  // ── Quiz screen ────────────────────────────────────────────────────
+  if (screen === 'quiz' && activeSession) {
+    const wrongIds =
+      activeSession.mode === 'retry'
+        ? (getProgress(activeSession.quiz.id)?.results ?? [])
+            .filter((r) => !r.correct)
+            .map((r) => r.questionId)
+        : undefined;
+
     return (
-      <main className="min-h-screen bg-zinc-950 text-white p-6">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-10">
-            <h1 className="text-5xl font-black tracking-tight">
-              Révision BNSSA
-            </h1>
-
-            <p className="mt-3 text-zinc-400 text-lg">
-              Sélectionne un QCM pour commencer.
-            </p>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {quizzes.map((quiz) => (
-              <m.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-                key={quiz.id}
-                onClick={() => setSelectedQuiz(quiz)}
-                className="rounded-3xl border border-zinc-800 bg-zinc-900 p-6 text-left transition hover:border-zinc-700 hover:bg-zinc-800"
-              >
-                <div className="mb-6 flex items-center justify-between">
-                  <span className="rounded-full bg-zinc-800 px-3 py-1 text-sm font-semibold">
-                    40 Questions
-                  </span>
-
-                  <span className="text-zinc-500">#{quiz.id}</span>
-                </div>
-
-                <h2 className="text-2xl font-bold">{quiz.title}</h2>
-
-                <p className="mt-2 text-sm text-zinc-400">
-                  {quiz.description}
-                </p>
-
-                <div className="mt-8">
-                  <div className="rounded-2xl bg-white px-4 py-3 text-center font-semibold text-black">
-                    Commencer
-                  </div>
-                </div>
-              </m.button>
-            ))}
-          </div>
-        </div>
-      </main>
+      <QuizSession
+        quiz={activeSession.quiz}
+        questionIds={wrongIds}
+        onComplete={handleComplete}
+        onBack={handleHome}
+      />
     );
   }
 
-  if (showResults) {
-    const percentage = Math.round(
-      (score / selectedQuiz.questions.length) * 100,
-    );
-
+  // ── Results screen ─────────────────────────────────────────────────
+  if (screen === 'results' && activeSession) {
     return (
-      <main className="flex min-h-screen items-center justify-center bg-zinc-950 p-6 text-white">
-        <m.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="w-full max-w-2xl rounded-3xl border border-zinc-800 bg-zinc-900 p-8"
-        >
-          <div className="text-center">
-            <div className="mb-4 flex justify-center">
-              {percentage >= 50 ? (
-                <FaCheckCircle className="text-7xl text-green-500" />
-              ) : (
-                <FaTimesCircle className="text-7xl text-red-500" />
-              )}
-            </div>
-
-            <h1 className="text-4xl font-black">Résultats</h1>
-
-            <p className="mt-4 text-zinc-400">
-              Tu as obtenu :
-            </p>
-
-            <div className="mt-6 text-7xl font-black">
-              {score}
-              <span className="text-3xl text-zinc-500">
-                /{selectedQuiz.questions.length}
-              </span>
-            </div>
-
-            <div className="mt-3 text-2xl font-bold">
-              {percentage}%
-            </div>
-
-            <button
-              onClick={resetQuiz}
-              className="mt-10 rounded-2xl bg-white px-6 py-4 font-bold text-black transition hover:scale-[1.02]"
-            >
-              Retour aux QCM
-            </button>
-          </div>
-        </m.div>
-      </main>
+      <ResultsScreen
+        quiz={activeSession.quiz}
+        results={pendingResults}
+        onRetry={handleRetry}
+        onRetryWrong={handleRetryWrong}
+        onHome={handleHome}
+      />
     );
   }
 
+  // ── Home screen ────────────────────────────────────────────────────
   return (
-    <main className="min-h-screen bg-zinc-950 p-6 text-white">
-      <div className="mx-auto max-w-4xl">
-        <div className="mb-8 flex items-center justify-between gap-4">
-          <button
-            onClick={resetQuiz}
-            className="rounded-2xl border border-zinc-800 bg-zinc-900 px-4 py-3 font-medium transition hover:bg-zinc-800"
-          >
-            Retour
-          </button>
-
-          <div className="text-right">
-            <p className="text-sm text-zinc-500">
-              Question
-            </p>
-
-            <p className="text-2xl font-black">
-              {currentQuestionIndex + 1}
-              <span className="text-zinc-500">
-                /{selectedQuiz.questions.length}
-              </span>
-            </p>
+    <main className="min-h-screen bg-zinc-950 text-white">
+      <div className="mx-auto max-w-5xl px-4 py-10 md:px-6">
+        {/* Header */}
+        <m.div
+          initial={{ opacity: 0, y: -12 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-10"
+        >
+          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900 px-3 py-1 text-xs text-zinc-400">
+            <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            BNSSA · Préparation examen
           </div>
+          <h1 className="mt-3 text-5xl font-black tracking-tight md:text-6xl">
+            Révision
+            <br />
+            <span className="text-zinc-500">BNSSA</span>
+          </h1>
+          <p className="mt-3 text-zinc-400">
+            Maîtrise les 4 QCM. Seuil de réussite : 75% (30/40).
+          </p>
+        </m.div>
+
+        {/* Global progress */}
+        <ProgressBanner session={session} quizzes={quizzes} onClearAll={clearAll} />
+
+        {/* QCM grid */}
+        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          {quizzes.map((quiz, i) => (
+            <m.div
+              key={quiz.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.07 }}
+            >
+              <QcmCard
+                quiz={quiz}
+                progress={getProgress(quiz.id)}
+                onStart={(mode) => handleStart(quiz, mode)}
+              />
+            </m.div>
+          ))}
         </div>
-
-        <div className="mb-6 h-3 overflow-hidden rounded-full bg-zinc-800">
-          <div
-            className="h-full rounded-full bg-white transition-all"
-            style={{
-              width: `${
-                ((currentQuestionIndex + 1) /
-                  selectedQuiz.questions.length) *
-                100
-              }%`,
-            }}
-          />
-        </div>
-
-        <AnimatePresence mode="wait">
-          <m.div
-            key={currentQuestion?.id}
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -40 }}
-            transition={{ duration: 0.2 }}
-            className="rounded-3xl border border-zinc-800 bg-zinc-900 p-8"
-          >
-            <div className="mb-8">
-              <span className="rounded-full bg-zinc-800 px-3 py-1 text-sm font-semibold">
-                {selectedQuiz.title}
-              </span>
-
-              <h1 className="mt-6 text-3xl font-black leading-tight">
-                {currentQuestion?.question}
-              </h1>
-            </div>
-
-            <div className="grid gap-4">
-              {(
-                Object.entries(currentQuestion?.answers || {}) as [
-                  AnswerKey,
-                  string,
-                ][]
-              ).map(([key, value]) => {
-                const selected =
-                  answers[currentQuestion!.id] === key;
-
-                return (
-                  <button
-                    key={key}
-                    onClick={() => handleSelectAnswer(key)}
-                    className={`rounded-2xl border p-5 text-left transition ${
-                      selected
-                        ? 'border-white bg-white text-black'
-                        : 'border-zinc-800 bg-zinc-950 hover:border-zinc-700'
-                    }`}
-                  >
-                    <div className="flex items-center gap-4">
-                      <div
-                        className={`flex h-10 w-10 items-center justify-center rounded-full font-bold ${
-                          selected
-                            ? 'bg-black text-white'
-                            : 'bg-zinc-800'
-                        }`}
-                      >
-                        {key}
-                      </div>
-
-                      <span className="font-medium">{value}</span>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-
-            <div className="mt-10 flex items-center justify-between">
-              <button
-                onClick={previousQuestion}
-                disabled={currentQuestionIndex === 0}
-                className="flex items-center gap-2 rounded-2xl border border-zinc-800 px-5 py-3 transition hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-40"
-              >
-                <FaArrowLeft />
-                Précédent
-              </button>
-
-              <button
-                onClick={nextQuestion}
-                disabled={!answers[currentQuestion!.id]}
-                className="flex items-center gap-2 rounded-2xl bg-white px-5 py-3 font-bold text-black transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-40"
-              >
-                {currentQuestionIndex ===
-                selectedQuiz.questions.length - 1
-                  ? 'Terminer'
-                  : 'Suivant'}
-
-                <FaArrowRight />
-              </button>
-            </div>
-          </m.div>
-        </AnimatePresence>
       </div>
     </main>
   );
