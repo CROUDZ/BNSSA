@@ -23,7 +23,7 @@ const stateStyles: Record<Props["state"], string> = {
 };
 
 const badgeStyles: Record<Props["state"], string> = {
-  idle: "border border-soft bg-surface-veil text-muted-strong",
+  idle: "text-muted-strong",
   selected: "border-transparent ring-2 ring-[color:var(--foreground)] text-foreground",
   correct: "border-transparent ring-2 ring-emerald-400 text-emerald-200",
   wrong: "border-transparent ring-2 ring-red-400 text-red-200",
@@ -46,7 +46,7 @@ export function AnswerButton({
     >
       <div className="flex items-center gap-4">
         <div
-          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-black transition-all duration-200 ${badgeStyles[state]}`}
+          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-md font-black transition-all duration-200 ${badgeStyles[state]}`}
         >
           {answerKey}
         </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import "@/styles/globals.css";
 import ClientProviders from "@/components/ClientProviders";
 import ThemeToggle from "@/components/ThemeToggle";
+import "@/styles/globals.css";
 
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -100,7 +100,7 @@ export default function RootLayout({
                   href="https://formation.fnmns.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-emerald-200/90 transition hover:text-emerald-100"
+                  className="font-medium text-accent transition hover:text-foreground"
                 >
                   Pour la formation officielle
                 </a>

@@ -45,7 +45,6 @@ export function QuizSession({
 
   const question = questions[index];
   const answerKeys = Object.keys(question.answers) as AnswerKey[];
-  const isMulti = question.correctAnswers.length > 1;
   const canConfirm = selected.length > 0 && !confirmed;
   const answeredCount = questions.reduce(
     (count, q) => count + ((examAnswers[q.id] ?? []).length > 0 ? 1 : 0),
@@ -228,7 +227,6 @@ export function QuizSession({
           <div className="flex flex-col gap-6">
             {questions.map((item, questionIndex) => {
               const itemKeys = Object.keys(item.answers) as AnswerKey[];
-              const itemMulti = item.correctAnswers.length > 1;
               const itemSelected = examAnswers[item.id] ?? [];
 
               return (
@@ -240,11 +238,6 @@ export function QuizSession({
                     <span className="rounded-full bg-surface-veil px-3 py-1 text-xs font-semibold uppercase tracking-widest text-muted">
                       Question {questionIndex + 1}
                     </span>
-                    {itemMulti && (
-                      <span className="rounded-full border border-soft px-3 py-1 text-xs text-muted">
-                        Plusieurs réponses
-                      </span>
-                    )}
                   </div>
                   <h2 className="text-xl font-black leading-snug md:text-2xl">
                     {item.question}
@@ -333,6 +326,9 @@ export function QuizSession({
               {index + 1}
               <span className="text-muted-strong">/{questions.length}</span>
             </span>
+                            <span className="rounded-full bg-surface-veil px-3 py-1 text-xs font-semibold uppercase tracking-widest text-muted">
+                  {quiz.title}
+                </span>
           </div>
         </div>
 
@@ -355,21 +351,9 @@ export function QuizSession({
             exit={{ opacity: 0, x: direction * -40 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="mb-5 rounded-3xl border border-soft bg-surface-strong p-6">
-              <div className="mb-3 flex items-center justify-between">
-                <span className="rounded-full bg-surface-veil px-3 py-1 text-xs font-semibold uppercase tracking-widest text-muted">
-                  {quiz.title}
-                </span>
-                {isMulti && (
-                  <span className="rounded-full border border-soft px-3 py-1 text-xs text-muted">
-                    Plusieurs réponses
-                  </span>
-                )}
-              </div>
-              <h2 className="text-xl font-black leading-snug md:text-2xl">
+              <h2 className="text-xl font-black leading-snug md:text-2xl mb-5 rounded-3xl border border-soft bg-surface-strong p-6">
                 {question.question}
               </h2>
-            </div>
 
             {/* Answers */}
             <div className="flex flex-col gap-3">

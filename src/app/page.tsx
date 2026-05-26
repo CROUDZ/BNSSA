@@ -79,11 +79,7 @@ export default function HomePage() {
     null,
   );
   const [pendingResults, setPendingResults] = useState<QuestionResult[]>([]);
-  const totalQuestions = quizzes.reduce(
-    (sum, quiz) => sum + quiz.questions.length,
-    0,
-  );
-
+  
   const handleStart = (quiz: QcmData, mode: "all" | "retry" | "exam") => {
     if (mode === "all" || mode === "exam") {
       clearProgress(quiz.id);
@@ -209,7 +205,7 @@ export default function HomePage() {
               <h1 className="font-display text-4xl leading-none md:text-6xl">
                 QCM officiels
                 <br />
-                <span className="text-emerald-200">BNSSA</span> (FNMNS)
+                <span className="text-accent">BNSSA</span> (FNMNS)
               </h1>
               <p className="mt-4 text-base text-muted md:text-lg">
                 Site créé pour réviser le BNSSA avec la FNMNS. Les 4 QCM sont
@@ -220,7 +216,7 @@ export default function HomePage() {
                   {quizzes.length} QCM
                 </span>
                 <span className="rounded-full border border-soft bg-surface-veil px-3 py-1 text-xs uppercase tracking-[0.2em] text-muted">
-                  {totalQuestions} questions
+                  100 questions
                 </span>
                 <span className="rounded-full border border-soft bg-surface-veil px-3 py-1 text-xs uppercase tracking-[0.2em] text-muted">
                   Seuil 75%
