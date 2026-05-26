@@ -5,9 +5,9 @@ import ClientProviders from '@/components/ClientProviders';
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? process.env.URL ?? 'http://localhost:3000')
   .trim()
   .replace(/\/$/, '');
-const defaultTitle = "BNSSA - QCM et preparation a l'examen";
+const defaultTitle = "BNSSA - QCM officiels FNMNS";
 const defaultDescription =
-  "QCM BNSSA pour preparer l'examen : 4 QCM, mode examen, suivi de progression et revision ciblee.";
+  "Site cree pour reviser le BNSSA avec la FNMNS : 4 QCM officiels de l'examen, mode examen et suivi de progression.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
