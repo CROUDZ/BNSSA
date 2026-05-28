@@ -68,19 +68,18 @@ const buildPrompt = (payload: ExplainPayload) => {
     `${quiz}` +
     `Question: ${payload.question}\n` +
     `Propositions:\n${answers}\n\n` +
-    `Reponses correctes: ${correct}\n` +
+    `Bonnes reponses: ${correct}\n` +
     `Reponses de l'utilisateur: ${selected}\n\n` +
-    "Adresse-toi directement a l'utilisateur en le tutoyant. " +
-    "Cite au moins une lettre de ses choix et une lettre des bonnes reponses. " +
-    "Explique la regle ou le principe qui justifie chaque bonne reponse. " +
-    "Si l'utilisateur s'est trompe, indique en une phrase pourquoi ses choix ne conviennent pas. " +
-    "Apporte au moins un element concret (regle, seuil, definition ou condition). " +
-    "Contraintes: ne developpe pas les sigles, n'invente pas d'intitules ou de diplome, reste factuel et coherent. " +
-    "Utilise seulement les lettres des propositions, ne recopie pas leurs intitules. " +
-    "Si plusieurs bonnes reponses, justifie chacune en une phrase courte. " +
-    "Reponse en francais, ton pedagogique, 3 a 5 phrases courtes maximum. " +
-    "Ne repete pas la question. " +
-    "Ne mentionne pas que tu es une IA."
+    "Objectif: corriger et expliquer. Concentre-toi uniquement sur: (1) pourquoi les bonnes lettres sont correctes, (2) pourquoi les lettres choisies par l'utilisateur sont fausses ou incompletes.\n" +
+    "Tu tutoies l'utilisateur.\n" +
+    "Format STRICT en 4 a 5 phrases courtes, dans cet ordre:\n" +
+    "1) Phrase 1: annonce si c'est correct, partiellement correct, ou incorrect, en citant au moins 1 lettre choisie et au moins 1 bonne lettre.\n" +
+    "2) Phrase 2: explique la/les bonne(s) lettre(s) (une justification par lettre, tres courte), avec au moins un element concret (regle, seuil, condition, definition).\n" +
+    "3) Phrase 3: si erreur, explique en une phrase pourquoi la/les lettre(s) choisie(s) par l'utilisateur ne conviennent pas (condition non remplie, confusion typique, criteres incomplets).\n" +
+    "4) Phrase 4: si plusieurs bonnes reponses, confirme rapidement ce qu'il fallait cocher (lettres uniquement). Sinon, rappelle la bonne lettre.\n" +
+    "5) Phrase 5 (optionnelle): un rappel-memo ultra court de la regle (1 seule idee).\n" + 
+    "Priorite: si l'utilisateur s'est trompe, la phrase 3 doit etre la plus explicite et pointer la condition precise qui manque ou la confusion exacte.\n" +
+    "Contraintes: ne recopie pas la question. Ne recopie pas les intitules des propositions. Utilise uniquement les lettres (A, B, C...). Ne developpe pas les sigles. N'invente rien. Reste factuel, coherent, pedagogique.\n"
   );
 };
 
