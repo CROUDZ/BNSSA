@@ -64,23 +64,42 @@ const buildPrompt = (payload: ExplainPayload) => {
     ? payload.selectedAnswers.join(", ")
     : "Aucune";
 
+const buildPrompt = (payload: ExplainPayload) => {
+  const quiz = payload.quizTitle ? `QCM: ${payload.quizTitle}\n` : "";
+  const answers = formatAnswers(payload.answers);
+  const correct = payload.correctAnswers.join(", ");
+  const selected = payload.selectedAnswers?.length
+    ? payload.selectedAnswers.join(", ")
+    : "Aucune";
+
   return (
     `${quiz}` +
     `Question: ${payload.question}\n` +
     `Propositions:\n${answers}\n\n` +
     `Bonnes reponses: ${correct}\n` +
     `Reponses de l'utilisateur: ${selected}\n\n` +
-    "Objectif: corriger et expliquer. Concentre-toi uniquement sur: (1) pourquoi les bonnes lettres sont correctes, (2) pourquoi les lettres choisies par l'utilisateur sont fausses ou incompletes.\n" +
-    "Tu tutoies l'utilisateur.\n" +
-    "Format STRICT en 4 a 5 phrases courtes, dans cet ordre:\n" +
-    "1) Phrase 1: annonce si c'est correct, partiellement correct, ou incorrect, en citant au moins 1 lettre choisie et au moins 1 bonne lettre.\n" +
-    "2) Phrase 2: explique la/les bonne(s) lettre(s) (une justification par lettre, tres courte), avec au moins un element concret (regle, seuil, condition, definition).\n" +
-    "3) Phrase 3: si erreur, explique en une phrase pourquoi la/les lettre(s) choisie(s) par l'utilisateur ne conviennent pas (condition non remplie, confusion typique, criteres incomplets).\n" +
-    "4) Phrase 4: si plusieurs bonnes reponses, confirme rapidement ce qu'il fallait cocher (lettres uniquement). Sinon, rappelle la bonne lettre.\n" +
-    "5) Phrase 5 (optionnelle): un rappel-memo ultra court de la regle (1 seule idee).\n" + 
-    "Priorite: si l'utilisateur s'est trompe, la phrase 3 doit etre la plus explicite et pointer la condition precise qui manque ou la confusion exacte.\n" +
-    "Contraintes: ne recopie pas la question. Ne recopie pas les intitules des propositions. Utilise uniquement les lettres (A, B, C...). Ne developpe pas les sigles. N'invente rien. Reste factuel, coherent, pedagogique.\n"
+    "Tu es formateur BNSSA. Tu tutoies l'utilisateur.\n" +
+    "But: expliquer VRAIMENT, pas reformuler.\n\n" +
+
+    "Regles anti-repetition (STRICT):\n" +
+    "- Ne reprends pas mot pour mot les phrases de l'utilisateur ni les tiennes.\n" +
+    "- Ne dis pas 'car ...' en repetant juste une localisation/phrase du QCM.\n" +
+    "- N'invente aucun fait externe (lieu, chiffre, nom, contexte) non deduit de la question/propositions.\n" +
+    "- Si l'info manque pour justifier un fait, reste general (regle/condition) au lieu d'inventer.\n\n" +
+
+    "Structure obligatoire en 4 phrases MAX (courtes):\n" +
+    "1) Verdict + lettres: 'Incorrect/Partiellement/Correct' en citant 1 lettre choisie et 1 bonne lettre.\n" +
+    "2) Justification des bonnes lettres: pour CHAQUE bonne lettre, donne le critere/regle qui la rend correcte (definition, condition, seuil, obligation/interdiction).\n" +
+    "3) Diagnostic de l'erreur: pour CHAQUE lettre choisie fausse, explique le critere precis non rempli ou la confusion typique (ex: 'tu confonds X avec Y', 'condition A manque', 'generalisation abusive').\n" +
+    "4) Correction finale: 'Il fallait cocher: ...' (lettres uniquement) + 1 rappel de regle en 8 mots max.\n\n" +
+
+    "Contraintes:\n" +
+    "- Utilise uniquement les lettres (A, B, C...).\n" +
+    "- Ne recopie pas les intitules des propositions.\n" +
+    "- Ne developpe pas les sigles.\n" +
+    "- Ne mentionne pas que tu es une IA.\n"
   );
+};
 };
 
 const isValidPayload = (
