@@ -77,29 +77,24 @@ const buildPrompt = (payload: ExplainPayload) => {
     `Question: ${payload.question}\n` +
     `Propositions:\n${answers}\n\n` +
     `Bonnes reponses: ${correct}\n` +
-    `Reponses de l'utilisateur: ${selected}\n\n` +
-    "Tu es formateur BNSSA. Tu tutoies l'utilisateur.\n" +
-    "But: expliquer VRAIMENT, pas reformuler.\n\n" +
+    `Reponses utilisateur: ${selected}\n\n` +
 
-    "Regles anti-repetition (STRICT):\n" +
-    "- Ne reprends pas mot pour mot les phrases de l'utilisateur ni les tiennes.\n" +
-    "- Ne dis pas 'car ...' en repetant juste une localisation/phrase du QCM.\n" +
-    "- N'invente aucun fait externe (lieu, chiffre, nom, contexte) non deduit de la question/propositions.\n" +
-    "- Si l'info manque pour justifier un fait, reste general (regle/condition) au lieu d'inventer.\n\n" +
+    "Tu tutoies l'utilisateur.\n" +
+    "Objectif: CORRECTION PRECISE (pas de generalites).\n\n" +
 
-    "Structure obligatoire en 4 phrases MAX (courtes):\n" +
-    "1) Verdict + lettres: 'Incorrect/Partiellement/Correct' en citant 1 lettre choisie et 1 bonne lettre.\n" +
-    "2) Justification des bonnes lettres: pour CHAQUE bonne lettre, donne le critere/regle qui la rend correcte (definition, condition, seuil, obligation/interdiction).\n" +
-    "3) Diagnostic de l'erreur: pour CHAQUE lettre choisie fausse, explique le critere precis non rempli ou la confusion typique (ex: 'tu confonds X avec Y', 'condition A manque', 'generalisation abusive').\n" +
-    "4) Correction finale: 'Il fallait cocher: ...' (lettres uniquement) + 1 rappel de regle en 8 mots max.\n\n" +
+    "Interdictions (STRICT):\n" +
+    "- Interdit d'utiliser des phrases vagues: 'depend de', 'en fonction de', 'tels que', 'a proximite', 'conditions de mer', 'cela definit'.\n" +
+    "- Interdit d'inventer des faits (chiffres, lieux, regles) non explicitement presents dans la question/propositions.\n\n" +
 
-    "Contraintes:\n" +
-    "- Utilise uniquement les lettres (A, B, C...).\n" +
-    "- Ne recopie pas les intitules des propositions.\n" +
-    "- Ne developpe pas les sigles.\n" +
-    "- Ne mentionne pas que tu es une IA.\n"
+    "Autorisation:\n" +
+    "- Tu peux citer 1 a 3 mots-cles MAX par lettre (sans recopier la phrase).\n\n" +
+
+    "Format STRICT: 4 phrases MAX.\n" +
+    "Phrase 1: Verdict + lettres (au moins 1 lettre choisie + 1 bonne).\n" +
+    "Phrase 2: Bonnes lettres: pour CHAQUE bonne lettre -> 'Critere: ... ; Application: ...' (1 mini-critere testable + comment ca colle).\n" +
+    "Phrase 3: Erreurs: pour CHAQUE lettre choisie fausse ou manquante -> 'Erreur: critere manquant OU confusion precise'.\n" +
+    "Phrase 4: Correction finale: 'Il fallait cocher: ...' + rappel de regle en 8 mots max.\n"
   );
-};
 };
 
 const isValidPayload = (
