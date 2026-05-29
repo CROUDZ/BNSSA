@@ -3,7 +3,7 @@ import ClientProviders from "@/components/ClientProviders";
 import ThemeToggle from "@/components/ThemeToggle";
 import "@/styles/globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -91,7 +91,7 @@ export default function RootLayout({
           <ThemeToggle />
           <div className="flex min-h-screen flex-col">
             <div className="flex-1">{children}</div>
-             <footer className="border-t border-soft bg-surface-veil">
+            <footer className="border-t border-soft bg-surface-veil">
               <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-4 py-6 text-xs text-muted opacity-90 sm:text-sm md:flex-row md:items-center md:justify-between md:gap-6 md:px-6">
                 <div className="flex flex-col gap-1">
                   <p>Site non officiel indépendant de la FNMNS</p>
@@ -111,7 +111,7 @@ export default function RootLayout({
                     </a>
                   </p>
                 </div>
-            
+
                 <a
                   href="https://formation.fnmns.org"
                   target="_blank"

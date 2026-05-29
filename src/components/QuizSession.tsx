@@ -11,11 +11,7 @@ import {
 } from "react-icons/fa";
 import { SiAnthropic, SiGooglegemini, SiOpenai } from "react-icons/si";
 import { AnswerButton } from "@/components/AnswerButton";
-import {
-  CopilotIcon,
-  GrokIcon,
-  MistralIcon,
-} from "@/components/BrandIcons";
+import { CopilotIcon, GrokIcon, MistralIcon } from "@/components/BrandIcons";
 import type { QcmData, AnswerKey, QuestionResult } from "@/types/qcm";
 
 type Props = {
@@ -45,7 +41,9 @@ const buildPrompt = ({
   selectedAnswers,
 }: PromptPayload) => {
   const correct = correctAnswers.join(", ");
-  const selected = selectedAnswers.length ? selectedAnswers.join(", ") : "Aucune";
+  const selected = selectedAnswers.length
+    ? selectedAnswers.join(", ")
+    : "Aucune";
 
   return (
     "Tu es un formateur BNSSA. Tu tutoies l'utilisateur et tu reponds en francais.\n\n" +
@@ -469,6 +467,38 @@ export function QuizSession({
               </AnimatePresence>
             )}
 
+            {/* Navigation */}
+            <div className="mt-6 flex items-center justify-between gap-3">
+              <button
+                onClick={handlePrev}
+                disabled={index === 0}
+                className="flex items-center gap-2 rounded-2xl border border-soft px-5 py-3 text-sm transition hover:bg-surface-veil disabled:cursor-not-allowed disabled:opacity-30"
+              >
+                <FaArrowLeft className="text-xs" />
+                Précédent
+              </button>
+
+              {!confirmed ? (
+                <button
+                  onClick={handleConfirm}
+                  disabled={selected.length === 0}
+                  className="flex-1 rounded-2xl bg-foreground px-5 py-3 text-sm font-bold text-background transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30"
+                >
+                  Valider
+                </button>
+              ) : (
+                <button
+                  onClick={handleNext}
+                  className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-foreground px-5 py-3 text-sm font-bold text-background transition hover:opacity-90"
+                >
+                  {index === questions.length - 1
+                    ? "Voir les résultats"
+                    : "Suivant"}
+                  <FaArrowRight className="text-xs" />
+                </button>
+              )}
+            </div>
+
             {canExplain && (
               <div className="mt-4 rounded-2xl border border-soft bg-surface-veil px-5 py-4">
                 <div className="flex flex-wrap items-center justify-between gap-3">
@@ -531,38 +561,6 @@ export function QuizSession({
             )}
           </m.div>
         </AnimatePresence>
-
-        {/* Navigation */}
-        <div className="mt-6 flex items-center justify-between gap-3">
-          <button
-            onClick={handlePrev}
-            disabled={index === 0}
-            className="flex items-center gap-2 rounded-2xl border border-soft px-5 py-3 text-sm transition hover:bg-surface-veil disabled:cursor-not-allowed disabled:opacity-30"
-          >
-            <FaArrowLeft className="text-xs" />
-            Précédent
-          </button>
-
-          {!confirmed ? (
-            <button
-              onClick={handleConfirm}
-              disabled={selected.length === 0}
-              className="flex-1 rounded-2xl bg-foreground px-5 py-3 text-sm font-bold text-background transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30"
-            >
-              Valider
-            </button>
-          ) : (
-            <button
-              onClick={handleNext}
-              className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-foreground px-5 py-3 text-sm font-bold text-background transition hover:opacity-90"
-            >
-              {index === questions.length - 1
-                ? "Voir les résultats"
-                : "Suivant"}
-              <FaArrowRight className="text-xs" />
-            </button>
-          )}
-        </div>
       </div>
     </main>
   );
