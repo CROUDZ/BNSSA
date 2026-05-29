@@ -2,8 +2,20 @@
 
 import { useState, useCallback } from "react";
 import { m, AnimatePresence } from "framer-motion";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import {
+  FaArrowLeft,
+  FaArrowRight,
+  FaChevronDown,
+  FaChevronUp,
+  FaCopy,
+} from "react-icons/fa";
+import { SiAnthropic, SiGooglegemini, SiOpenai } from "react-icons/si";
 import { AnswerButton } from "@/components/AnswerButton";
+import {
+  CopilotIcon,
+  GrokIcon,
+  MistralIcon,
+} from "@/components/BrandIcons";
 import type { QcmData, AnswerKey, QuestionResult } from "@/types/qcm";
 
 type Props = {
@@ -16,6 +28,37 @@ type Props = {
 };
 
 type AnswerState = "idle" | "selected" | "correct" | "wrong" | "missed";
+
+type PromptPayload = {
+  quizTitle: string;
+  questionText: string;
+  answersText: string;
+  correctAnswers: string[];
+  selectedAnswers: string[];
+};
+
+const buildPrompt = ({
+  quizTitle,
+  questionText,
+  answersText,
+  correctAnswers,
+  selectedAnswers,
+}: PromptPayload) => {
+  const correct = correctAnswers.join(", ");
+  const selected = selectedAnswers.length ? selectedAnswers.join(", ") : "Aucune";
+
+  return (
+    "Tu es un formateur BNSSA. Tu tutoies l'utilisateur et tu reponds en francais.\n\n" +
+    `Contexte:\nQCM: ${quizTitle}\nQuestion: ${questionText}\nPropositions:\n${answersText}\n\n` +
+    `Bonnes reponses: ${correct}\nReponse utilisateur: ${selected}\n\n` +
+    "Consignes:\n" +
+    "- Explique pourquoi chaque bonne reponse est correcte.\n" +
+    "- Explique pourquoi chaque reponse choisie incorrecte est fausse.\n" +
+    "- Si une bonne reponse manque, explique le manque.\n" +
+    "- Reste clair et court (4 a 6 phrases max).\n" +
+    "- N'invente aucune information absente de l'enonce ou des propositions.\n"
+  );
+};
 
 export function QuizSession({
   quiz,
@@ -37,11 +80,8 @@ export function QuizSession({
   const [examAnswers, setExamAnswers] = useState<Record<number, AnswerKey[]>>(
     {},
   );
-  const [explanations, setExplanations] = useState<Record<number, string>>({});
-  const [explainErrors, setExplainErrors] = useState<Record<number, string>>(
-    {},
-  );
-  const [explainLoadingId, setExplainLoadingId] = useState<number | null>(null);
+  const [copiedPromptId, setCopiedPromptId] = useState<number | null>(null);
+  const [openPromptId, setOpenPromptId] = useState<number | null>(null);
 
   const question = questions[index];
   const answerKeys = Object.keys(question.answers) as AnswerKey[];
@@ -50,6 +90,77 @@ export function QuizSession({
     (count, q) => count + ((examAnswers[q.id] ?? []).length > 0 ? 1 : 0),
     0,
   );
+  const canExplain = revealAnswers && confirmed && mode !== "exam";
+  const answersText = answerKeys
+    .map((key) => `${key}: ${question.answers[key] ?? ""}`)
+    .join("\n");
+  const promptText = canExplain
+    ? buildPrompt({
+        quizTitle: quiz.title,
+        questionText: question.question,
+        answersText,
+        correctAnswers: question.correctAnswers,
+        selectedAnswers: selected,
+      })
+    : "";
+  const promptQuery = encodeURIComponent(promptText);
+  const providers = [
+    {
+      id: "chatgpt",
+      label: "ChatGPT",
+      href: `https://chatgpt.com/?q=${promptQuery}`,
+      Icon: SiOpenai,
+    },
+    {
+      id: "gemini",
+      label: "Gemini",
+      href: `https://gemini.google.com/app?prompt=${promptQuery}`,
+      Icon: SiGooglegemini,
+    },
+    {
+      id: "claude",
+      label: "Claude",
+      href: `https://claude.ai/new?q=${promptQuery}`,
+      Icon: SiAnthropic,
+    },
+    {
+      id: "grok",
+      label: "Grok",
+      href: `https://grok.com/?q=${promptQuery}`,
+      Icon: GrokIcon,
+    },
+    {
+      id: "mistral",
+      label: "Mistral",
+      href: `https://chat.mistral.ai/chat?prompt=${promptQuery}`,
+      Icon: MistralIcon,
+    },
+    {
+      id: "copilot",
+      label: "Copilot",
+      href: `https://copilot.microsoft.com/?q=${promptQuery}`,
+      Icon: CopilotIcon,
+    },
+  ];
+  const isPromptOpen = openPromptId === question.id;
+  const promptDetailsId = `prompt-details-${question.id}`;
+
+  const handleCopyPrompt = async () => {
+    if (!promptText) return;
+    try {
+      await navigator.clipboard.writeText(promptText);
+      setCopiedPromptId(question.id);
+      window.setTimeout(() => {
+        setCopiedPromptId((prev) => (prev === question.id ? null : prev));
+      }, 1600);
+    } catch {
+      setCopiedPromptId(null);
+    }
+  };
+
+  const handleTogglePrompt = () => {
+    setOpenPromptId((prev) => (prev === question.id ? null : question.id));
+  };
 
   const getState = useCallback(
     (key: AnswerKey): AnswerState => {
@@ -111,6 +222,8 @@ export function QuizSession({
     } else {
       onComplete(newResults);
     }
+    setCopiedPromptId(null);
+    setOpenPromptId(null);
   };
 
   const handlePrev = () => {
@@ -128,6 +241,8 @@ export function QuizSession({
     }
     // Pop last result
     setResults((r) => r.slice(0, -1));
+    setCopiedPromptId(null);
+    setOpenPromptId(null);
   };
 
   const progress =
@@ -136,80 +251,6 @@ export function QuizSession({
         ? (answeredCount / questions.length) * 100
         : 0
       : ((index + (confirmed ? 1 : 0)) / questions.length) * 100;
-  const canExplain = revealAnswers && confirmed && mode !== "exam";
-  const currentExplanation = explanations[question.id];
-  const currentExplainError = explainErrors[question.id];
-  const isExplainLoading = explainLoadingId === question.id;
-
-  const handleExplain = async () => {
-    if (!canExplain || isExplainLoading) return;
-    setExplainLoadingId(question.id);
-    setExplainErrors((prev) => ({ ...prev, [question.id]: "" }));
-
-    const answerPayload = answerKeys.reduce<Record<AnswerKey, string>>(
-      (acc, key) => {
-        const value = question.answers[key];
-        if (value) acc[key] = value;
-        return acc;
-      },
-      {} as Record<AnswerKey, string>,
-    );
-
-    try {
-      const response = await fetch("/api/qcm-explain", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "x-use-cache": "1" },
-        body: JSON.stringify({
-          quizTitle: quiz.title,
-          question: question.question,
-          answers: answerPayload,
-          correctAnswers: question.correctAnswers,
-          selectedAnswers: selected,
-        }),
-      });
-
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(errorText || "Explain request failed");
-      }
-
-      if (!response.body) {
-        const fallbackText = (await response.text()).trim();
-        if (!fallbackText) throw new Error("Missing explanation");
-        setExplanations((prev) => ({ ...prev, [question.id]: fallbackText }));
-        return;
-      }
-
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder();
-      let aggregated = "";
-
-      setExplanations((prev) => ({ ...prev, [question.id]: "" }));
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        aggregated += decoder.decode(value, { stream: true });
-        setExplanations((prev) => ({ ...prev, [question.id]: aggregated }));
-      }
-
-      aggregated += decoder.decode();
-
-      const finalText = aggregated.trim();
-      if (!finalText) {
-        throw new Error("Missing explanation");
-      }
-
-      setExplanations((prev) => ({ ...prev, [question.id]: finalText }));
-    } catch {
-      setExplainErrors((prev) => ({
-        ...prev,
-        [question.id]: "Impossible d'obtenir une explication pour le moment.",
-      }));
-    } finally {
-      setExplainLoadingId(null);
-    }
-  };
 
   if (mode === "exam") {
     const remainingCount = questions.length - answeredCount;
@@ -432,33 +473,59 @@ export function QuizSession({
               <div className="mt-4 rounded-2xl border border-soft bg-surface-veil px-5 py-4">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <span className="text-xs font-semibold uppercase tracking-widest text-muted">
-                    Explication IA
+                    Lancer une discussion
                   </span>
-                  {!currentExplanation && (
-                    <button
-                      onClick={handleExplain}
-                      disabled={isExplainLoading}
-                      className="rounded-full border border-soft px-3 py-1 text-xs font-semibold text-muted-strong transition hover:border-emerald-300/40 hover:text-foreground disabled:cursor-not-allowed disabled:opacity-60"
-                    >
-                      Demander une explication
-                    </button>
-                  )}
+                  <button
+                    onClick={handleCopyPrompt}
+                    className="inline-flex items-center gap-2 rounded-full border border-soft px-3 py-1 text-xs font-semibold text-muted-strong transition hover:border-emerald-300/40 hover:text-foreground"
+                    aria-label="Copier le prompt"
+                    title="Copier le prompt"
+                  >
+                    <FaCopy className="text-xs" />
+                    {copiedPromptId === question.id ? "Copie" : "Copier"}
+                  </button>
                 </div>
-
-                {isExplainLoading && (
-                  <p className="mt-3 text-sm text-muted">Analyse en cours...</p>
-                )}
-
-                {currentExplainError && (
-                  <p className="mt-3 text-sm text-red-300">
-                    {currentExplainError}
-                  </p>
-                )}
-
-                {currentExplanation && (
-                  <p className="mt-3 whitespace-pre-wrap text-sm text-foreground">
-                    {currentExplanation}
-                  </p>
+                <p className="mt-2 text-xs text-muted">
+                  Choisis une IA pour ouvrir la discussion avec le prompt.
+                </p>
+                <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                  {providers.map(({ id, label, href, Icon }) => (
+                    <a
+                      key={id}
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-soft bg-surface-strong px-3 py-2 text-xs font-semibold text-foreground transition hover:border-emerald-300/40 hover:bg-surface-veil"
+                      aria-label={`Ouvrir ${label} avec le prompt`}
+                      title={`Ouvrir ${label}`}
+                    >
+                      <Icon className="text-base" />
+                      <span>{label}</span>
+                    </a>
+                  ))}
+                </div>
+                <button
+                  onClick={handleTogglePrompt}
+                  className="mt-3 flex w-full items-center justify-between rounded-xl border border-soft bg-surface-strong px-3 py-2 text-xs font-semibold text-muted-strong transition hover:border-emerald-300/40 hover:text-foreground"
+                  aria-expanded={isPromptOpen}
+                  aria-controls={promptDetailsId}
+                >
+                  <span>Voir le prompt</span>
+                  {isPromptOpen ? (
+                    <FaChevronUp className="text-xs" />
+                  ) : (
+                    <FaChevronDown className="text-xs" />
+                  )}
+                </button>
+                {isPromptOpen && (
+                  <div
+                    id={promptDetailsId}
+                    className="mt-3 max-h-64 overflow-auto rounded-xl border border-soft bg-surface-strong p-4 text-xs text-foreground"
+                  >
+                    <pre className="whitespace-pre-wrap font-mono">
+                      {promptText}
+                    </pre>
+                  </div>
                 )}
               </div>
             )}
