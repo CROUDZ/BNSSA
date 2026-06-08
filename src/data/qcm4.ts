@@ -10,490 +10,461 @@ export type Question = {
 };
 
 export const qcm4: Question[] = [
-  // THEME : CONNAISSANCE DU MILIEU
   {
     id: 1,
-    question: "Il est possible de se baigner dans les plans d'eau",
+    question: 'L’échelle de Beaufort est :',
     answers: {
-      A: "Qui sont autorisés par le Maire",
-      B: "Où il n'y a pas de panneau baignade interdite",
-      C: "Seulement s'il y a un poste de secours",
-      D: "Seulement s'il y a des sauveteurs",
+      A: 'Une grille de notation des sauveteurs en fin de saison',
+      B: 'Une grille qui indique la force du vent et les effets sur l’état de la mer',
+      C: 'Une échelle de valeur qui informe de la hauteur des marées',
+      D: 'Internationale et permet à tous les marins, les gens de la mer de la comprendre',
     },
-    correctAnswers: ["A", "B"],
+    correctAnswers: ["B", "D"],
   },
 
   {
     id: 2,
-    question: "Une baignade est surveillée dès lors qu'il y a",
+    question: 'Les baïnes :',
     answers: {
-      A: "Un poste de secours",
-      B: "Un drapeau vert sur le mat du poste de secours",
-      C: "Des sauveteurs sur la plage",
-      D: "Une signalisation en place",
+      A: 'Doivent être situées dans la zone de baignade pour être sécurisée au maximum',
+      B: 'Sont dangereuses pour la baignade',
+      C: 'Peuvent entraîner un nageur au large',
+      D: 'Peuvent amener les sauveteurs à rétrécir la zone de baignade',
     },
-    correctAnswers: ["B"],
+    correctAnswers: ["B", "C", "D"],
   },
 
   {
     id: 3,
-    question: "Sur une plage, ou il n'y a pas de poste de secours",
+    question: 'Il existe, dans la réglementation française, plusieurs catégories de baignades :',
     answers: {
-      A: "La baignade n'est pas autorisée",
-      B: "La baignade est aux risques et périls des usagers",
-      C: "La baignade est autorisée mais il n'y a pas de surveillance",
+      A: 'Les baignades interdites / aux risques et périls des usagers / autorisées et aménagées',
+      B: 'Les baignades aux risques et périls des usagers / autorisées et surveillées',
+      C: 'Les baignades aux risques et périls des usagers / surveillées / non-surveillées',
     },
-    correctAnswers: ["B", "C"],
+    correctAnswers: ["A"],
   },
 
   {
     id: 4,
-    question: "Une baïne :",
+    question: 'Pour prendre la météo marine, vous pouvez :',
     answers: {
-      A: "Représente l'amplitude de la mer",
-      B: "Est une sorte de cuvette remplie d'eau",
-      C: "Peut être dangereuse pour la baignade",
+      A: 'Faire le 112',
+      B: 'Consulter l’application mobile ou le site internet de Météo France',
+      C: 'Ecouter le bulletin météo émis par les CROSS et les Sémaphores sur le canal VHF',
     },
     correctAnswers: ["B", "C"],
   },
 
   {
     id: 5,
-    question: "Se baigner dans une eau de piscine polluée",
+    question: 'Sur chaque lieu de baignade :',
     answers: {
-      A: "Peut générer des conjonctivites",
-      B: "Peut provoquer des affections cutanées",
-      C: "Peut provoquer des diarrhées",
+      A: 'Il est obligatoire d’avoir un poste de secours',
+      B: 'La décision d’implantation d’un poste de secours est en premier ressort de la compétence du maire',
+      C: 'En l’absence de surveillance, la baignade est aux risques et périls de l’usager',
     },
-    correctAnswers: ["A", "B", "C"],
+    correctAnswers: ["B", "C"],
   },
 
   {
     id: 6,
-    question: "Les bouées coniques jaunes servent à baliser :",
+    question: 'Lorsque l’on vient du large, les chenaux traversiers :',
     answers: {
-      A: "Un chenal traversier",
-      B: "La limite des 300m",
-      C: "La limite la zone de baignade",
-      D: "Le côté gauche d'un chenal traversier lorsque je regarde de la plage",
-    },
-    correctAnswers: ["A", "D"],
-  },
-
-  {
-    id: 7,
-    question:
-      "Le drapeau jaune peut être hissé lorsque la température de l'eau est trop froide",
-    answers: {
-      A: "Vrai",
-      B: "Faux, la température n'intervient pas dans le choix de la flamme",
-      C: "Faux, c'est le drapeau rouge qui doit être hissée",
-      D: "Faux, c'est l'échelle de Beaufort qui détermine la couleur du drapeau",
-    },
-    correctAnswers: ["A"],
-  },
-
-  {
-    id: 8,
-    question:
-      "En milieu naturel, avec un vent fort venant de la terre, un cône orange peut être hissé",
-    answers: {
-      A: "Car des pneumatiques peuvent être emportés vers le large",
-      B: "Car cela nécessite une vigilance particulière",
-      C: "A la place du cône orange, on peut hisser un drapeau Rouge et Blanc",
-      D: "On le hisse dès que la force du vent atteint 2 beauforts",
-    },
-    correctAnswers: ["A", "B"],
-  },
-
-  {
-    id: 9,
-    question:
-      "Les dangers en Atlantique liés aux marées, sont à prendre au sérieux",
-    answers: {
-      A: "Surtout en présence de Baïnes",
-      B: "En marée montante uniquement",
-      C: "Lors des grandes marées d'équinoxes",
+      A: 'Sont matérialisés par des bouées cylindriques à bâbord',
+      B: 'Sont matérialisés par des bouées cylindriques à tribord',
+      C: 'Sont matérialisés par des bouées de couleurs jaunes',
     },
     correctAnswers: ["A", "C"],
   },
 
   {
-    id: 10,
-    question:
-      "Il existe dans la réglementation française plusieurs catégories de baignade",
+    id: 7,
+    question: 'Qui détermine la couleur de la flamme :',
     answers: {
-      A: "Les emplacements dangereux ou il est interdit de se baigner",
-      B: "Les emplacements ou le public se baigne à ces risques et périls",
-      C: "Les emplacements aménagés qui font l'objet de dispositions particulières",
+      A: 'L’échelle de Beaufort',
+      B: 'Le maire de la commune',
+      C: 'Le chef de poste',
+      D: 'Le responsable local de Météo France',
     },
-    correctAnswers: ["A", "B", "C"],
+    correctAnswers: ["C"],
+  },
+
+  {
+    id: 8,
+    question: 'En piscine les analyses d’eau effectuées par le personnel :',
+    answers: {
+      A: 'Peuvent entraîner la fermeture d’une baignade si elles sont mauvaises',
+      B: 'Sont obligatoires une fois par mois',
+      C: 'Doivent être effectuées au moins deux fois par jours',
+    },
+    correctAnswers: ["A", "C"],
+  },
+
+  {
+    id: 9,
+    question: 'Un BNSSA peut enseigner contre rémunération :',
+    answers: {
+      A: 'Oui, l’aquagym',
+      B: 'Oui, la natation',
+      C: 'Non, il ne peut rien enseigner',
+    },
+    correctAnswers: ["C"],
+  },
+
+  {
+    id: 10,
+    question: 'Les CROSS principaux sont au nombre de :',
+    answers: {
+      A: '2 en outre-mer',
+      B: '8 en métropole',
+      C: '5 en métropole',
+      D: '4 en outre-mer',
+    },
+    correctAnswers: ["A", "C"],
   },
 
   {
     id: 11,
-    question: "Une baignade en eaux libre et d'accès payant",
+    question: 'Dans la zone des 300 mètres :',
     answers: {
-      A: "Doit disposer d'un POSS",
-      B: "Doit afficher les analyses d'eau",
-      C: "Est surveillée que par des MNS",
+      A: 'Le préfet maritime est le seul responsable',
+      B: 'Le préfet maritime peut intervenir en cas de forte pollution',
+      C: 'Le maire exerce la police des baignades',
     },
-    correctAnswers: ["A", "B"],
+    correctAnswers: ["B", "C"],
   },
 
   {
     id: 12,
-    question: "Une zone de bain en milieu naturel doit est balisée avec",
+    question: 'Un BNSSA peut surveiller en autonomie :',
     answers: {
-      A: "Des bouées sphériques jaunes",
-      B: "Des bouées cylindriques jaunes",
-      C: "Obligatoirement avec des bouées rouges",
+      A: 'Un plan d’eau d’accès gratuit',
+      B: 'Une piscine payante',
+      C: 'Un accueil collectif de mineur dans une piscine privée du centre',
+      D: 'Une baignade en mer',
     },
-    correctAnswers: ["A"],
+    correctAnswers: ["A", "B", "C", "D"],
   },
 
   {
     id: 13,
-    question: "Une zone de baignade surveillée en fonds instables",
+    question: 'En mer, dans la zone des 300 mètres et en l’absence de balisage ou en présence d’un balisage :',
     answers: {
-      A: "Est balisée par des piquets avec un drapeau rouge/jaune",
-      B: "N'a pas de limite qui détermine la zone de surveillance",
-      C: "Est toujours limitée à 300m à droite et à gauche du poste de secours",
-      D: "Peut-être amovible en fonction de l'état de la mer",
+      A: 'Je peux pratiquer le ski nautique',
+      B: 'Je ne dois pas dépasser les 3 nœuds',
+      C: 'Je ne dois pas dépasser les 5 nœuds',
+      D: 'Il n’y a pas de limitation',
     },
-    correctAnswers: ["A", "D"],
+    correctAnswers: ["C"],
   },
 
   {
     id: 14,
-    question:
-      "Dès que l'on détecte des méduses, la fermeture de la baignade est obligatoire",
+    question: 'Parmi ces obligations, lesquelles sont applicables au BNSSA souhaitant exercer en piscine :',
     answers: {
-      A: "Oui, c'est un vrai danger pour les baigneurs",
-      B: "Oui, les brûlures risquent de provoquer des crampes qui finissent en noyade",
-      C: "Non, les méduses sont régulièrement présentes dans la mer",
-      D: "Un drapeau violet peut signaler leurs présences",
-    },
-    correctAnswers: ["C", "D"],
-  },
-
-  // THEME : DIPLÔMES COMPETENCES OBLIGATIONS
-  {
-    id: 15,
-    question:
-      "Pour exercer sur un lieu d'accès payant, un BNSSA doit être déclaré en préfecture",
-    answers: {
-      A: "Pour travailler seul",
-      B: "Pour travailler en présence d'un MNS",
-      C: "Le préfet lui délivre un récépissé de déclaration",
-      D: "N'a pas de déclaration à faire, seuls les MNS doivent se déclarer",
-    },
-    correctAnswers: ["A", "B", "C"],
-  },
-
-  {
-    id: 16,
-    question: "Un surveillant de baignade pour Accueil Collectif de Mineurs",
-    answers: {
-      A: "Peux exercer en piscine toute l'année avec une dérogation du préfet",
-      B: "Peut exercer en piscine uniquement l'été avec une dérogation du préfet",
-      C: "Exerce uniquement en centre de vacances",
-    },
-    correctAnswers: ["C"],
-  },
-
-  {
-    id: 17,
-    question:
-      "Un BNSSA qui travaille dans une piscine publique, peut exercer en surveillance",
-    answers: {
-      A: "Entre 1 mois minimum et 4 mois maximum avec dérogation",
-      B: "Toute l'année sans dérogation",
-      C: "Uniquement s'il a réussi un concours dans la fonction publique",
-    },
-    correctAnswers: ["B"],
-  },
-
-  {
-    id: 18,
-    question: "Une autorisation spéciale peut être délivrée par le préfet",
-    answers: {
-      A: "Pour pouvoir exercer dans un lieu d'accès payant sans la présence d'un MNS",
-      B: "Pour être autorisé à faire des cours de natation",
-      C: "Dans le temps appelé « dérogation », pour exercer en autonomie, elle n'existe plus",
-    },
-    correctAnswers: ["C"],
-  },
-
-  {
-    id: 19,
-    question:
-      "Parmi ces obligations, lesquelles sont obligatoires pour exercer en piscine publique",
-    answers: {
-      A: "Etre titulaire du certificat de compétence PSE 2",
-      B: "le récépissé de déclaration de la préfecture",
-      C: "le certificat de vaccination pour l'hépatite B",
-      D: "la formation continue en secourisme doit être à jour",
+      A: 'Être titulaire du certificat de compétence PSE2',
+      B: 'Le récépissé de déclaration délivré par les services de l’état',
+      C: 'Le certificat de vaccination pour l’hépatite B',
+      D: 'La formation continue à jour',
     },
     correctAnswers: ["B", "D"],
   },
 
   {
-    id: 20,
-    question:
-      "Un BNSSA peut piloter un bateau à moteur mis à disposition au poste de secours",
+    id: 15,
+    question: 'La responsabilité civile d’un BNSSA peut être engagée pour une faute dont l’origine est considérée comme :',
     answers: {
-      A: "Sans permis, quelle que soit la puissance du moteur s'il ne dépasse pas 5 nœuds",
-      B: "Sans permis, quelle que soit la puissance du moteur, car c'est un engin de secours",
-      D: "Uniquement avec un permis",
-    },
-    correctAnswers: ["D"],
-  },
-
-  // THEME : ORGANISATION ADMINISTRATIVE
-  {
-    id: 21,
-    question:
-      "La demande d'analyse bactériologique d'une baignade est ordonnée",
-    answers: {
-      A: "Par l'exploitant d'une piscine",
-      B: "Par un laboratoire agréé",
-      C: "Par l'Agence Régionale de la Santé",
-      D: "Par le maire responsable d'une zone de baignade",
-    },
-    correctAnswers: ["A", "D"],
-  },
-
-  {
-    id: 22,
-    question:
-      "Lorsqu'une baignade en milieu naturel est ouverte, les analyses de l'eau sont faites",
-    answers: {
-      A: "A la convenance du Maire",
-      B: "Obligatoirement tous les 15 jours",
-      C: "Obligatoirement une fois tous les mois",
-      D: "Uniquement en cas d'aspect inquiétant de l'eau",
+      A: 'Uniquement volontaire',
+      B: 'Volontaire et non-volontaire',
+      C: 'Uniquement involontaire',
     },
     correctAnswers: ["B"],
   },
 
   {
-    id: 23,
-    question: "Les droits d'accès aux baignades en milieu naturel sont régis",
+    id: 16,
+    question: 'Avec le permis plaisance, option côtière, extension hauturière, on peut naviguer :',
     answers: {
-      A: "Par le Préfet",
-      B: "Par le Directeur de l'agence régionale de l'eau",
-      C: "Par le Maire",
-      D: "Le Président d'une communauté de communes",
+      A: 'En rivière uniquement',
+      B: 'De jour comme de nuit',
+      C: 'Au-delà de 6 milles d’un abri',
+    },
+    correctAnswers: ["B", "C"],
+  },
+
+  {
+    id: 17,
+    question: 'En combien de catégories sont classifiées les baignades en eau libre:',
+    answers: {
+      A: '1 catégorie',
+      B: '2 catégories',
+      C: '3 catégories',
+      D: '4 catégories',
     },
     correctAnswers: ["C"],
   },
 
   {
-    id: 24,
-    question: "Le Préfet peut prendre la décision d'interdire une baignade",
+    id: 18,
+    question: 'Les limites de zone de bain :',
     answers: {
-      A: "Lorsque le Maire ne respecte pas ses obligations",
-      B: "Lorsqu'un conflit politique oppose le Maire et le Préfet",
-      C: "Non car seul le Maire est responsable devant la justice",
-      D: "Sur avis de la DDCSPP",
+      A: 'Sont délimitées par des drapeaux à bandes horizontales rouge et jaune',
+      B: 'Déterminent la limite de réglementation du maire',
+      C: 'Peuvent bouger au cours de la journée',
+      D: 'En mer, vers le large la responsabilité administrative du maire s’arrête à 300 mètres',
+    },
+    correctAnswers: ["A", "C", "D"],
+  },
+
+  {
+    id: 19,
+    question: 'Dans un établissement de bain d’accès payant :',
+    answers: {
+      A: 'L’affichage des diplômes est obligatoire',
+      B: 'L’affichage des diplômes n’est pas obligatoire',
+      C: 'Le personnel chargé de la surveillance doit être déclaré auprès de la préfecture',
+    },
+    correctAnswers: ["A", "C"],
+  },
+
+  {
+    id: 20,
+    question: 'Où le POSS doit-il obligatoirement être installé :',
+    answers: {
+      A: 'Dans tous les établissements de bain d’accès payant',
+      B: 'Dans les lieux de baignade autorisés et d’accès payant',
+      C: 'Dans les piscines de copropriétés',
+    },
+    correctAnswers: ["A", "B"],
+  },
+
+  {
+    id: 21,
+    question: 'Lorsqu’une baignade en milieu naturel est ouverte, les analyses de l’eau sont faites :',
+    answers: {
+      A: 'A la convenance du maire',
+      B: 'Au minimum deux fois par mois',
+      C: 'Uniquement en cas d’aspect inquiétant de l’eau',
+    },
+    correctAnswers: ["B"],
+  },
+
+  {
+    id: 22,
+    question: 'Qui recrute le personnel pour armer les postes de secours :',
+    answers: {
+      A: 'Le maire',
+      B: 'Le préfet du département',
+      C: 'Le préfet maritime',
     },
     correctAnswers: ["A"],
   },
 
   {
-    id: 25,
-    question:
-      "Un gérant de camping souhaite ouvrir une baignade surveillée au bord d'un lac.",
+    id: 23,
+    question: 'Le SAMU :',
     answers: {
-      A: "Il doit effectuer une demande d'ouverture de la baignade adressée au Maire",
-      B: "Il doit adresser une déclaration d'ouverture de la baignade adressée au Préfet",
-      C: "Il doit se conformer à une visite des pompiers",
-      D: "Il doit installer un poste de secours",
+      A: 'Est le service d’aide médical urgente',
+      B: 'Est le service d’assistance médicalisé d’urgence',
+      C: 'Dispose de SMUR',
     },
-    correctAnswers: ["A", "B", "D"],
+    correctAnswers: ["A", "C"],
   },
 
   {
-    id: 26,
-    question:
-      "La réglementation des piscines de camping oblige à une surveillance",
+    id: 24,
+    question: 'Le CROSS :',
     answers: {
-      A: "Toute l'année",
-      B: "Toute la période estivale",
-      C: "Le gérant doit uniquement informer ces clients de l'absence de surveillance",
+      A: 'Coordonne les opérations de sauvetage',
+      B: 'Met en place les zones aménagées de baignade',
+      C: 'Recrute les équipes qui assurent la surveillance des plages',
+      D: 'Assure la surveillance et la police des pêches maritimes',
+    },
+    correctAnswers: ["A", "D"],
+  },
+
+  {
+    id: 25,
+    question: 'Le POSS est obligatoire :',
+    answers: {
+      A: 'Dans tous les lieux de baignade',
+      B: 'Dans les piscines uniquement',
+      C: 'Uniquement dans les lieux d’accès payant',
+      D: 'Uniquement lorsqu’il y a un maître-nageur sauveteur',
     },
     correctAnswers: ["C"],
   },
 
   {
-    id: 27,
-    question:
-      "Même sans obligation de surveillance un gérant de camping peut être",
+    id: 26,
+    question: 'Lors de sa 1ère prise de service en milieu naturel, un BNSSA :',
     answers: {
-      A: "Condamné pour un défaut de moyen",
-      B: "Condamné pour un manquement à une obligation de sécurité",
-      C: "Condamné pour un manquement à une obligation d'information",
-      D: "Jamais condamné car le client se baigne à ces risques et périls",
+      A: 'Doit consulter le plan de secours s’il existe',
+      B: 'Doit vérifier l’ensemble du matériel',
+      C: 'Doit détenir le permis bateau',
     },
-    correctAnswers: ["A", "B", "C"],
+    correctAnswers: ["A", "B"],
+  },
+
+  {
+    id: 27,
+    question: 'En zone métropolitaine, lorsque l’on vient du large, en entrant dans un port :',
+    answers: {
+      A: 'On trouve à tribord des balises vertes',
+      B: 'On trouve à bâbord des balises rouges',
+      C: 'On trouve à tribord des balises rouges',
+      D: 'On trouve à bâbord des valises vertes',
+    },
+    correctAnswers: ["A", "B"],
   },
 
   {
     id: 28,
-    question: "En piscine un suivi sanitaire journalier doit être",
+    question: 'Les sauveteurs abaissent le drapeau :',
     answers: {
-      A: "Assuré par le personnel en place",
-      B: "Effectué pour vérifier la teneur en chlore",
-      C: "Effectué pour vérifier la teneur en PH",
-      D: "Assuré pour mesurer le taux de bactéries pathogènes",
+      A: 'Quand une intervention importante le nécessite',
+      B: 'Pour aller déjeuner, si la surveillance est interrompu',
+      C: 'A la fermeture du poste de secours',
+      D: 'Quand la mer est dangereuse',
     },
     correctAnswers: ["A", "B", "C"],
   },
 
   {
     id: 29,
-    question:
-      "En cas de noyade, au-delà de leur zone de surveillance, les sauveteurs",
+    question: 'Des engins de plage :',
     answers: {
-      A: "Ne doivent pas intervenir car ils quittent leur zone de surveillance",
-      B: "Doivent intervenir et mettant en œuvre les moyens dont ils disposent",
-      C: "Doivent prévenir le Maire avant de porter secours",
-      D: "Doivent prévenir le CROSS avant de porter secours",
+      A: 'Doivent naviguer dans la zone des 300 mètres',
+      B: 'Peuvent naviguer jusqu’à 1 mille d’un abri',
+      C: 'Nécessitent une surveillance accrue par vent de terre',
+    },
+    correctAnswers: ["A", "C"],
+  },
+
+  {
+    id: 30,
+    question: 'La planche à voile peut se pratiquer :',
+    answers: {
+      A: 'Dans la bande des 300 mètres',
+      B: 'Dans la zone de baignade surveillée',
+      C: 'Uniquement en dehors de la zone de baignade',
+      D: 'Uniquement en dehors de la bande des 300 mètres',
+    },
+    correctAnswers: ["A", "C"],
+  },
+
+  {
+    id: 31,
+    question: 'Titulaire du BNSSA, avec un accueil collectif de mineurs, vous pouvez aller vous baigner :',
+    answers: {
+      A: 'Où vous voulez',
+      B: 'En dehors des zones surveillées, réputées ne pas être dangereuses',
+      C: 'Uniquement sur des plages surveillées',
     },
     correctAnswers: ["B"],
   },
 
-  // THEME : L'ORGANISATION DE LA SECURITE
   {
-    id: 30,
-    question: "Le POSS est obligatoire",
+    id: 32,
+    question: 'La chasse sous-marine :',
     answers: {
-      A: "Dans tous les lieux de baignade",
-      B: "Dans les piscines uniquement",
-      C: "Uniquement dans les lieux d'accès payant",
-      D: "Uniquement lorsqu'il y a un maître-nageur sauveteur",
+      A: 'Est autorisée avec des bouteilles de plongée',
+      B: 'Est autorisée de jour comme de nuit',
+      C: 'Il est interdit de détenir un fusil chargé hors de l’eau',
+      D: 'Le produit de la pêche peut être vendu',
     },
     correctAnswers: ["C"],
   },
 
   {
-    id: 31,
-    question: "Quels sont les éléments obligatoires dans le POSS",
-    answers: {
-      A: "Un plan détaillé du lieu indiquant les moyens de secours sur place",
-      B: "Les numéros de téléphone indispensables pour l'appel des secours",
-      C: "Les analyses bactériologiques de l'eau",
-      D: "Les protocoles d'intervention",
-      E: "Les horaires d'ouverture",
-    },
-    correctAnswers: ["A", "B", "D", "E"],
-  },
-
-  // THEME : LA SURVEILLANCE ET SECURITE DES ACTIVITES SPECIFIQUES
-  {
-    id: 32,
-    question: "Un scooter des mers peut être utilisé dans la bande des 300m",
-    answers: {
-      A: "Uniquement à vitesse de 5 nœuds pour sortir de la bande des 300m",
-      B: "A pleine vitesse dès lors qu'il ne s'agit pas d'une zone de baignade",
-      C: "Non, leur utilisation est strictement interdite",
-    },
-    correctAnswers: ["A"],
-  },
-
-  {
     id: 33,
-    question: "Le surf et le Body-Board se pratiquent",
+    question: 'Pour pratiquer le ski nautique :',
     answers: {
-      A: "Uniquement dans la zone de baignade",
-      B: "Uniquement hors de la zone de baignade",
-      C: "Dans une zone délimitée par un drapeau à damier noir et blanc",
+      A: 'Le pratiquant doit savoir nager',
+      B: 'En rivière, je peux pratiquer n’importe où',
+      C: 'En mer, je peux pratiquer au-delà de la zone des 300 mètres',
     },
-    correctAnswers: ["B", "C"],
+    correctAnswers: ["A", "C"],
   },
 
   {
     id: 34,
-    question: "La planche à voile peut se pratiquer",
+    question: 'Pour la sécurité des plongeurs, un club ou une structure professionnelle doit :',
     answers: {
-      A: "Dans la bande des 300m",
-      B: "Dans la zone de baignade surveillée",
-      C: "Uniquement en dehors de la zone de baignade",
-      D: "Uniquement en dehors de la bande des 300m",
+      A: 'Disposer de matériel de secours',
+      B: 'Avoir un directeur de plongée sur place',
+      C: 'Se signaler au moyen du pavillon ARMA',
     },
-    correctAnswers: ["A", "C"],
+    correctAnswers: ["A", "B"],
   },
 
   {
     id: 35,
-    question: "Un kayak de mer",
+    question: 'Une piscine privée et réservée aux enfants d’un accueil collectif de mineurs :',
     answers: {
-      A: "Ne peut évoluer qu'en présence d'une embarcation",
-      B: "Doit être de structure rigide pour évoluer au delà des 300m",
-      C: "Doit disposer d'un dispositif permettant le remorquage",
+      A: 'Peut être surveillée par un SB',
+      B: 'Peut être surveillée par un BNSSA',
+      C: 'Doit obligatoirement être surveillée par un MNS',
     },
-    correctAnswers: ["B", "C"],
+    correctAnswers: ["A", "B"],
   },
 
   {
     id: 36,
-    question: "Les bateaux gonflables et les matelas pneumatiques sont",
+    question: 'Dans le cas d’un enfant en arrêt cardiaque, suite à une noyade, il faut :',
     answers: {
-      A: "Uniquement utilisés dans la bande des 300m",
-      B: "Ne sont pas considérés comme des engins de plages",
-      C: "Doivent être utilisés dans le chenal traversier",
-      D: "Sont utilisables jusqu'à 1 mille des côtes",
-    },
-    correctAnswers: ["A"],
-  },
-
-  // THEME : CONDUITE A TENIR EN CAS D'ACCIDENT, PREMIERS SOINS
-  {
-    id: 37,
-    question: "Lors d'un accident de plongée",
-    answers: {
-      A: "Une des raisons peut être une remontée trop rapide",
-      B: "Les paramètres de durée et de profondeur ne rentrent pas en ligne de compte",
-      C: "Il est utile de préciser le nombre de plongeurs dans la palanquée",
-      D: "L'administration d'oxygène est déconseillée",
+      A: 'Commencer immédiatement par faire 5 insufflations',
+      B: 'Commencer immédiatement par faire le massage cardiaque',
+      C: 'Masser au moins à 100 compressions à la minute',
+      D: 'Masser au moins à 150 compressions à la minute',
     },
     correctAnswers: ["A", "C"],
   },
 
   {
-    id: 38,
-    question: "Les stades de la noyade",
+    id: 37,
+    question: 'Les stades de la noyade :',
     answers: {
-      A: "Permettent de simplifier la communication entre les sauveteurs",
-      B: "Sont au nombre de cinq tableaux cliniques",
-      C: "Lorsque vous êtes en présence d'un stade 2, la victime est inconsciente",
-      D: "Des difficultés respiratoires avec une inconscience caractérisent le stade 3",
+      A: 'Permettent de simplifier la communication entre les sauveteurs',
+      B: 'Sont au nombre de cinq tableaux cliniques',
+      C: 'Lorsque vous êtes en présence d’un stade 2, la victime est inconsciente',
     },
-    correctAnswers: ["A", "D"],
+    correctAnswers: ["A"],
+  },
+
+  {
+    id: 38,
+    question: 'Evaluation des fonctions vitales :',
+    answers: {
+      A: 'Il existe quatre fonctions vitales',
+      B: 'Dans l’ordre, le sauveteur contrôle la circulation, l’inconscience, la ventilation',
+      C: 'L’évaluation des fonctions vitales fait partie du bilan',
+      D: 'Même en cas d’hémorragie visible, le sauveteur effectue d’abord le contrôle des fonctions vitales',
+    },
+    correctAnswers: ["C"],
   },
 
   {
     id: 39,
-    question: "Lors d'un trauma du rachis survenant dans l'eau en piscine",
+    question: 'Lors d’une noyade :',
     answers: {
-      A: "Il vaut mieux extraire la victime rapidement, et ce même si elle est consciente",
-      B: "Il vaut mieux stabiliser la victime dans l'eau en attendant les secours",
-      C: "Un des facteurs aggravants peut être l'hypothermie",
-      D: "Il est possible de procéder à deux sauveteurs à une extraction sur planche dorsale",
+      A: 'Chez l’adulte, il n’est pas nécessaire de réaliser 5 insufflations avant de débuter une réanimation',
+      B: 'Chez l’enfant, il est nécessaire de réaliser 5 insufflations avant de débuter une réanimation',
+      C: 'On peut effectuer une RCP dans l’eau, lors d’un remorquage',
     },
-    correctAnswers: ["B", "C"],
+    correctAnswers: ["B"],
   },
 
   {
     id: 40,
-    question: "Une hypersensibilité due à l'eau",
+    question: 'Soins apportés :',
     answers: {
-      A: "Pour les personnes à risque peut provenir directement au contact de l'eau",
-      B: "Pour les personnes à risque ne peut provenir qu'au bout d'un certain temps de baignade",
-      C: "Peut entraîner des difficultés respiratoires",
-      D: "Réduire la durée du bain peut en limiter le risque",
+      A: 'Une personne suspectée d’avoir inhaler de l’eau doit être hospitalisée',
+      B: 'Une personne inconsciente qui ne ventile pas doit être placée en PLS',
+      C: 'La défibrillation précoce augmente les chances de survie d’une réanimation cardio-pulmonaire',
+      D: 'Certains malaises ou maladies graves peuvent entraîner une détresse vitale dans l’eau',
     },
-    correctAnswers: ["A", "B", "C", "D"],
+    correctAnswers: ["A", "C", "D"],
   },
 ];
