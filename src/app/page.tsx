@@ -1,48 +1,44 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { m } from "framer-motion";
-import { useQcmSession } from "@/hooks/useQcmSession";
-import { QcmCard } from "@/components/QcmCard";
 import { ProgressBanner } from "@/components/ProgressBanner";
 import { QuizSession } from "@/components/QuizSession";
 import { ResultsScreen } from "@/components/ResultsScreen";
-import { qcm1 } from "@/data/qcm1";
-import { qcm2 } from "@/data/qcm2";
-import { qcm3 } from "@/data/qcm3";
-import { qcm4 } from "@/data/qcm4";
-import type { QcmData, QuestionResult } from "@/types/qcm";
+import examQuestions from "@/data/exam.json";
+import trainingQuestions from "@/data/training.json";
+import { useQcmSession } from "@/hooks/useQcmSession";
+import type { QcmData, Question, QuestionResult } from "@/types/qcm";
 
-const quizzes: QcmData[] = [
-  {
-    id: 1,
-    title: "QCM 1",
-    description: "Connaissance du milieu · Diplômes · Organisation",
-    questions: qcm1,
-  },
-  {
-    id: 2,
-    title: "QCM 2",
-    description: "Milieu · Compétences · Contexte juridique",
-    questions: qcm2,
-  },
-  {
-    id: 3,
-    title: "QCM 3",
-    description: "Réglementation · Surveillance · Secourisme",
-    questions: qcm3,
-  },
-  {
-    id: 4,
-    title: "QCM 4",
-    description: "Milieu · Administration · Activités spécifiques",
-    questions: qcm4,
-  },
-];
+const TRAINING_QCM_ID = 1;
+const EXAM_QCM_ID = 2;
+
+const examBank = examQuestions as Question[];
+const trainingBank = trainingQuestions as Question[];
+
+const trainingQuiz: QcmData = {
+  id: TRAINING_QCM_ID,
+  title: "Entraînement",
+  description: "Questions aléatoires avec correction immédiate",
+  questions: [
+    ...trainingBank,
+    ...examBank.map((question) => ({
+      ...question,
+      tags: [...new Set([...question.tags, "examen"])],
+    })),
+  ],
+};
+
+const examQuiz: QcmData = {
+  id: EXAM_QCM_ID,
+  title: "QCM d'examen",
+  description: "Le QCM 4 conservé comme véritable examen",
+  questions: examBank,
+};
 
 type ActiveSession = {
   quiz: QcmData;
-  mode: "all" | "retry" | "exam";
+  mode: "training" | "exam" | "review";
 };
 
 type Screen = "home" | "quiz" | "results";
@@ -54,7 +50,7 @@ export default function HomePage() {
     "@type": "Organization",
     name: "BNSSA QCM",
     description:
-      "Site cree pour reviser le BNSSA avec la FNMNS. Les 4 QCM sont ceux de l'examen officiel FNMNS du BNSSA.",
+      "Site cree pour reviser le BNSSA avec un entrainement infini et un QCM d'examen officiel FNMNS.",
   };
   const website: Record<string, unknown> = {
     "@type": "WebSite",
@@ -79,43 +75,115 @@ export default function HomePage() {
     null,
   );
   const [pendingResults, setPendingResults] = useState<QuestionResult[]>([]);
+  const autoStartRef = useRef(false);
 
-  const handleStart = (quiz: QcmData, mode: "all" | "retry" | "exam") => {
-    if (mode === "all" || mode === "exam") {
-      clearProgress(quiz.id);
-    }
-    setActiveSession({ quiz, mode });
+  const trainingProgress = getProgress(TRAINING_QCM_ID);
+  const examProgress = getProgress(EXAM_QCM_ID);
+
+  const startTraining = useCallback(() => {
+    setActiveSession({ quiz: trainingQuiz, mode: "training" });
+    setPendingResults([]);
     setScreen("quiz");
+  }, []);
+
+  const startFailedReview = useCallback(
+    (questionIds: string[]) => {
+      const questions = questionIds
+        .map((id) =>
+          trainingQuiz.questions.find((question) => question.id === id),
+        )
+        .filter((question): question is Question => Boolean(question));
+
+      if (!questions.length) {
+        startTraining();
+        return;
+      }
+
+      setActiveSession({
+        quiz: {
+          ...trainingQuiz,
+          title: "Révision des erreurs",
+          description: "Questions échouées à retravailler",
+          questions,
+        },
+        mode: "review",
+      });
+      setPendingResults([]);
+      setScreen("quiz");
+    },
+    [startTraining],
+  );
+
+  useEffect(() => {
+    const handleStartTraining = () => startTraining();
+
+    window.addEventListener("bnssa:start-training", handleStartTraining);
+
+    if (!autoStartRef.current) {
+      autoStartRef.current = true;
+      const params = new URLSearchParams(window.location.search);
+
+      if (params.get("review") === "failed") {
+        startFailedReview(
+          (params.get("ids") ?? "")
+            .split(",")
+            .map((id) => id.trim())
+            .filter(Boolean),
+        );
+      } else if (params.get("start") === "training") {
+        startTraining();
+      }
+    }
+
+    return () =>
+      window.removeEventListener("bnssa:start-training", handleStartTraining);
+  }, [startFailedReview, startTraining]);
+
+  const startExam = () => {
+    clearProgress(EXAM_QCM_ID);
+    setActiveSession({ quiz: examQuiz, mode: "exam" });
+    setPendingResults([]);
+    setScreen("quiz");
+  };
+
+  const handleTrainingAnswer = (
+    result: QuestionResult,
+    answeredQuestionIds: string[],
+  ) => {
+    const existing = getProgress(TRAINING_QCM_ID);
+    const results = [...(existing?.results ?? []), result];
+
+    saveProgress({
+      qcmId: TRAINING_QCM_ID,
+      results,
+      answeredQuestionIds,
+      completedAt: null,
+      score: results.filter((item) => item.correct).length,
+      total: trainingQuiz.questions.length,
+    });
   };
 
   const handleComplete = (results: QuestionResult[]) => {
     if (!activeSession) return;
 
-    const { quiz, mode } = activeSession;
-    const existing = getProgress(quiz.id);
+    const score = results.filter((result) => result.correct).length;
 
-    // Merge retry results with previous full run if applicable
-    let allResults: QuestionResult[];
-    if (mode === "retry" && existing) {
-      // replace only the retried questions
-      allResults = existing.results.map(
-        (r) => results.find((nr) => nr.questionId === r.questionId) ?? r,
-      );
-    } else {
-      allResults = results;
+    if (activeSession.mode === "review") {
+      setPendingResults(results);
+      setScreen("results");
+      return;
     }
 
-    const score = allResults.filter((r) => r.correct).length;
-
     saveProgress({
-      qcmId: quiz.id,
-      results: allResults,
+      qcmId: activeSession.quiz.id,
+      results,
+      answeredQuestionIds: results.map((result) => result.questionId),
       completedAt: new Date().toISOString(),
       score,
-      total: quiz.questions.length,
+      total: activeSession.quiz.questions.length,
     });
 
-    setPendingResults(results); // show only current run in results screen
+    setPendingResults(results);
     setScreen("results");
   };
 
@@ -125,59 +193,45 @@ export default function HomePage() {
     setPendingResults([]);
   };
 
-  const handleRetry = () => {
-    if (!activeSession) return;
-    clearProgress(activeSession.quiz.id);
-    setActiveSession({
-      quiz: activeSession.quiz,
-      mode: activeSession.mode === "exam" ? "exam" : "all",
-    });
-    setPendingResults([]);
-    setScreen("quiz");
-  };
-
-  const handleRetryWrong = () => {
-    if (!activeSession) return;
-    setActiveSession({ quiz: activeSession.quiz, mode: "retry" });
-    setPendingResults([]);
-    setScreen("quiz");
-  };
-
-  // ── Quiz screen ────────────────────────────────────────────────────
   if (screen === "quiz" && activeSession) {
-    const wrongIds =
-      activeSession.mode === "retry"
-        ? (getProgress(activeSession.quiz.id)?.results ?? [])
-            .filter((r) => !r.correct)
-            .map((r) => r.questionId)
-        : undefined;
-
     return (
       <QuizSession
         quiz={activeSession.quiz}
-        questionIds={wrongIds}
         mode={activeSession.mode}
+        initialProgress={
+          activeSession.mode === "training" ? trainingProgress : null
+        }
         revealAnswers={activeSession.mode !== "exam"}
+        onAnswer={handleTrainingAnswer}
         onComplete={handleComplete}
         onBack={handleHome}
       />
     );
   }
 
-  // ── Results screen ─────────────────────────────────────────────────
   if (screen === "results" && activeSession) {
     return (
       <ResultsScreen
         quiz={activeSession.quiz}
         results={pendingResults}
-        onRetry={handleRetry}
-        onRetryWrong={handleRetryWrong}
+        onRetry={
+          activeSession.mode === "exam"
+            ? startExam
+            : () =>
+                startFailedReview(
+                  activeSession.quiz.questions.map((question) => question.id),
+                )
+        }
         onHome={handleHome}
       />
     );
   }
 
-  // ── Home screen ────────────────────────────────────────────────────
+  const trainingAttemptCount = trainingProgress?.results.length ?? 0;
+  const examPct = examProgress?.completedAt
+    ? Math.round((examProgress.score / examProgress.total) * 100)
+    : null;
+
   return (
     <>
       <script
@@ -198,87 +252,99 @@ export default function HomePage() {
           >
             <div className="inline-flex items-center gap-2 rounded-full border border-soft bg-surface-veil px-3 py-1 text-[0.65rem] uppercase tracking-[0.35em] text-muted">
               <span className="h-2 w-2 rounded-full bg-emerald-300 animate-pulse" />
-              FNMNS · QCM officiels
+              BNSSA · Entraînement et examen
             </div>
 
             <div className="max-w-3xl">
               <h1 className="font-display text-4xl leading-none md:text-6xl">
-                QCM officiels
+                QCM BNSSA
                 <br />
-                <span className="text-accent">BNSSA</span> (FNMNS)
+                <span className="text-accent">entraînement infini</span>
               </h1>
               <p className="mt-4 text-base text-muted md:text-lg">
-                Site créé pour réviser le BNSSA avec la FNMNS. Les 4 QCM sont
-                ceux de l'examen officiel FNMNS du BNSSA.
+                Une banque d'entraînement aléatoire pour réviser à ton rythme.
+                Le QCM 4 reste disponible comme examen officiel.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <span className="rounded-full border border-soft bg-surface-veil px-3 py-1 text-xs uppercase tracking-[0.2em] text-muted">
-                  {quizzes.length} QCM
+                  {trainingQuiz.questions.length} questions en entraînement
                 </span>
                 <span className="rounded-full border border-soft bg-surface-veil px-3 py-1 text-xs uppercase tracking-[0.2em] text-muted">
-                  100 questions
+                  {examQuiz.questions.length} questions examen
                 </span>
                 <span className="rounded-full border border-soft bg-surface-veil px-3 py-1 text-xs uppercase tracking-[0.2em] text-muted">
-                  Seuil 75%
+                  Sauvegarde si connecté
                 </span>
-                <span className="rounded-full border border-soft bg-surface-veil px-3 py-1 text-xs uppercase tracking-[0.2em] text-muted">
-                  3 modes
-                </span>
-              </div>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <a
-                  href="#qcm-grid"
-                  className="rounded-2xl bg-emerald-300 px-5 py-3 text-sm font-semibold text-slate-900 shadow-glow transition hover:bg-emerald-200"
-                >
-                  Choisir un QCM
-                </a>
-                <div className="rounded-2xl border border-soft bg-surface-veil px-4 py-3 text-xs text-muted">
-                  Sauvegarde locale automatique
-                </div>
               </div>
             </div>
           </m.div>
 
-          <section id="qcm-grid" className="space-y-6">
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-muted">
-                  Choix rapide
-                </p>
-                <h2 className="mt-2 font-display text-3xl">Choisis ton QCM</h2>
-                <p className="mt-2 text-sm text-muted">
-                  Clique et lance une session.
-                </p>
+          <section className="grid gap-5 lg:grid-cols-2">
+            <m.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex flex-col rounded-3xl border border-soft bg-surface p-6 shadow-hero"
+            >
+              <div className="mb-4 flex items-center justify-between gap-3">
+                <span className="rounded-full border border-soft bg-surface-veil px-3 py-1 text-xs font-semibold uppercase tracking-widest text-muted">
+                  Mode principal
+                </span>
               </div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-soft bg-surface-veil px-3 py-1 text-xs text-muted">
-                <span className="h-2 w-2 rounded-full bg-emerald-300" />
-                Reprise automatique de ta progression
-              </div>
-            </div>
+              <h2 className="font-display text-3xl font-black">Entraînement</h2>
+              <p className="mt-2 text-sm text-muted">
+                Les questions sortent dans un ordre aléatoire, avec correction
+                immédiate après validation.
+              </p>
+              {trainingAttemptCount > 0 && (
+                <p className="mt-5 rounded-2xl border border-soft bg-surface-veil px-4 py-3 text-sm text-muted">
+                  {trainingAttemptCount} réponse
+                  {trainingAttemptCount > 1 ? "s" : ""} enregistrée
+                  {trainingAttemptCount > 1 ? "s" : ""}.
+                </p>
+              )}
+              <button
+                onClick={startTraining}
+                className="mt-auto w-full rounded-2xl bg-emerald-300 px-4 py-3 text-sm font-bold text-slate-900 transition hover:bg-emerald-200"
+              >
+                Lancer l'entraînement
+              </button>
+            </m.div>
 
-            <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-              {quizzes.map((quiz, i) => (
-                <m.div
-                  key={quiz.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.07 }}
-                >
-                  <QcmCard
-                    quiz={quiz}
-                    progress={getProgress(quiz.id)}
-                    onStart={(mode) => handleStart(quiz, mode)}
-                    onReset={() => clearProgress(quiz.id)}
-                  />
-                </m.div>
-              ))}
-            </div>
+            <m.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.07 }}
+              className="flex flex-col rounded-3xl border border-soft bg-surface p-6 shadow-hero"
+            >
+              <div className="mb-4 flex items-center justify-between gap-3">
+                <span className="rounded-full border border-amber-300/30 bg-amber-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-amber-200">
+                  Examen
+                </span>
+                <span className="font-mono text-xs text-muted-strong">
+                  QCM 4
+                </span>
+              </div>
+              <h2 className="font-display text-3xl font-black">QCM d'examen</h2>
+              <p className="mt-2 text-sm text-muted">
+                Le vrai QCM d'examen est conservé séparément, sans correction
+                immédiate, avec résultat final.
+              </p>
+              {examPct !== null && (
+                <p className="mt-5 rounded-2xl border border-soft bg-surface-veil px-4 py-3 text-sm text-muted">
+                  Dernier score:{" "}
+                  <span className="font-bold text-foreground">{examPct}%</span>
+                </p>
+              )}
+              <button
+                onClick={startExam}
+                className="mt-auto w-full rounded-2xl border border-soft px-4 py-3 text-sm font-semibold text-foreground transition hover:border-emerald-300/40"
+              >
+                Lancer l'examen
+              </button>
+            </m.div>
           </section>
-          <ProgressBanner
-            session={session}
-            quizzes={quizzes}
-            onClearAll={clearAll}
-          />
+
+          <ProgressBanner session={session} onClearAll={clearAll} />
         </div>
       </main>
     </>

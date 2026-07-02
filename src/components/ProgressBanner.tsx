@@ -1,51 +1,51 @@
 "use client";
 
 import type { SessionData } from "@/types/qcm";
-import type { QcmData } from "@/types/qcm";
 
 type Props = {
   session: SessionData;
-  quizzes: QcmData[];
   onClearAll: () => void;
 };
 
-export function ProgressBanner({ session, quizzes, onClearAll }: Props) {
-  const completed = Object.values(session).filter((p) => p.completedAt).length;
-  const total = quizzes.length;
-  if (completed === 0) return null;
+export function ProgressBanner({ session, onClearAll }: Props) {
+  const trainingProgress = session[1];
+  const examProgress = session[2];
+  const attempts = trainingProgress?.results.length ?? 0;
+  const examPct = examProgress?.completedAt
+    ? Math.round((examProgress.score / examProgress.total) * 100)
+    : null;
 
-  const allScores = Object.values(session)
-    .filter((p) => p.completedAt)
-    .map((p) => Math.round((p.score / p.total) * 100));
-  const avg = Math.round(
-    allScores.reduce((a, b) => a + b, 0) / allScores.length,
-  );
+  if (attempts === 0 && examPct === null) return null;
 
   return (
-    <div className="mb-10 flex flex-col gap-4 rounded-3xl border border-soft bg-surface-veil px-6 py-5 shadow-hero backdrop-blur md:flex-row md:items-center md:justify-between">
-      <div className="flex flex-1 items-center gap-6">
+    <div className="flex flex-col gap-4 rounded-3xl border border-soft bg-surface-veil px-6 py-5 shadow-hero backdrop-blur md:flex-row md:items-center md:justify-between">
+      <div className="flex flex-1 flex-wrap items-center gap-6">
         <div>
           <p className="text-xs uppercase tracking-widest text-muted">
-            Progression
+            Entraînement
           </p>
           <p className="text-lg font-black text-foreground">
-            {completed}
-            <span className="text-muted-strong">/{total} QCM</span>
+            {attempts}
+            <span className="text-muted-strong"> réponses</span>
           </p>
         </div>
-        <div className="hidden h-10 w-px bg-border sm:block" />
-        <div>
-          <p className="text-xs uppercase tracking-widest text-muted">
-            Moyenne
-          </p>
-          <p
-            className={`text-lg font-black ${
-              avg >= 75 ? "text-emerald-300" : "text-rose-300"
-            }`}
-          >
-            {avg}%
-          </p>
-        </div>
+        {examPct !== null && (
+          <>
+            <div className="hidden h-10 w-px bg-border sm:block" />
+            <div>
+              <p className="text-xs uppercase tracking-widest text-muted">
+                Dernier examen
+              </p>
+              <p
+                className={`text-lg font-black ${
+                  examPct >= 75 ? "text-emerald-300" : "text-rose-300"
+                }`}
+              >
+                {examPct}%
+              </p>
+            </div>
+          </>
+        )}
       </div>
       <button
         onClick={onClearAll}

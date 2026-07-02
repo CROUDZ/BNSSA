@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ClientProviders from "@/components/ClientProviders";
-import ThemeToggle from "@/components/ThemeToggle";
+import { Header } from "@/components/Header";
 import "@/styles/globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
@@ -88,8 +88,8 @@ export default function RootLayout({
         <SpeedInsights />
         <Analytics />
         <ClientProviders>
-          <ThemeToggle />
           <div className="flex min-h-screen flex-col">
+            <Header />
             <div className="flex-1">{children}</div>
             <footer className="border-t border-soft bg-surface-veil">
               <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-4 py-6 text-xs text-muted opacity-90 sm:text-sm md:flex-row md:items-center md:justify-between md:gap-6 md:px-6">

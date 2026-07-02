@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 const THEME_KEY = "bnssa-theme";
 
@@ -49,25 +50,22 @@ export default function ThemeToggle() {
   if (!mounted || !theme) return null;
 
   const isDark = theme === "dark";
-  const label = isDark ? "Sombre" : "Clair";
+  const label = isDark ? "mode clair" : "mode sombre";
 
   return (
-    <div className="fixed right-4 top-4 z-50">
-      <button
-        type="button"
-        onClick={handleToggle}
-        aria-pressed={isDark}
-        aria-label={`Passer en mode ${isDark ? "clair" : "sombre"}`}
-        title={`Mode ${label}`}
-        className="inline-flex items-center gap-2 rounded-full border border-soft bg-surface-veil px-3 py-1 text-xs font-semibold text-muted transition hover:text-foreground"
-      >
-        <span
-          className={`h-2.5 w-2.5 rounded-full ${
-            isDark ? "bg-emerald-300" : "bg-amber-300"
-          }`}
-        />
-        {label}
-      </button>
-    </div>
+    <button
+      type="button"
+      onClick={handleToggle}
+      aria-pressed={isDark}
+      aria-label={`Passer en mode ${isDark ? "clair" : "sombre"}`}
+      title={`Passer en ${label}`}
+      className="inline-flex h-10 w-10 items-center justify-center rounded-full text-sm text-muted transition hover:bg-surface-veil hover:text-foreground"
+    >
+      {isDark ? (
+        <FaSun aria-hidden="true" className="text-amber-300" />
+      ) : (
+        <FaMoon aria-hidden="true" />
+      )}
+    </button>
   );
 }

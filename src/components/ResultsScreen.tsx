@@ -7,22 +7,14 @@ type Props = {
   quiz: QcmData;
   results: QuestionResult[];
   onRetry: () => void;
-  onRetryWrong: () => void;
   onHome: () => void;
 };
 
-export function ResultsScreen({
-  quiz,
-  results,
-  onRetry,
-  onRetryWrong,
-  onHome,
-}: Props) {
+export function ResultsScreen({ quiz, results, onRetry, onHome }: Props) {
   const score = results.filter((r) => r.correct).length;
   const total = results.length;
   const pct = Math.round((score / total) * 100);
   const passed = pct >= 75;
-  const wrongCount = results.filter((r) => !r.correct).length;
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-background p-6 text-foreground">
@@ -77,19 +69,11 @@ export function ResultsScreen({
 
         {/* Actions */}
         <div className="flex flex-col gap-3">
-          {wrongCount > 0 && (
-            <button
-              onClick={onRetryWrong}
-              className="w-full rounded-2xl bg-foreground px-5 py-4 font-bold text-background transition hover:opacity-90"
-            >
-              Revoir les {wrongCount} erreur{wrongCount > 1 ? "s" : ""}
-            </button>
-          )}
           <button
             onClick={onRetry}
-            className="w-full rounded-2xl border border-soft px-5 py-4 font-semibold text-muted-strong transition hover:border-emerald-300/40 hover:text-foreground"
+            className="w-full rounded-2xl bg-foreground px-5 py-4 font-bold text-background transition hover:opacity-90"
           >
-            Tout recommencer
+            Refaire l'examen
           </button>
           <button
             onClick={onHome}

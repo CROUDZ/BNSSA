@@ -1,7 +1,10 @@
 export type AnswerKey = "A" | "B" | "C" | "D" | "E";
 
 export type Question = {
-  id: number;
+  id: string;
+  sourceQcm: number;
+  sourceQuestionId: number;
+  tags: string[];
   question: string;
   answers: Partial<Record<AnswerKey, string>>;
   correctAnswers: AnswerKey[];
@@ -16,15 +19,17 @@ export type QcmData = {
 
 // Per-question result stored in session
 export type QuestionResult = {
-  questionId: number;
+  questionId: string;
   selectedAnswers: AnswerKey[];
   correct: boolean;
+  answeredAt?: string;
 };
 
 // Per-QCM progress stored in sessionStorage
 export type QcmProgress = {
   qcmId: number;
   results: QuestionResult[];
+  answeredQuestionIds?: string[];
   completedAt: string | null;
   score: number;
   total: number;

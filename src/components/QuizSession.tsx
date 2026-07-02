@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import {
   FaArrowLeft,
@@ -12,26 +12,38 @@ import {
 import { SiAnthropic, SiGooglegemini, SiOpenai } from "react-icons/si";
 import { AnswerButton } from "@/components/AnswerButton";
 import { CopilotIcon, GrokIcon, MistralIcon } from "@/components/BrandIcons";
-import type { QcmData, AnswerKey, QuestionResult } from "@/types/qcm";
+import type {
+  AnswerKey,
+  QcmData,
+  QcmProgress,
+  Question,
+  QuestionResult,
+} from "@/types/qcm";
 
 type Props = {
   quiz: QcmData;
-  questionIds?: number[]; // if set, only show those question ids (retry mode)
-  mode?: "all" | "retry" | "exam";
+  mode: "training" | "exam" | "review";
+  initialProgress?: QcmProgress | null;
   revealAnswers?: boolean;
+  onAnswer?: (result: QuestionResult, answeredQuestionIds: string[]) => void;
   onComplete: (results: QuestionResult[]) => void;
   onBack: () => void;
 };
 
 type AnswerState = "idle" | "selected" | "correct" | "wrong" | "missed";
 
-type PromptPayload = {
-  quizTitle: string;
-  questionText: string;
-  answersText: string;
-  correctAnswers: string[];
-  selectedAnswers: string[];
-};
+function shuffle<T>(items: T[]) {
+  return [...items].sort(() => Math.random() - 0.5);
+}
+
+function buildTrainingOrder(
+  questions: Question[],
+  answeredQuestionIds: string[],
+) {
+  const answered = new Set(answeredQuestionIds);
+  const remaining = questions.filter((question) => !answered.has(question.id));
+  return shuffle(remaining.length ? remaining : questions);
+}
 
 const buildPrompt = ({
   quizTitle,
@@ -39,7 +51,13 @@ const buildPrompt = ({
   answersText,
   correctAnswers,
   selectedAnswers,
-}: PromptPayload) => {
+}: {
+  quizTitle: string;
+  questionText: string;
+  answersText: string;
+  correctAnswers: string[];
+  selectedAnswers: string[];
+}) => {
   const correct = correctAnswers.join(", ");
   const selected = selectedAnswers.length
     ? selectedAnswers.join(", ")
@@ -60,35 +78,58 @@ const buildPrompt = ({
 
 export function QuizSession({
   quiz,
-  questionIds,
-  mode = "all",
+  mode,
+  initialProgress,
   revealAnswers = true,
+  onAnswer,
   onComplete,
   onBack,
 }: Props) {
-  const questions = questionIds
-    ? quiz.questions.filter((q) => questionIds.includes(q.id))
-    : quiz.questions;
-
+  const isTrainingLike = mode === "training" || mode === "review";
+  const initialAnsweredQuestionIds =
+    initialProgress?.answeredQuestionIds?.filter((id) =>
+      quiz.questions.some((question) => question.id === id),
+    ) ?? [];
+  const [answeredQuestionIds, setAnsweredQuestionIds] = useState(
+    initialAnsweredQuestionIds.length >= quiz.questions.length
+      ? []
+      : initialAnsweredQuestionIds,
+  );
+  const [trainingOrder, setTrainingOrder] = useState(() =>
+    buildTrainingOrder(quiz.questions, initialAnsweredQuestionIds),
+  );
+  const questions = mode === "training" ? trainingOrder : quiz.questions;
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<AnswerKey[]>([]);
   const [confirmed, setConfirmed] = useState(false);
-  const [results, setResults] = useState<QuestionResult[]>([]);
-  const [direction, setDirection] = useState(1);
-  const [examAnswers, setExamAnswers] = useState<Record<number, AnswerKey[]>>(
+  const [examAnswers, setExamAnswers] = useState<Record<string, AnswerKey[]>>(
     {},
   );
-  const [copiedPromptId, setCopiedPromptId] = useState<number | null>(null);
-  const [openPromptId, setOpenPromptId] = useState<number | null>(null);
+  const [reviewResults, setReviewResults] = useState<QuestionResult[]>([]);
+  const [copiedPromptId, setCopiedPromptId] = useState<string | null>(null);
+  const [openPromptId, setOpenPromptId] = useState<string | null>(null);
 
-  const question = questions[index];
+  const question = questions[index] ?? questions[0];
   const answerKeys = Object.keys(question.answers) as AnswerKey[];
   const canConfirm = selected.length > 0 && !confirmed;
-  const answeredCount = questions.reduce(
-    (count, q) => count + ((examAnswers[q.id] ?? []).length > 0 ? 1 : 0),
+  const answeredCount = quiz.questions.reduce(
+    (count, item) => count + ((examAnswers[item.id] ?? []).length > 0 ? 1 : 0),
     0,
   );
-  const canExplain = revealAnswers && confirmed && mode !== "exam";
+  const progress =
+    mode === "exam"
+      ? quiz.questions.length
+        ? (answeredCount / quiz.questions.length) * 100
+        : 0
+      : mode === "review"
+        ? quiz.questions.length
+          ? ((index + (confirmed ? 1 : 0)) / quiz.questions.length) * 100
+          : 0
+        : ((answeredQuestionIds.length + (confirmed ? 1 : 0)) /
+            quiz.questions.length) *
+          100;
+
+  const canExplain = revealAnswers && confirmed && isTrainingLike;
   const answersText = answerKeys
     .map((key) => `${key}: ${question.answers[key] ?? ""}`)
     .join("\n");
@@ -102,63 +143,49 @@ export function QuizSession({
       })
     : "";
   const promptQuery = encodeURIComponent(promptText);
-  const providers = [
-    {
-      id: "chatgpt",
-      label: "ChatGPT",
-      href: `https://chatgpt.com/?q=${promptQuery}`,
-      Icon: SiOpenai,
-    },
-    {
-      id: "gemini",
-      label: "Gemini",
-      href: `https://gemini.google.com/app?prompt=${promptQuery}`,
-      Icon: SiGooglegemini,
-    },
-    {
-      id: "claude",
-      label: "Claude",
-      href: `https://claude.ai/new?q=${promptQuery}`,
-      Icon: SiAnthropic,
-    },
-    {
-      id: "grok",
-      label: "Grok",
-      href: `https://grok.com/?q=${promptQuery}`,
-      Icon: GrokIcon,
-    },
-    {
-      id: "mistral",
-      label: "Mistral",
-      href: `https://chat.mistral.ai/chat?prompt=${promptQuery}`,
-      Icon: MistralIcon,
-    },
-    {
-      id: "copilot",
-      label: "Copilot",
-      href: `https://copilot.microsoft.com/?q=${promptQuery}`,
-      Icon: CopilotIcon,
-    },
-  ];
+  const providers = useMemo(
+    () => [
+      {
+        id: "chatgpt",
+        label: "ChatGPT",
+        href: `https://chatgpt.com/?q=${promptQuery}`,
+        Icon: SiOpenai,
+      },
+      {
+        id: "gemini",
+        label: "Gemini",
+        href: `https://gemini.google.com/app?prompt=${promptQuery}`,
+        Icon: SiGooglegemini,
+      },
+      {
+        id: "claude",
+        label: "Claude",
+        href: `https://claude.ai/new?q=${promptQuery}`,
+        Icon: SiAnthropic,
+      },
+      {
+        id: "grok",
+        label: "Grok",
+        href: `https://grok.com/?q=${promptQuery}`,
+        Icon: GrokIcon,
+      },
+      {
+        id: "mistral",
+        label: "Mistral",
+        href: `https://chat.mistral.ai/chat?prompt=${promptQuery}`,
+        Icon: MistralIcon,
+      },
+      {
+        id: "copilot",
+        label: "Copilot",
+        href: `https://copilot.microsoft.com/?q=${promptQuery}`,
+        Icon: CopilotIcon,
+      },
+    ],
+    [promptQuery],
+  );
   const isPromptOpen = openPromptId === question.id;
   const promptDetailsId = `prompt-details-${question.id}`;
-
-  const handleCopyPrompt = async () => {
-    if (!promptText) return;
-    try {
-      await navigator.clipboard.writeText(promptText);
-      setCopiedPromptId(question.id);
-      window.setTimeout(() => {
-        setCopiedPromptId((prev) => (prev === question.id ? null : prev));
-      }, 1600);
-    } catch {
-      setCopiedPromptId(null);
-    }
-  };
-
-  const handleTogglePrompt = () => {
-    setOpenPromptId((prev) => (prev === question.id ? null : question.id));
-  };
 
   const getState = useCallback(
     (key: AnswerKey): AnswerState => {
@@ -175,84 +202,90 @@ export function QuizSession({
       if (isCorrect && !wasSelected) return "missed";
       return "idle";
     },
-    [confirmed, selected, question.correctAnswers, revealAnswers],
+    [confirmed, question.correctAnswers, revealAnswers, selected],
   );
 
   const handleSelect = (key: AnswerKey) => {
     if (confirmed) return;
     setSelected((prev) =>
-      prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key],
+      prev.includes(key) ? prev.filter((item) => item !== key) : [...prev, key],
     );
   };
 
-  const handleExamSelect = (questionId: number, key: AnswerKey) => {
+  const handleExamSelect = (questionId: string, key: AnswerKey) => {
     setExamAnswers((prev) => {
       const current = prev[questionId] ?? [];
       const next = current.includes(key)
-        ? current.filter((k) => k !== key)
+        ? current.filter((item) => item !== key)
         : [...current, key];
       return { ...prev, [questionId]: next };
     });
   };
 
-  const handleConfirm = () => {
-    if (!canConfirm) return;
-    setConfirmed(true);
+  const handleCopyPrompt = async () => {
+    if (!promptText) return;
+    try {
+      await navigator.clipboard.writeText(promptText);
+      setCopiedPromptId(question.id);
+      window.setTimeout(() => {
+        setCopiedPromptId((prev) => (prev === question.id ? null : prev));
+      }, 1600);
+    } catch {
+      setCopiedPromptId(null);
+    }
   };
 
-  const handleNext = () => {
-    // Save result
+  const handleNextTrainingQuestion = () => {
     const correct =
       selected.length === question.correctAnswers.length &&
-      selected.every((k) => question.correctAnswers.includes(k));
+      selected.every((key) => question.correctAnswers.includes(key));
+    const result: QuestionResult = {
+      questionId: question.id,
+      selectedAnswers: selected,
+      correct,
+      answeredAt: new Date().toISOString(),
+    };
+    const currentAnsweredIds = [...answeredQuestionIds, question.id];
+    const uniqueAnsweredIds = [...new Set(currentAnsweredIds)];
+    const nextAnsweredQuestionIds =
+      uniqueAnsweredIds.length >= quiz.questions.length
+        ? []
+        : uniqueAnsweredIds;
 
-    const newResults = [
-      ...results,
-      { questionId: question.id, selectedAnswers: selected, correct },
-    ];
+    onAnswer?.(result, nextAnsweredQuestionIds);
+    setAnsweredQuestionIds(nextAnsweredQuestionIds);
+    setReviewResults((current) => [...current, result]);
+    setSelected([]);
+    setConfirmed(false);
+    setCopiedPromptId(null);
+    setOpenPromptId(null);
+
+    if (mode === "review") {
+      const nextResults = [...reviewResults, result];
+
+      if (index < questions.length - 1) {
+        setIndex((current) => current + 1);
+        return;
+      }
+
+      onComplete(nextResults);
+      return;
+    }
 
     if (index < questions.length - 1) {
-      setDirection(1);
-      setResults(newResults);
-      setIndex((i) => i + 1);
-      setSelected([]);
-      setConfirmed(false);
-    } else {
-      onComplete(newResults);
+      setIndex((current) => current + 1);
+      return;
     }
-    setCopiedPromptId(null);
-    setOpenPromptId(null);
-  };
 
-  const handlePrev = () => {
-    if (index === 0) return;
-    setDirection(-1);
-    setIndex((i) => i - 1);
-    // Restore previous answer if available
-    const prev = results[index - 1];
-    if (prev) {
-      setSelected(prev.selectedAnswers);
-      setConfirmed(true);
-    } else {
-      setSelected([]);
-      setConfirmed(false);
-    }
-    // Pop last result
-    setResults((r) => r.slice(0, -1));
-    setCopiedPromptId(null);
-    setOpenPromptId(null);
+    setTrainingOrder(
+      buildTrainingOrder(quiz.questions, nextAnsweredQuestionIds),
+    );
+    setIndex(0);
   };
-
-  const progress =
-    mode === "exam"
-      ? questions.length
-        ? (answeredCount / questions.length) * 100
-        : 0
-      : ((index + (confirmed ? 1 : 0)) / questions.length) * 100;
 
   if (mode === "exam") {
-    const remainingCount = questions.length - answeredCount;
-    const canSubmit = remainingCount === 0 && questions.length > 0;
+    const remainingCount = quiz.questions.length - answeredCount;
+    const canSubmit = remainingCount === 0 && quiz.questions.length > 0;
 
     return (
       <main className="min-h-screen bg-background p-4 text-foreground md:p-6">
@@ -265,14 +298,15 @@ export function QuizSession({
               <FaArrowLeft className="text-xs" />
               Retour
             </button>
-
             <div className="flex items-center gap-3">
               <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-semibold text-amber-300">
-                Mode examen
+                Examen
               </span>
               <span className="font-mono text-sm text-muted">
                 {answeredCount}
-                <span className="text-muted-strong">/{questions.length}</span>
+                <span className="text-muted-strong">
+                  /{quiz.questions.length}
+                </span>
               </span>
             </div>
           </div>
@@ -286,7 +320,7 @@ export function QuizSession({
           </div>
 
           <div className="flex flex-col gap-6">
-            {questions.map((item) => {
+            {quiz.questions.map((item) => {
               const itemKeys = Object.keys(item.answers) as AnswerKey[];
               const itemSelected = examAnswers[item.id] ?? [];
 
@@ -296,9 +330,8 @@ export function QuizSession({
                   className="rounded-3xl border border-soft bg-surface-strong p-6"
                 >
                   <h2 className="text-xl font-black leading-snug md:text-2xl">
-                    {item.id}) {item.question}
+                    {item.sourceQuestionId}) {item.question}
                   </h2>
-
                   <div className="mt-4 flex flex-col gap-3">
                     {itemKeys.map((key) => (
                       <AnswerButton
@@ -326,17 +359,18 @@ export function QuizSession({
             <button
               onClick={() => {
                 if (!canSubmit) return;
-                const newResults = questions.map((item) => {
+                const newResults = quiz.questions.map((item) => {
                   const selectedAnswers = examAnswers[item.id] ?? [];
                   const correct =
                     selectedAnswers.length === item.correctAnswers.length &&
-                    selectedAnswers.every((k) =>
-                      item.correctAnswers.includes(k),
+                    selectedAnswers.every((key) =>
+                      item.correctAnswers.includes(key),
                     );
                   return {
                     questionId: item.id,
                     selectedAnswers,
                     correct,
+                    answeredAt: new Date().toISOString(),
                   };
                 });
                 onComplete(newResults);
@@ -355,7 +389,6 @@ export function QuizSession({
   return (
     <main className="min-h-screen bg-background p-4 text-foreground md:p-6">
       <div className="mx-auto max-w-2xl">
-        {/* Header */}
         <div className="mb-6 flex items-center justify-between gap-4">
           <button
             onClick={onBack}
@@ -364,53 +397,55 @@ export function QuizSession({
             <FaArrowLeft className="text-xs" />
             Retour
           </button>
-
           <div className="flex items-center gap-3">
-            {mode !== "all" && (
-              <span
-                className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                  mode === "retry"
-                    ? "bg-red-500/20 text-red-400"
-                    : "bg-amber-500/20 text-amber-300"
-                }`}
-              >
-                {mode === "retry" ? "Mode erreurs" : "Mode examen"}
+            <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-300">
+              {mode === "review" ? "Révision" : "Entraînement"}
+            </span>
+            {mode === "review" && (
+              <span className="font-mono text-sm text-muted">
+                {index + 1}
+                <span className="text-muted-strong">
+                  /{quiz.questions.length}
+                </span>
               </span>
             )}
-            <span className="font-mono text-sm text-muted">
-              {index + 1}
-              <span className="text-muted-strong">/{questions.length}</span>
-            </span>
-            <span className="rounded-full bg-surface-veil px-3 py-1 text-xs font-semibold uppercase tracking-widest text-muted">
-              {quiz.title}
-            </span>
           </div>
         </div>
 
-        {/* Progress bar */}
-        <div className="mb-6 h-1.5 overflow-hidden rounded-full bg-surface-strong">
-          <m.div
-            className="h-full rounded-full bg-foreground"
-            animate={{ width: `${progress}%` }}
-            transition={{ ease: "easeOut", duration: 0.3 }}
-          />
-        </div>
+        {mode === "review" && (
+          <div className="mb-6 h-1.5 overflow-hidden rounded-full bg-surface-strong">
+            <m.div
+              className="h-full rounded-full bg-foreground"
+              animate={{ width: `${progress}%` }}
+              transition={{ ease: "easeOut", duration: 0.3 }}
+            />
+          </div>
+        )}
 
-        {/* Question card */}
-        <AnimatePresence mode="wait" custom={direction}>
+        <AnimatePresence mode="wait">
           <m.div
             key={question.id}
-            custom={direction}
-            initial={{ opacity: 0, x: direction * 40 }}
+            initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: direction * -40 }}
+            exit={{ opacity: 0, x: -40 }}
             transition={{ duration: 0.2 }}
           >
-            <h2 className="text-xl font-black leading-snug md:text-2xl mb-5 rounded-3xl border border-soft bg-surface-strong p-6">
-              {question.id}) {question.question}
-            </h2>
+            <div className="mb-5 rounded-3xl border border-soft bg-surface-strong p-6">
+              <div className="mb-3 flex flex-wrap gap-2">
+                {question.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-soft bg-surface-veil px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-widest text-muted"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <h2 className="text-xl font-black leading-snug md:text-2xl">
+                {question.question}
+              </h2>
+            </div>
 
-            {/* Answers */}
             <div className="flex flex-col gap-3">
               {answerKeys.map((key) => (
                 <AnswerButton
@@ -424,76 +459,44 @@ export function QuizSession({
               ))}
             </div>
 
-            {/* Feedback */}
-            {revealAnswers && (
-              <AnimatePresence>
-                {confirmed && (
-                  <m.div
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0 }}
-                    className={`mt-4 rounded-2xl border px-5 py-4 text-sm font-semibold ${
-                      results.length > 0 ||
-                      (selected.every((k) =>
-                        question.correctAnswers.includes(k),
-                      ) &&
-                        selected.length === question.correctAnswers.length)
-                        ? (() => {
-                            const correct =
-                              selected.length ===
-                                question.correctAnswers.length &&
-                              selected.every((k) =>
-                                question.correctAnswers.includes(k),
-                              );
-                            return correct
-                              ? "border-emerald-700 bg-emerald-900/30 text-emerald-300"
-                              : "border-red-700 bg-red-900/30 text-red-300";
-                          })()
-                        : "border-emerald-700 bg-emerald-900/30 text-emerald-300"
-                    }`}
-                  >
-                    {(() => {
-                      const correct =
-                        selected.length === question.correctAnswers.length &&
-                        selected.every((k) =>
-                          question.correctAnswers.includes(k),
-                        );
-                      return correct
-                        ? "✓ Bonne réponse !"
-                        : `✗ Mauvaise réponse. La bonne réponse était : ${question.correctAnswers.join(", ")}`;
-                    })()}
-                  </m.div>
-                )}
-              </AnimatePresence>
-            )}
+            <AnimatePresence>
+              {confirmed && (
+                <m.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className={`mt-4 rounded-2xl border px-5 py-4 text-sm font-semibold ${
+                    selected.length === question.correctAnswers.length &&
+                    selected.every((key) =>
+                      question.correctAnswers.includes(key),
+                    )
+                      ? "border-emerald-700 bg-emerald-900/30 text-emerald-300"
+                      : "border-red-700 bg-red-900/30 text-red-300"
+                  }`}
+                >
+                  {selected.length === question.correctAnswers.length &&
+                  selected.every((key) => question.correctAnswers.includes(key))
+                    ? "✓ Bonne réponse !"
+                    : `✗ Mauvaise réponse. La bonne réponse était : ${question.correctAnswers.join(", ")}`}
+                </m.div>
+              )}
+            </AnimatePresence>
 
-            {/* Navigation */}
-            <div className="mt-6 flex items-center justify-between gap-3">
-              <button
-                onClick={handlePrev}
-                disabled={index === 0}
-                className="flex items-center gap-2 rounded-2xl border border-soft px-5 py-3 text-sm transition hover:bg-surface-veil disabled:cursor-not-allowed disabled:opacity-30"
-              >
-                <FaArrowLeft className="text-xs" />
-                Précédent
-              </button>
-
+            <div className="mt-6 flex items-center gap-3">
               {!confirmed ? (
                 <button
-                  onClick={handleConfirm}
-                  disabled={selected.length === 0}
-                  className="flex-1 rounded-2xl bg-foreground px-5 py-3 text-sm font-bold text-background transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30"
+                  onClick={() => setConfirmed(true)}
+                  disabled={!canConfirm}
+                  className="w-full rounded-2xl bg-foreground px-5 py-3 text-sm font-bold text-background transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30"
                 >
                   Valider
                 </button>
               ) : (
                 <button
-                  onClick={handleNext}
-                  className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-foreground px-5 py-3 text-sm font-bold text-background transition hover:opacity-90"
+                  onClick={handleNextTrainingQuestion}
+                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-foreground px-5 py-3 text-sm font-bold text-background transition hover:opacity-90"
                 >
-                  {index === questions.length - 1
-                    ? "Voir les résultats"
-                    : "Suivant"}
+                  Question suivante
                   <FaArrowRight className="text-xs" />
                 </button>
               )}
@@ -535,7 +538,11 @@ export function QuizSession({
                   ))}
                 </div>
                 <button
-                  onClick={handleTogglePrompt}
+                  onClick={() =>
+                    setOpenPromptId((prev) =>
+                      prev === question.id ? null : question.id,
+                    )
+                  }
                   className="mt-3 flex w-full items-center justify-between rounded-xl border border-soft bg-surface-strong px-3 py-2 text-xs font-semibold text-muted-strong transition hover:border-emerald-300/40 hover:text-foreground"
                   aria-expanded={isPromptOpen}
                   aria-controls={promptDetailsId}
