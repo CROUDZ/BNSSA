@@ -39,7 +39,7 @@ export default function Image() {
             BNSSA QCM
           </div>
           <div style={{ fontSize: 30, opacity: 0.82 }}>
-            Preparation examen · 4 QCM · Mode examen
+            Preparation examen · Entrainement · Mode examen
           </div>
           <div
             style={{

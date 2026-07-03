@@ -1,7 +1,6 @@
 [
   {
     "id": "exam-1",
-    "sourceQcm": 4,
     "sourceQuestionId": 1,
     "tags": ["examen"],
     "question": "L’échelle de Beaufort est :",
@@ -15,7 +14,6 @@
   },
   {
     "id": "exam-2",
-    "sourceQcm": 4,
     "sourceQuestionId": 2,
     "tags": ["examen"],
     "question": "Les baïnes :",
@@ -29,7 +27,6 @@
   },
   {
     "id": "exam-3",
-    "sourceQcm": 4,
     "sourceQuestionId": 3,
     "tags": ["examen"],
     "question": "Il existe, dans la réglementation française, plusieurs catégories de baignades :",
@@ -42,7 +39,6 @@
   },
   {
     "id": "exam-4",
-    "sourceQcm": 4,
     "sourceQuestionId": 4,
     "tags": ["examen"],
     "question": "Pour prendre la météo marine, vous pouvez :",
@@ -55,7 +51,6 @@
   },
   {
     "id": "exam-5",
-    "sourceQcm": 4,
     "sourceQuestionId": 5,
     "tags": ["examen"],
     "question": "Sur chaque lieu de baignade :",
@@ -68,7 +63,6 @@
   },
   {
     "id": "exam-6",
-    "sourceQcm": 4,
     "sourceQuestionId": 6,
     "tags": ["examen"],
     "question": "Lorsque l’on vient du large, les chenaux traversiers :",
@@ -81,7 +75,6 @@
   },
   {
     "id": "exam-7",
-    "sourceQcm": 4,
     "sourceQuestionId": 7,
     "tags": ["examen"],
     "question": "Qui détermine la couleur de la flamme :",
@@ -95,7 +88,6 @@
   },
   {
     "id": "exam-8",
-    "sourceQcm": 4,
     "sourceQuestionId": 8,
     "tags": ["examen"],
     "question": "En piscine les analyses d’eau effectuées par le personnel :",
@@ -108,7 +100,6 @@
   },
   {
     "id": "exam-9",
-    "sourceQcm": 4,
     "sourceQuestionId": 9,
     "tags": ["examen"],
     "question": "Un BNSSA peut enseigner contre rémunération :",
@@ -121,7 +112,6 @@
   },
   {
     "id": "exam-10",
-    "sourceQcm": 4,
     "sourceQuestionId": 10,
     "tags": ["examen"],
     "question": "Les CROSS principaux sont au nombre de :",
@@ -135,7 +125,6 @@
   },
   {
     "id": "exam-11",
-    "sourceQcm": 4,
     "sourceQuestionId": 11,
     "tags": ["examen"],
     "question": "Dans la zone des 300 mètres :",
@@ -148,7 +137,6 @@
   },
   {
     "id": "exam-12",
-    "sourceQcm": 4,
     "sourceQuestionId": 12,
     "tags": ["examen"],
     "question": "Un BNSSA peut surveiller en autonomie :",
@@ -162,7 +150,6 @@
   },
   {
     "id": "exam-13",
-    "sourceQcm": 4,
     "sourceQuestionId": 13,
     "tags": ["examen"],
     "question": "En mer, dans la zone des 300 mètres et en l’absence de balisage ou en présence d’un balisage :",
@@ -176,7 +163,6 @@
   },
   {
     "id": "exam-14",
-    "sourceQcm": 4,
     "sourceQuestionId": 14,
     "tags": ["examen"],
     "question": "Parmi ces obligations, lesquelles sont applicables au BNSSA souhaitant exercer en piscine :",
@@ -190,7 +176,6 @@
   },
   {
     "id": "exam-15",
-    "sourceQcm": 4,
     "sourceQuestionId": 15,
     "tags": ["examen"],
     "question": "La responsabilité civile d’un BNSSA peut être engagée pour une faute dont l’origine est considérée comme :",
@@ -203,7 +188,6 @@
   },
   {
     "id": "exam-16",
-    "sourceQcm": 4,
     "sourceQuestionId": 16,
     "tags": ["examen"],
     "question": "Avec le permis plaisance, option côtière, extension hauturière, on peut naviguer :",
@@ -216,7 +200,6 @@
   },
   {
     "id": "exam-17",
-    "sourceQcm": 4,
     "sourceQuestionId": 17,
     "tags": ["examen"],
     "question": "En combien de catégories sont classifiées les baignades en eau libre:",
@@ -230,7 +213,6 @@
   },
   {
     "id": "exam-18",
-    "sourceQcm": 4,
     "sourceQuestionId": 18,
     "tags": ["examen"],
     "question": "Les limites de zone de bain :",
@@ -244,7 +226,6 @@
   },
   {
     "id": "exam-19",
-    "sourceQcm": 4,
     "sourceQuestionId": 19,
     "tags": ["examen"],
     "question": "Dans un établissement de bain d’accès payant :",
@@ -257,7 +238,6 @@
   },
   {
     "id": "exam-20",
-    "sourceQcm": 4,
     "sourceQuestionId": 20,
     "tags": ["examen"],
     "question": "Où le POSS doit-il obligatoirement être installé :",
@@ -270,7 +250,6 @@
   },
   {
     "id": "exam-21",
-    "sourceQcm": 4,
     "sourceQuestionId": 21,
     "tags": ["examen"],
     "question": "Lorsqu’une baignade en milieu naturel est ouverte, les analyses de l’eau sont faites :",
@@ -283,7 +262,6 @@
   },
   {
     "id": "exam-22",
-    "sourceQcm": 4,
     "sourceQuestionId": 22,
     "tags": ["examen"],
     "question": "Qui recrute le personnel pour armer les postes de secours :",
@@ -296,7 +274,6 @@
   },
   {
     "id": "exam-23",
-    "sourceQcm": 4,
     "sourceQuestionId": 23,
     "tags": ["examen"],
     "question": "Le SAMU :",
@@ -309,7 +286,6 @@
   },
   {
     "id": "exam-24",
-    "sourceQcm": 4,
     "sourceQuestionId": 24,
     "tags": ["examen"],
     "question": "Le CROSS :",
@@ -323,7 +299,6 @@
   },
   {
     "id": "exam-25",
-    "sourceQcm": 4,
     "sourceQuestionId": 25,
     "tags": ["examen"],
     "question": "Le POSS est obligatoire :",
@@ -337,7 +312,6 @@
   },
   {
     "id": "exam-26",
-    "sourceQcm": 4,
     "sourceQuestionId": 26,
     "tags": ["examen"],
     "question": "Lors de sa 1ère prise de service en milieu naturel, un BNSSA :",
@@ -350,7 +324,6 @@
   },
   {
     "id": "exam-27",
-    "sourceQcm": 4,
     "sourceQuestionId": 27,
     "tags": ["examen"],
     "question": "En zone métropolitaine, lorsque l’on vient du large, en entrant dans un port :",
@@ -364,7 +337,6 @@
   },
   {
     "id": "exam-28",
-    "sourceQcm": 4,
     "sourceQuestionId": 28,
     "tags": ["examen"],
     "question": "Les sauveteurs abaissent le drapeau :",
@@ -378,7 +350,6 @@
   },
   {
     "id": "exam-29",
-    "sourceQcm": 4,
     "sourceQuestionId": 29,
     "tags": ["examen"],
     "question": "Des engins de plage :",
@@ -391,7 +362,6 @@
   },
   {
     "id": "exam-30",
-    "sourceQcm": 4,
     "sourceQuestionId": 30,
     "tags": ["examen"],
     "question": "La planche à voile peut se pratiquer :",
@@ -405,7 +375,6 @@
   },
   {
     "id": "exam-31",
-    "sourceQcm": 4,
     "sourceQuestionId": 31,
     "tags": ["examen"],
     "question": "Titulaire du BNSSA, avec un accueil collectif de mineurs, vous pouvez aller vous baigner :",
@@ -418,7 +387,6 @@
   },
   {
     "id": "exam-32",
-    "sourceQcm": 4,
     "sourceQuestionId": 32,
     "tags": ["examen"],
     "question": "La chasse sous-marine :",
@@ -432,7 +400,6 @@
   },
   {
     "id": "exam-33",
-    "sourceQcm": 4,
     "sourceQuestionId": 33,
     "tags": ["examen"],
     "question": "Pour pratiquer le ski nautique :",
@@ -445,7 +412,6 @@
   },
   {
     "id": "exam-34",
-    "sourceQcm": 4,
     "sourceQuestionId": 34,
     "tags": ["examen"],
     "question": "Pour la sécurité des plongeurs, un club ou une structure professionnelle doit :",
@@ -458,7 +424,6 @@
   },
   {
     "id": "exam-35",
-    "sourceQcm": 4,
     "sourceQuestionId": 35,
     "tags": ["examen"],
     "question": "Une piscine privée et réservée aux enfants d’un accueil collectif de mineurs :",
@@ -471,7 +436,6 @@
   },
   {
     "id": "exam-36",
-    "sourceQcm": 4,
     "sourceQuestionId": 36,
     "tags": ["examen"],
     "question": "Dans le cas d’un enfant en arrêt cardiaque, suite à une noyade, il faut :",
@@ -485,7 +449,6 @@
   },
   {
     "id": "exam-37",
-    "sourceQcm": 4,
     "sourceQuestionId": 37,
     "tags": ["examen"],
     "question": "Les stades de la noyade :",
@@ -498,7 +461,6 @@
   },
   {
     "id": "exam-38",
-    "sourceQcm": 4,
     "sourceQuestionId": 38,
     "tags": ["examen"],
     "question": "Evaluation des fonctions vitales :",
@@ -512,7 +474,6 @@
   },
   {
     "id": "exam-39",
-    "sourceQcm": 4,
     "sourceQuestionId": 39,
     "tags": ["examen"],
     "question": "Lors d’une noyade :",
@@ -525,7 +486,6 @@
   },
   {
     "id": "exam-40",
-    "sourceQcm": 4,
     "sourceQuestionId": 40,
     "tags": ["examen"],
     "question": "Soins apportés :",

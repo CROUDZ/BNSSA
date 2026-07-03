@@ -1,6 +1,7 @@
 "use client";
 
 import type { SessionData } from "@/types/qcm";
+import { EXAM_QCM_ID, TRAINING_QCM_ID } from "@/lib/qcmModes";
 
 type Props = {
   session: SessionData;
@@ -8,8 +9,8 @@ type Props = {
 };
 
 export function ProgressBanner({ session, onClearAll }: Props) {
-  const trainingProgress = session[1];
-  const examProgress = session[2];
+  const trainingProgress = session[TRAINING_QCM_ID];
+  const examProgress = session[EXAM_QCM_ID];
   const attempts = trainingProgress?.results.length ?? 0;
   const examPct = examProgress?.completedAt
     ? Math.round((examProgress.score / examProgress.total) * 100)

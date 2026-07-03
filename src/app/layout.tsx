@@ -14,7 +14,7 @@ const siteUrl = (
   .replace(/\/$/, "");
 const defaultTitle = "BNSSA - QCM officiels FNMNS";
 const defaultDescription =
-  "Site cree pour reviser le BNSSA avec la FNMNS : 4 QCM officiels de l'examen, mode examen et suivi de progression.";
+  "Site cree pour reviser le BNSSA avec la FNMNS : questions d'entrainement, mode examen et suivi de progression.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -4,15 +4,13 @@ import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import examQuestions from "@/data/exam.json";
 import trainingQuestions from "@/data/training.json";
+import { EXAM_QCM_ID, QCM_MODE_DB_IDS, TRAINING_QCM_ID } from "@/lib/qcmModes";
 import { prisma } from "@/lib/prisma";
 import type { Question, QuestionResult } from "@/types/qcm";
 
 export const metadata = {
   title: "Mon compte",
 };
-
-const TRAINING_QCM_ID = 1;
-const EXAM_QCM_ID = 2;
 
 const examBank = examQuestions as Question[];
 const trainingBank = trainingQuestions as Question[];
@@ -178,6 +176,13 @@ function getStreak(results: QuestionResult[]) {
   return streak;
 }
 
+function getQuestionModeLabel(question: Question | undefined) {
+  if (!question) return "Question";
+  return question.tags.includes("examen")
+    ? "Question d'examen"
+    : "Question d'entraînement";
+}
+
 export default async function ComptePage() {
   const session = await auth();
   const user = session?.user;
@@ -213,10 +218,10 @@ export default async function ComptePage() {
   }
 
   const trainingProgress = userRecord.qcmProgresses.find(
-    (progress) => progress.qcmId === TRAINING_QCM_ID,
+    (progress) => progress.qcmId === QCM_MODE_DB_IDS[TRAINING_QCM_ID],
   );
   const examProgress = userRecord.qcmProgresses.find(
-    (progress) => progress.qcmId === EXAM_QCM_ID,
+    (progress) => progress.qcmId === QCM_MODE_DB_IDS[EXAM_QCM_ID],
   );
   const trainingResults = toResults(trainingProgress);
   const examResults = toResults(examProgress);
@@ -230,9 +235,6 @@ export default async function ComptePage() {
   const examPct = examProgress?.completedAt
     ? percent(examProgress.score, examProgress.total)
     : null;
-  const sourceStats = buildTopicStats(allResults, (question) => [
-    `QCM ${question.sourceQcm}`,
-  ]);
   const tagStats = buildTopicStats(allResults, (question) => question.tags);
   const questionStats = buildQuestionStats(allResults);
   const weakQuestions = questionStats.slice(0, 6);
@@ -398,7 +400,7 @@ export default async function ComptePage() {
                 value={formatDate(userRecord.sessions[0]?.expires)}
               />
               <InfoRow
-                label="Sauvegardes QCM"
+                label="Sauvegardes"
                 value={`${userRecord.qcmProgresses.length}`}
               />
             </dl>
@@ -408,34 +410,6 @@ export default async function ComptePage() {
         <section className="grid gap-5 lg:grid-cols-2">
           <DailySuccessChart stats={dailyStats} />
           <StatsTable title="Erreurs par thème" stats={tagStats.slice(0, 8)} />
-        </section>
-
-        <section className="grid gap-5 lg:grid-cols-2">
-          <StatsTable title="Erreurs par QCM source" stats={sourceStats} />
-          <div className="rounded-3xl border border-soft bg-surface p-6 shadow-hero">
-            <p className="text-xs uppercase tracking-[0.25em] text-muted">
-              Révision ciblée
-            </p>
-            <p className="mt-3 text-sm text-muted">
-              {failedQuestionIds.length
-                ? `${failedQuestionIds.length} question${failedQuestionIds.length > 1 ? "s" : ""} avec au moins une erreur à retravailler.`
-                : "Aucune erreur enregistrée pour le moment."}
-            </p>
-            {failedQuestionIds.length > 0 && (
-              <Link
-                href={{
-                  pathname: "/",
-                  query: {
-                    review: "failed",
-                    ids: failedQuestionIds.join(","),
-                  },
-                }}
-                className="mt-5 inline-flex w-full items-center justify-center rounded-2xl border border-soft px-5 py-3 text-sm font-semibold text-foreground transition hover:border-emerald-300/40"
-              >
-                Réviser uniquement les réponses échouées
-              </Link>
-            )}
-          </div>
         </section>
 
         <section className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
@@ -452,7 +426,7 @@ export default async function ComptePage() {
                   >
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <span className="text-xs font-bold uppercase tracking-widest text-muted">
-                        QCM {item.question?.sourceQcm} · Question{" "}
+                        {getQuestionModeLabel(item.question)}{" "}
                         {item.question?.sourceQuestionId}
                       </span>
                       <span className="text-xs font-bold text-red-400">
@@ -493,7 +467,7 @@ export default async function ComptePage() {
                     >
                       <div>
                         <p className="font-semibold">
-                          QCM {question?.sourceQcm ?? "?"} · Q
+                          {getQuestionModeLabel(question)}{" "}
                           {question?.sourceQuestionId ?? "?"}
                         </p>
                         <p className="text-xs text-muted">

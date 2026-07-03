@@ -1,7 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import type { SessionData, QcmProgress } from "@/types/qcm";
+import { qcmModeFromDbId } from "@/lib/qcmModes";
+import type { QcmMode, SessionData, QcmProgress } from "@/types/qcm";
 
 const SESSION_KEY = "bnssa_progress";
 
@@ -9,10 +10,31 @@ function loadSession(): SessionData {
   if (typeof window === "undefined") return {};
   try {
     const raw = sessionStorage.getItem(SESSION_KEY);
-    return raw ? JSON.parse(raw) : {};
+    return raw ? normalizeSession(JSON.parse(raw)) : {};
   } catch {
     return {};
   }
+}
+
+function normalizeSession(value: unknown): SessionData {
+  if (!value || typeof value !== "object") return {};
+
+  const data = value as Record<string, QcmProgress>;
+  const next: SessionData = {};
+
+  for (const [key, progress] of Object.entries(data)) {
+    const mode =
+      key === "training" || key === "exam" ? key : qcmModeFromDbId(Number(key));
+
+    if (!mode || !progress) continue;
+
+    next[mode] = {
+      ...progress,
+      qcmId: mode,
+    };
+  }
+
+  return next;
 }
 
 function saveSession(data: SessionData) {
@@ -30,8 +52,9 @@ function mergeSessions(local: SessionData, remote: SessionData): SessionData {
   const merged = { ...local };
 
   for (const [qcmId, remoteProgress] of Object.entries(remote)) {
-    const localProgress = merged[Number(qcmId)];
-    merged[Number(qcmId)] =
+    const mode = qcmId as QcmMode;
+    const localProgress = merged[mode];
+    merged[mode] =
       getProgressTime(remoteProgress) >= getProgressTime(localProgress)
         ? remoteProgress
         : localProgress;
@@ -48,11 +71,11 @@ async function saveRemoteProgress(progress: QcmProgress) {
   }).catch(() => undefined);
 }
 
-async function clearRemoteProgress(qcmId?: number) {
+async function clearRemoteProgress(qcmId?: QcmMode) {
   await fetch("/api/qcm-progress", {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(typeof qcmId === "number" ? { qcmId } : {}),
+    body: JSON.stringify(qcmId ? { qcmId } : {}),
   }).catch(() => undefined);
 }
 
@@ -78,7 +101,7 @@ export function useQcmSession() {
   }, []);
 
   const getProgress = useCallback(
-    (qcmId: number): QcmProgress | null => session[qcmId] ?? null,
+    (qcmId: QcmMode): QcmProgress | null => session[qcmId] ?? null,
     [session],
   );
 
@@ -91,7 +114,7 @@ export function useQcmSession() {
     void saveRemoteProgress(progress);
   }, []);
 
-  const clearProgress = useCallback((qcmId: number) => {
+  const clearProgress = useCallback((qcmId: QcmMode) => {
     setSession((prev) => {
       const next = { ...prev };
       delete next[qcmId];

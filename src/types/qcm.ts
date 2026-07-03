@@ -1,8 +1,9 @@
 export type AnswerKey = "A" | "B" | "C" | "D" | "E";
 
+export type QcmMode = "training" | "exam";
+
 export type Question = {
   id: string;
-  sourceQcm: number;
   sourceQuestionId: number;
   tags: string[];
   question: string;
@@ -11,7 +12,7 @@ export type Question = {
 };
 
 export type QcmData = {
-  id: number;
+  id: QcmMode;
   title: string;
   description: string;
   questions: Question[];
@@ -25,9 +26,9 @@ export type QuestionResult = {
   answeredAt?: string;
 };
 
-// Per-QCM progress stored in sessionStorage
+// Per-mode progress stored in sessionStorage
 export type QcmProgress = {
-  qcmId: number;
+  qcmId: QcmMode;
   results: QuestionResult[];
   answeredQuestionIds?: string[];
   completedAt: string | null;
@@ -35,6 +36,4 @@ export type QcmProgress = {
   total: number;
 };
 
-export type SessionData = {
-  [qcmId: number]: QcmProgress;
-};
+export type SessionData = Partial<Record<QcmMode, QcmProgress>>;

@@ -1,7 +1,6 @@
 [
   {
     "id": "qcm1-1",
-    "sourceQcm": 1,
     "sourceQuestionId": 1,
     "tags": ["entrainement"],
     "question": "Choix du drapeau",
@@ -14,7 +13,6 @@
   },
   {
     "id": "qcm1-2",
-    "sourceQcm": 1,
     "sourceQuestionId": 2,
     "tags": ["entrainement"],
     "question": "Les analyses d'eau",
@@ -27,7 +25,6 @@
   },
   {
     "id": "qcm1-3",
-    "sourceQcm": 1,
     "sourceQuestionId": 3,
     "tags": ["entrainement"],
     "question": "L'affichage météo au poste de secours comprend entre autres",
@@ -40,7 +37,6 @@
   },
   {
     "id": "qcm1-4",
-    "sourceQcm": 1,
     "sourceQuestionId": 4,
     "tags": ["entrainement"],
     "question": "Les chenaux traversiers (lorsque l'on vient du large)",
@@ -54,7 +50,6 @@
   },
   {
     "id": "qcm1-5",
-    "sourceQcm": 1,
     "sourceQuestionId": 5,
     "tags": ["entrainement"],
     "question": "L'Echelle de Beaufort est",
@@ -67,7 +62,6 @@
   },
   {
     "id": "qcm1-6",
-    "sourceQcm": 1,
     "sourceQuestionId": 6,
     "tags": ["entrainement"],
     "question": "L'échelle de Beaufort va pour la force du vent",
@@ -80,7 +74,6 @@
   },
   {
     "id": "qcm1-7",
-    "sourceQcm": 1,
     "sourceQuestionId": 7,
     "tags": ["entrainement"],
     "question": "Une Baïne",
@@ -93,7 +86,6 @@
   },
   {
     "id": "qcm1-8",
-    "sourceQcm": 1,
     "sourceQuestionId": 8,
     "tags": ["entrainement"],
     "question": "Un BNSSA peut surveiller « seul » sans dérogation préfectorale",
@@ -106,7 +98,6 @@
   },
   {
     "id": "qcm1-9",
-    "sourceQcm": 1,
     "sourceQuestionId": 9,
     "tags": ["entrainement"],
     "question": "Un BNSSA pour exercer en milieu naturel",
@@ -119,7 +110,6 @@
   },
   {
     "id": "qcm1-10",
-    "sourceQcm": 1,
     "sourceQuestionId": 10,
     "tags": ["entrainement"],
     "question": "Un BNSSA peut enseigner contre rémunération",
@@ -132,7 +122,6 @@
   },
   {
     "id": "qcm1-11",
-    "sourceQcm": 1,
     "sourceQuestionId": 11,
     "tags": ["entrainement"],
     "question": "A partir de quel âge peut-on conduire un scooter des mers, avec un permis",
@@ -145,7 +134,6 @@
   },
   {
     "id": "qcm1-12",
-    "sourceQcm": 1,
     "sourceQuestionId": 12,
     "tags": ["entrainement"],
     "question": "Un BNSSA peut-il surveiller en autonomie une baignade d'accès payant",
@@ -158,7 +146,6 @@
   },
   {
     "id": "qcm1-13",
-    "sourceQcm": 1,
     "sourceQuestionId": 13,
     "tags": ["entrainement"],
     "question": "Quel sont les permis de navigation pour la plaisance",
@@ -171,7 +158,6 @@
   },
   {
     "id": "qcm1-14",
-    "sourceQcm": 1,
     "sourceQuestionId": 14,
     "tags": ["entrainement"],
     "question": "Durée de la dérogation préfectorale pour un employeur qui ne trouve pas de MNS",
@@ -184,7 +170,6 @@
   },
   {
     "id": "qcm1-15",
-    "sourceQcm": 1,
     "sourceQuestionId": 15,
     "tags": ["entrainement"],
     "question": "Un SB peut travailler",
@@ -197,7 +182,6 @@
   },
   {
     "id": "qcm1-16",
-    "sourceQcm": 1,
     "sourceQuestionId": 16,
     "tags": ["entrainement"],
     "question": "Qui est le premier responsable de la zone des 300 mètres sur le littoral maritime",
@@ -210,7 +194,6 @@
   },
   {
     "id": "qcm1-17",
-    "sourceQcm": 1,
     "sourceQuestionId": 17,
     "tags": ["entrainement"],
     "question": "Combien y a t-il de CROSS en Méditerranée",
@@ -223,7 +206,6 @@
   },
   {
     "id": "qcm1-18",
-    "sourceQcm": 1,
     "sourceQuestionId": 18,
     "tags": ["entrainement"],
     "question": "Qui a autorité pour intervenir en premier dans le cas d'une pollution sur la plage",
@@ -236,7 +218,6 @@
   },
   {
     "id": "qcm1-19",
-    "sourceQcm": 1,
     "sourceQuestionId": 19,
     "tags": ["entrainement"],
     "question": "Qui coordonne les secours dans le cas d'une personne disparue en mer",
@@ -249,7 +230,6 @@
   },
   {
     "id": "qcm1-20",
-    "sourceQcm": 1,
     "sourceQuestionId": 20,
     "tags": ["entrainement"],
     "question": "En milieu naturel, il existe :",
@@ -262,7 +242,6 @@
   },
   {
     "id": "qcm1-21",
-    "sourceQcm": 1,
     "sourceQuestionId": 21,
     "tags": ["entrainement"],
     "question": "Qui rémunère le personnel pour armer les postes de secours d'une commune",
@@ -275,7 +254,6 @@
   },
   {
     "id": "qcm1-22",
-    "sourceQcm": 1,
     "sourceQuestionId": 22,
     "tags": ["entrainement"],
     "question": "Qui à autorité sur les opérations de sauvetage au-delà de 300m du bord de plage",
@@ -288,7 +266,6 @@
   },
   {
     "id": "qcm1-23",
-    "sourceQcm": 1,
     "sourceQuestionId": 23,
     "tags": ["entrainement"],
     "question": "Le SAMU est",
@@ -301,7 +278,6 @@
   },
   {
     "id": "qcm1-24",
-    "sourceQcm": 1,
     "sourceQuestionId": 24,
     "tags": ["entrainement"],
     "question": "Les drapeaux de couleur",
@@ -314,7 +290,6 @@
   },
   {
     "id": "qcm1-25",
-    "sourceQcm": 1,
     "sourceQuestionId": 25,
     "tags": ["entrainement"],
     "question": "Le CODIS gère les interventions de secours pour",
@@ -327,7 +302,6 @@
   },
   {
     "id": "qcm1-26",
-    "sourceQcm": 1,
     "sourceQuestionId": 26,
     "tags": ["entrainement"],
     "question": "Le CROSS veille",
@@ -340,7 +314,6 @@
   },
   {
     "id": "qcm1-27",
-    "sourceQcm": 1,
     "sourceQuestionId": 27,
     "tags": ["entrainement"],
     "question": "Les CROSS sont gérés par",
@@ -353,7 +326,6 @@
   },
   {
     "id": "qcm1-28",
-    "sourceQcm": 1,
     "sourceQuestionId": 28,
     "tags": ["entrainement"],
     "question": "Les bouées de la zone de baignade",
@@ -366,7 +338,6 @@
   },
   {
     "id": "qcm1-29",
-    "sourceQcm": 1,
     "sourceQuestionId": 29,
     "tags": ["entrainement"],
     "question": "Pour fermer un poste de secours, le drapeau est baissé",
@@ -379,7 +350,6 @@
   },
   {
     "id": "qcm1-30",
-    "sourceQcm": 1,
     "sourceQuestionId": 30,
     "tags": ["entrainement"],
     "question": "Le POSS c'est",
@@ -392,7 +362,6 @@
   },
   {
     "id": "qcm1-31",
-    "sourceQcm": 1,
     "sourceQuestionId": 31,
     "tags": ["entrainement"],
     "question": "En qualité de BNSSA avec un Accueil Collectif de Mineurs, vous pouvez",
@@ -405,7 +374,6 @@
   },
   {
     "id": "qcm1-32",
-    "sourceQcm": 1,
     "sourceQuestionId": 32,
     "tags": ["entrainement"],
     "question": "Pour pratiquer la chasse sous-marine ;",
@@ -418,7 +386,6 @@
   },
   {
     "id": "qcm1-33",
-    "sourceQcm": 1,
     "sourceQuestionId": 33,
     "tags": ["entrainement"],
     "question": "Si un groupe de 40 enfants de plus de 6 ans est sur une plage « non surveillée » mais autorisée avec 1 Surveillant de Baignade et 8 animateurs.",
@@ -431,7 +398,6 @@
   },
   {
     "id": "qcm1-34",
-    "sourceQcm": 1,
     "sourceQuestionId": 34,
     "tags": ["entrainement"],
     "question": "La pêche en mer",
@@ -444,7 +410,6 @@
   },
   {
     "id": "qcm1-35",
-    "sourceQcm": 1,
     "sourceQuestionId": 35,
     "tags": ["entrainement"],
     "question": "Quelle est la vitesse maximale autorisée avec un bateau à moteur dans la zone des 300 mètres?",
@@ -457,7 +422,6 @@
   },
   {
     "id": "qcm1-36",
-    "sourceQcm": 1,
     "sourceQuestionId": 36,
     "tags": ["entrainement"],
     "question": "Avec une planche à voile, je peux m'éloigner de la côte",
@@ -470,7 +434,6 @@
   },
   {
     "id": "qcm1-37",
-    "sourceQcm": 1,
     "sourceQuestionId": 37,
     "tags": ["entrainement"],
     "question": "Les surfeurs",
@@ -483,7 +446,6 @@
   },
   {
     "id": "qcm1-38",
-    "sourceQcm": 1,
     "sourceQuestionId": 38,
     "tags": ["entrainement"],
     "question": "La noyade",
@@ -496,7 +458,6 @@
   },
   {
     "id": "qcm1-39",
-    "sourceQcm": 1,
     "sourceQuestionId": 39,
     "tags": ["entrainement"],
     "question": "Lors d'un accident de plongée",
@@ -509,7 +470,6 @@
   },
   {
     "id": "qcm1-40",
-    "sourceQcm": 1,
     "sourceQuestionId": 40,
     "tags": ["entrainement"],
     "question": "Un malaise grave dû à une exposition trop prolongée au soleil",
@@ -522,7 +482,6 @@
   },
   {
     "id": "qcm2-1",
-    "sourceQcm": 2,
     "sourceQuestionId": 1,
     "tags": ["entrainement"],
     "question": "En milieu naturel",
@@ -535,7 +494,6 @@
   },
   {
     "id": "qcm2-2",
-    "sourceQcm": 2,
     "sourceQuestionId": 2,
     "tags": ["entrainement"],
     "question": "Les analyses de qualité de l'eau en piscine",
@@ -548,7 +506,6 @@
   },
   {
     "id": "qcm2-3",
-    "sourceQcm": 2,
     "sourceQuestionId": 3,
     "tags": ["entrainement"],
     "question": "La météo marine annonce Force 10 sur l'Echelle de Beaufort",
@@ -561,7 +518,6 @@
   },
   {
     "id": "qcm2-4",
-    "sourceQcm": 2,
     "sourceQuestionId": 4,
     "tags": ["entrainement"],
     "question": "Une piqûre de vive",
@@ -574,7 +530,6 @@
   },
   {
     "id": "qcm2-5",
-    "sourceQcm": 2,
     "sourceQuestionId": 5,
     "tags": ["entrainement"],
     "question": "l'ARS",
@@ -587,7 +542,6 @@
   },
   {
     "id": "qcm2-6",
-    "sourceQcm": 2,
     "sourceQuestionId": 6,
     "tags": ["entrainement"],
     "question": "Les analyses d'eau en piscine effectuées par le personnel",
@@ -600,7 +554,6 @@
   },
   {
     "id": "qcm2-7",
-    "sourceQcm": 2,
     "sourceQuestionId": 7,
     "tags": ["entrainement"],
     "question": "En mer les \"bâches\"",
@@ -613,7 +566,6 @@
   },
   {
     "id": "qcm2-8",
-    "sourceQcm": 2,
     "sourceQuestionId": 8,
     "tags": ["entrainement"],
     "question": "L'Echelle de Beaufort est",
@@ -626,7 +578,6 @@
   },
   {
     "id": "qcm2-9",
-    "sourceQcm": 2,
     "sourceQuestionId": 9,
     "tags": ["entrainement"],
     "question": "Un BNSSA",
@@ -639,7 +590,6 @@
   },
   {
     "id": "qcm2-10",
-    "sourceQcm": 2,
     "sourceQuestionId": 10,
     "tags": ["entrainement"],
     "question": "Dans un club de natation sportive",
@@ -652,7 +602,6 @@
   },
   {
     "id": "qcm2-11",
-    "sourceQcm": 2,
     "sourceQuestionId": 11,
     "tags": ["entrainement"],
     "question": "Avec le BNSSA je peux",
@@ -665,7 +614,6 @@
   },
   {
     "id": "qcm2-12",
-    "sourceQcm": 2,
     "sourceQuestionId": 12,
     "tags": ["entrainement"],
     "question": "Un Surveillant de Baignade pour accueil collectif de mineurs peut",
@@ -678,7 +626,6 @@
   },
   {
     "id": "qcm2-13",
-    "sourceQcm": 2,
     "sourceQuestionId": 13,
     "tags": ["entrainement"],
     "question": "J'ai 16 ans",
@@ -691,7 +638,6 @@
   },
   {
     "id": "qcm2-14",
-    "sourceQcm": 2,
     "sourceQuestionId": 14,
     "tags": ["entrainement"],
     "question": "Un BNSSA peut-il surveiller en autonomie une baignade d'accès payant ?",
@@ -704,7 +650,6 @@
   },
   {
     "id": "qcm2-15",
-    "sourceQcm": 2,
     "sourceQuestionId": 15,
     "tags": ["entrainement"],
     "question": "Un BNSSA peut encadrer une séance de natation scolaire",
@@ -717,7 +662,6 @@
   },
   {
     "id": "qcm2-16",
-    "sourceQcm": 2,
     "sourceQuestionId": 16,
     "tags": ["entrainement"],
     "question": "L'obtention du BNSSA est un prérequis pour",
@@ -730,7 +674,6 @@
   },
   {
     "id": "qcm2-17",
-    "sourceQcm": 2,
     "sourceQuestionId": 17,
     "tags": ["entrainement"],
     "question": "Les textes réglementaires s'établissent dans cet ordre hiérarchique",
@@ -743,7 +686,6 @@
   },
   {
     "id": "qcm2-18",
-    "sourceQcm": 2,
     "sourceQuestionId": 18,
     "tags": ["entrainement"],
     "question": "Un second jugement est instruit",
@@ -756,7 +698,6 @@
   },
   {
     "id": "qcm2-19",
-    "sourceQcm": 2,
     "sourceQuestionId": 19,
     "tags": ["entrainement"],
     "question": "Suite à une noyade dans un lieu surveillé, la responsabilité civile et pénale d'un BNSSA",
@@ -769,7 +710,6 @@
   },
   {
     "id": "qcm2-20",
-    "sourceQcm": 2,
     "sourceQuestionId": 20,
     "tags": ["entrainement"],
     "question": "Le port d'un tee-shirt de Maitre-Nageur Sauveteur par un BNSSA",
@@ -782,7 +722,6 @@
   },
   {
     "id": "qcm2-21",
-    "sourceQcm": 2,
     "sourceQuestionId": 21,
     "tags": ["entrainement"],
     "question": "La responsabilité des maires",
@@ -795,7 +734,6 @@
   },
   {
     "id": "qcm2-22",
-    "sourceQcm": 2,
     "sourceQuestionId": 22,
     "tags": ["entrainement"],
     "question": "Une assurance en responsabilité civile professionnelle",
@@ -808,7 +746,6 @@
   },
   {
     "id": "qcm2-23",
-    "sourceQcm": 2,
     "sourceQuestionId": 23,
     "tags": ["entrainement"],
     "question": "Un SB",
@@ -821,7 +758,6 @@
   },
   {
     "id": "qcm2-24",
-    "sourceQcm": 2,
     "sourceQuestionId": 24,
     "tags": ["entrainement"],
     "question": "Les sauveteurs abaissent le drapeau",
@@ -834,7 +770,6 @@
   },
   {
     "id": "qcm2-25",
-    "sourceQcm": 2,
     "sourceQuestionId": 25,
     "tags": ["entrainement"],
     "question": "Dans une piscine d'accès payant, ouverte au public",
@@ -847,7 +782,6 @@
   },
   {
     "id": "qcm2-26",
-    "sourceQcm": 2,
     "sourceQuestionId": 26,
     "tags": ["entrainement"],
     "question": "La surveillance est plus efficace lorsque",
@@ -860,7 +794,6 @@
   },
   {
     "id": "qcm2-27",
-    "sourceQcm": 2,
     "sourceQuestionId": 27,
     "tags": ["entrainement"],
     "question": "Dans le code du sport, « surveillance constante et exclusive » sous-entend,",
@@ -873,7 +806,6 @@
   },
   {
     "id": "qcm2-28",
-    "sourceQcm": 2,
     "sourceQuestionId": 28,
     "tags": ["entrainement"],
     "question": "Le règlement intérieur d'une piscine ouverte au public",
@@ -886,7 +818,6 @@
   },
   {
     "id": "qcm2-29",
-    "sourceQcm": 2,
     "sourceQuestionId": 29,
     "tags": ["entrainement"],
     "question": "L'arrêté municipal des plages surveillées",
@@ -899,7 +830,6 @@
   },
   {
     "id": "qcm2-30",
-    "sourceQcm": 2,
     "sourceQuestionId": 30,
     "tags": ["entrainement"],
     "question": "Une piscine privée et réservée aux enfants d'un Accueil Collectif de Mineurs",
@@ -912,7 +842,6 @@
   },
   {
     "id": "qcm2-31",
-    "sourceQcm": 2,
     "sourceQuestionId": 31,
     "tags": ["entrainement"],
     "question": "Une piscine de camping ouverte uniquement à ces résidents nécessite",
@@ -925,7 +854,6 @@
   },
   {
     "id": "qcm2-32",
-    "sourceQcm": 2,
     "sourceQuestionId": 32,
     "tags": ["entrainement"],
     "question": "L'obligation faite aux ERP « établissements recevant du public » de s'équiper d'un Défibrillateur",
@@ -938,7 +866,6 @@
   },
   {
     "id": "qcm2-33",
-    "sourceQcm": 2,
     "sourceQuestionId": 33,
     "tags": ["entrainement"],
     "question": "Pour une association type 1901",
@@ -951,7 +878,6 @@
   },
   {
     "id": "qcm2-34",
-    "sourceQcm": 2,
     "sourceQuestionId": 34,
     "tags": ["entrainement"],
     "question": "La surveillance de la natation scolaire par un BNSSA",
@@ -964,7 +890,6 @@
   },
   {
     "id": "qcm2-35",
-    "sourceQcm": 2,
     "sourceQuestionId": 35,
     "tags": ["entrainement"],
     "question": "L'enseignement de l'aquagym contre rémunération",
@@ -977,7 +902,6 @@
   },
   {
     "id": "qcm2-36",
-    "sourceQcm": 2,
     "sourceQuestionId": 36,
     "tags": ["entrainement"],
     "question": "Les activités de plongée subaquatique",
@@ -990,7 +914,6 @@
   },
   {
     "id": "qcm2-37",
-    "sourceQcm": 2,
     "sourceQuestionId": 37,
     "tags": ["entrainement"],
     "question": "Dans le cas d'un enfant en arrêt cardio-respiratoire, suite à une noyade",
@@ -1003,7 +926,6 @@
   },
   {
     "id": "qcm2-38",
-    "sourceQcm": 2,
     "sourceQuestionId": 38,
     "tags": ["entrainement"],
     "question": "Pour un adulte en détresse vitale, SpO2 < à 94%, il faudra utiliser lors d'une noyade",
@@ -1016,7 +938,6 @@
   },
   {
     "id": "qcm2-39",
-    "sourceQcm": 2,
     "sourceQuestionId": 39,
     "tags": ["entrainement"],
     "question": "Un Stade 3 est caractérisé par une victime",
@@ -1029,7 +950,6 @@
   },
   {
     "id": "qcm2-40",
-    "sourceQcm": 2,
     "sourceQuestionId": 40,
     "tags": ["entrainement"],
     "question": "Le chlore utilisé en piscine pour le traitement de l'eau",
@@ -1042,7 +962,6 @@
   },
   {
     "id": "qcm3-1",
-    "sourceQcm": 3,
     "sourceQuestionId": 1,
     "tags": ["entrainement"],
     "question": "Une noyade",
@@ -1055,7 +974,6 @@
   },
   {
     "id": "qcm3-2",
-    "sourceQcm": 3,
     "sourceQuestionId": 2,
     "tags": ["entrainement"],
     "question": "Vous avez un vent de terre sous petite brise, que faites-vous",
@@ -1068,7 +986,6 @@
   },
   {
     "id": "qcm3-3",
-    "sourceQcm": 3,
     "sourceQuestionId": 3,
     "tags": ["entrainement"],
     "question": "Lorsqu’aucun drapeau n’est pas hissé durant les heures de surveillance",
@@ -1081,7 +998,6 @@
   },
   {
     "id": "qcm3-4",
-    "sourceQcm": 3,
     "sourceQuestionId": 4,
     "tags": ["entrainement"],
     "question": "Les baïnes",
@@ -1094,7 +1010,6 @@
   },
   {
     "id": "qcm3-5",
-    "sourceQcm": 3,
     "sourceQuestionId": 5,
     "tags": ["entrainement"],
     "question": "La signalisation des baignades",
@@ -1107,7 +1022,6 @@
   },
   {
     "id": "qcm3-6",
-    "sourceQcm": 3,
     "sourceQuestionId": 6,
     "tags": ["entrainement"],
     "question": "La signalisation des postes de secours",
@@ -1120,7 +1034,6 @@
   },
   {
     "id": "qcm3-7",
-    "sourceQcm": 3,
     "sourceQuestionId": 7,
     "tags": ["entrainement"],
     "question": "Le code vestimentaire",
@@ -1133,7 +1046,6 @@
   },
   {
     "id": "qcm3-8",
-    "sourceQcm": 3,
     "sourceQuestionId": 8,
     "tags": ["entrainement"],
     "question": "Les analyses d’eau",
@@ -1146,7 +1058,6 @@
   },
   {
     "id": "qcm3-9",
-    "sourceQcm": 3,
     "sourceQuestionId": 9,
     "tags": ["entrainement"],
     "question": "Quels sont le ou les diplômes permettant d’enseigner la natation scolaire ?",
@@ -1159,7 +1070,6 @@
   },
   {
     "id": "qcm3-10",
-    "sourceQcm": 3,
     "sourceQuestionId": 10,
     "tags": ["entrainement"],
     "question": "Qui peut assurer l’enseignement contre rémunération de l’aquagym ?",
@@ -1172,7 +1082,6 @@
   },
   {
     "id": "qcm3-11",
-    "sourceQcm": 3,
     "sourceQuestionId": 11,
     "tags": ["entrainement"],
     "question": "Avec le BNSSA, je…",
@@ -1185,7 +1094,6 @@
   },
   {
     "id": "qcm3-12",
-    "sourceQcm": 3,
     "sourceQuestionId": 12,
     "tags": ["entrainement"],
     "question": "Pour revalider le diplôme de surveillant sauveteur aquatique, je …",
@@ -1198,7 +1106,6 @@
   },
   {
     "id": "qcm3-13",
-    "sourceQcm": 3,
     "sourceQuestionId": 13,
     "tags": ["entrainement"],
     "question": "Un MNS doit être titulaire du diplôme suivant :",
@@ -1211,7 +1118,6 @@
   },
   {
     "id": "qcm3-14",
-    "sourceQcm": 3,
     "sourceQuestionId": 14,
     "tags": ["entrainement"],
     "question": "Un BNSSA est exclusivement chargé",
@@ -1224,7 +1130,6 @@
   },
   {
     "id": "qcm3-15",
-    "sourceQcm": 3,
     "sourceQuestionId": 15,
     "tags": ["entrainement"],
     "question": "La limite de compétence d’un maire du littoral en matière de baignades",
@@ -1237,7 +1142,6 @@
   },
   {
     "id": "qcm3-16",
-    "sourceQcm": 3,
     "sourceQuestionId": 16,
     "tags": ["entrainement"],
     "question": "Le niveau de responsabilité qui peut être engagé au niveau du surveillant est",
@@ -1250,7 +1154,6 @@
   },
   {
     "id": "qcm3-17",
-    "sourceQcm": 3,
     "sourceQuestionId": 17,
     "tags": ["entrainement"],
     "question": "Catégories de navigations",
@@ -1263,7 +1166,6 @@
   },
   {
     "id": "qcm3-18",
-    "sourceQcm": 3,
     "sourceQuestionId": 18,
     "tags": ["entrainement"],
     "question": "Le préfet maritime peut intervenir dans la zone des 300 mètres",
@@ -1276,7 +1178,6 @@
   },
   {
     "id": "qcm3-19",
-    "sourceQcm": 3,
     "sourceQuestionId": 19,
     "tags": ["entrainement"],
     "question": "Dans les S.D.I.S., il y a",
@@ -1289,7 +1190,6 @@
   },
   {
     "id": "qcm3-20",
-    "sourceQcm": 3,
     "sourceQuestionId": 20,
     "tags": ["entrainement"],
     "question": "Les limites de zone de bain",
@@ -1302,7 +1202,6 @@
   },
   {
     "id": "qcm3-21",
-    "sourceQcm": 3,
     "sourceQuestionId": 21,
     "tags": ["entrainement"],
     "question": "Le CROSS est",
@@ -1315,7 +1214,6 @@
   },
   {
     "id": "qcm3-22",
-    "sourceQcm": 3,
     "sourceQuestionId": 22,
     "tags": ["entrainement"],
     "question": "Le SAMU",
@@ -1328,7 +1226,6 @@
   },
   {
     "id": "qcm3-23",
-    "sourceQcm": 3,
     "sourceQuestionId": 23,
     "tags": ["entrainement"],
     "question": "Dans un établissement de bain d’accès payant",
@@ -1341,7 +1238,6 @@
   },
   {
     "id": "qcm3-24",
-    "sourceQcm": 3,
     "sourceQuestionId": 24,
     "tags": ["entrainement"],
     "question": "Où le POSS doit-il être obligatoirement affiché",
@@ -1354,7 +1250,6 @@
   },
   {
     "id": "qcm3-25",
-    "sourceQcm": 3,
     "sourceQuestionId": 25,
     "tags": ["entrainement"],
     "question": "Suite à un appel du CROSS tous les sauveteurs doivent partir en mer porter secours",
@@ -1367,7 +1262,6 @@
   },
   {
     "id": "qcm3-26",
-    "sourceQcm": 3,
     "sourceQuestionId": 26,
     "tags": ["entrainement"],
     "question": "Le drapeau rouge est hissé",
@@ -1380,7 +1274,6 @@
   },
   {
     "id": "qcm3-27",
-    "sourceQcm": 3,
     "sourceQuestionId": 27,
     "tags": ["entrainement"],
     "question": "En cas d’accident grave en piscine",
@@ -1393,7 +1286,6 @@
   },
   {
     "id": "qcm3-28",
-    "sourceQcm": 3,
     "sourceQuestionId": 28,
     "tags": ["entrainement"],
     "question": "Pendant que je suis affecté à la surveillance",
@@ -1406,7 +1298,6 @@
   },
   {
     "id": "qcm3-29",
-    "sourceQcm": 3,
     "sourceQuestionId": 29,
     "tags": ["entrainement"],
     "question": "Qui coordonne les secours en mer",
@@ -1419,7 +1310,6 @@
   },
   {
     "id": "qcm3-30",
-    "sourceQcm": 3,
     "sourceQuestionId": 30,
     "tags": ["entrainement"],
     "question": "En accueil collectif de mineurs, la réglementation exige en milieu naturel",
@@ -1432,7 +1322,6 @@
   },
   {
     "id": "qcm3-31",
-    "sourceQcm": 3,
     "sourceQuestionId": 31,
     "tags": ["entrainement"],
     "question": "La zone de bain en milieu naturel",
@@ -1445,7 +1334,6 @@
   },
   {
     "id": "qcm3-32",
-    "sourceQcm": 3,
     "sourceQuestionId": 32,
     "tags": ["entrainement"],
     "question": "Lors de sa 1ère prise de service en milieu naturel un surveillant sauveteur",
@@ -1458,7 +1346,6 @@
   },
   {
     "id": "qcm3-33",
-    "sourceQcm": 3,
     "sourceQuestionId": 33,
     "tags": ["entrainement"],
     "question": "Le POSS dans un établissement payant",
@@ -1471,7 +1358,6 @@
   },
   {
     "id": "qcm3-34",
-    "sourceQcm": 3,
     "sourceQuestionId": 34,
     "tags": ["entrainement"],
     "question": "En piscine, un accueil collectif de mineurs",
@@ -1484,7 +1370,6 @@
   },
   {
     "id": "qcm3-35",
-    "sourceQcm": 3,
     "sourceQuestionId": 35,
     "tags": ["entrainement"],
     "question": "En piscine les zones sensibles sont",
@@ -1497,7 +1382,6 @@
   },
   {
     "id": "qcm3-36",
-    "sourceQcm": 3,
     "sourceQuestionId": 36,
     "tags": ["entrainement"],
     "question": "Une activité subaquatique peut être signalée par",
@@ -1510,7 +1394,6 @@
   },
   {
     "id": "qcm3-37",
-    "sourceQcm": 3,
     "sourceQuestionId": 37,
     "tags": ["entrainement"],
     "question": "En milieu naturel, la surveillance des plages en métropole",
@@ -1523,7 +1406,6 @@
   },
   {
     "id": "qcm3-38",
-    "sourceQcm": 3,
     "sourceQuestionId": 38,
     "tags": ["entrainement"],
     "question": "Le matériel de réanimation cardio-pulmonaire est composé",
@@ -1536,7 +1418,6 @@
   },
   {
     "id": "qcm3-39",
-    "sourceQcm": 3,
     "sourceQuestionId": 39,
     "tags": ["entrainement"],
     "question": "Soins apportés",
@@ -1550,7 +1431,6 @@
   },
   {
     "id": "qcm3-40",
-    "sourceQcm": 3,
     "sourceQuestionId": 40,
     "tags": ["entrainement"],
     "question": "Evaluation des fonctions vitales",

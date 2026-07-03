@@ -8,10 +8,8 @@ import { ResultsScreen } from "@/components/ResultsScreen";
 import examQuestions from "@/data/exam.json";
 import trainingQuestions from "@/data/training.json";
 import { useQcmSession } from "@/hooks/useQcmSession";
+import { EXAM_QCM_ID, TRAINING_QCM_ID } from "@/lib/qcmModes";
 import type { QcmData, Question, QuestionResult } from "@/types/qcm";
-
-const TRAINING_QCM_ID = 1;
-const EXAM_QCM_ID = 2;
 
 const examBank = examQuestions as Question[];
 const trainingBank = trainingQuestions as Question[];
@@ -32,7 +30,7 @@ const trainingQuiz: QcmData = {
 const examQuiz: QcmData = {
   id: EXAM_QCM_ID,
   title: "QCM d'examen",
-  description: "Le QCM 4 conservé comme véritable examen",
+  description: "Questions d'examen conservées séparément",
   questions: examBank,
 };
 
@@ -263,7 +261,7 @@ export default function HomePage() {
               </h1>
               <p className="mt-4 text-base text-muted md:text-lg">
                 Une banque d'entraînement aléatoire pour réviser à ton rythme.
-                Le QCM 4 reste disponible comme examen officiel.
+                Les questions d'examen restent disponibles dans un mode séparé.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <span className="rounded-full border border-soft bg-surface-veil px-3 py-1 text-xs uppercase tracking-[0.2em] text-muted">
@@ -319,9 +317,6 @@ export default function HomePage() {
               <div className="mb-4 flex items-center justify-between gap-3">
                 <span className="rounded-full border border-amber-300/30 bg-amber-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-amber-200">
                   Examen
-                </span>
-                <span className="font-mono text-xs text-muted-strong">
-                  QCM 4
                 </span>
               </div>
               <h2 className="font-display text-3xl font-black">QCM d'examen</h2>

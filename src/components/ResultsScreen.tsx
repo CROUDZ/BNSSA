@@ -79,7 +79,7 @@ export function ResultsScreen({ quiz, results, onRetry, onHome }: Props) {
             onClick={onHome}
             className="w-full rounded-2xl px-5 py-4 text-sm text-muted transition hover:text-foreground"
           >
-            ← Retour aux QCM
+            ← Retour à l'accueil
           </button>
         </div>
       </m.div>
