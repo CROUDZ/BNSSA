@@ -2,6 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
+import {
+  RecentActivity,
+  type RecentActivityItem,
+} from "@/components/RecentActivity";
+import { DailySuccessChart } from "@/components/DailySuccessChart";
 import examQuestions from "@/data/exam.json";
 import trainingQuestions from "@/data/training.json";
 import { EXAM_QCM_ID, QCM_MODE_DB_IDS, TRAINING_QCM_ID } from "@/lib/qcmModes";
@@ -237,7 +242,6 @@ export default async function ComptePage() {
     : null;
   const tagStats = buildTopicStats(allResults, (question) => question.tags);
   const questionStats = buildQuestionStats(allResults);
-  const weakQuestions = questionStats.slice(0, 6);
   const failedQuestionIds = questionStats.map((item) => item.questionId);
   const dailyStats = buildDailyStats(allResults);
   const recentResults = [...allResults]
@@ -247,6 +251,19 @@ export default async function ComptePage() {
         new Date(a.answeredAt ?? 0).getTime(),
     )
     .slice(0, 8);
+  const recentActivityItems: RecentActivityItem[] = recentResults.map(
+    (result, index) => {
+      const question = questionById.get(result.questionId) ?? null;
+
+      return {
+        id: `${result.questionId}-${result.answeredAt ?? index}`,
+        question,
+        modeLabel: getQuestionModeLabel(question ?? undefined),
+        dateLabel: formatDate(result.answeredAt),
+        result,
+      };
+    },
+  );
   const lastActivity = allResults
     .map((result) => result.answeredAt)
     .filter(Boolean)
@@ -317,181 +334,73 @@ export default async function ComptePage() {
           />
         </section>
 
-        <section className="grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="rounded-3xl border border-soft bg-surface p-6 shadow-hero">
-            <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-[0.25em] text-muted">
-                  Progression
-                </p>
-                <h2 className="mt-2 font-display text-3xl">
-                  Où tu en es vraiment
-                </h2>
-              </div>
-              <p className="text-sm text-muted">
-                Dernière activité: {formatDate(lastActivity)}
-              </p>
-            </div>
-
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              <ProgressMeter
-                label="Entraînement"
-                value={trainingPct}
-                detail={`${trainingResults.length} réponses enregistrées`}
-              />
-              <ProgressMeter
-                label="Dernier examen"
-                value={examPct ?? 0}
-                detail={
-                  examPct === null
-                    ? "Aucun examen validé"
-                    : `${examProgress?.score}/${examProgress?.total} le ${formatDate(examProgress?.completedAt)}`
-                }
-              />
-            </div>
-
-            <div className="mt-6 rounded-2xl border border-soft bg-surface-veil p-4">
+        <section className="flex flex-col gap-6 rounded-3xl border border-soft bg-surface-veil p-6 shadow-hero backdrop-blur md:p-8">
+          <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+            <div>
               <p className="text-xs uppercase tracking-[0.25em] text-muted">
-                Priorité d'apprentissage
+                Progression
               </p>
-              <p className="mt-2 text-lg font-black">
-                {bestWeakTag
-                  ? `Retravailler: ${bestWeakTag.label}`
-                  : "Continue, aucune faiblesse nette pour l'instant"}
-              </p>
-              <p className="mt-1 text-sm text-muted">
-                {bestWeakTag
-                  ? `${bestWeakTag.wrong} erreur${bestWeakTag.wrong > 1 ? "s" : ""} repérée${bestWeakTag.wrong > 1 ? "s" : ""} sur ce thème.`
-                  : "Plus tu réponds, plus les recommandations deviennent précises."}
-              </p>
+              <h2 className="mt-2 font-display text-3xl">
+                Où tu en es vraiment
+              </h2>
             </div>
-
-            {failedQuestionIds.length > 0 && (
-              <Link
-                href={{
-                  pathname: "/",
-                  query: {
-                    review: "failed",
-                    ids: failedQuestionIds.join(","),
-                  },
-                }}
-                className="mt-4 inline-flex w-full items-center justify-center rounded-2xl bg-emerald-300 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-emerald-200"
-              >
-                Relancer un QCM avec mes erreurs
-              </Link>
-            )}
-          </div>
-
-          <div className="rounded-3xl border border-soft bg-surface p-6 shadow-hero">
-            <p className="text-xs uppercase tracking-[0.25em] text-muted">
-              Données compte
+            <p className="text-sm text-muted">
+              Dernière activité: {formatDate(lastActivity)}
             </p>
-            <dl className="mt-4 space-y-3 text-sm">
-              <InfoRow
-                label="Compte créé"
-                value={formatDate(userRecord.createdAt)}
-              />
-              <InfoRow
-                label="Dernière sauvegarde"
-                value={formatDate(userRecord.qcmProgresses[0]?.updatedAt)}
-              />
-              <InfoRow
-                label="Session active jusqu'au"
-                value={formatDate(userRecord.sessions[0]?.expires)}
-              />
-              <InfoRow
-                label="Sauvegardes"
-                value={`${userRecord.qcmProgresses.length}`}
-              />
-            </dl>
           </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <ProgressMeter
+              label="Entraînement"
+              value={trainingPct}
+              detail={`${trainingResults.length} réponses enregistrées`}
+            />
+            <ProgressMeter
+              label="Dernier examen"
+              value={examPct ?? 0}
+              detail={
+                examPct === null
+                  ? "Aucun examen validé"
+                  : `${examProgress?.score}/${examProgress?.total} le ${formatDate(examProgress?.completedAt)}`
+              }
+            />
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-soft bg-surface-veil p-4">
+            <p className="text-xs uppercase tracking-[0.25em] text-muted">
+              Priorité d'apprentissage
+            </p>
+            <p className="mt-2 text-lg font-black">
+              {bestWeakTag
+                ? `Retravailler: ${bestWeakTag.label}`
+                : "Continue, aucune faiblesse nette pour l'instant"}
+            </p>
+            <p className="mt-1 text-sm text-muted">
+              {bestWeakTag
+                ? `${bestWeakTag.wrong} erreur${bestWeakTag.wrong > 1 ? "s" : ""} repérée${bestWeakTag.wrong > 1 ? "s" : ""} sur ce thème.`
+                : "Plus tu réponds, plus les recommandations deviennent précises."}
+            </p>
+          </div>
+
+          {failedQuestionIds.length > 0 && (
+            <Link
+              href={{
+                pathname: "/",
+                query: {
+                  review: "failed",
+                  ids: failedQuestionIds.join(","),
+                },
+              }}
+              className="mt-4 inline-flex w-full items-center justify-center rounded-2xl bg-emerald-300 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-emerald-200"
+            >
+              Relancer un QCM avec mes erreurs
+            </Link>
+          )}
         </section>
 
-        <section className="grid gap-5 lg:grid-cols-2">
-          <DailySuccessChart stats={dailyStats} />
-          <StatsTable title="Erreurs par thème" stats={tagStats.slice(0, 8)} />
-        </section>
+        <DailySuccessChart stats={dailyStats} />
 
-        <section className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
-          <div className="rounded-3xl border border-soft bg-surface p-6 shadow-hero">
-            <p className="text-xs uppercase tracking-[0.25em] text-muted">
-              Questions à cibler
-            </p>
-            <div className="mt-4 flex flex-col gap-3">
-              {weakQuestions.length ? (
-                weakQuestions.map((item) => (
-                  <div
-                    key={item.questionId}
-                    className="rounded-2xl border border-soft bg-surface-veil p-4"
-                  >
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="text-xs font-bold uppercase tracking-widest text-muted">
-                        {getQuestionModeLabel(item.question)}{" "}
-                        {item.question?.sourceQuestionId}
-                      </span>
-                      <span className="text-xs font-bold text-red-400">
-                        {item.wrong} erreur{item.wrong > 1 ? "s" : ""}
-                      </span>
-                    </div>
-                    <p className="mt-2 text-sm font-semibold">
-                      {item.question?.question}
-                    </p>
-                    <p className="mt-2 text-xs text-muted">
-                      Dernier choix: {item.lastSelected.join(", ") || "aucun"} ·
-                      Bonne réponse: {item.question?.correctAnswers.join(", ")}
-                    </p>
-                  </div>
-                ))
-              ) : (
-                <p className="rounded-2xl border border-soft bg-surface-veil p-4 text-sm text-muted">
-                  Pas encore assez d'erreurs pour identifier des questions
-                  prioritaires.
-                </p>
-              )}
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-soft bg-surface p-6 shadow-hero">
-            <p className="text-xs uppercase tracking-[0.25em] text-muted">
-              Activité récente
-            </p>
-            <div className="mt-4 flex flex-col gap-2">
-              {recentResults.length ? (
-                recentResults.map((result) => {
-                  const question = questionById.get(result.questionId);
-
-                  return (
-                    <div
-                      key={`${result.questionId}-${result.answeredAt}`}
-                      className="flex items-center justify-between gap-3 rounded-2xl border border-soft bg-surface-veil px-4 py-3 text-sm"
-                    >
-                      <div>
-                        <p className="font-semibold">
-                          {getQuestionModeLabel(question)}{" "}
-                          {question?.sourceQuestionId ?? "?"}
-                        </p>
-                        <p className="text-xs text-muted">
-                          {formatDate(result.answeredAt)}
-                        </p>
-                      </div>
-                      <span
-                        className={`text-xs font-black ${
-                          result.correct ? "text-emerald-400" : "text-red-400"
-                        }`}
-                      >
-                        {result.correct ? "Correct" : "Erreur"}
-                      </span>
-                    </div>
-                  );
-                })
-              ) : (
-                <p className="rounded-2xl border border-soft bg-surface-veil p-4 text-sm text-muted">
-                  Lance un entraînement pour commencer à construire tes stats.
-                </p>
-              )}
-            </div>
-          </div>
-        </section>
+        <RecentActivity items={recentActivityItems} />
       </div>
     </main>
   );
@@ -537,161 +446,6 @@ function ProgressMeter({
         />
       </div>
       <p className="mt-2 text-xs text-muted">{detail}</p>
-    </div>
-  );
-}
-
-function DailySuccessChart({ stats }: { stats: DailyStat[] }) {
-  const width = 640;
-  const height = 220;
-  const padding = 34;
-  const chartWidth = width - padding * 2;
-  const chartHeight = height - padding * 2;
-  const points = stats.map((stat, index) => {
-    const x =
-      padding +
-      (stats.length <= 1
-        ? chartWidth / 2
-        : (index / (stats.length - 1)) * chartWidth);
-    const y = padding + chartHeight - (stat.pct / 100) * chartHeight;
-
-    return { ...stat, x, y };
-  });
-  const path = points
-    .map((point, index) => `${index === 0 ? "M" : "L"} ${point.x} ${point.y}`)
-    .join(" ");
-
-  return (
-    <div className="rounded-3xl border border-soft bg-surface p-6 shadow-hero">
-      <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-        <div>
-          <p className="text-xs uppercase tracking-[0.25em] text-muted">
-            Réussite quotidienne
-          </p>
-          <h2 className="mt-2 font-display text-2xl">
-            Bonnes réponses par jour
-          </h2>
-        </div>
-        <p className="text-sm text-muted">Survole un point pour le détail</p>
-      </div>
-
-      {points.length ? (
-        <div className="mt-5 overflow-x-auto">
-          <svg
-            viewBox={`0 0 ${width} ${height}`}
-            role="img"
-            aria-label="Pourcentage de bonnes réponses par jour"
-            className="min-w-[520px]"
-          >
-            {[0, 25, 50, 75, 100].map((tick) => {
-              const y = padding + chartHeight - (tick / 100) * chartHeight;
-
-              return (
-                <g key={tick}>
-                  <line
-                    x1={padding}
-                    x2={width - padding}
-                    y1={y}
-                    y2={y}
-                    className="stroke-white/10"
-                  />
-                  <text
-                    x={8}
-                    y={y + 4}
-                    className="fill-current text-[10px] text-muted"
-                  >
-                    {tick}%
-                  </text>
-                </g>
-              );
-            })}
-            {path && (
-              <path
-                d={path}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-emerald-300"
-              />
-            )}
-            {points.map((point) => (
-              <g key={point.date}>
-                <circle
-                  cx={point.x}
-                  cy={point.y}
-                  r="7"
-                  className="fill-emerald-300 stroke-slate-950"
-                  strokeWidth="3"
-                >
-                  <title>
-                    {`${point.label}: ${point.pct}% - ${point.correct} correctes, ${point.wrong} incorrectes`}
-                  </title>
-                </circle>
-                <text
-                  x={point.x}
-                  y={height - 8}
-                  textAnchor="middle"
-                  className="fill-current text-[10px] text-muted"
-                >
-                  {point.label.slice(0, 6)}
-                </text>
-              </g>
-            ))}
-          </svg>
-        </div>
-      ) : (
-        <p className="mt-5 rounded-2xl border border-soft bg-surface-veil p-4 text-sm text-muted">
-          Réponds à quelques questions pour faire apparaître le graphe.
-        </p>
-      )}
-    </div>
-  );
-}
-
-function InfoRow({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex items-center justify-between gap-4 border-b border-soft pb-3 last:border-b-0 last:pb-0">
-      <dt className="text-muted">{label}</dt>
-      <dd className="text-right font-semibold">{value}</dd>
-    </div>
-  );
-}
-
-function StatsTable({ title, stats }: { title: string; stats: TopicStat[] }) {
-  return (
-    <div className="rounded-3xl border border-soft bg-surface p-6 shadow-hero">
-      <p className="text-xs uppercase tracking-[0.25em] text-muted">{title}</p>
-      <div className="mt-4 overflow-hidden rounded-2xl border border-soft">
-        {stats.length ? (
-          stats.map((stat, index) => (
-            <div
-              key={stat.label}
-              className={`grid grid-cols-[1fr_auto] gap-4 px-4 py-3 text-sm ${
-                index < stats.length - 1 ? "border-b border-soft" : ""
-              }`}
-            >
-              <div>
-                <p className="font-bold">{stat.label}</p>
-                <p className="text-xs text-muted">
-                  {stat.correct}/{stat.total} correctes
-                </p>
-              </div>
-              <div className="text-right">
-                <p className="font-mono font-black">{stat.pct}%</p>
-                <p className="text-xs text-red-400">
-                  {stat.wrong} erreur{stat.wrong > 1 ? "s" : ""}
-                </p>
-              </div>
-            </div>
-          ))
-        ) : (
-          <p className="p-4 text-sm text-muted">
-            Aucune donnée pour le moment.
-          </p>
-        )}
-      </div>
     </div>
   );
 }

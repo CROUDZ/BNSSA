@@ -110,6 +110,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-veil: var(--surface-veil);
+  --color-surface-strong: var(--surface-strong);
+  --color-surface-solid: var(--surface-solid);
   --font-sans:
     "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
@@ -220,6 +224,20 @@
 
   .border-soft {
     border-color: var(--border);
+  }
+
+  .divide-recessed > :not(:last-child) {
+    border-bottom-color: rgba(15, 23, 42, 0.12);
+  }
+
+  :root[data-theme="dark"] .divide-recessed > :not(:last-child) {
+    border-bottom-color: rgba(2, 6, 23, 0.48);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) .divide-recessed > :not(:last-child) {
+      border-bottom-color: rgba(2, 6, 23, 0.48);
+    }
   }
 
   .text-muted {

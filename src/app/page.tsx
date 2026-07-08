@@ -225,7 +225,6 @@ export default function HomePage() {
     );
   }
 
-  const trainingAttemptCount = trainingProgress?.results.length ?? 0;
   const examPct = examProgress?.completedAt
     ? Math.round((examProgress.score / examProgress.total) * 100)
     : null;
@@ -293,16 +292,9 @@ export default function HomePage() {
                 Les questions sortent dans un ordre aléatoire, avec correction
                 immédiate après validation.
               </p>
-              {trainingAttemptCount > 0 && (
-                <p className="mt-5 rounded-2xl border border-soft bg-surface-veil px-4 py-3 text-sm text-muted">
-                  {trainingAttemptCount} réponse
-                  {trainingAttemptCount > 1 ? "s" : ""} enregistrée
-                  {trainingAttemptCount > 1 ? "s" : ""}.
-                </p>
-              )}
               <button
                 onClick={startTraining}
-                className="mt-auto w-full rounded-2xl bg-emerald-300 px-4 py-3 text-sm font-bold text-slate-900 transition hover:bg-emerald-200"
+                className="mt-5 w-full rounded-2xl bg-emerald-300 px-4 py-3 text-sm font-bold text-slate-900 transition hover:bg-emerald-200"
               >
                 Lancer l'entraînement
               </button>

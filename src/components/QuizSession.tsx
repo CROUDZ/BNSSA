@@ -8,6 +8,7 @@ import {
   FaChevronDown,
   FaChevronUp,
   FaCopy,
+  FaRedo,
 } from "react-icons/fa";
 import { SiAnthropic, SiGooglegemini, SiOpenai } from "react-icons/si";
 import { AnswerButton } from "@/components/AnswerButton";
@@ -31,6 +32,8 @@ type Props = {
 };
 
 type AnswerState = "idle" | "selected" | "correct" | "wrong" | "missed";
+
+const COUNTER_ROUND_SIZE = 40;
 
 function shuffle<T>(items: T[]) {
   return [...items].sort(() => Math.random() - 0.5);
@@ -106,6 +109,7 @@ export function QuizSession({
     {},
   );
   const [reviewResults, setReviewResults] = useState<QuestionResult[]>([]);
+  const [counterResults, setCounterResults] = useState<QuestionResult[]>([]);
   const [copiedPromptId, setCopiedPromptId] = useState<string | null>(null);
   const [openPromptId, setOpenPromptId] = useState<string | null>(null);
 
@@ -143,6 +147,38 @@ export function QuizSession({
       })
     : "";
   const promptQuery = encodeURIComponent(promptText);
+  const currentAnswerCorrect =
+    selected.length === question.correctAnswers.length &&
+    selected.every((key) => question.correctAnswers.includes(key));
+  const displayedCounterResults = confirmed
+    ? [
+        ...counterResults,
+        {
+          questionId: question.id,
+          selectedAnswers: selected,
+          correct: currentAnswerCorrect,
+        },
+      ]
+    : counterResults;
+  const counterTotal = displayedCounterResults.length;
+  const counterScore = displayedCounterResults.filter(
+    (result) => result.correct,
+  ).length;
+  const counterPct = counterTotal
+    ? Math.round((counterScore / counterTotal) * 100)
+    : 0;
+  const isCounterSuccess = counterTotal > 0 && counterPct >= 75;
+  const isCounterDanger = counterTotal > 0 && counterPct < 75;
+  const counterColor = isCounterSuccess
+    ? "#34d399"
+    : isCounterDanger
+      ? "#f87171"
+      : "var(--muted)";
+  const roundAnswered =
+    counterTotal > 0 && counterTotal % COUNTER_ROUND_SIZE === 0
+      ? COUNTER_ROUND_SIZE
+      : counterTotal % COUNTER_ROUND_SIZE;
+  const roundPct = (roundAnswered / COUNTER_ROUND_SIZE) * 100;
   const providers = useMemo(
     () => [
       {
@@ -235,14 +271,19 @@ export function QuizSession({
     }
   };
 
+  const handleResetCounter = () => {
+    setCounterResults([]);
+    setSelected([]);
+    setConfirmed(false);
+    setCopiedPromptId(null);
+    setOpenPromptId(null);
+  };
+
   const handleNextTrainingQuestion = () => {
-    const correct =
-      selected.length === question.correctAnswers.length &&
-      selected.every((key) => question.correctAnswers.includes(key));
     const result: QuestionResult = {
       questionId: question.id,
       selectedAnswers: selected,
-      correct,
+      correct: currentAnswerCorrect,
       answeredAt: new Date().toISOString(),
     };
     const currentAnsweredIds = [...answeredQuestionIds, question.id];
@@ -255,6 +296,7 @@ export function QuizSession({
     onAnswer?.(result, nextAnsweredQuestionIds);
     setAnsweredQuestionIds(nextAnsweredQuestionIds);
     setReviewResults((current) => [...current, result]);
+    setCounterResults((current) => [...current, result]);
     setSelected([]);
     setConfirmed(false);
     setCopiedPromptId(null);
@@ -422,6 +464,45 @@ export function QuizSession({
           </div>
         )}
 
+        <div
+          className="mb-6 flex justify-center"
+          aria-label="Compteur de réussite"
+        >
+          <div className="relative h-36 w-36 rounded-full p-2">
+            <button
+              onClick={handleResetCounter}
+              className="absolute left-1/2 top-0 z-10 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-soft bg-surface-strong text-foreground shadow-hero transition hover:bg-surface-veil"
+              title="Réinitialiser le compteur"
+              aria-label="Réinitialiser le compteur"
+            >
+              <FaRedo className="text-sm" />
+            </button>
+            <div
+              className="absolute inset-0 rounded-full transition-all duration-500"
+              style={{
+                background: `conic-gradient(${counterColor} ${roundPct * 3.6}deg, rgba(148, 163, 184, 0.2) 0deg)`,
+              }}
+            />
+            <div className="relative flex h-full w-full flex-col items-center justify-center rounded-full border border-soft bg-surface-strong text-center">
+              <m.span
+                key={`${counterScore}-${counterTotal}`}
+                initial={{ scale: 0.9, opacity: 0.5 }}
+                animate={{ scale: 1, opacity: 1 }}
+                className="font-mono text-3xl font-black leading-none"
+                style={{ color: counterColor }}
+              >
+                {counterScore}/{counterTotal}
+              </m.span>
+              <span className="mt-1 text-xs font-bold text-muted">
+                {counterPct}% réussi
+              </span>
+              <span className="mt-1 font-mono text-[0.65rem] font-bold uppercase tracking-widest text-muted">
+                {roundAnswered}/{COUNTER_ROUND_SIZE}
+              </span>
+            </div>
+          </div>
+        </div>
+
         <AnimatePresence mode="wait">
           <m.div
             key={question.id}
@@ -466,16 +547,12 @@ export function QuizSession({
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
                   className={`mt-4 rounded-2xl border px-5 py-4 text-sm font-semibold ${
-                    selected.length === question.correctAnswers.length &&
-                    selected.every((key) =>
-                      question.correctAnswers.includes(key),
-                    )
+                    currentAnswerCorrect
                       ? "border-emerald-700 bg-emerald-900/30 text-emerald-300"
                       : "border-red-700 bg-red-900/30 text-red-300"
                   }`}
                 >
-                  {selected.length === question.correctAnswers.length &&
-                  selected.every((key) => question.correctAnswers.includes(key))
+                  {currentAnswerCorrect
                     ? "✓ Bonne réponse !"
                     : `✗ Mauvaise réponse. La bonne réponse était : ${question.correctAnswers.join(", ")}`}
                 </m.div>
