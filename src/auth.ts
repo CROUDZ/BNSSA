@@ -3,7 +3,18 @@ import Google from "next-auth/providers/google";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "@/lib/prisma";
 
+function requireEnv(name: string) {
+  const value = process.env[name];
+
+  if (!value) {
+    throw new Error(`Missing required environment variable: ${name}`);
+  }
+
+  return value;
+}
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  secret: requireEnv("AUTH_SECRET"),
   trustHost: true,
   adapter: PrismaAdapter(prisma),
   session: {
@@ -11,6 +22,8 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   },
   providers: [
     Google({
+      clientId: requireEnv("AUTH_GOOGLE_ID"),
+      clientSecret: requireEnv("AUTH_GOOGLE_SECRET"),
       allowDangerousEmailAccountLinking: false,
     }),
   ],
