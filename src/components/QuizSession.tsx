@@ -10,7 +10,7 @@ import {
   FaCopy,
   FaRedo,
 } from "react-icons/fa";
-import { SiAnthropic, SiGooglegemini, SiOpenai } from "react-icons/si";
+import { SiAnthropic, SiGooglegemini, SiOpenAI } from "react-icons/si";
 import { AnswerButton } from "@/components/AnswerButton";
 import { CopilotIcon, GrokIcon, MistralIcon } from "@/components/BrandIcons";
 import type {
@@ -185,7 +185,7 @@ export function QuizSession({
         id: "chatgpt",
         label: "ChatGPT",
         href: `https://chatgpt.com/?q=${promptQuery}`,
-        Icon: SiOpenai,
+        Icon: SiOpenAI,
       },
       {
         id: "gemini",
