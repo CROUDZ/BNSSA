@@ -10,9 +10,9 @@ import {
   FaCopy,
   FaRedo,
 } from "react-icons/fa";
-import { SiAnthropic, SiGooglegemini, SiOpenAI } from "react-icons/si";
+import { SiAnthropic, SiGooglegemini } from "react-icons/si";
 import { AnswerButton } from "@/components/AnswerButton";
-import { CopilotIcon, GrokIcon, MistralIcon } from "@/components/BrandIcons";
+import { CopilotIcon, GrokIcon, MistralIcon, OpenAIIcon } from "@/components/BrandIcons";
 import type {
   AnswerKey,
   QcmData,
@@ -185,7 +185,7 @@ export function QuizSession({
         id: "chatgpt",
         label: "ChatGPT",
         href: `https://chatgpt.com/?q=${promptQuery}`,
-        Icon: SiOpenAI,
+        Icon: OpenAIIcon,
       },
       {
         id: "gemini",

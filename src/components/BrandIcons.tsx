@@ -191,3 +191,11 @@ export function CopilotIcon(props: BrandIconProps) {
     </svg>
   );
 }
+
+export function OpenAIIcon(props: BrandIconProps) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-1c0 3.86-3.14 7-7 7H9c-3.86 0-7-3.14-7-7H1a2 2 0 0 1-2-2 2 2 0 0 1 2-2h1a7 7 0 0 1 7-7h1V5.73A2 2 0 1 1 12 2zM9 9a5 5 0 0 0-5 5c0 2.76 2.24 5 5 5h6a5 5 0 0 0 5-5 5 5 0 0 0-5-5H9zm-1 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm8 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/>
+    </svg>
+  );
+}
