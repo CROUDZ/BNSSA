@@ -19,27 +19,27 @@ export function ProgressBanner({ session, onClearAll }: Props) {
   if (attempts === 0 && examPct === null) return null;
 
   return (
-    <div className="flex flex-col gap-4 rounded-3xl border border-soft bg-surface-veil px-6 py-5 shadow-hero backdrop-blur md:flex-row md:items-center md:justify-between">
-      <div className="flex flex-1 flex-wrap items-center gap-6">
-        <div>
-          <p className="text-xs uppercase tracking-widest text-muted">
+    <div className="flex flex-col gap-4 rounded-xl border border-border bg-card p-6 shadow-sm md:flex-row md:items-center md:justify-between">
+      <div className="flex flex-1 flex-wrap items-center gap-8">
+        <div className="space-y-1">
+          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             Entraînement
           </p>
-          <p className="text-lg font-black text-foreground">
+          <p className="text-2xl font-bold tracking-tight text-foreground">
             {attempts}
-            <span className="text-muted-strong"> réponses</span>
+            <span className="ml-1 text-sm font-medium text-muted-foreground">réponses</span>
           </p>
         </div>
         {examPct !== null && (
           <>
             <div className="hidden h-10 w-px bg-border sm:block" />
-            <div>
-              <p className="text-xs uppercase tracking-widest text-muted">
+            <div className="space-y-1">
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                 Dernier examen
               </p>
               <p
-                className={`text-lg font-black ${
-                  examPct >= 75 ? "text-emerald-300" : "text-rose-300"
+                className={`text-2xl font-bold tracking-tight ${
+                  examPct >= 75 ? "text-success" : "text-destructive"
                 }`}
               >
                 {examPct}%
@@ -50,7 +50,7 @@ export function ProgressBanner({ session, onClearAll }: Props) {
       </div>
       <button
         onClick={onClearAll}
-        className="rounded-xl border border-soft bg-surface px-4 py-2 text-xs font-semibold text-muted transition hover:border-emerald-300/40 hover:text-foreground"
+        className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 text-xs font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
       >
         Tout réinitialiser
       </button>

@@ -1,8 +1,9 @@
 [
   {
     "id": "exam-1",
-    "sourceQuestionId": 1,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "L’échelle de Beaufort est :",
     "answers": {
       "A": "Une grille de notation des sauveteurs en fin de saison",
@@ -10,12 +11,16 @@
       "C": "Une échelle de valeur qui informe de la hauteur des marées",
       "D": "Internationale et permet à tous les marins, les gens de la mer de la comprendre"
     },
-    "correctAnswers": ["B", "D"]
+    "correctAnswers": [
+      "B",
+      "D"
+    ]
   },
   {
     "id": "exam-2",
-    "sourceQuestionId": 2,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Les baïnes :",
     "answers": {
       "A": "Doivent être situées dans la zone de baignade pour être sécurisée au maximum",
@@ -23,60 +28,80 @@
       "C": "Peuvent entraîner un nageur au large",
       "D": "Peuvent amener les sauveteurs à rétrécir la zone de baignade"
     },
-    "correctAnswers": ["B", "C", "D"]
+    "correctAnswers": [
+      "B",
+      "C",
+      "D"
+    ]
   },
   {
     "id": "exam-3",
-    "sourceQuestionId": 3,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Il existe, dans la réglementation française, plusieurs catégories de baignades :",
     "answers": {
       "A": "Les baignades interdites / aux risques et périls des usagers / autorisées et aménagées",
       "B": "Les baignades aux risques et périls des usagers / autorisées et surveillées",
       "C": "Les baignades aux risques et périls des usagers / surveillées / non-surveillées"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
     "id": "exam-4",
-    "sourceQuestionId": 4,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Pour prendre la météo marine, vous pouvez :",
     "answers": {
       "A": "Faire le 112",
       "B": "Consulter l’application mobile ou le site internet de Météo France",
       "C": "Ecouter le bulletin météo émis par les CROSS et les Sémaphores sur le canal VHF"
     },
-    "correctAnswers": ["B", "C"]
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
   },
   {
     "id": "exam-5",
-    "sourceQuestionId": 5,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Sur chaque lieu de baignade :",
     "answers": {
       "A": "Il est obligatoire d’avoir un poste de secours",
       "B": "La décision d’implantation d’un poste de secours est en premier ressort de la compétence du maire",
       "C": "En l’absence de surveillance, la baignade est aux risques et périls de l’usager"
     },
-    "correctAnswers": ["B", "C"]
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
   },
   {
     "id": "exam-6",
-    "sourceQuestionId": 6,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Lorsque l’on vient du large, les chenaux traversiers :",
     "answers": {
       "A": "Sont matérialisés par des bouées cylindriques à bâbord",
       "B": "Sont matérialisés par des bouées cylindriques à tribord",
       "C": "Sont matérialisés par des bouées de couleurs jaunes"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
     "id": "exam-7",
-    "sourceQuestionId": 7,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Qui détermine la couleur de la flamme :",
     "answers": {
       "A": "L’échelle de Beaufort",
@@ -84,36 +109,46 @@
       "C": "Le chef de poste",
       "D": "Le responsable local de Météo France"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
     "id": "exam-8",
-    "sourceQuestionId": 8,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "En piscine les analyses d’eau effectuées par le personnel :",
     "answers": {
       "A": "Peuvent entraîner la fermeture d’une baignade si elles sont mauvaises",
       "B": "Sont obligatoires une fois par mois",
       "C": "Doivent être effectuées au moins deux fois par jours"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
     "id": "exam-9",
-    "sourceQuestionId": 9,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Un BNSSA peut enseigner contre rémunération :",
     "answers": {
       "A": "Oui, l’aquagym",
       "B": "Oui, la natation",
       "C": "Non, il ne peut rien enseigner"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
     "id": "exam-10",
-    "sourceQuestionId": 10,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Les CROSS principaux sont au nombre de :",
     "answers": {
       "A": "2 en outre-mer",
@@ -121,24 +156,32 @@
       "C": "5 en métropole",
       "D": "4 en outre-mer"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
     "id": "exam-11",
-    "sourceQuestionId": 11,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Dans la zone des 300 mètres :",
     "answers": {
       "A": "Le préfet maritime est le seul responsable",
       "B": "Le préfet maritime peut intervenir en cas de forte pollution",
       "C": "Le maire exerce la police des baignades"
     },
-    "correctAnswers": ["B", "C"]
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
   },
   {
     "id": "exam-12",
-    "sourceQuestionId": 12,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Un BNSSA peut surveiller en autonomie :",
     "answers": {
       "A": "Un plan d’eau d’accès gratuit",
@@ -146,12 +189,18 @@
       "C": "Un accueil collectif de mineur dans une piscine privée du centre",
       "D": "Une baignade en mer"
     },
-    "correctAnswers": ["A", "B", "C", "D"]
+    "correctAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ]
   },
   {
     "id": "exam-13",
-    "sourceQuestionId": 13,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "En mer, dans la zone des 300 mètres et en l’absence de balisage ou en présence d’un balisage :",
     "answers": {
       "A": "Je peux pratiquer le ski nautique",
@@ -159,12 +208,15 @@
       "C": "Je ne dois pas dépasser les 5 nœuds",
       "D": "Il n’y a pas de limitation"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
     "id": "exam-14",
-    "sourceQuestionId": 14,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Parmi ces obligations, lesquelles sont applicables au BNSSA souhaitant exercer en piscine :",
     "answers": {
       "A": "Être titulaire du certificat de compétence PSE2",
@@ -172,36 +224,47 @@
       "C": "Le certificat de vaccination pour l’hépatite B",
       "D": "La formation continue à jour"
     },
-    "correctAnswers": ["B", "D"]
+    "correctAnswers": [
+      "B",
+      "D"
+    ]
   },
   {
     "id": "exam-15",
-    "sourceQuestionId": 15,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "La responsabilité civile d’un BNSSA peut être engagée pour une faute dont l’origine est considérée comme :",
     "answers": {
       "A": "Uniquement volontaire",
       "B": "Volontaire et non-volontaire",
       "C": "Uniquement involontaire"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
     "id": "exam-16",
-    "sourceQuestionId": 16,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Avec le permis plaisance, option côtière, extension hauturière, on peut naviguer :",
     "answers": {
       "A": "En rivière uniquement",
       "B": "De jour comme de nuit",
       "C": "Au-delà de 6 milles d’un abri"
     },
-    "correctAnswers": ["B", "C"]
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
   },
   {
     "id": "exam-17",
-    "sourceQuestionId": 17,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "En combien de catégories sont classifiées les baignades en eau libre:",
     "answers": {
       "A": "1 catégorie",
@@ -209,12 +272,15 @@
       "C": "3 catégories",
       "D": "4 catégories"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
     "id": "exam-18",
-    "sourceQuestionId": 18,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Les limites de zone de bain :",
     "answers": {
       "A": "Sont délimitées par des drapeaux à bandes horizontales rouge et jaune",
@@ -222,72 +288,95 @@
       "C": "Peuvent bouger au cours de la journée",
       "D": "En mer, vers le large la responsabilité administrative du maire s’arrête à 300 mètres"
     },
-    "correctAnswers": ["A", "C", "D"]
+    "correctAnswers": [
+      "A",
+      "C",
+      "D"
+    ]
   },
   {
     "id": "exam-19",
-    "sourceQuestionId": 19,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Dans un établissement de bain d’accès payant :",
     "answers": {
       "A": "L’affichage des diplômes est obligatoire",
       "B": "L’affichage des diplômes n’est pas obligatoire",
       "C": "Le personnel chargé de la surveillance doit être déclaré auprès de la préfecture"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
     "id": "exam-20",
-    "sourceQuestionId": 20,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Où le POSS doit-il obligatoirement être installé :",
     "answers": {
       "A": "Dans tous les établissements de bain d’accès payant",
       "B": "Dans les lieux de baignade autorisés et d’accès payant",
       "C": "Dans les piscines de copropriétés"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
     "id": "exam-21",
-    "sourceQuestionId": 21,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Lorsqu’une baignade en milieu naturel est ouverte, les analyses de l’eau sont faites :",
     "answers": {
       "A": "A la convenance du maire",
       "B": "Au minimum deux fois par mois",
       "C": "Uniquement en cas d’aspect inquiétant de l’eau"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
     "id": "exam-22",
-    "sourceQuestionId": 22,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Qui recrute le personnel pour armer les postes de secours :",
     "answers": {
       "A": "Le maire",
       "B": "Le préfet du département",
       "C": "Le préfet maritime"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
     "id": "exam-23",
-    "sourceQuestionId": 23,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Le SAMU :",
     "answers": {
       "A": "Est le service d’aide médical urgente",
       "B": "Est le service d’assistance médicalisé d’urgence",
       "C": "Dispose de SMUR"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
     "id": "exam-24",
-    "sourceQuestionId": 24,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Le CROSS :",
     "answers": {
       "A": "Coordonne les opérations de sauvetage",
@@ -295,12 +384,16 @@
       "C": "Recrute les équipes qui assurent la surveillance des plages",
       "D": "Assure la surveillance et la police des pêches maritimes"
     },
-    "correctAnswers": ["A", "D"]
+    "correctAnswers": [
+      "A",
+      "D"
+    ]
   },
   {
     "id": "exam-25",
-    "sourceQuestionId": 25,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Le POSS est obligatoire :",
     "answers": {
       "A": "Dans tous les lieux de baignade",
@@ -308,24 +401,31 @@
       "C": "Uniquement dans les lieux d’accès payant",
       "D": "Uniquement lorsqu’il y a un maître-nageur sauveteur"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
     "id": "exam-26",
-    "sourceQuestionId": 26,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Lors de sa 1ère prise de service en milieu naturel, un BNSSA :",
     "answers": {
       "A": "Doit consulter le plan de secours s’il existe",
       "B": "Doit vérifier l’ensemble du matériel",
       "C": "Doit détenir le permis bateau"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
     "id": "exam-27",
-    "sourceQuestionId": 27,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "En zone métropolitaine, lorsque l’on vient du large, en entrant dans un port :",
     "answers": {
       "A": "On trouve à tribord des balises vertes",
@@ -333,12 +433,16 @@
       "C": "On trouve à tribord des balises rouges",
       "D": "On trouve à bâbord des valises vertes"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
     "id": "exam-28",
-    "sourceQuestionId": 28,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Les sauveteurs abaissent le drapeau :",
     "answers": {
       "A": "Quand une intervention importante le nécessite",
@@ -346,24 +450,33 @@
       "C": "A la fermeture du poste de secours",
       "D": "Quand la mer est dangereuse"
     },
-    "correctAnswers": ["A", "B", "C"]
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ]
   },
   {
     "id": "exam-29",
-    "sourceQuestionId": 29,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Des engins de plage :",
     "answers": {
       "A": "Doivent naviguer dans la zone des 300 mètres",
       "B": "Peuvent naviguer jusqu’à 1 mille d’un abri",
       "C": "Nécessitent une surveillance accrue par vent de terre"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
     "id": "exam-30",
-    "sourceQuestionId": 30,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "La planche à voile peut se pratiquer :",
     "answers": {
       "A": "Dans la bande des 300 mètres",
@@ -371,24 +484,31 @@
       "C": "Uniquement en dehors de la zone de baignade",
       "D": "Uniquement en dehors de la bande des 300 mètres"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
     "id": "exam-31",
-    "sourceQuestionId": 31,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Titulaire du BNSSA, avec un accueil collectif de mineurs, vous pouvez aller vous baigner :",
     "answers": {
       "A": "Où vous voulez",
       "B": "En dehors des zones surveillées, réputées ne pas être dangereuses",
       "C": "Uniquement sur des plages surveillées"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
     "id": "exam-32",
-    "sourceQuestionId": 32,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "La chasse sous-marine :",
     "answers": {
       "A": "Est autorisée avec des bouteilles de plongée",
@@ -396,48 +516,63 @@
       "C": "Il est interdit de détenir un fusil chargé hors de l’eau",
       "D": "Le produit de la pêche peut être vendu"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
     "id": "exam-33",
-    "sourceQuestionId": 33,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Pour pratiquer le ski nautique :",
     "answers": {
       "A": "Le pratiquant doit savoir nager",
       "B": "En rivière, je peux pratiquer n’importe où",
       "C": "En mer, je peux pratiquer au-delà de la zone des 300 mètres"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
     "id": "exam-34",
-    "sourceQuestionId": 34,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Pour la sécurité des plongeurs, un club ou une structure professionnelle doit :",
     "answers": {
       "A": "Disposer de matériel de secours",
       "B": "Avoir un directeur de plongée sur place",
       "C": "Se signaler au moyen du pavillon ARMA"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
     "id": "exam-35",
-    "sourceQuestionId": 35,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Une piscine privée et réservée aux enfants d’un accueil collectif de mineurs :",
     "answers": {
       "A": "Peut être surveillée par un SB",
       "B": "Peut être surveillée par un BNSSA",
       "C": "Doit obligatoirement être surveillée par un MNS"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
     "id": "exam-36",
-    "sourceQuestionId": 36,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Dans le cas d’un enfant en arrêt cardiaque, suite à une noyade, il faut :",
     "answers": {
       "A": "Commencer immédiatement par faire 5 insufflations",
@@ -445,24 +580,31 @@
       "C": "Masser au moins à 100 compressions à la minute",
       "D": "Masser au moins à 150 compressions à la minute"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
     "id": "exam-37",
-    "sourceQuestionId": 37,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Les stades de la noyade :",
     "answers": {
       "A": "Permettent de simplifier la communication entre les sauveteurs",
       "B": "Sont au nombre de cinq tableaux cliniques",
       "C": "Lorsque vous êtes en présence d’un stade 2, la victime est inconsciente"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
     "id": "exam-38",
-    "sourceQuestionId": 38,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Evaluation des fonctions vitales :",
     "answers": {
       "A": "Il existe quatre fonctions vitales",
@@ -470,24 +612,30 @@
       "C": "L’évaluation des fonctions vitales fait partie du bilan",
       "D": "Même en cas d’hémorragie visible, le sauveteur effectue d’abord le contrôle des fonctions vitales"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
     "id": "exam-39",
-    "sourceQuestionId": 39,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Lors d’une noyade :",
     "answers": {
       "A": "Chez l’adulte, il n’est pas nécessaire de réaliser 5 insufflations avant de débuter une réanimation",
       "B": "Chez l’enfant, il est nécessaire de réaliser 5 insufflations avant de débuter une réanimation",
       "C": "On peut effectuer une RCP dans l’eau, lors d’un remorquage"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
     "id": "exam-40",
-    "sourceQuestionId": 40,
-    "tags": ["examen"],
+    "tags": [
+      "examen"
+    ],
     "question": "Soins apportés :",
     "answers": {
       "A": "Une personne suspectée d’avoir inhaler de l’eau doit être hospitalisée",
@@ -495,6 +643,10 @@
       "C": "La défibrillation précoce augmente les chances de survie d’une réanimation cardio-pulmonaire",
       "D": "Certains malaises ou maladies graves peuvent entraîner une détresse vitale dans l’eau"
     },
-    "correctAnswers": ["A", "C", "D"]
+    "correctAnswers": [
+      "A",
+      "C",
+      "D"
+    ]
   }
 ]

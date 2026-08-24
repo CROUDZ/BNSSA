@@ -235,103 +235,102 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main className="relative min-h-screen overflow-hidden bg-hero text-foreground">
-        <div className="pointer-events-none absolute inset-0 bg-grid opacity-[0.08]" />
-        <div className="pointer-events-none absolute -top-40 left-1/2 h-105 w-105 -translate-x-1/2 rounded-full bg-emerald-400/20 blur-[140px]" />
-        <div className="pointer-events-none absolute top-24 right-30 h-90 w-90 rounded-full bg-amber-300/20 blur-[130px]" />
-
-        <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 pb-14 pt-10 md:px-6">
+      <main className="relative min-h-screen bg-background">
+        <div className="mx-auto flex max-w-5xl flex-col gap-12 px-4 pb-14 pt-16 md:px-6 md:pt-24">
           <m.div
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="space-y-8"
+            transition={{ duration: 0.4 }}
+            className="flex flex-col items-center text-center space-y-6"
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-soft bg-surface-veil px-3 py-1 text-[0.65rem] uppercase tracking-[0.35em] text-muted">
-              <span className="h-2 w-2 rounded-full bg-emerald-300 animate-pulse" />
+            <div className="inline-flex items-center rounded-full border border-border bg-secondary/50 px-3 py-1 text-xs font-medium text-secondary-foreground">
               BNSSA · Entraînement et examen
             </div>
 
-            <div className="max-w-3xl">
-              <h1 className="font-display text-4xl leading-none md:text-6xl">
+            <div className="max-w-3xl space-y-4">
+              <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
                 QCM BNSSA
                 <br />
-                <span className="text-accent">entraînement infini</span>
+                <span className="text-muted-foreground">entraînement infini</span>
               </h1>
-              <p className="mt-4 text-base text-muted md:text-lg">
+              <p className="mx-auto max-w-xl text-base text-muted-foreground md:text-lg">
                 Une banque d'entraînement aléatoire pour réviser à ton rythme.
                 Les questions d'examen restent disponibles dans un mode séparé.
               </p>
-              <div className="mt-5 flex flex-wrap gap-3">
-                <span className="rounded-full border border-soft bg-surface-veil px-3 py-1 text-xs uppercase tracking-[0.2em] text-muted">
-                  {trainingQuiz.questions.length} questions en entraînement
-                </span>
-                <span className="rounded-full border border-soft bg-surface-veil px-3 py-1 text-xs uppercase tracking-[0.2em] text-muted">
-                  {examQuiz.questions.length} questions examen
-                </span>
-                <span className="rounded-full border border-soft bg-surface-veil px-3 py-1 text-xs uppercase tracking-[0.2em] text-muted">
-                  Sauvegarde si connecté
-                </span>
-              </div>
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-3 pt-4">
+              <span className="inline-flex items-center rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">
+                {trainingQuiz.questions.length} questions en entraînement
+              </span>
+              <span className="inline-flex items-center rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">
+                {examQuiz.questions.length} questions examen
+              </span>
             </div>
           </m.div>
 
-          <section className="grid gap-5 lg:grid-cols-2">
+          <section className="mx-auto grid w-full max-w-4xl gap-6 lg:grid-cols-2">
             <m.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex flex-col rounded-3xl border border-soft bg-surface p-6 shadow-hero"
+              transition={{ delay: 0.1, duration: 0.4 }}
+              className="flex flex-col rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md"
             >
-              <div className="mb-4 flex items-center justify-between gap-3">
-                <span className="rounded-full border border-soft bg-surface-veil px-3 py-1 text-xs font-semibold uppercase tracking-widest text-muted">
+              <div className="mb-4">
+                <span className="inline-flex items-center rounded-md bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
                   Mode principal
                 </span>
               </div>
-              <h2 className="font-display text-3xl font-black">Entraînement</h2>
-              <p className="mt-2 text-sm text-muted">
+              <h2 className="text-2xl font-bold tracking-tight">Entraînement</h2>
+              <p className="mt-2 text-sm text-muted-foreground">
                 Les questions sortent dans un ordre aléatoire, avec correction
                 immédiate après validation.
               </p>
               <button
                 onClick={startTraining}
-                className="mt-5 w-full rounded-2xl bg-emerald-300 px-4 py-3 text-sm font-bold text-slate-900 transition hover:bg-emerald-200"
+                className="mt-6 inline-flex h-10 w-full items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
               >
                 Lancer l'entraînement
               </button>
             </m.div>
 
             <m.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.07 }}
-              className="flex flex-col rounded-3xl border border-soft bg-surface p-6 shadow-hero"
+              transition={{ delay: 0.2, duration: 0.4 }}
+              className="flex flex-col rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md"
             >
-              <div className="mb-4 flex items-center justify-between gap-3">
-                <span className="rounded-full border border-amber-300/30 bg-amber-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-amber-200">
+              <div className="mb-4">
+                <span className="inline-flex items-center rounded-md border border-transparent bg-secondary px-2.5 py-1 text-xs font-semibold text-secondary-foreground">
                   Examen
                 </span>
               </div>
-              <h2 className="font-display text-3xl font-black">QCM d'examen</h2>
-              <p className="mt-2 text-sm text-muted">
+              <h2 className="text-2xl font-bold tracking-tight">QCM d'examen</h2>
+              <p className="mt-2 text-sm text-muted-foreground">
                 Le vrai QCM d'examen est conservé séparément, sans correction
                 immédiate, avec résultat final.
               </p>
-              {examPct !== null && (
-                <p className="mt-5 rounded-2xl border border-soft bg-surface-veil px-4 py-3 text-sm text-muted">
-                  Dernier score:{" "}
-                  <span className="font-bold text-foreground">{examPct}%</span>
-                </p>
-              )}
-              <button
-                onClick={startExam}
-                className="mt-auto w-full rounded-2xl border border-soft px-4 py-3 text-sm font-semibold text-foreground transition hover:border-emerald-300/40"
-              >
-                Lancer l'examen
-              </button>
+              
+              <div className="mt-auto pt-6 flex flex-col gap-3">
+                {examPct !== null && (
+                  <div className="flex items-center justify-between rounded-md border border-border bg-secondary/50 px-3 py-2 text-sm">
+                    <span className="text-muted-foreground">Dernier score</span>
+                    <span className="font-semibold text-foreground">{examPct}%</span>
+                  </div>
+                )}
+                <button
+                  onClick={startExam}
+                  className="inline-flex h-10 w-full items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                >
+                  Lancer l'examen
+                </button>
+              </div>
             </m.div>
           </section>
 
-          <ProgressBanner session={session} onClearAll={clearAll} />
+          <div className="mx-auto w-full max-w-4xl pt-8">
+            <ProgressBanner session={session} onClearAll={clearAll} />
+          </div>
         </div>
       </main>
     </>

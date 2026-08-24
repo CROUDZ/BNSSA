@@ -26,7 +26,7 @@ const columns: { key: SortKey; label: string; className?: string }[] = [
 ];
 
 function getQuestionNumber(item: RecentActivityItem) {
-  return item.question?.sourceQuestionId ?? Number.MAX_SAFE_INTEGER;
+  return parseInt(item.question?.id ?? "0", 10) || Number.MAX_SAFE_INTEGER;
 }
 
 function getModeTag(item: RecentActivityItem) {
@@ -232,7 +232,7 @@ export function RecentActivity({ items }: Props) {
                 const content = (
                   <>
                     <span className="font-mono text-sm font-black">
-                      {item.question?.sourceQuestionId ?? "?"}
+                      {item.question?.id ?? "?"}
                     </span>
                     <span className="text-sm font-semibold">
                       {getModeTag(item)}
@@ -299,7 +299,7 @@ export function RecentActivity({ items }: Props) {
               <div>
                 <p className="text-xs uppercase tracking-[0.25em] text-muted">
                   {getModeTag(activeItem)} · Question n°
-                  {question?.sourceQuestionId ?? "?"} ·{" "}
+                  {question?.id ?? "?"} ·{" "}
                   {formatRecentDate(activeItem.result.answeredAt)}
                 </p>
                 <h2

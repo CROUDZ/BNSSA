@@ -9,7 +9,9 @@
     "clean": "rm -rf dist .next node_modules",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "reorder-ids": "node scripts/reorder-ids.js",
+    "deduplicate": "node scripts/deduplicate.js"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.2",

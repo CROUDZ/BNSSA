@@ -330,38 +330,38 @@ export function QuizSession({
     const canSubmit = remainingCount === 0 && quiz.questions.length > 0;
 
     return (
-      <main className="min-h-screen bg-background p-4 text-foreground md:p-6">
-        <div className="mx-auto max-w-4xl">
-          <div className="mb-6 flex items-center justify-between gap-4">
+      <main className="min-h-screen bg-background p-4 text-foreground md:p-6 md:pt-12">
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-8 flex items-center justify-between gap-4">
             <button
               onClick={onBack}
-              className="flex items-center gap-2 rounded-2xl border border-soft bg-surface-strong px-4 py-2.5 text-sm font-medium transition hover:bg-surface-veil"
+              className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-input bg-background px-4 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
             >
-              <FaArrowLeft className="text-xs" />
+              <FaArrowLeft className="h-3 w-3" />
               Retour
             </button>
             <div className="flex items-center gap-3">
-              <span className="rounded-full bg-amber-500/20 px-3 py-1 text-xs font-semibold text-amber-300">
+              <span className="inline-flex items-center rounded-md border border-border bg-secondary px-2.5 py-0.5 text-xs font-semibold text-secondary-foreground">
                 Examen
               </span>
-              <span className="font-mono text-sm text-muted">
+              <span className="font-mono text-sm font-medium text-foreground">
                 {answeredCount}
-                <span className="text-muted-strong">
+                <span className="text-muted-foreground">
                   /{quiz.questions.length}
                 </span>
               </span>
             </div>
           </div>
 
-          <div className="mb-8 h-1.5 overflow-hidden rounded-full bg-surface-strong">
+          <div className="mb-10 h-1.5 overflow-hidden rounded-full bg-secondary">
             <m.div
-              className="h-full rounded-full bg-foreground"
+              className="h-full rounded-full bg-primary"
               animate={{ width: `${progress}%` }}
               transition={{ ease: "easeOut", duration: 0.3 }}
             />
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-8">
             {quiz.questions.map((item) => {
               const itemKeys = Object.keys(item.answers) as AnswerKey[];
               const itemSelected = examAnswers[item.id] ?? [];
@@ -369,12 +369,13 @@ export function QuizSession({
               return (
                 <div
                   key={item.id}
-                  className="rounded-3xl border border-soft bg-surface-strong p-6"
+                  className="rounded-xl border border-border bg-card p-6 shadow-sm md:p-8"
                 >
-                  <h2 className="text-xl font-black leading-snug md:text-2xl">
-                    {item.sourceQuestionId}) {item.question}
+                  <h2 className="text-xl font-bold tracking-tight md:text-2xl">
+                    <span className="text-muted-foreground mr-2">{item.id}.</span> 
+                    {item.question}
                   </h2>
-                  <div className="mt-4 flex flex-col gap-3">
+                  <div className="mt-6 flex flex-col gap-3">
                     {itemKeys.map((key) => (
                       <AnswerButton
                         key={key}
@@ -391,9 +392,9 @@ export function QuizSession({
             })}
           </div>
 
-          <div className="mt-8 flex flex-col gap-3">
+          <div className="mt-12 flex flex-col gap-4">
             {remainingCount > 0 && (
-              <p className="text-center text-sm text-muted">
+              <p className="text-center text-sm font-medium text-muted-foreground">
                 {remainingCount} question{remainingCount > 1 ? "s" : ""}{" "}
                 restante{remainingCount > 1 ? "s" : ""} avant de valider.
               </p>
@@ -418,7 +419,7 @@ export function QuizSession({
                 onComplete(newResults);
               }}
               disabled={!canSubmit}
-              className="w-full rounded-2xl bg-foreground px-5 py-4 text-sm font-bold text-background transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
+              className="inline-flex h-12 w-full items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 disabled:pointer-events-none disabled:opacity-50"
             >
               Valider l'examen
             </button>
@@ -429,24 +430,24 @@ export function QuizSession({
   }
 
   return (
-    <main className="min-h-screen bg-background p-4 text-foreground md:p-6">
+    <main className="min-h-screen bg-background p-4 text-foreground md:p-6 md:pt-12">
       <div className="mx-auto max-w-2xl">
-        <div className="mb-6 flex items-center justify-between gap-4">
+        <div className="mb-8 flex items-center justify-between gap-4">
           <button
             onClick={onBack}
-            className="flex items-center gap-2 rounded-2xl border border-soft bg-surface-strong px-4 py-2.5 text-sm font-medium transition hover:bg-surface-veil"
+            className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-input bg-background px-4 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
           >
-            <FaArrowLeft className="text-xs" />
+            <FaArrowLeft className="h-3 w-3" />
             Retour
           </button>
           <div className="flex items-center gap-3">
-            <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-300">
+            <span className="inline-flex items-center rounded-md border border-border bg-secondary px-2.5 py-0.5 text-xs font-semibold text-secondary-foreground">
               {mode === "review" ? "Révision" : "Entraînement"}
             </span>
             {mode === "review" && (
-              <span className="font-mono text-sm text-muted">
+              <span className="font-mono text-sm font-medium text-foreground">
                 {index + 1}
-                <span className="text-muted-strong">
+                <span className="text-muted-foreground">
                   /{quiz.questions.length}
                 </span>
               </span>
@@ -455,9 +456,9 @@ export function QuizSession({
         </div>
 
         {mode === "review" && (
-          <div className="mb-6 h-1.5 overflow-hidden rounded-full bg-surface-strong">
+          <div className="mb-8 h-1.5 overflow-hidden rounded-full bg-secondary">
             <m.div
-              className="h-full rounded-full bg-foreground"
+              className="h-full rounded-full bg-primary"
               animate={{ width: `${progress}%` }}
               transition={{ ease: "easeOut", duration: 0.3 }}
             />
@@ -465,39 +466,36 @@ export function QuizSession({
         )}
 
         <div
-          className="mb-6 flex justify-center"
+          className="mb-8 flex justify-center"
           aria-label="Compteur de réussite"
         >
-          <div className="relative h-36 w-36 rounded-full p-2">
+          <div className="relative h-32 w-32 rounded-full p-1.5">
             <button
               onClick={handleResetCounter}
-              className="absolute left-1/2 top-0 z-10 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-soft bg-surface-strong text-foreground shadow-hero transition hover:bg-surface-veil"
+              className="absolute left-1/2 top-0 z-10 flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background text-muted-foreground shadow-sm transition hover:bg-accent hover:text-accent-foreground"
               title="Réinitialiser le compteur"
               aria-label="Réinitialiser le compteur"
             >
-              <FaRedo className="text-sm" />
+              <FaRedo className="h-3 w-3" />
             </button>
             <div
               className="absolute inset-0 rounded-full transition-all duration-500"
               style={{
-                background: `conic-gradient(${counterColor} ${roundPct * 3.6}deg, rgba(148, 163, 184, 0.2) 0deg)`,
+                background: `conic-gradient(${counterColor} ${roundPct * 3.6}deg, var(--secondary) 0deg)`,
               }}
             />
-            <div className="relative flex h-full w-full flex-col items-center justify-center rounded-full border border-soft bg-surface-strong text-center">
+            <div className="relative flex h-full w-full flex-col items-center justify-center rounded-full border border-border bg-card text-center shadow-sm">
               <m.span
                 key={`${counterScore}-${counterTotal}`}
                 initial={{ scale: 0.9, opacity: 0.5 }}
                 animate={{ scale: 1, opacity: 1 }}
-                className="font-mono text-3xl font-black leading-none"
+                className="text-2xl font-black tracking-tight"
                 style={{ color: counterColor }}
               >
                 {counterScore}/{counterTotal}
               </m.span>
-              <span className="mt-1 text-xs font-bold text-muted">
+              <span className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                 {counterPct}% réussi
-              </span>
-              <span className="mt-1 font-mono text-[0.65rem] font-bold uppercase tracking-widest text-muted">
-                {roundAnswered}/{COUNTER_ROUND_SIZE}
               </span>
             </div>
           </div>
@@ -506,23 +504,23 @@ export function QuizSession({
         <AnimatePresence mode="wait">
           <m.div
             key={question.id}
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -40 }}
+            exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.2 }}
           >
-            <div className="mb-5 rounded-3xl border border-soft bg-surface-strong p-6">
-              <div className="mb-3 flex flex-wrap gap-2">
+            <div className="mb-6 rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
+              <div className="mb-4 flex flex-wrap gap-2">
                 {question.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-soft bg-surface-veil px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-widest text-muted"
+                    className="inline-flex items-center rounded-md border border-border bg-secondary px-2 py-0.5 text-xs font-medium text-secondary-foreground"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-              <h2 className="text-xl font-black leading-snug md:text-2xl">
+              <h2 className="text-xl font-bold tracking-tight md:text-2xl">
                 {question.question}
               </h2>
             </div>
@@ -546,10 +544,10 @@ export function QuizSession({
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
-                  className={`mt-4 rounded-2xl border px-5 py-4 text-sm font-semibold ${
+                  className={`mt-4 rounded-lg border p-4 text-sm font-medium ${
                     currentAnswerCorrect
-                      ? "border-emerald-700 bg-emerald-900/30 text-emerald-300"
-                      : "border-red-700 bg-red-900/30 text-red-300"
+                      ? "border-success/50 bg-success/10 text-success"
+                      : "border-destructive/50 bg-destructive/10 text-destructive"
                   }`}
                 >
                   {currentAnswerCorrect
@@ -564,52 +562,50 @@ export function QuizSession({
                 <button
                   onClick={() => setConfirmed(true)}
                   disabled={!canConfirm}
-                  className="w-full rounded-2xl bg-foreground px-5 py-3 text-sm font-bold text-background transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-30"
+                  className="inline-flex h-11 w-full items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 disabled:pointer-events-none disabled:opacity-50"
                 >
                   Valider
                 </button>
               ) : (
                 <button
                   onClick={handleNextTrainingQuestion}
-                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-foreground px-5 py-3 text-sm font-bold text-background transition hover:opacity-90"
+                  className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
                 >
                   Question suivante
-                  <FaArrowRight className="text-xs" />
+                  <FaArrowRight className="h-3 w-3" />
                 </button>
               )}
             </div>
 
             {canExplain && (
-              <div className="mt-4 rounded-2xl border border-soft bg-surface-veil px-5 py-4">
+              <div className="mt-6 rounded-xl border border-border bg-card p-6 shadow-sm">
                 <div className="flex flex-wrap items-center justify-between gap-3">
-                  <span className="text-xs font-semibold uppercase tracking-widest text-muted">
-                    Lancer une discussion
+                  <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    Explications avec l'IA
                   </span>
                   <button
                     onClick={handleCopyPrompt}
-                    className="inline-flex items-center gap-2 rounded-full border border-soft px-3 py-1 text-xs font-semibold text-muted-strong transition hover:border-emerald-300/40 hover:text-foreground"
+                    className="inline-flex h-8 items-center justify-center gap-2 rounded-md border border-input bg-background px-3 text-xs font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
                     aria-label="Copier le prompt"
                     title="Copier le prompt"
                   >
-                    <FaCopy className="text-xs" />
-                    {copiedPromptId === question.id ? "Copie" : "Copier"}
+                    <FaCopy className="h-3 w-3" />
+                    {copiedPromptId === question.id ? "Copié !" : "Copier le prompt"}
                   </button>
                 </div>
-                <p className="mt-2 text-xs text-muted">
-                  Choisis une IA pour ouvrir la discussion avec le prompt.
-                </p>
-                <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                
+                <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
                   {providers.map(({ id, label, href, Icon }) => (
                     <a
                       key={id}
                       href={href}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-soft bg-surface-strong px-3 py-2 text-xs font-semibold text-foreground transition hover:border-emerald-300/40 hover:bg-surface-veil"
-                      aria-label={`Ouvrir ${label} avec le prompt`}
+                      className="inline-flex h-9 items-center justify-center gap-2 rounded-md border border-input bg-background px-3 text-xs font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
+                      aria-label={`Ouvrir ${label}`}
                       title={`Ouvrir ${label}`}
                     >
-                      <Icon className="text-base" />
+                      <Icon className="h-3 w-3" />
                       <span>{label}</span>
                     </a>
                   ))}
@@ -620,25 +616,23 @@ export function QuizSession({
                       prev === question.id ? null : question.id,
                     )
                   }
-                  className="mt-3 flex w-full items-center justify-between rounded-xl border border-soft bg-surface-strong px-3 py-2 text-xs font-semibold text-muted-strong transition hover:border-emerald-300/40 hover:text-foreground"
+                  className="mt-4 flex w-full items-center justify-between rounded-md border border-border bg-muted/50 px-3 py-2 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                   aria-expanded={isPromptOpen}
                   aria-controls={promptDetailsId}
                 >
-                  <span>Voir le prompt</span>
+                  <span>Voir le prompt généré</span>
                   {isPromptOpen ? (
-                    <FaChevronUp className="text-xs" />
+                    <FaChevronUp className="h-3 w-3" />
                   ) : (
-                    <FaChevronDown className="text-xs" />
+                    <FaChevronDown className="h-3 w-3" />
                   )}
                 </button>
                 {isPromptOpen && (
                   <div
                     id={promptDetailsId}
-                    className="mt-3 max-h-64 overflow-auto rounded-xl border border-soft bg-surface-strong p-4 text-xs text-foreground"
+                    className="mt-2 max-h-64 overflow-auto rounded-md border border-border bg-muted/30 p-4 text-xs font-mono text-muted-foreground"
                   >
-                    <pre className="whitespace-pre-wrap font-mono">
-                      {promptText}
-                    </pre>
+                    <pre className="whitespace-pre-wrap">{promptText}</pre>
                   </div>
                 )}
               </div>

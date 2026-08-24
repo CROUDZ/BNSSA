@@ -24,13 +24,13 @@ export async function AuthButtons({ variant = "default" }: AuthButtonsProps) {
         <AuthSubmitButton
           className={
             isCompact
-              ? "flex h-10 w-10 items-center justify-center rounded-full text-sm text-muted transition hover:bg-surface-veil hover:text-foreground disabled:cursor-not-allowed disabled:opacity-60"
-              : "rounded-2xl border border-soft bg-surface-veil px-4 py-2 text-sm font-semibold text-foreground shadow-hero transition hover:border-emerald-300/50 hover:text-emerald-200 disabled:cursor-not-allowed disabled:opacity-60"
+              ? "inline-flex h-9 w-9 items-center justify-center rounded-md border border-input bg-background text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-50"
+              : "inline-flex h-10 w-full items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-50"
           }
-          pendingLabel="Connexion..."
+          pendingLabel={isCompact ? "..." : "Connexion..."}
         >
           {isCompact ? (
-            <FaUser aria-hidden="true" />
+            <FaUser aria-hidden="true" className="h-4 w-4" />
           ) : (
             "Se connecter avec Google"
           )}
@@ -45,35 +45,37 @@ export async function AuthButtons({ variant = "default" }: AuthButtonsProps) {
         href="/compte"
         aria-label="Mon compte"
         title={user.name ?? "Mon compte"}
-        className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full text-sm font-black text-foreground transition hover:bg-surface-veil"
+        className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-border bg-background transition-colors hover:border-primary/50"
       >
         {user.image ? (
           <Image
             src={user.image}
             alt=""
-            width={40}
-            height={40}
+            width={36}
+            height={36}
             className="h-full w-full object-cover"
           />
         ) : (
-          (user.name?.charAt(0) ?? "U").toUpperCase()
+          <span className="text-xs font-semibold text-foreground">
+            {(user.name?.charAt(0) ?? "U").toUpperCase()}
+          </span>
         )}
       </Link>
     );
   }
 
   return (
-    <div className="flex items-center gap-3 rounded-2xl border border-soft bg-surface-veil px-3 py-2 shadow-hero">
+    <div className="flex items-center gap-3 rounded-md border border-border bg-card px-3 py-2 shadow-sm">
       {user.image ? (
         <Image
           src={user.image}
           alt=""
           width={32}
           height={32}
-          className="h-8 w-8 rounded-full border border-soft"
+          className="h-8 w-8 rounded-full border border-border"
         />
       ) : null}
-      <Link href="/compte" className="text-sm font-semibold text-foreground">
+      <Link href="/compte" className="text-sm font-medium hover:underline">
         {user.name ?? "Mon compte"}
       </Link>
       <form
@@ -81,12 +83,13 @@ export async function AuthButtons({ variant = "default" }: AuthButtonsProps) {
           "use server";
           await signOut({ redirectTo: "/" });
         }}
+        className="ml-auto"
       >
         <AuthSubmitButton
-          className="rounded-xl border border-soft bg-surface px-3 py-1.5 text-xs font-semibold text-muted transition hover:text-foreground disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex h-8 items-center justify-center rounded-md px-3 text-xs font-medium transition-colors hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-50"
           pendingLabel="..."
         >
-          Se déconnecter
+          Déconnexion
         </AuthSubmitButton>
       </form>
     </div>

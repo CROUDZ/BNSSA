@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import ClientProviders from "@/components/ClientProviders";
 import { Header } from "@/components/Header";
 import "@/styles/globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -67,8 +74,8 @@ export const metadata: Metadata = {
 
 export const viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b1220" },
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
   ],
 };
 
@@ -78,8 +85,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
-      <body className="antialiased">
+    <html lang="fr" className={`${inter.variable} antialiased`}>
+      <body className="font-sans text-foreground bg-background">
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var stored=sessionStorage.getItem("bnssa-theme");if(stored==="light"||stored==="dark"){document.documentElement.dataset.theme=stored;}}catch(e){}})();`,
@@ -91,8 +98,8 @@ export default function RootLayout({
           <div className="flex min-h-screen flex-col">
             <Header />
             <div className="flex-1">{children}</div>
-            <footer className="border-t border-soft bg-surface-veil">
-              <div className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-4 py-6 text-xs text-muted opacity-90 sm:text-sm md:flex-row md:items-center md:justify-between md:gap-6 md:px-6">
+            <footer className="border-t border-border bg-background">
+              <div className="mx-auto flex w-full max-w-5xl flex-col gap-3 px-4 py-8 text-xs text-muted-foreground sm:text-sm md:flex-row md:items-center md:justify-between md:gap-6 md:px-6">
                 <div className="flex flex-col gap-1">
                   <p>Site non officiel indépendant de la FNMNS</p>
                   <p>
@@ -100,12 +107,15 @@ export default function RootLayout({
                     auteurs respectifs
                   </p>
                   <p>
+                    Dernière mise à jour des questions : 24 août 2026
+                  </p>
+                  <p>
                     Projet open source disponible sur{" "}
                     <a
                       href="https://github.com/CROUDZ/BNSSA"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-medium text-accent transition hover:text-foreground"
+                      className="font-medium text-foreground transition-colors hover:text-primary"
                     >
                       GitHub
                     </a>
@@ -116,7 +126,7 @@ export default function RootLayout({
                   href="https://formation.fnmns.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-accent transition hover:text-foreground"
+                  className="font-medium text-foreground transition-colors hover:text-primary"
                 >
                   Pour la formation officielle
                 </a>

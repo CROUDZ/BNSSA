@@ -12,23 +12,22 @@ type Props = {
 };
 
 const baseButtonStyles =
-  "border-soft bg-surface-strong hover:border-emerald-300/30 hover:bg-surface-veil";
+  "border-border bg-card hover:border-border hover:bg-accent hover:text-accent-foreground";
 
 const stateStyles: Record<Props["state"], string> = {
   idle: baseButtonStyles,
-  selected: baseButtonStyles,
-  correct: baseButtonStyles,
-  wrong: baseButtonStyles,
-  missed: baseButtonStyles,
+  selected: "border-primary bg-primary/5 shadow-sm",
+  correct: "border-success bg-success/5 text-success shadow-sm",
+  wrong: "border-destructive bg-destructive/5 text-destructive shadow-sm",
+  missed: "border-success border-dashed bg-success/5 text-success",
 };
 
 const badgeStyles: Record<Props["state"], string> = {
-  idle: "text-muted-strong",
-  selected:
-    "border-transparent ring-2 ring-[color:var(--foreground)] text-foreground",
-  correct: "border-transparent ring-2 ring-emerald-400 text-emerald-200",
-  wrong: "border-transparent ring-2 ring-red-400 text-red-200",
-  missed: "border-transparent ring-2 ring-emerald-600 text-emerald-300",
+  idle: "border-border text-muted-foreground",
+  selected: "border-primary bg-primary text-primary-foreground",
+  correct: "border-success bg-success text-success-foreground",
+  wrong: "border-destructive bg-destructive text-destructive-foreground",
+  missed: "border-success bg-success text-success-foreground",
 };
 
 export function AnswerButton({
@@ -40,18 +39,20 @@ export function AnswerButton({
 }: Props) {
   return (
     <m.button
-      whileTap={disabled ? {} : { scale: 0.99 }}
+      whileTap={disabled ? {} : { scale: 0.995 }}
       onClick={onClick}
       disabled={disabled}
-      className={`w-full rounded-2xl border p-4 text-left transition-all duration-200 ${stateStyles[state]} ${disabled && state === "idle" ? "cursor-default opacity-40" : ""}`}
+      className={`w-full rounded-lg border p-4 text-left transition-all duration-200 ${stateStyles[state]} ${disabled && state === "idle" ? "cursor-default opacity-50" : ""}`}
     >
       <div className="flex items-center gap-4">
         <div
-          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-md font-black transition-all duration-200 ${badgeStyles[state]}`}
+          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-md border text-sm font-bold transition-all duration-200 ${badgeStyles[state]}`}
         >
           {answerKey}
         </div>
-        <span className="font-medium leading-snug">{value}</span>
+        <span className={`font-medium leading-relaxed ${state === "idle" ? "text-foreground" : ""}`}>
+          {value}
+        </span>
       </div>
     </m.button>
   );

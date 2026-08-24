@@ -4,7 +4,6 @@ export type QcmMode = "training" | "exam";
 
 export type Question = {
   id: string;
-  sourceQuestionId: number;
   tags: string[];
   question: string;
   answers: Partial<Record<AnswerKey, string>>;

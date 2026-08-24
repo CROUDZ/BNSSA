@@ -19,11 +19,10 @@ export function StartTrainingButton() {
     <button
       type="button"
       onClick={handleClick}
-      aria-label="Lancer l'entraînement"
-      title="Lancer l'entraînement"
-      className="flex h-11 w-11 items-center justify-center rounded-full bg-emerald-300 text-sm text-slate-950 transition hover:bg-emerald-200 focus:outline-none focus:ring-2 focus:ring-emerald-300/60 focus:ring-offset-2 focus:ring-offset-background"
+      className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-xs font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
     >
-      <FaPlay aria-hidden="true" className="ml-0.5" />
+      <FaPlay aria-hidden="true" className="mr-2 h-3 w-3" />
+      Entraînement
     </button>
   );
 }

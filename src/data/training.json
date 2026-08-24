@@ -1,44 +1,57 @@
 [
   {
-    "id": "qcm1-1",
-    "sourceQuestionId": 1,
-    "tags": ["entrainement"],
+    "id": "1",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Choix du drapeau",
     "answers": {
       "A": "Pour un vent de force 4 à 5, il est recommandé de mettre le drapeau jaune",
       "B": "En cas de brume intense ne permettant pas la surveillance, il faut mettre le drapeau vert",
       "C": "Pour un vent de force inférieur à 3, il est recommandé de mettre le drapeau vert"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm1-2",
-    "sourceQuestionId": 2,
-    "tags": ["entrainement"],
+    "id": "2",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Les analyses d'eau",
     "answers": {
       "A": "Peuvent entraîner la fermeture d'une baignade si elles sont mauvaises",
       "B": "Sont effectuées sous contrôle de l'ARS",
       "C": "Sont uniquement réalisées en piscine"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm1-3",
-    "sourceQuestionId": 3,
-    "tags": ["entrainement"],
+    "id": "3",
+    "tags": [
+      "entrainement"
+    ],
     "question": "L'affichage météo au poste de secours comprend entre autres",
     "answers": {
       "A": "Les observations météorologiques du jour",
       "B": "La durée d'ensoleillement du jour",
       "C": "Les heures de marées et coefficients du jour"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm1-4",
-    "sourceQuestionId": 4,
-    "tags": ["entrainement"],
+    "id": "4",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Les chenaux traversiers (lorsque l'on vient du large)",
     "answers": {
       "A": "Sont matérialisés par des bouées cylindriques à Bâbord et des bouées coniques à Tribord",
@@ -46,1380 +59,1794 @@
       "C": "Peuvent être autorisés à la baignade",
       "D": "Ne font pas l'objet d'une surveillance spécifique"
     },
-    "correctAnswers": ["A", "D"]
+    "correctAnswers": [
+      "A",
+      "D"
+    ]
   },
   {
-    "id": "qcm1-5",
-    "sourceQuestionId": 5,
-    "tags": ["entrainement"],
+    "id": "5",
+    "tags": [
+      "entrainement"
+    ],
     "question": "L'Echelle de Beaufort est",
     "answers": {
       "A": "Une grille de lecture qui indique la force du vent et l'état de la mer",
       "B": "Une échelle de valeur qui informe de la hauteur des marées",
       "C": "Un indicateur dans le choix du drapeau à hisser"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm1-6",
-    "sourceQuestionId": 6,
-    "tags": ["entrainement"],
+    "id": "6",
+    "tags": [
+      "entrainement"
+    ],
     "question": "L'échelle de Beaufort va pour la force du vent",
     "answers": {
       "A": "0 à 9",
       "B": "0 à 12",
       "C": "0 à 15"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm1-7",
-    "sourceQuestionId": 7,
-    "tags": ["entrainement"],
+    "id": "7",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Une Baïne",
     "answers": {
       "A": "Représente l'amplitude de la mer",
       "B": "Est une sorte de cuvette remplie d'eau",
       "C": "Peut être dangereuse pour la baignade"
     },
-    "correctAnswers": ["B", "C"]
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
   },
   {
-    "id": "qcm1-8",
-    "sourceQuestionId": 8,
-    "tags": ["entrainement"],
+    "id": "8",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Un BNSSA peut surveiller « seul » sans dérogation préfectorale",
     "answers": {
       "A": "Un plan d'eau d'accès gratuit",
       "B": "Une piscine d'accès payant",
       "C": "Un Accueil Collectif de Mineurs dans une piscine privée du centre"
     },
-    "correctAnswers": ["A", "B", "C"]
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ]
   },
   {
-    "id": "qcm1-9",
-    "sourceQuestionId": 9,
-    "tags": ["entrainement"],
+    "id": "9",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Un BNSSA pour exercer en milieu naturel",
     "answers": {
       "A": "Peux passer l'unité d'enseignement SSA en Eaux Intérieures",
       "B": "Peux passer l'unité d'enseignement mention SSA Littoral",
       "C": "Une formation en piscine donne les compétences de ces deux unités d'enseignements"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm1-10",
-    "sourceQuestionId": 10,
-    "tags": ["entrainement"],
+    "id": "10",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Un BNSSA peut enseigner contre rémunération",
     "answers": {
       "A": "L'aquagym",
       "B": "La natation",
       "C": "Il ne peut rien enseigner"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm1-11",
-    "sourceQuestionId": 11,
-    "tags": ["entrainement"],
+    "id": "11",
+    "tags": [
+      "entrainement"
+    ],
     "question": "A partir de quel âge peut-on conduire un scooter des mers, avec un permis",
     "answers": {
       "A": "14 ans",
       "B": "18 ans",
       "C": "16 ans"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm1-12",
-    "sourceQuestionId": 12,
-    "tags": ["entrainement"],
+    "id": "12",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Un BNSSA peut-il surveiller en autonomie une baignade d'accès payant",
     "answers": {
       "A": "Non",
       "B": "Oui à la condition d'avoir obtenu une dérogation préfectorale",
       "C": "Oui, depuis un arrêté publié en juin 2023"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm1-13",
-    "sourceQuestionId": 13,
-    "tags": ["entrainement"],
+    "id": "13",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Quel sont les permis de navigation pour la plaisance",
     "answers": {
       "A": "Permis Fluvial",
       "B": "Permis côtier",
       "C": "Capitaine 200"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm1-14",
-    "sourceQuestionId": 14,
-    "tags": ["entrainement"],
+    "id": "14",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Durée de la dérogation préfectorale pour un employeur qui ne trouve pas de MNS",
     "answers": {
       "A": "Elle n'existe plus",
       "B": "2 mois mini à 6 mois maxi",
       "C": "1 an maxi"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
-    "id": "qcm1-15",
-    "sourceQuestionId": 15,
-    "tags": ["entrainement"],
+    "id": "15",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Un SB peut travailler",
     "answers": {
       "A": "En piscine comme assistant d'un MNS",
       "B": "Dans le cadre d'un Accueil Collectif de Mineurs",
       "C": "Toute l'année comme salarié"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm1-16",
-    "sourceQuestionId": 16,
-    "tags": ["entrainement"],
+    "id": "16",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Qui est le premier responsable de la zone des 300 mètres sur le littoral maritime",
     "answers": {
       "A": "Le Maire",
       "B": "Le Ministre de l'Intérieur",
       "C": "Le Préfet Maritime"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
-    "id": "qcm1-17",
-    "sourceQuestionId": 17,
-    "tags": ["entrainement"],
+    "id": "17",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Combien y a t-il de CROSS en Méditerranée",
     "answers": {
       "A": "1",
       "B": "2",
       "C": "3"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
-    "id": "qcm1-18",
-    "sourceQuestionId": 18,
-    "tags": ["entrainement"],
+    "id": "18",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Qui a autorité pour intervenir en premier dans le cas d'une pollution sur la plage",
     "answers": {
       "A": "Le Maire",
       "B": "Le Préfet du département",
       "C": "Le Préfet Maritime"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
-    "id": "qcm1-19",
-    "sourceQuestionId": 19,
-    "tags": ["entrainement"],
+    "id": "19",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Qui coordonne les secours dans le cas d'une personne disparue en mer",
     "answers": {
       "A": "Le SDIS",
       "B": "La SNSM",
       "C": "Le CROSS"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm1-20",
-    "sourceQuestionId": 20,
-    "tags": ["entrainement"],
+    "id": "20",
+    "tags": [
+      "entrainement"
+    ],
     "question": "En milieu naturel, il existe :",
     "answers": {
       "A": "1 catégorie de baignade",
       "B": "2 catégories de baignades",
       "C": "3 catégories de baignades"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm1-21",
-    "sourceQuestionId": 21,
-    "tags": ["entrainement"],
+    "id": "21",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Qui rémunère le personnel pour armer les postes de secours d'une commune",
     "answers": {
       "A": "Le Maire",
       "B": "Le Préfet du département",
       "C": "Le Préfet Maritime"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
-    "id": "qcm1-22",
-    "sourceQuestionId": 22,
-    "tags": ["entrainement"],
+    "id": "22",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Qui à autorité sur les opérations de sauvetage au-delà de 300m du bord de plage",
     "answers": {
       "A": "Le Maire",
       "B": "Le Préfet du département",
       "C": "Le Préfet Maritime"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm1-23",
-    "sourceQuestionId": 23,
-    "tags": ["entrainement"],
+    "id": "23",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Le SAMU est",
     "answers": {
       "A": "Un service de secours hospitalier",
       "B": "Rattaché aux sapeurs pompiers",
       "C": "Dispose de SMUR"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm1-24",
-    "sourceQuestionId": 24,
-    "tags": ["entrainement"],
+    "id": "24",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Les drapeaux de couleur",
     "answers": {
       "A": "Sont au nombre de 3 (Verte / jaune / Rouge)",
       "B": "Sont obligatoires en piscine",
       "C": "Doivent être hissées à une hauteur visible de toute la zone surveillée"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm1-25",
-    "sourceQuestionId": 25,
-    "tags": ["entrainement"],
+    "id": "25",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Le CODIS gère les interventions de secours pour",
     "answers": {
       "A": "Les SMUR",
       "B": "Les sapeurs-pompiers",
       "C": "La SNSM"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm1-26",
-    "sourceQuestionId": 26,
-    "tags": ["entrainement"],
+    "id": "26",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Le CROSS veille",
     "answers": {
       "A": "Au respect des règlements maritimes nationaux",
       "B": "A la sécurité des gens de la mer",
       "C": "Au respect des règles de plongée en mer"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm1-27",
-    "sourceQuestionId": 27,
-    "tags": ["entrainement"],
+    "id": "27",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Les CROSS sont gérés par",
     "answers": {
       "A": "Les préfectures de département",
       "B": "Les préfectures maritimes",
       "C": "Les sous préfectures"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm1-28",
-    "sourceQuestionId": 28,
-    "tags": ["entrainement"],
+    "id": "28",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Les bouées de la zone de baignade",
     "answers": {
       "A": "Sont de couleur jaune",
       "B": "Sont de forme sphérique",
       "C": "Sont de forme cylindrique"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm1-29",
-    "sourceQuestionId": 29,
-    "tags": ["entrainement"],
+    "id": "29",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Pour fermer un poste de secours, le drapeau est baissé",
     "answers": {
       "A": "Avant le rangement de tout le matériel",
       "B": "Après le rangement de tout le matériel",
       "C": "A l'heure fixée par les horaires de surveillance"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm1-30",
-    "sourceQuestionId": 30,
-    "tags": ["entrainement"],
+    "id": "30",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Le POSS c'est",
     "answers": {
       "A": "Un Plan d'Organisation de la Surveillance et des Secours",
       "B": "Un Plan d'Occupation du Sauvetage et des Secours",
       "C": "Le Préfet Opérationnel pour la Sécurité et le Sauvetage"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
-    "id": "qcm1-31",
-    "sourceQuestionId": 31,
-    "tags": ["entrainement"],
+    "id": "31",
+    "tags": [
+      "entrainement"
+    ],
     "question": "En qualité de BNSSA avec un Accueil Collectif de Mineurs, vous pouvez",
     "answers": {
       "A": "Aller vous baigner où vous voulez",
       "B": "Vous baigner en dehors de zones surveillées sous certaines conditions",
       "C": "Vous baigner sur des plages surveillées"
     },
-    "correctAnswers": ["B", "C"]
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
   },
   {
-    "id": "qcm1-32",
-    "sourceQuestionId": 32,
-    "tags": ["entrainement"],
+    "id": "32",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Pour pratiquer la chasse sous-marine ;",
     "answers": {
       "A": "Vous pouvez chasser la nuit",
       "B": "Vous pouvez utiliser un fusil à air comprimé",
       "C": "Vous devez avoir au moins 16 ans"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm1-33",
-    "sourceQuestionId": 33,
-    "tags": ["entrainement"],
+    "id": "33",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Si un groupe de 40 enfants de plus de 6 ans est sur une plage « non surveillée » mais autorisée avec 1 Surveillant de Baignade et 8 animateurs.",
     "answers": {
       "A": "Le SB peut organiser une baignade",
       "B": "La baignade doit être matérialisée",
       "C": "Il n'y a pas d'obligation de matérialisation ou de balisage"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm1-34",
-    "sourceQuestionId": 34,
-    "tags": ["entrainement"],
+    "id": "34",
+    "tags": [
+      "entrainement"
+    ],
     "question": "La pêche en mer",
     "answers": {
       "A": "Est autorisée dans les zones de baignade",
       "B": "Est interdite dans les ports",
       "C": "Les pêcheurs non professionnels peuvent vendre le produit de leur pêche"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm1-35",
-    "sourceQuestionId": 35,
-    "tags": ["entrainement"],
+    "id": "35",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Quelle est la vitesse maximale autorisée avec un bateau à moteur dans la zone des 300 mètres?",
     "answers": {
       "A": "3 nœuds",
       "B": "5 nœuds",
       "C": "Non limitée"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm1-36",
-    "sourceQuestionId": 36,
-    "tags": ["entrainement"],
+    "id": "36",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Avec une planche à voile, je peux m'éloigner de la côte",
     "answers": {
       "A": "Jusqu'à 1 mille d'un abri",
       "B": "Jusqu'à 2 milles d'un abri",
       "C": "Jusqu'à 6 milles d'un abri"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm1-37",
-    "sourceQuestionId": 37,
-    "tags": ["entrainement"],
+    "id": "37",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Les surfeurs",
     "answers": {
       "A": "Doivent être au maximum à deux sur une vague",
       "B": "Evoluent si elle existe dans une zone délimitée par un drapeau à damier noir et blanc",
       "C": "Doivent interrompre leur activité si le drapeau des baignades est rouge"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm1-38",
-    "sourceQuestionId": 38,
-    "tags": ["entrainement"],
+    "id": "38",
+    "tags": [
+      "entrainement"
+    ],
     "question": "La noyade",
     "answers": {
       "A": "Est une asphyxie",
       "B": "A toujours pour origine une défaillance physique (épuisement, manque de technique)",
       "C": "Nécessite un suivi médical après inhalation"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm1-39",
-    "sourceQuestionId": 39,
-    "tags": ["entrainement"],
+    "id": "39",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Lors d'un accident de plongée",
     "answers": {
       "A": "Il suffit d'organiser la prise en charge du plongeur accidenté",
       "B": "Il faut organiser la prise en charge de la palanquée complète",
       "C": "En mer, le CROSS doit être informé"
     },
-    "correctAnswers": ["B", "C"]
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
   },
   {
-    "id": "qcm1-40",
-    "sourceQuestionId": 40,
-    "tags": ["entrainement"],
+    "id": "40",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Un malaise grave dû à une exposition trop prolongée au soleil",
     "answers": {
       "A": "Peut avoir une répercussion sur la conscience",
       "B": "Peut être le signe d'une atteinte grave",
       "C": "Peut se rétablir juste en faisant boire la personne"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm2-1",
-    "sourceQuestionId": 1,
-    "tags": ["entrainement"],
+    "id": "41",
+    "tags": [
+      "entrainement"
+    ],
     "question": "En milieu naturel",
     "answers": {
       "A": "Avec un drapeau jaune hissée, j'interdis la baignade",
       "B": "Avec un drapeau rouge hissée, j'interdis la baignade",
       "C": "Sur l'échelle de beaufort qui indique F6, je hisse le drapeau vert"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm2-2",
-    "sourceQuestionId": 2,
-    "tags": ["entrainement"],
+    "id": "42",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Les analyses de qualité de l'eau en piscine",
     "answers": {
       "A": "Sont confidentielles et ne doivent pas être vues du public",
       "B": "Doivent être affichées et visibles par le public",
       "C": "Sont réalisées au moins 4 fois par mois par l'ARS"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm2-3",
-    "sourceQuestionId": 3,
-    "tags": ["entrainement"],
+    "id": "43",
+    "tags": [
+      "entrainement"
+    ],
     "question": "La météo marine annonce Force 10 sur l'Echelle de Beaufort",
     "answers": {
       "A": "C'est une tempête",
       "B": "C'est un coup de vent",
       "C": "Je dois fermer la baignade"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm2-4",
-    "sourceQuestionId": 4,
-    "tags": ["entrainement"],
+    "id": "44",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Une piqûre de vive",
     "answers": {
       "A": "Peut provoquer une violente douleur",
       "B": "Peut occasionner des nécroses de la peau",
       "C": "Est provoquée par un animal de la classe des physalies"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm2-5",
-    "sourceQuestionId": 5,
-    "tags": ["entrainement"],
+    "id": "45",
+    "tags": [
+      "entrainement"
+    ],
     "question": "l'ARS",
     "answers": {
       "A": "Est l'Agence Régionale de Sécurité",
       "B": "Est l'Agence Régionale de Santé",
       "C": "Assure uniquement le contrôle de la qualité de l'eau des piscines"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm2-6",
-    "sourceQuestionId": 6,
-    "tags": ["entrainement"],
+    "id": "46",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Les analyses d'eau en piscine effectuées par le personnel",
     "answers": {
       "A": "Peuvent être réalisées par un BNSSA",
       "B": "Sont obligatoires 1 fois par mois",
       "C": "Doivent être effectuées au moins deux fois par jour"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm2-7",
-    "sourceQuestionId": 7,
-    "tags": ["entrainement"],
+    "id": "47",
+    "tags": [
+      "entrainement"
+    ],
     "question": "En mer les \"bâches\"",
     "answers": {
       "A": "Se trouvent principalement sur les côtes de la Manche",
       "B": "Sont toujours en Méditerranée",
       "C": "Ne sont absolument pas dangereuses"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
-    "id": "qcm2-8",
-    "sourceQuestionId": 8,
-    "tags": ["entrainement"],
+    "id": "48",
+    "tags": [
+      "entrainement"
+    ],
     "question": "L'Echelle de Beaufort est",
     "answers": {
       "A": "Une grille de notation des sauveteurs en fin de saison",
       "B": "Une grille qui indique la force du vent et les effets sur l'état de la mer",
       "C": "Internationale et permet à tous les marins de la comprendre"
     },
-    "correctAnswers": ["B", "C"]
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
   },
   {
-    "id": "qcm2-9",
-    "sourceQuestionId": 9,
-    "tags": ["entrainement"],
+    "id": "49",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Un BNSSA",
     "answers": {
       "A": "Doit suivre une formation continue pour réactualiser son BNSSA tous les 5 ans",
       "B": "Doit suivre une formation continue en secourisme tous les ans",
       "C": "Peut conserver une activité sans satisfaire à aucune formation continue"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm2-10",
-    "sourceQuestionId": 10,
-    "tags": ["entrainement"],
+    "id": "50",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Dans un club de natation sportive",
     "answers": {
       "A": "Un BNSSA peut assurer la surveillance des usagers",
       "B": "Un BNSSA peut encadrer les activités et assurer certains cours en étant salarié",
       "C": "Un MNS peut assurer l'enseignement de la natation"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm2-11",
-    "sourceQuestionId": 11,
-    "tags": ["entrainement"],
+    "id": "51",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Avec le BNSSA je peux",
     "answers": {
       "A": "Encadrer contre rémunération des élèves en club et enseigner la natation",
       "B": "Assurer des cours d'aquagym",
       "C": "Surveiller contre rémunération des enfants en accueil collectif de mineurs"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm2-12",
-    "sourceQuestionId": 12,
-    "tags": ["entrainement"],
+    "id": "52",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Un Surveillant de Baignade pour accueil collectif de mineurs peut",
     "answers": {
       "A": "Travailler seul dans une piscine municipale avec une dérogation préfectorale",
       "B": "Surveiller uniquement les lieux d'accès gratuits",
       "C": "Peut surveiller un accueil collectif de mineurs"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm2-13",
-    "sourceQuestionId": 13,
-    "tags": ["entrainement"],
+    "id": "53",
+    "tags": [
+      "entrainement"
+    ],
     "question": "J'ai 16 ans",
     "answers": {
       "A": "Je peux passer le permis mer option côtier",
       "B": "Je peux passer le permis plaisance en eaux intérieures",
       "C": "Je dois attendre d'avoir 18 ans pour passer l'un de ces deux permis"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm2-14",
-    "sourceQuestionId": 14,
-    "tags": ["entrainement"],
+    "id": "54",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Un BNSSA peut-il surveiller en autonomie une baignade d'accès payant ?",
     "answers": {
       "A": "Non en aucun cas",
       "B": "Oui à condition d'avoir plus de deux ans d'ancienneté",
       "C": "Oui depuis la parution d'un décret en juin 2023"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm2-15",
-    "sourceQuestionId": 15,
-    "tags": ["entrainement"],
+    "id": "55",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Un BNSSA peut encadrer une séance de natation scolaire",
     "answers": {
       "A": "En étant rémunéré pour cette action",
       "B": "En étant bénévole pour cette action",
       "C": "En remplacement d'un MNS"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm2-16",
-    "sourceQuestionId": 16,
-    "tags": ["entrainement"],
+    "id": "56",
+    "tags": [
+      "entrainement"
+    ],
     "question": "L'obtention du BNSSA est un prérequis pour",
     "answers": {
       "A": "Se présenter à une sélection pour devenir MNS",
       "B": "Valider l'unité d'enseignement de Surveillant Sauveteur Aquatique en Littoral",
       "C": "Porter un tee-shirt de MNS"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm2-17",
-    "sourceQuestionId": 17,
-    "tags": ["entrainement"],
+    "id": "57",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Les textes réglementaires s'établissent dans cet ordre hiérarchique",
     "answers": {
       "A": "Lois, décrets, arrêtés, circulaires",
       "B": "Lois, arrêtés, décrets, circulaires",
       "C": "Circulaires, arrêtés, décrets, lois"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
-    "id": "qcm2-18",
-    "sourceQuestionId": 18,
-    "tags": ["entrainement"],
+    "id": "58",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Un second jugement est instruit",
     "answers": {
       "A": "Par une cour de cassation",
       "B": "Par une cour d'appel",
       "C": "Par le conseil d'état"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm2-19",
-    "sourceQuestionId": 19,
-    "tags": ["entrainement"],
+    "id": "59",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Suite à une noyade dans un lieu surveillé, la responsabilité civile et pénale d'un BNSSA",
     "answers": {
       "A": "Peut être engagée",
       "B": "Ne peut jamais être engagée",
       "C": "Si un MNS était présent, lui seul doit répondre de l'accident"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
-    "id": "qcm2-20",
-    "sourceQuestionId": 20,
-    "tags": ["entrainement"],
+    "id": "60",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Le port d'un tee-shirt de Maitre-Nageur Sauveteur par un BNSSA",
     "answers": {
       "A": "Est autorisé",
       "B": "Peut se voir qualifié d'usurpation de titre",
       "C": "Expose son contrevenant à 15 000 € d'amende et 1 an d'emprisonnement"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm2-21",
-    "sourceQuestionId": 21,
-    "tags": ["entrainement"],
+    "id": "61",
+    "tags": [
+      "entrainement"
+    ],
     "question": "La responsabilité des maires",
     "answers": {
       "A": "Le maire dispose d'un pouvoir de police spécial en matière de baignades",
       "B": "En cas de carence du maire, l'autorité de substitution est le préfet",
       "C": "Le Maire peut être inquiété même pour une noyade hors zone surveillée"
     },
-    "correctAnswers": ["A", "B", "C"]
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ]
   },
   {
-    "id": "qcm2-22",
-    "sourceQuestionId": 22,
-    "tags": ["entrainement"],
+    "id": "62",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Une assurance en responsabilité civile professionnelle",
     "answers": {
       "A": "Permet de dédommager une victime, ou ses proches lors d'une condamnation civile",
       "B": "Permet de dédommager une victime, ou ses proches lors d'une condamnation pénale",
       "C": "Est la même assurance que la responsabilité civile personnelle"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
-    "id": "qcm2-23",
-    "sourceQuestionId": 23,
-    "tags": ["entrainement"],
+    "id": "63",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Un SB",
     "answers": {
       "A": "Peut organiser une baignade pour mineurs près d'une plage surveillée, s'il est autorisé",
       "B": "Peut organiser une baignade pour mineurs sur une plage non surveillée",
       "C": "Ne peut assurer la surveillance de mineurs qu'en assistance d'un MNS"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm2-24",
-    "sourceQuestionId": 24,
-    "tags": ["entrainement"],
+    "id": "64",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Les sauveteurs abaissent le drapeau",
     "answers": {
       "A": "Quand une intervention importante le nécessite",
       "B": "En fin de surveillance à la fermeture du poste de secours",
       "C": "Quand la mer est dangereuse"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm2-25",
-    "sourceQuestionId": 25,
-    "tags": ["entrainement"],
+    "id": "65",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Dans une piscine d'accès payant, ouverte au public",
     "answers": {
       "A": "Le POSS est obligatoire",
       "B": "Le POSS est un document interne et ne doit pas être affiché",
       "C": "Le POSS n'est pas obligatoire mais recommandé"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
-    "id": "qcm2-26",
-    "sourceQuestionId": 26,
-    "tags": ["entrainement"],
+    "id": "66",
+    "tags": [
+      "entrainement"
+    ],
     "question": "La surveillance est plus efficace lorsque",
     "answers": {
       "A": "Les surveillants sont côte à côte",
       "B": "Les surveillants sont positionnés sur des chaises hautes uniquement",
       "C": "Les surveillants sont positionnés alternativement sur une chaise haute et en déplacement"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm2-27",
-    "sourceQuestionId": 27,
-    "tags": ["entrainement"],
+    "id": "67",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Dans le code du sport, « surveillance constante et exclusive » sous-entend,",
     "answers": {
       "A": "Que le MNS peut enseigner et surveiller en même temps",
       "B": "Que le BNSSA peut se distraire durant la surveillance avec un smartphone",
       "C": "Que le non-respect des règles de sécurité peut conduire à une lourde condamnation"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm2-28",
-    "sourceQuestionId": 28,
-    "tags": ["entrainement"],
+    "id": "68",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Le règlement intérieur d'une piscine ouverte au public",
     "answers": {
       "A": "Edicte des règles que les utilisateurs doivent respecter",
       "B": "Le MNS est le seul garant pour le faire respecter",
       "C": "Comporte des sanctions en cas de non-respect"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm2-29",
-    "sourceQuestionId": 29,
-    "tags": ["entrainement"],
+    "id": "69",
+    "tags": [
+      "entrainement"
+    ],
     "question": "L'arrêté municipal des plages surveillées",
     "answers": {
       "A": "Est pris par le Maire",
       "B": "Est pris par le préfet",
       "C": "Les surveillants sauveteurs se doivent de le faire respecter"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm2-30",
-    "sourceQuestionId": 30,
-    "tags": ["entrainement"],
+    "id": "70",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Une piscine privée et réservée aux enfants d'un Accueil Collectif de Mineurs",
     "answers": {
       "A": "Peut être surveillée par un SB",
       "B": "Peut être surveillée par un BNSSA",
       "C": "Doit obligatoirement être surveillée par un MNS"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm2-31",
-    "sourceQuestionId": 31,
-    "tags": ["entrainement"],
+    "id": "71",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Une piscine de camping ouverte uniquement à ces résidents nécessite",
     "answers": {
       "A": "Systématiquement une surveillance",
       "B": "L'information au public de l'absence de surveillance",
       "C": "La présence d'un appareil d'oxygénothérapie"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm2-32",
-    "sourceQuestionId": 32,
-    "tags": ["entrainement"],
+    "id": "72",
+    "tags": [
+      "entrainement"
+    ],
     "question": "L'obligation faite aux ERP « établissements recevant du public » de s'équiper d'un Défibrillateur",
     "answers": {
       "A": "Ne concerne pas les campings",
       "B": "Concerne tous les campings",
       "C": "Ne concerne que les campings avec une piscine"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm2-33",
-    "sourceQuestionId": 33,
-    "tags": ["entrainement"],
+    "id": "73",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Pour une association type 1901",
     "answers": {
       "A": "Le responsable de la sécurité des membres est le président",
       "B": "Un BNSSA peut être salarié pour assurer la surveillance des membres",
       "C": "Un BNSSA peut animer des activités sportives en étant salarié"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm2-34",
-    "sourceQuestionId": 34,
-    "tags": ["entrainement"],
+    "id": "74",
+    "tags": [
+      "entrainement"
+    ],
     "question": "La surveillance de la natation scolaire par un BNSSA",
     "answers": {
       "A": "N'est pas possible",
       "B": "Peux se faire en autonomie alors que le MNS enseigne",
       "C": "Un BNSSA peux bénévolement être agréé pour encadrer la natation scolaire"
     },
-    "correctAnswers": ["B", "C"]
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
   },
   {
-    "id": "qcm2-35",
-    "sourceQuestionId": 35,
-    "tags": ["entrainement"],
+    "id": "75",
+    "tags": [
+      "entrainement"
+    ],
     "question": "L'enseignement de l'aquagym contre rémunération",
     "answers": {
       "A": "Peut se faire par BNSSA qui dispose d'un diplôme fédéral d'aquagym",
       "B": "Peut se faire en autonomie si le BNSSA dispose du TPF «coach fitness dans l'eau »",
       "C": "L'encadrement de séances collectives d'animation en aquafitness doit se dérouler dans un bassin d'une profondeur maximale de 1,30 m et sous la surveillance d'un BNSSA ou d'un MNS."
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm2-36",
-    "sourceQuestionId": 36,
-    "tags": ["entrainement"],
+    "id": "76",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Les activités de plongée subaquatique",
     "answers": {
       "A": "Sont réglementées par le code du sport",
       "B": "L'enseignement bénévole ou rémunéré doit être assuré par un moniteur breveté",
       "C": "Un directeur de plongée doit organiser l'activité et coordonner les secours"
     },
-    "correctAnswers": ["A", "B", "C"]
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ]
   },
   {
-    "id": "qcm2-37",
-    "sourceQuestionId": 37,
-    "tags": ["entrainement"],
+    "id": "77",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Dans le cas d'un enfant en arrêt cardio-respiratoire, suite à une noyade",
     "answers": {
       "A": "Il faudra commencer immédiatement par faire 5 insufflations",
       "B": "Il faudra commencer immédiatement par faire le massage cardiaque",
       "C": "Il faudra masser au moins à 100 compressions à la minute"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm2-38",
-    "sourceQuestionId": 38,
-    "tags": ["entrainement"],
+    "id": "78",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Pour un adulte en détresse vitale, SpO2 < à 94%, il faudra utiliser lors d'une noyade",
     "answers": {
       "A": "Un masque haute concentration + débit initial à 15l/mn",
       "B": "Utilisation masque moyenne concentration + débit initial à 15l/mn",
       "C": "Utilisation lunette à O2 + débit initial à 15l/mn"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
-    "id": "qcm2-39",
-    "sourceQuestionId": 39,
-    "tags": ["entrainement"],
+    "id": "79",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Un Stade 3 est caractérisé par une victime",
     "answers": {
       "A": "Consciente et fatiguée",
       "B": "Consciente avec des signes de détresse respiratoire",
       "C": "Inconsciente avec des signes de détresse respiratoires"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm2-40",
-    "sourceQuestionId": 40,
-    "tags": ["entrainement"],
+    "id": "80",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Le chlore utilisé en piscine pour le traitement de l'eau",
     "answers": {
       "A": "Peut s'avérer très toxique",
       "B": "Peut être conditionné sous forme liquide, solide ou gazeuse",
       "C": "A des propriétés spécifiques pour ne pas brûler au contact avec la peau"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm3-1",
-    "sourceQuestionId": 1,
-    "tags": ["entrainement"],
+    "id": "81",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Une noyade",
     "answers": {
       "A": "Peut être provoquée par un malaise dans l’eau",
       "B": "Peut être provoquée par un traumatisme violent",
       "C": "Est toujours le fait d’un mauvais nageur"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm3-2",
-    "sourceQuestionId": 2,
-    "tags": ["entrainement"],
+    "id": "82",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Vous avez un vent de terre sous petite brise, que faites-vous",
     "answers": {
       "A": "Je hisse le drapeau rouge",
       "B": "Je hisse le drapeau jaune",
       "C": "Je laisse le drapeau vert"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm3-3",
-    "sourceQuestionId": 3,
-    "tags": ["entrainement"],
+    "id": "83",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Lorsqu’aucun drapeau n’est pas hissé durant les heures de surveillance",
     "answers": {
       "A": "La baignade n’est plus surveillée",
       "B": "Tous les sauveteurs sont peut-être en intervention",
       "C": "La baignade est interdite"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm3-4",
-    "sourceQuestionId": 4,
-    "tags": ["entrainement"],
+    "id": "84",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Les baïnes",
     "answers": {
       "A": "Sont dangereuses pour la baignade",
       "B": "Peuvent entraîner un nageur au large",
       "C": "Peuvent amener les sauveteurs à rétrécir la zone de baignade"
     },
-    "correctAnswers": ["A", "B", "C"]
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ]
   },
   {
-    "id": "qcm3-5",
-    "sourceQuestionId": 5,
-    "tags": ["entrainement"],
+    "id": "85",
+    "tags": [
+      "entrainement"
+    ],
     "question": "La signalisation des baignades",
     "answers": {
       "A": "Comporte des drapeaux de couleurs qui signalent des niveaux risques",
       "B": "Comporte des drapeaux de délimitation de zone",
       "C": "Des marques transversales"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm3-6",
-    "sourceQuestionId": 6,
-    "tags": ["entrainement"],
+    "id": "86",
+    "tags": [
+      "entrainement"
+    ],
     "question": "La signalisation des postes de secours",
     "answers": {
       "A": "Le poste de secours doit être peint en blanc",
       "B": "Un bandeau de couleur rouge et jaune doit faire le tour complet de la structure",
       "C": "L’inscription « sauveteur – lifeguard » doit figurer sur la partie jaune du bandeau"
     },
-    "correctAnswers": ["B", "C"]
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
   },
   {
-    "id": "qcm3-7",
-    "sourceQuestionId": 7,
-    "tags": ["entrainement"],
+    "id": "87",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Le code vestimentaire",
     "answers": {
       "A": "Le personnel de surveillance doit porter une tenue distincte",
       "B": "Le rouge est la couleur dominante du haut du corps",
       "C": "La mention « SAUVETEUR – LIFEGUARD » doit figurer dans le dos"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm3-8",
-    "sourceQuestionId": 8,
-    "tags": ["entrainement"],
+    "id": "88",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Les analyses d’eau",
     "answers": {
       "A": "Leur affichage n’est pas obligatoire",
       "B": "Sont uniquement réalisées en piscine",
       "C": "Sont effectuées sous le contrôle de l’ARS"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm3-9",
-    "sourceQuestionId": 9,
-    "tags": ["entrainement"],
+    "id": "89",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Quels sont le ou les diplômes permettant d’enseigner la natation scolaire ?",
     "answers": {
       "A": "Le BNSSA",
       "B": "Le MNS",
       "C": "Le SB"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm3-10",
-    "sourceQuestionId": 10,
-    "tags": ["entrainement"],
+    "id": "90",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Qui peut assurer l’enseignement contre rémunération de l’aquagym ?",
     "answers": {
       "A": "BNSSA",
       "B": "MNS",
       "C": "Aucun diplôme n’est requis"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm3-11",
-    "sourceQuestionId": 11,
-    "tags": ["entrainement"],
+    "id": "91",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Avec le BNSSA, je…",
     "answers": {
       "A": "Peut assurer la surveillance d’un accès payant, en assistance d’un MNS",
       "B": "Peut assurer la surveillance d’un plan d’eau d’accès gratuit",
       "C": "Peut enseigner l’Aisance Aquatique"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm3-12",
-    "sourceQuestionId": 12,
-    "tags": ["entrainement"],
+    "id": "92",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Pour revalider le diplôme de surveillant sauveteur aquatique, je …",
     "answers": {
       "A": "Doit suivre une formation continue en secourisme tous les ans",
       "B": "Doit satisfaire à une formation continue du BNSSA tous les 5 ans",
       "C": "Peux me présenter en candidat libre"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm3-13",
-    "sourceQuestionId": 13,
-    "tags": ["entrainement"],
+    "id": "93",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Un MNS doit être titulaire du diplôme suivant :",
     "answers": {
       "A": "BEESAN",
       "B": "BPJEPSAAN",
       "C": "BNSSA"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm3-14",
-    "sourceQuestionId": 14,
-    "tags": ["entrainement"],
+    "id": "94",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Un BNSSA est exclusivement chargé",
     "answers": {
       "A": "De la surveillance des baignades",
       "B": "Du sauvetage des personnes",
       "C": "De l’enseignement de la natation"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm3-15",
-    "sourceQuestionId": 15,
-    "tags": ["entrainement"],
+    "id": "95",
+    "tags": [
+      "entrainement"
+    ],
     "question": "La limite de compétence d’un maire du littoral en matière de baignades",
     "answers": {
       "A": "Est fixé à 300m du bord",
       "B": "Est fixé à 2 milles des côtes",
       "C": "Lui donne un pouvoir de police spéciale"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm3-16",
-    "sourceQuestionId": 16,
-    "tags": ["entrainement"],
+    "id": "96",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Le niveau de responsabilité qui peut être engagé au niveau du surveillant est",
     "answers": {
       "A": "La responsabilité pénale",
       "B": "La responsabilité personnelle",
       "C": "La responsabilité civile"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm3-17",
-    "sourceQuestionId": 17,
-    "tags": ["entrainement"],
+    "id": "97",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Catégories de navigations",
     "answers": {
       "A": "Les navires de plaisance sont classés en 4ème catégorie de conception",
       "B": "La catégorie C définit la navigation à proximité des côtes",
       "C": "Un bateau peut affronter toutes les conditions de mer"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm3-18",
-    "sourceQuestionId": 18,
-    "tags": ["entrainement"],
+    "id": "98",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Le préfet maritime peut intervenir dans la zone des 300 mètres",
     "answers": {
       "A": "Si l’ampleur de la catastrophe est trop importante pour être gérée par le Maire",
       "B": "Seulement si le Maire donne son accord",
       "C": "Si la zone n’est pas aménagée pour la baignade"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
-    "id": "qcm3-19",
-    "sourceQuestionId": 19,
-    "tags": ["entrainement"],
+    "id": "99",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Dans les S.D.I.S., il y a",
     "answers": {
       "A": "Des policiers",
       "B": "Des sapeurs pompiers",
       "C": "Des gendarmes"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm3-20",
-    "sourceQuestionId": 20,
-    "tags": ["entrainement"],
+    "id": "100",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Les limites de zone de bain",
     "answers": {
       "A": "Elles peuvent être délimitées par des drapeaux rouge et jaune",
       "B": "Elles déterminent la limite de réglementation du Maire",
       "C": "En mer, vers le large la responsabilité administrative du Maire s’arrête à 300m"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm3-21",
-    "sourceQuestionId": 21,
-    "tags": ["entrainement"],
+    "id": "101",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Le CROSS est",
     "answers": {
       "A": "Un organisme d’état qui coordonne les sauvetages en mer",
       "B": "Un organisme d’état qui organise la pratique sportive",
       "C": "Un organisme d’état rattaché aux sapeurs-pompiers"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
-    "id": "qcm3-22",
-    "sourceQuestionId": 22,
-    "tags": ["entrainement"],
+    "id": "102",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Le SAMU",
     "answers": {
       "A": "Service d’Aide Médicale Urgente",
       "B": "Service d’Assistance Médicalisé d’Urgence",
       "C": "Il dispose de SMUR"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm3-23",
-    "sourceQuestionId": 23,
-    "tags": ["entrainement"],
+    "id": "103",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Dans un établissement de bain d’accès payant",
     "answers": {
       "A": "L’affichage des diplômes est obligatoire",
       "B": "L’affichage des diplômes n’est pas obligatoire",
       "C": "Le personnel doit être déclaré auprès de la DDCSPP"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm3-24",
-    "sourceQuestionId": 24,
-    "tags": ["entrainement"],
+    "id": "104",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Où le POSS doit-il être obligatoirement affiché",
     "answers": {
       "A": "Dans tous les établissements de bain d’accès payant",
       "B": "Dans les lieux de baignade autorisés et d’accès payant",
       "C": "Dans les piscines de copropriétés"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm3-25",
-    "sourceQuestionId": 25,
-    "tags": ["entrainement"],
+    "id": "105",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Suite à un appel du CROSS tous les sauveteurs doivent partir en mer porter secours",
     "answers": {
       "A": "Hissent le drapeau rouge",
       "B": "Abaissent le drapeau",
       "C": "Font évacuer la baignade"
     },
-    "correctAnswers": ["B"]
+    "correctAnswers": [
+      "B"
+    ]
   },
   {
-    "id": "qcm3-26",
-    "sourceQuestionId": 26,
-    "tags": ["entrainement"],
+    "id": "106",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Le drapeau rouge est hissé",
     "answers": {
       "A": "Il signale que la zone de baignade est surveillée mais interdite",
       "B": "Il permet au sauveteur de quitter le poste",
       "C": "Il indique que la baignade est dangereuse mais surveillée"
     },
-    "correctAnswers": ["A"]
+    "correctAnswers": [
+      "A"
+    ]
   },
   {
-    "id": "qcm3-27",
-    "sourceQuestionId": 27,
-    "tags": ["entrainement"],
+    "id": "107",
+    "tags": [
+      "entrainement"
+    ],
     "question": "En cas d’accident grave en piscine",
     "answers": {
       "A": "Si on est qu’à deux sauveteurs, je peux faire évacuer le bassin",
       "B": "On est qu’à deux sauveteurs, je gère seul",
       "C": "Je mets en œuvre le POSS"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm3-28",
-    "sourceQuestionId": 28,
-    "tags": ["entrainement"],
+    "id": "108",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Pendant que je suis affecté à la surveillance",
     "answers": {
       "A": "Je peux me situer sur une chaise haute",
       "B": "Je peux me déplacer autour du bassin",
       "C": "Je peux utiliser mon téléphone"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm3-29",
-    "sourceQuestionId": 29,
-    "tags": ["entrainement"],
+    "id": "109",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Qui coordonne les secours en mer",
     "answers": {
       "A": "Les CRS",
       "B": "Le SDIS",
       "C": "Le CROSS"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm3-30",
-    "sourceQuestionId": 30,
-    "tags": ["entrainement"],
+    "id": "110",
+    "tags": [
+      "entrainement"
+    ],
     "question": "En accueil collectif de mineurs, la réglementation exige en milieu naturel",
     "answers": {
       "A": "Pas plus de 40 enfants dans l’eau",
       "B": "Un périmètre doit délimiter la zone de bain",
       "C": "Un BNSSA peut surveiller ce genre de public"
     },
-    "correctAnswers": ["A", "B", "C"]
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ]
   },
   {
-    "id": "qcm3-31",
-    "sourceQuestionId": 31,
-    "tags": ["entrainement"],
+    "id": "111",
+    "tags": [
+      "entrainement"
+    ],
     "question": "La zone de bain en milieu naturel",
     "answers": {
       "A": "Le Maire est responsable de sa matérialisation",
       "B": "Le Préfet maritime est responsable de sa matérialisation",
       "C": "Est parfois matérialisée par les sauveteurs"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm3-32",
-    "sourceQuestionId": 32,
-    "tags": ["entrainement"],
+    "id": "112",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Lors de sa 1ère prise de service en milieu naturel un surveillant sauveteur",
     "answers": {
       "A": "Doit s’informer sur les risques",
       "B": "Doit vérifier l’ensemble du matériel",
       "C": "Doit détenir le permis bateau"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm3-33",
-    "sourceQuestionId": 33,
-    "tags": ["entrainement"],
+    "id": "113",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Le POSS dans un établissement payant",
     "answers": {
       "A": "Doit être affiché dans un endroit visible au public",
       "B": "N’est pas obligatoirement affiché",
       "C": "Recense tous les risques potentiels"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm3-34",
-    "sourceQuestionId": 34,
-    "tags": ["entrainement"],
+    "id": "114",
+    "tags": [
+      "entrainement"
+    ],
     "question": "En piscine, un accueil collectif de mineurs",
     "answers": {
       "A": "Doit venir avec un SB",
       "B": "Doit venir avec un BNSSA",
       "C": "Est placé exclusivement sous la surveillance du personnel"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
   },
   {
-    "id": "qcm3-35",
-    "sourceQuestionId": 35,
-    "tags": ["entrainement"],
+    "id": "115",
+    "tags": [
+      "entrainement"
+    ],
     "question": "En piscine les zones sensibles sont",
     "answers": {
       "A": "Les angles des bassins",
       "B": "Les zones d’ombre",
       "C": "Les pédiluves"
     },
-    "correctAnswers": ["A", "B"]
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
   },
   {
-    "id": "qcm3-36",
-    "sourceQuestionId": 36,
-    "tags": ["entrainement"],
+    "id": "116",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Une activité subaquatique peut être signalée par",
     "answers": {
       "A": "Un pavillon Bleu et Blanc Alpha",
       "B": "Un pavillon Rouge et Blanc nommé « Croix de St André »",
       "C": "Un pavillon Rouge barré d’une bande blanche nommé « CMAS »"
     },
-    "correctAnswers": ["A", "B", "C"]
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ]
   },
   {
-    "id": "qcm3-37",
-    "sourceQuestionId": 37,
-    "tags": ["entrainement"],
+    "id": "117",
+    "tags": [
+      "entrainement"
+    ],
     "question": "En milieu naturel, la surveillance des plages en métropole",
     "answers": {
       "A": "S’effectue toute l’année",
       "B": "S’effectue en été",
       "C": "La durée de la surveillance est définie par le Maire"
     },
-    "correctAnswers": ["B", "C"]
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
   },
   {
-    "id": "qcm3-38",
-    "sourceQuestionId": 38,
-    "tags": ["entrainement"],
+    "id": "118",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Le matériel de réanimation cardio-pulmonaire est composé",
     "answers": {
       "A": "D’un ballon auto-remplisseur",
       "B": "D’une bouteille d’air comprimé",
       "C": "D’un défibrillateur"
     },
-    "correctAnswers": ["A", "C"]
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   },
   {
-    "id": "qcm3-39",
-    "sourceQuestionId": 39,
-    "tags": ["entrainement"],
+    "id": "119",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Soins apportés",
     "answers": {
       "A": "Une personne suspectée d’avoir inhalée de l’eau doit être hospitalisée",
@@ -1427,18 +1854,4558 @@
       "C": "La défibrillation précoce augmente les chances de survie",
       "D": "Certains malaises ou maladies graves peuvent entraîner une détresse vitale dans l’eau"
     },
-    "correctAnswers": ["A", "C", "D"]
+    "correctAnswers": [
+      "A",
+      "C",
+      "D"
+    ]
   },
   {
-    "id": "qcm3-40",
-    "sourceQuestionId": 40,
-    "tags": ["entrainement"],
+    "id": "120",
+    "tags": [
+      "entrainement"
+    ],
     "question": "Evaluation des fonctions vitales",
     "answers": {
       "A": "Il existe quatre fonctions vitales",
       "B": "Le sauveteur contrôle la ventilation, l’inconscience, la circulation",
       "C": "Le Bilan des REGARDS inclut l’évaluation des fonctions vitales"
     },
-    "correctAnswers": ["C"]
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "121",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Emplacements aménagés à l'usage de baignades qui font l'objet de dispositions particulières destinées à assurer la sécurité des baigneurs",
+    "answers": {
+      "A": "Cette affirmation est exact",
+      "B": "Cette affirmation est fausse",
+      "C": "Comprend une zone délimitée pour la baignade"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "122",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les zones de navigation",
+    "answers": {
+      "A": "Il existe trois zones de navigation",
+      "B": "Il existe deux zones de navigation",
+      "C": "La première zone de navigation se limite à moins de 6 milles d'un abri"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "123",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "En cas d'accident grave pour un défaut de surveillance",
+    "answers": {
+      "A": "Je peux faire confiance à l'assurance Responsabilité civile de mon employeur pour me défendre",
+      "B": "Il vaut mieux avoir son assurance en responsabilité civile professionnelle indépendante de celle de l'employeur",
+      "C": "Contracter une assurance responsabilité civile avec la FNMNS me permet de retirer 66% de la cotisation aux impôts"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "124",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "L'entretien des baignades surveillées nécessite que",
+    "answers": {
+      "A": "Des pancartes rappellent aux usagers les mesures d'hygiène auxquelles ils doivent se conformer",
+      "B": "Le chef de poste soit responsable de l'hygiène et du nettoyage de la plage",
+      "C": "Les communes doivent disposer des douches, WC et réceptacles de déchets sur la plage"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "125",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le balisage en navigation comprend",
+    "answers": {
+      "A": "Des marques latérales",
+      "B": "Des marques cardinales",
+      "C": "Des marques transversales"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "126",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La norme de signalisation des baignades",
+    "answers": {
+      "A": "S'inspire d'une norme ISO internationale",
+      "B": "Concerne les lieux de baignade en littoral et eaux intérieures",
+      "C": "N'est pas applicable dans les départements d'outre-mer"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "127",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un VNM",
+    "answers": {
+      "A": "N'a pas besoin d'être immatriculé s'il a une puissance supérieure à 90 kW",
+      "B": "Est un véhicule nautique à moteur",
+      "C": "Le marine jet entre dans cette catégorie"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "128",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Quel est l'unité de mesure de la vitesse en milieu maritime ?",
+    "answers": {
+      "A": "Le nœud",
+      "B": "Le kilomètre par heure",
+      "C": "Le mile par heure"
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "129",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour se voir valider le SSA Littoral ou SSA Eaux intérieures",
+    "answers": {
+      "A": "Il faut être titulaire du diplôme du BNSSA",
+      "B": "Il faut être titulaire du diplôme de MNS",
+      "C": "Il faut obtenir le PSE2"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "130",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le règlement intérieur",
+    "answers": {
+      "A": "Définit les règles d'accès à l'établissement",
+      "B": "Est mis en place par le Chef de Bassin",
+      "C": "Donne des dispositions réglementaires en matière d'hygiène"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "131",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "J'assure seul la surveillance d'une plage au bord d'un étang",
+    "answers": {
+      "A": "Je suis le mieux placé au poste de secours pour que l'on me trouve facilement en cas d'accident",
+      "B": "Je suis le mieux placé au bord de l'eau pour avoir une vue directe sur les baigneurs",
+      "C": "Une chaise de surveillance peut me permettre de voir et d'être vu"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "132",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Chaque département dispose d'une administration",
+    "answers": {
+      "A": "Qui peut contrôler la sécurité des piscines publiques",
+      "B": "Qui est placée sous l'autorité du président de région",
+      "C": "Qui assure également le contrôle des baignades en milieu naturel"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "133",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Il existe une Norme AFNOR « Exigences de surveillance des piscines à usage public »",
+    "answers": {
+      "A": "Celle-ci explique notamment les contraintes organisationnelles d'une piscine",
+      "B": "Celle-ci donne des pistes pour assurer une bonne surveillance d'une piscine",
+      "C": "Celle-ci est spécifique aux contraintes d'hygiène des piscines"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "134",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lors d'une noyade",
+    "answers": {
+      "A": "Chez l'adulte, il n'est pas nécessaire de réaliser 5 insufflations avant de débuter une réanimation",
+      "B": "Chez l'enfant, il est nécessaire de réaliser 5 insufflations avant de débuter une réanimation",
+      "C": "On peut effectuer une RCP dans l'eau, lors d'un remorquage"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "135",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lorsqu'une baignade en milieu naturel est ouverte, les analyses de l'eau sont faites",
+    "answers": {
+      "A": "À la convenance du Maire",
+      "B": "Au minimum deux fois par mois",
+      "C": "Uniquement en cas d'aspect inquiétant de l'eau"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "136",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un Coach fitness dans l'eau peut assurer l'encadrement de séances collectives d'animation en aquafitness",
+    "answers": {
+      "A": "Dans tout type de bassin s'il est titulaire du BNSSA",
+      "B": "Dans un bassin d'une profondeur maximale de 1,30 m et sous la surveillance d'un MNS ou d'un BNSSA",
+      "C": "Dans un bassin d'une profondeur minimale de 1,30 m en autonomie"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "137",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lorsque l'on vient du large, les chenaux traversiers",
+    "answers": {
+      "A": "Sont matérialisés par des bouées cylindriques à bâbord",
+      "B": "Sont matérialisés par des bouées cylindriques à tribord",
+      "C": "Sont matérialisés par des bouées de couleur jaune"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "138",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Quels sont les principaux recruteurs de personnel dans les postes de secours ?",
+    "answers": {
+      "A": "Les maires",
+      "B": "Les services départementaux d'incendie et de secours",
+      "C": "Les compagnies républicaines de sécurité"
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "139",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Quel moyen de communication puis-je avoir avec moi au bord du bassin ?",
+    "answers": {
+      "A": "La radio émettrice pour entrer en contact avec mes collègues",
+      "B": "Le téléphone de service exclusivement réservé pour l'alerte des secours",
+      "C": "Mon téléphone personnel"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "140",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Une dérogation préfectorale est sollicitée par un employeur qui ne trouve pas de MNS",
+    "answers": {
+      "A": "Cette disposition n'est plus d'actualité depuis juin 2023",
+      "B": "A une durée maximale de 6 mois",
+      "C": "Le titulaire du BNSSA peut exercer en autonomie, mais doit se déclarer"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "141",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un poste de secours doit être",
+    "answers": {
+      "A": "Peint en blanc",
+      "B": "Identifiable grâce à un bandeau rouge et jaune",
+      "C": "Peint avec une croix rouge"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "142",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Dans les techniques de surveillance on peut compter sur différentes techniques de balayages visuels",
+    "answers": {
+      "A": "En arc",
+      "B": "En zig zag",
+      "C": "En cercle"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "143",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lors d'activités se déroulant dans une piscine sous statut associatif",
+    "answers": {
+      "A": "Une convention établie avec l'exploitant définit les conditions d'utilisation du lieu",
+      "B": "C'est le président de l'association qui est le garant de la sécurité de ses membres",
+      "C": "Un BNSSA peut y enseigner contre rémunération avec un diplôme fédéral"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "144",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Dans le cas d'une concession à un plagiste",
+    "answers": {
+      "A": "La responsabilité du Maire pourra toujours être recherchée en cas d'accident",
+      "B": "Le maire est déchargé de la sécurité",
+      "C": "Un poste de secours est obligatoire"
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "145",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "En France on recense chaque année entre le 1er juin et le 31 août",
+    "answers": {
+      "A": "Près de 1000 à 1500 cas de noyades",
+      "B": "Près de 1500 à 2000 cas de noyades",
+      "C": "Près de 2000 à 2500 cas de noyades"
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "146",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Qui peut assurer l'enseignement de l'aquagym contre rémunération ?",
+    "answers": {
+      "A": "Un BNSSA",
+      "B": "Un MNS",
+      "C": "Aucun diplôme n'est requis."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "147",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un surveillant de baignade peut travailler :",
+    "answers": {
+      "A": "en piscine comme assistant d'un MNS.",
+      "B": "dans le cadre d'un accueil collectif de loisirs pour la surveillance de mineurs.",
+      "C": "en lieu et place d'un BNSSA dans un poste de secours."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "148",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Soins apportés lors d'une noyade.",
+    "answers": {
+      "A": "Une personne suspectée d'avoir inhalée de l'eau doit être hospitalisée.",
+      "B": "La défibrillation précoce augmente les chances de survie d'une réanimation cardio-pulmonaire.",
+      "C": "Certains malaises ou maladies graves peuvent entraîner une détresse vitale dans l'eau."
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "149",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le POSS :",
+    "answers": {
+      "A": "doit comprendre un descriptif des installations.",
+      "B": "n'est pas obligatoire en piscine public d'accès payant.",
+      "C": "est le plan d'organisation de la surveillance et des secours."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "150",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les zones de navigation.",
+    "answers": {
+      "A": "Il existe trois zones de navigation.",
+      "B": "Il existe deux zones de navigation.",
+      "C": "La première zone de navigation se limite à moins de 6 milles d'un abri."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "151",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un BNSSA peut enseigner contre rémunération.",
+    "answers": {
+      "A": "Oui, l'aquagym.",
+      "B": "Oui, la natation.",
+      "C": "Non, il ne peut rien enseigner."
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "152",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les piscines de camping uniquement réservées aux résidents :",
+    "answers": {
+      "A": "doivent être surveillées.",
+      "B": "doivent signaler l’absence de surveillance.",
+      "C": "doivent au moins avoir un Défibrillateur sur le camping"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "153",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "En cas d'accident grave pour un défaut de surveillance :",
+    "answers": {
+      "A": "je peux faire confiance à l'assurance Responsabilité civile de mon employeur pour me défendre",
+      "B": "il vaut mieux avoir son assurance en responsabilité civile professionnelle indépendante de celle de l'employeur",
+      "C": "contracter une assurance responsabilité civile avec la FNMNS, me permet de retirer 66% de la cotisation aux impôts"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "154",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Quelle est la durée dérogatoire permettant à un BNSSA d'exercer en autonomie dans une piscine saisonnière ?",
+    "answers": {
+      "A": "1 mois mini à 4 mois maxi.",
+      "B": "Il n'y en a plus.",
+      "C": "1 an maxi."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "155",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "L'entretien des baignades surveillées nécessite que :",
+    "answers": {
+      "A": "des pancartes rappellent aux usagers les mesures d'hygiène auxquelles ils doivent se conformer.",
+      "B": "le chef de poste soit responsable de l'hygiène et du nettoyage de la plage.",
+      "C": "les communes doivent disposer des douches, WC et réceptacles de déchets sur la plage."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "156",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le SAMU:",
+    "answers": {
+      "A": "est le service d'Aide Médicale Urgente.",
+      "B": "est le service d'Assistance Médicalisé d'Urgence.",
+      "C": "dispose de SMUR."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "157",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Quel produit est obligatoire pour traiter l'eau d'une piscine publique ?",
+    "answers": {
+      "A": "le brome",
+      "B": "l'ozone",
+      "C": "le chlore"
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "158",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "L'ARS :",
+    "answers": {
+      "A": "est l'Agence Régionale de Sécurité",
+      "B": "Est l'Agence Régionale de Santé",
+      "C": "a, dans le cadre de ces missions,uniquement le contrôle de la qualité de l'eau des piscines."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "159",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le balisage en navigation comprend :",
+    "answers": {
+      "A": "des marques latérales.",
+      "B": "des marques cardinales.",
+      "C": "des marques transversales"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "160",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Qui recrute le personnel pour armer les postes de secours ?",
+    "answers": {
+      "A": "le Maire",
+      "B": "le Préfet du département",
+      "C": "le Préfet maritime"
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "161",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un VNM :",
+    "answers": {
+      "A": "n'a pas besoin d'être immatriculé s'il a une puissance supérieure à 90kw.",
+      "B": "est un véhicule nautique à moteur",
+      "C": "le marine jet entre dans cette catégorie"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "162",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "A la suite d'une piqûre de vive :",
+    "answers": {
+      "A": "je dois nettoyer la plaie.",
+      "B": "le venin étant thermolabile, je peux plongée le pied dans une bassine d'eau chaude pour le détruire.",
+      "C": "la victime peut se baigner sitôt la plaie désinfectée."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "163",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour se voir valider le SSA Littoral ou SSA Eaux intérieures :",
+    "answers": {
+      "A": "il faut être titulaire du diplome du BNSSA",
+      "B": "il faut être titulaire du diplome de MNS",
+      "C": "Il faut obtenir le PSE2"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "164",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les baïnes :",
+    "answers": {
+      "A": "Doivent être situées dans la zone de baignade pour être sécurisées au maximum.",
+      "B": "sont dangereuses pour la baignade.",
+      "C": "peuvent entraîner un nageur au large."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "165",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "En combien de catégories sont classifiées les baignades en eau libre ?",
+    "answers": {
+      "A": "1 catégories",
+      "B": "2 catégories",
+      "C": "3 catégories"
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "166",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le règlement intérieur :",
+    "answers": {
+      "A": "définit les règles d’accès à l’établissement.",
+      "B": "est mis en place par le Chef de Bassin.",
+      "C": "donne des dispositions réglementaires en matière d’hygiène."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "167",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "J'assure seul la surveillance d'une plage au bord d'un étang :",
+    "answers": {
+      "A": "je suis le mieux placé au poste de secours pour que l'on me trouve facilement en cas d'accident",
+      "B": "je suis le mieux placé au bord de l'eau pour avoir une vue directe sur les baigneurs",
+      "C": "une chaise de surveillance peut me permettre de voir, et d'être vu"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "168",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Chaque département dispose d'une administration ?",
+    "answers": {
+      "A": "Qui peut contrôler la sécurité des piscines publiques.",
+      "B": "Qui est placée sous l'autorité du président de région.",
+      "C": "Qui assure également le contrôle des baignades en milieu naturel."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "169",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Il existe une Norme AFNOR \"Exigences de surveillance des piscines à usage public :",
+    "answers": {
+      "A": "celle ci explique notamment les contraintes organisationnelles d'une piscine",
+      "B": "celle ci donne des pistes pour assurer une bonne surveillance d'une piscine",
+      "C": "celle ci est spécifique au contrainte d'hygiène des piscines"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "170",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lors d'une noyade:",
+    "answers": {
+      "A": "chez l'adulte, il n'est pas nécessaire de réaliser 5 insufflations avant de débuter une réanimation.",
+      "B": "chez l'enfant, il est nécessaire de réaliser 5 insufflations avant de débuter une réanimation.",
+      "C": "on peut effectuer une RCP dans l'eau, lors d'un remorquage."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "171",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lorsqu'une baignade en milieu naturel est ouverte, les analyses de l'eau sont faites:",
+    "answers": {
+      "A": "à la convenance du Maire.",
+      "B": "au minimum deux fois par mois.",
+      "C": "uniquement en cas d'aspect inquiétant de l'eau."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "172",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un Coach fitness dans l'eau peut assurer l’encadrement de séances collectives d'animation en aquafitness :",
+    "answers": {
+      "A": "dans toute type de bassin s'il est titulaire du BNSSA",
+      "B": "dans un bassin d'une profondeur maximale de 1,30 m et sous la surveillance d'un MNS ou d'un BNSSA.",
+      "C": "dans un bassin d'une profondeur minimale de 1,30 m en autonomie"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "173",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lorsque l'on vient du large, les chenaux traversiers :",
+    "answers": {
+      "A": "sont matérialisés par des bouées cylindriques à bâbord.",
+      "B": "sont matérialisés par des bouées cylindriques à tribord.",
+      "C": "sont matérialisés par des bouées couleur jaune."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "174",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Quel moyen de communication puis je avoir avec moi au bord du bassin :",
+    "answers": {
+      "A": "la radio émettrice pour entrer en contact avec mes collègues",
+      "B": "le téléphone de service exclusivement réservé pour l'alerte des secours",
+      "C": "mon téléphone personnel"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "175",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Une dérogation préfectorale est sollicitée par un employeur qui ne trouve pas de MNS :",
+    "answers": {
+      "A": "cette disposition n'est plus d'actualité depuis Juin 2023",
+      "B": "a une durée maximale de 6 mois.",
+      "C": "le titulaire du BNSSA peut exercer en autonomie, mais doit se déclarer"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "176",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un poste de secours doit être :",
+    "answers": {
+      "A": "peint en blanc.",
+      "B": "identifiable grace à un bandeau rouge et jaune",
+      "C": "peint avec une croix rouge."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "177",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Dans les techniques de surveillance on peut compter sur différentes techniques de balayages visuels :",
+    "answers": {
+      "A": "en arc",
+      "B": "en zig zag",
+      "C": "en cercle"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "178",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lors d’activités se déroulant dans une piscine sous statut associatif :",
+    "answers": {
+      "A": "une convention établie avec l’exploitant définit les conditions d’utilisation du lieu.",
+      "B": "c’est le président de l’association qui est le garant de la sécurité de ces membres .",
+      "C": "un BNSSA peut y enseigner contre rémunération avec un diplôme fédéral."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "179",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Dans le cas d'une concession à un plagiste :",
+    "answers": {
+      "A": "la responsabilité du Maire pourra toujours être recherchée en cas d'accident.",
+      "B": "le maire est déchargée de la sécurité.",
+      "C": "un poste de secours est obligatoire."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "180",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "J'ai 16 ans.",
+    "answers": {
+      "A": "Je peux passer le permis mer option côtier.",
+      "B": "Je peux passer le permis plaisance en eaux intérieurs.",
+      "C": "Je dois attendre d'avoir 18 ans pour passer un permis navigation de plaisance."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "181",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "En France on recense chaque année entre le 1er juin et 31 aout :",
+    "answers": {
+      "A": "près de 1000 à 1500 cas de noyades",
+      "B": "près de 1500 à 2000 cas de noyades",
+      "C": "près de 2000 à 2500 cas de noyades"
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "182",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le dédommagement d'une victime handicapée à vie :",
+    "answers": {
+      "A": "peut être de l'ordre de 200 000 à 400 000 euros",
+      "B": "peut être de l'ordre de 4 à 8 millions d'euros",
+      "C": "peut être pris en charge par une assurance dans le cas d'une condamnation civile"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "183",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "En cas d'intervention mobilisant l'ensemble du personnel du poste de secours dans la bande des 300 mètres :",
+    "answers": {
+      "A": "je fait baisser le drapeau des conditions de baignades",
+      "B": "je fais évacuer la baignade",
+      "C": "j'informe prioritairement le CROSS"
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "184",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le POSS est obligatoire :",
+    "answers": {
+      "A": "dans tous les lieux de baignade.",
+      "B": "uniquement dans les lieux d’accès payant..",
+      "C": "uniquement lorsqu’il y a un maître nageur sauveteur."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "185",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les analyses d’eau en piscine :",
+    "answers": {
+      "A": "sont obligatoirement affichées.",
+      "B": "sont uniquement réalisées en milieu naturel.",
+      "C": "sont réalisés à une fréquence d’une fois par mois."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "186",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "L'accès à un poste de secours peut comporter :",
+    "answers": {
+      "A": "une voie carossable",
+      "B": "une aire héliportée",
+      "C": "un parking réservé aux secours"
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "187",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Choix du drapeau:",
+    "answers": {
+      "A": "Pour un vent de force 4 à 5, il est recommandé de mettre le drapeau jaune.",
+      "B": "En cas de brume intense ne permettant pas la surveillance, il faut mettre le drapeau vert.",
+      "C": "Pour un vent de force inférieur à 3, il est recommandé de mettre le drapeau vert...."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "188",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "En cas de violation d’une obligation de sécurité imposée par la loi les peines encourues sont portées à :",
+    "answers": {
+      "A": "de un à cinq ans d’emprisonnement et 25000€ à 75 000 € d’amende",
+      "B": "le tribunal à une liberté totale en matière de sanction",
+      "C": "pas d'emprisonnement et pas d'amende juste une interdiction d'exercer"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "189",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le chlore d'une piscine conditionné dans un bidon sous forme liquide peut :",
+    "answers": {
+      "A": "provoquer un risque mortel par ingestion",
+      "B": "ne rien faire car il est dilué",
+      "C": "provoquer un risque mortel par inhalation"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "190",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "L'unité de vitesse d'un navire :",
+    "answers": {
+      "A": "s'exprime en noeud en mer",
+      "B": "s'exprime en km/h en eaux intérieures",
+      "C": "s'exprime en noeud en mer et en eaux intérieures"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "191",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Une piqûre de vive :",
+    "answers": {
+      "A": "peut provoquer une violente douleur.",
+      "B": "peut occasionner des nécroses de la peau.",
+      "C": "est provoquée par un animal de la classe des physalies."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "192",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Sur le territoire métropolitain, lorsque l'on vient du large, les chenaux d'entrée de port :",
+    "answers": {
+      "A": "sont matérialisés par des bouées, cylindriques à bâbord et coniques à tribord.",
+      "B": "sont matérialisés par des bouées de couleur verte à bâbord et rouge à tribord.",
+      "C": "peuvent être autorisés à la baignade."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "193",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le drapeau jaune peut être hissé lorsque la différence de température entre l’air et l’eau est trop importante.",
+    "answers": {
+      "A": "Vrai.",
+      "B": "La température n’intervient pas dans le choix du drapeau.",
+      "C": "C’est uniquement l’échelle de Beaufort qui détermine la couleur du drapeau."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "194",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Se baigner dans une eau de piscine polluée peut entrainer :",
+    "answers": {
+      "A": "une infection bénigne comme la conjonctivite",
+      "B": "un blanchiment de la peau.",
+      "C": "une fermeture de l’établissement."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "195",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les engins pneumatiques tractés :",
+    "answers": {
+      "A": "doivent avoir une personne à bord en plus du pilote pour surveiller l'activité.",
+      "B": "doivent, arborer une flamme fluorescente orange de 2 m.",
+      "C": "Les personnes embarquées sur l'engin pneumatique n'ont pas besoin de gilets."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "196",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Avec un permis plaisance option côtière, vous pouvez:",
+    "answers": {
+      "A": "naviguer jusqu'à 6 milles d'un abri de jour comme de nuit.",
+      "B": "naviguer sans limitation de distance.",
+      "C": "naviguer sans limite de vitesse au-delà des 300 m."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "197",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lors d'un stage SSA Eaux intérieures ou Littoral, le stagiaire aborde :",
+    "answers": {
+      "A": "les techniques de sauvetage et de secourisme en milieu naturel",
+      "B": "les gestes complémentaires pour la prise en charge d'une noyade",
+      "C": "la réglementation des piscines"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "198",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Combien y a-t-il de CROSS principaux en France métropolitaine ?",
+    "answers": {
+      "A": "3",
+      "B": "4",
+      "C": "5"
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "199",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Une noyade :",
+    "answers": {
+      "A": "peut être provoquée par un malaise dans l'eau.",
+      "B": "peut être provoquée par un traumatisme violent.",
+      "C": "est toujours le fait d'un mauvais nageur."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "200",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lors de sa 1ère prise de service en milieu naturel, un BNSSA :",
+    "answers": {
+      "A": "doit consulter le plan de secours s'il existe.",
+      "B": "doit vérifier l'ensemble du matériel.",
+      "C": "doit détenir le permis bateau."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "201",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les surfeurs doivent:",
+    "answers": {
+      "A": "évoluer si elle existe dans une zone délimitée par un drapeau à damier noir et blanc",
+      "B": "évoluer si elle existe dans une zone délimitée par une flamme rouge avec un rond vert.",
+      "C": "interrompre leur activité par flamme rouge."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "202",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Une baïne :",
+    "answers": {
+      "A": "représente l'amplitude de la mer.",
+      "B": "est une sorte de cuvette remplie d'eau.",
+      "C": "peut être dangereuse pour la baignade."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "203",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Vous avez un vent de terre sous petite brise, que faites-vous ?",
+    "answers": {
+      "A": "Je peux hisser une flamme spécifique",
+      "B": "Je hisse un cone orange",
+      "C": "Je peux laisser le drapeau signalant les conditions de baignade en place",
+      "D": "Je ferme la baignade"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "204",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La juridiction civile :",
+    "answers": {
+      "A": "se juge dans une cour d'assise",
+      "B": "répare un préjudice causé à un tiers",
+      "C": "prévoit des dommages et Intérêts"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "205",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Douche obligatoire avant d'aller dans l'eau en piscine. Laquelle de ces affirmations est juste ?",
+    "answers": {
+      "A": "pour limiter la pollution due aux déchets organiques que transporte le nageur",
+      "B": "pour limiter la consommation de chlore",
+      "C": "la production de chloramines n’est pas en lien avec l’hygiène des baigneurs"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "206",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Quels types d'atteintes peuvent être occasionnés par des aménagements ludiques :",
+    "answers": {
+      "A": "des traumatismes",
+      "B": "des noyades",
+      "C": "des intoxications"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "207",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "L'eau d'une piscine :",
+    "answers": {
+      "A": "doit être filtrante",
+      "B": "doit être désinfectante",
+      "C": "doit être stérilisante"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "208",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les unités de mesure en mer :",
+    "answers": {
+      "A": "1 mille nautique est équivalent à 1852 m.",
+      "B": "Un bateau naviguant à 5 nœuds circule à une vitesse approximative de 9 km/h.",
+      "C": "L'unité de mesure de la vitesse est le nœud."
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "209",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Si il n'y a pas d'interdiction, il est possible de se baigner dans un plan d'eau ou une rivière.",
+    "answers": {
+      "A": "Oui.",
+      "B": "Non il faut obligatoirement un poste de secours à proximité.",
+      "C": "Le maire doit d'abord faire une demande d'ouverture de baignade à la préfecture."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "210",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lequel n'est pas un engin de plage ?",
+    "answers": {
+      "A": "Pédalo",
+      "B": "Bateau gonflable",
+      "C": "kayac de mer"
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "211",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le systeme POSEIDON c'est quoi ?",
+    "answers": {
+      "A": "un système d'aide à la surveillance en milieu maritime",
+      "B": "un système d'aide à la surveillance en piscine",
+      "C": "un système qui ne peut pas se substituer aux surveillants, mais qui complète le dispositif de sécurité."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "212",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les CROSS sont placés sous l'autorité :",
+    "answers": {
+      "A": "des préfectures de département.",
+      "B": "des préfectures maritimes.",
+      "C": "des sous-préfectures."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "213",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La planche nautique tractée :",
+    "answers": {
+      "A": "se nomme aussi Kite-surf, fly-surf, kite board",
+      "B": "est autorisée pour une navigation de jour uniquement",
+      "C": "est limitée à 1 milles des côtes"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "214",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les engins tractés :",
+    "answers": {
+      "A": "les personnes embarquées sur l’engin doivent porter des gilets de sauvetage de couleur vive",
+      "B": "le navire tracteur doit arborer une flamme fluorescente orange",
+      "C": "les personnes embarquées sur l’engin doivent produire une attestation de natation de 100 mètres."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "215",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un maire peut salarier un sauveteur comme :",
+    "answers": {
+      "A": "travailleur indépendant",
+      "B": "agent communal",
+      "C": "auto-entrepreneur"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "216",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Utilisation de l'oxygène.",
+    "answers": {
+      "A": "L'utilisation d'une bouteille d'oxygène demande des précautions particulières.",
+      "B": "Je peux utiliser un masque d'inhalation pour délivrer de l'oxygène.",
+      "C": "Fumer à proximité d'une bouteille d'oxygène n'est pas dangereux."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "217",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le CROSS :",
+    "answers": {
+      "A": "est sous l'autorité de Préfet maritime.",
+      "B": "est sous l'autorité du Préfet de Région",
+      "C": "assure des missions de surveillance et de sauvetage."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "218",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Je peux passer le SSA Littoral :",
+    "answers": {
+      "A": "en 4 jours",
+      "B": "en 3 jours",
+      "C": "en 2 jours"
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "219",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Dans le cas d'un enfant en arrêt cardiaque, suite à une noyade, il faut :",
+    "answers": {
+      "A": "commencer si possible par faire 5 insufflations.",
+      "B": "commencer par le massage cardiaque, si les insufflations ne peuvent se faire",
+      "C": "masser au moins à 150 compressions à la minute."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "220",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Comment doivent être signalés les baignades non surveillées ?",
+    "answers": {
+      "A": "avec des panneaux à fond blanc, texte et cadre rouge.",
+      "B": "avec des panneaux à fond jaune, texte et cadre en noir.",
+      "C": "ce n’est pas normé."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "221",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour la force du vent, l'échelle de Beaufort va de :",
+    "answers": {
+      "A": "0 à 9",
+      "B": "0 à 12",
+      "C": "0 à 15"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "222",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les engins de plage :",
+    "answers": {
+      "A": "doivent évoluer dans la zone des 300 m.",
+      "B": "peuvent évoluer jusqu'à 1 mille d'un abri.",
+      "C": "nécessitent une surveillance accrue par vent de terre."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "223",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le préfet maritime peut intervenir dans la zone des 300 mètres :",
+    "answers": {
+      "A": "si l'ampleur de la catégorie de la catastrophe est trop importante pour être gérée par le Maire.",
+      "B": "seulement si le Maire donne son accord.",
+      "C": "si la zone n'est pas aménagée pour la baignade."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "224",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les CROSS :",
+    "answers": {
+      "A": "coordonnent les missions de sauvetage en mer.",
+      "B": "disposent entre autres des moyens de la SNSM.",
+      "C": "Le CROSS est sous l'autorité du SDIS."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "225",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "L'autorité administrative du préfet s'exerce par l'application des :",
+    "answers": {
+      "A": "Décrets",
+      "B": "Commandements",
+      "C": "Arrêtés"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "226",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le nombre de stades de la noyade est de :",
+    "answers": {
+      "A": "3",
+      "B": "4",
+      "C": "5"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "227",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le rôle du Maire en matière de sécurité des plages :",
+    "answers": {
+      "A": "il recrute le personnel de surveillance des plages.",
+      "B": "il détermine la couleur du drapeau à hisser.",
+      "C": "il dispose des pouvoirs de police spéciale."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "228",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La FMI d’un établissement de bain d’accès payant",
+    "answers": {
+      "A": "est la Fréquentation Maximale Instantanée.",
+      "B": "est la Fréquentation Minimale Indiquée.",
+      "C": "est calculée en fonction de la surface des bassins."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "229",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour fermer un poste, le drapeau est baissé :",
+    "answers": {
+      "A": "avant le rangement de tout le matériel.",
+      "B": "après le rangement de tout le matériel.",
+      "C": "à l’heure fixée par les horaires de surveillance"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "230",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le texte signé par le maire et qui réglemente une plage et sa baignade d'accès libre se nomme :",
+    "answers": {
+      "A": "arrêté municipal",
+      "B": "règlement intérieur",
+      "C": "arrêté préfectoral"
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "231",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les piscines d’hôtels ou de campings",
+    "answers": {
+      "A": "ne sont pas soumis à une réglementation en matière de surveillance",
+      "B": "sont soumis à une réglementation en matière de surveillance",
+      "C": "sont soumis à une obligation de surveillance uniquement en cas d'accès payant"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "232",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Il existe différentes catégories de baignade qui sont :",
+    "answers": {
+      "A": "Les emplacements où le public peut se baigner à ses risques et périls",
+      "B": "Les emplacements aménagés à l'usage de baignades qui font l'objet de dispositions particulières destinées à assurer la sécurité des baigneurs",
+      "C": "Les emplacements dangereux où il est interdit de se baigner"
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "233",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "En mer :",
+    "answers": {
+      "A": "avec un drapeau jaune hissé, j'interdis la baignade.",
+      "B": "avec un drapeau rouge hissé, j'interdis la baignade",
+      "C": "avec une échelle de Beaufort qui indique force 6, je hisse le drapeau vert."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "234",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "En piscine, les analyses d'eau qui sont effectuées par le personnel :",
+    "answers": {
+      "A": "peuvent entraîner la fermeture d'un baignade si elles sont mauvaises.",
+      "B": "sont obligatoires 1 fois par mois.",
+      "C": "doivent être effectuées au moins deux fois par jour."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "235",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La gestion d'une piscine peut être :",
+    "answers": {
+      "A": "publique",
+      "B": "privée",
+      "C": "aucune des deux"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "236",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Dans une piscine d’accès payant :",
+    "answers": {
+      "A": "la surveillance doit être constante et exclusive.",
+      "B": "un MNS peut enseigner et surveiller en même temps.",
+      "C": "un SSA peut animer sous la responsabilité d’un MNS."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "237",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La surveillance constante",
+    "answers": {
+      "A": "est une notion du code du sport concenant la sécurité des baignades d'accès payant",
+      "B": "consiste à assurer une observation ininterrompue du bassin et des plages dans le but de prévenir les risques et de détecter les accidents",
+      "C": "est une action destinée à prévenir, tout évènement non souhaité dans un étbalissement de bain"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "238",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Dans un club de natation sportive :",
+    "answers": {
+      "A": "un BNSSA peut assurer la surveillance des membres.",
+      "B": "un BNSSA rémunéré peut assurer certains cours.",
+      "C": "un titulaire du titre de MNS peut assurer l’enseignement de la natation."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "239",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un BNSSA peut piloter un bateau à moteur qui est à sa disposition au poste de secours :",
+    "answers": {
+      "A": "sans permis, quelle que soit la puissance du moteur, c'est un engin de secours.",
+      "B": "sans permis, uniquement si la puissance du moteur est inférieur à 6 CV.",
+      "C": "avec permis de plaisance, option côtière, quelle que soit la puissance du moteur à une distance maximum de 6 milles d'un abri."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "240",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour pratiquer le ski nautique, vous pouvez être seul à bord du bateau, si :",
+    "answers": {
+      "A": "vous êtes professionnel et équipé d'un rétroviseur.",
+      "B": "vous avez un rétroviseur sur votre embarcation.",
+      "C": "vous êtes seul sur le plan d'eau."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "241",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Avec un planche aérotractée (kitesurf), je peux naviguer :",
+    "answers": {
+      "A": "au maximum jusqu'à 1 mille de la côte, au maximum.",
+      "B": "jusqu'à 2 milles de la côte, au maximum.",
+      "C": "sans limitation de distance, si je suis expérimenté."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "242",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Evaluations des fonctions vitales.",
+    "answers": {
+      "A": "Il existe 4 fonctions vitales.",
+      "B": "Dans l'ordre, le sauveteur contrôle la ventilation, l'inconscience, la circulation.",
+      "C": "L'évaluation des fonctions vitales doit se faire rapidement selon la méthode ABCD"
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "243",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les limites de zone de bain:",
+    "answers": {
+      "A": "peuvent être délimitées par des flammes bleues",
+      "B": "peuvent être délimitées par des drapeaux rouge et jaune",
+      "C": "peuvent bouger au cours de la journée."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "244",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour revalider son diplôme un SSA :",
+    "answers": {
+      "A": "peut se présenter en candidat libre",
+      "B": "ne peut être que présenté par un organisme de formation agréé",
+      "C": "doit suivre une formation continue"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "245",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Si un groupe de 40 enfants de plus de 6 ans et de moins de 12 ans est sur une plage << non surveillée>> mais autorisée avec 1 surveillant de baignade et 8 animateurs :",
+    "answers": {
+      "A": "le surveillant peut organiser une baignade.",
+      "B": "la baignade doit être matérialisée.",
+      "C": "il n'y a pas d'obligation de matérialisation ou de balisage."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "246",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les compétences du SSA formé en milieu naturel permettent à son titulaire :",
+    "answers": {
+      "A": "d’effectuer une analyse des risques particuliers présents sur la zone",
+      "B": "de participer à un dispositif de surveillance en mettant en œuvre des techniques opérationnels adaptées, éventuellement associé à des matériels spécifiques",
+      "C": "d'attester des compétences de mes collègues que j'ai préalablement formé"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "247",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Une zone de baignade surveillée peut être délimitée par :",
+    "answers": {
+      "A": "des drapeau rouge et jaune montés sur des piquets.",
+      "B": "des bouées sphériques jaunes.",
+      "C": "des panneaux fixes à fond blancs et inscription en rouge."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "248",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Depuis la publication de la norme, la zone réservée à une activités nautiques :",
+    "answers": {
+      "A": "peut être matérialisée par un drapeau à damier noir et blanc",
+      "B": "peut être matérialisée par un drapeau noir",
+      "C": "concerne entre autre la pratique du surf"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "249",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Quels sont les affichages obligatoires dans une piscine publique :",
+    "answers": {
+      "A": "la météo",
+      "B": "les relevés bactériologiques",
+      "C": "le POSS"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "250",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Qu'est ce que la SNSM ?",
+    "answers": {
+      "A": "une association de sauvetage en mer",
+      "B": "elle est étendue sur plus de 250 stations de sauvetage en France",
+      "C": "elle n'emploit que des salariés"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "251",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Sur l'échelle de Beaufort :",
+    "answers": {
+      "A": "Le chiffre 10 correspond à une tempête.",
+      "B": "Le chiffre 0 correspond à une mer calme.",
+      "C": "L'échelle de Beaufort va de 0 à 20."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "252",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "En mer, dans la zone des 300 mètres et en l'absence de balisage :",
+    "answers": {
+      "A": "je peux pratiquer le ski nautique.",
+      "B": "je peux naviguer sans limitation de vitesse.",
+      "C": "je ne dois pas dépasser les 5 nœuds."
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "253",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les zones de baignades en milieu naturel :",
+    "answers": {
+      "A": "doivent être hors des zones de turbulences hydrauliques.",
+      "B": "font l'objet d'un contrôle tous les 2 mois",
+      "C": "à l’abri des pollutions urbaines ou industrielles."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "254",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lors de la formation SSA Littoral ou en Eaux intérieures :",
+    "answers": {
+      "A": "il peut être proposé une mention\"pilote d'une embarcation de sauvetage\"",
+      "B": "pour passer cette mention je dois avoir un permis bateau",
+      "C": "je n'ai pas besoin de ces compétences pour piloter une engin de sauvetage"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "255",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "A partir de quel âge peut-on conduire un scooter des mers, avec le permis ?",
+    "answers": {
+      "A": "14 ans",
+      "B": "16 ans",
+      "C": "18 ans"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "256",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "L'outrage à l'égard d'un agent chargé d'une mission de service public est puni de :",
+    "answers": {
+      "A": "7 500 € d'amende s'il est commis par une seule personne",
+      "B": "6 mois d'emprisonnement et 7 500 € d'amende s'il est commis par plusieurs personnes",
+      "C": "6 mois d'emprisonnement et de 7 500 € d'amende s'il est commis en milieu scolaire"
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "257",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "L'échelle de Beaufort est :",
+    "answers": {
+      "A": "une grille de notation de sauveteurs en fin de saison.",
+      "B": "une grille qui indique la force du vent et les effets sur l'état de la mer.",
+      "C": "internationale et permet à tous les gens de la mer de la comprendre."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "258",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un complément de formation du BNSSA :",
+    "answers": {
+      "A": "comporte une spécialité \"SSA Littoral\"",
+      "B": "comporte une spécialité \"SSA Eaux intérieures\"",
+      "C": "comporte une spécialité \"pilote engin nautique de sauvetage\""
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "259",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les sauveteurs abaissent le drapeau :",
+    "answers": {
+      "A": "quand une intervention importante le nécessite.",
+      "B": "à la fermeture du poste de secours.",
+      "C": "quand la mer est dangereuse."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "260",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les bouées pour la navigation hors chenaux traversisers.",
+    "answers": {
+      "A": "Une bouée conique verte est une marque latérale tribord.",
+      "B": "Une bouée cylindrique rouge est une marque latérale tribord.",
+      "C": "Les marques cardinales signalent un danger particulier."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "261",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Signification du drapeau jaune",
+    "answers": {
+      "A": "vagues et/ou courant modérés.",
+      "B": "écart de température important entre l’eau et l’air.",
+      "C": "Les accueils collectifs de mineurs ne peuvent pas se baigner"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "262",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Qu’est ce qui permet aujourd'hui de définir comment doit se faire la signalétique des baignades",
+    "answers": {
+      "A": "un décret",
+      "B": "une norme.",
+      "C": "une loi"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "263",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La durée moyenne d’une surveillance optimale est :",
+    "answers": {
+      "A": "de 30 minutes",
+      "B": "de 40minutes",
+      "C": "de 50 minutes"
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "264",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le drapeau jaune peut-être hissé lorsque la différence de température entre l'air et l'eau est trop importante :",
+    "answers": {
+      "A": "Vrai.",
+      "B": "Faux, la température n'intervient pas dans le choix de la flamme",
+      "C": "Faux, c'est la flamme rouge qui doit être hissée"
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "265",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Comment se nomme le document affiché dans un poste de secours pour réglementer la plage ?",
+    "answers": {
+      "A": "Un décret ministériel.",
+      "B": "Un arrêté municipal.",
+      "C": "Une circulaire ministérielle."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "266",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lors d'un accident de plongée :",
+    "answers": {
+      "A": "il faut organiser la prise en charge de la palanquée complète.",
+      "B": "en mer, le CROSS doit être informé.",
+      "C": "en lac, Voies Navigables de France doivent être informées."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "267",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Une zone de baignade surveillée :",
+    "answers": {
+      "A": "peut être délimitée par des piquets avec un drapeau jaune et rouge.",
+      "B": "est toujours limitée à 300m à droite et à gauche du poste de secours.",
+      "C": "peut être amovible en fonction de l'état de la mer."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "268",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un titulaire du surveillant de baignade peut :",
+    "answers": {
+      "A": "surveiller un groupe de 30 enfants de moins de 6 ans en baignade non aménagée mais autorisée.",
+      "B": "surveiller un groupe de 30 enfants de plus de 6 ans en baignade non aménagée mais autorisée.",
+      "C": "surveiller un groupe de 15 enfants de moins de 6 ans en baignade non aménagée mais autorisée."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "269",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Sur les panneaux d’information des signalétiques mises en place :",
+    "answers": {
+      "A": "un bandeau rouge doit être utilisé sur le cadre des panneaux.",
+      "B": "un bandeau bleu doit être utilisé sur le cadre des panneaux.",
+      "C": "un bandeau rouge et jaune doit être utilisé sur le cadre des panneaux."
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "270",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Avec la formation SSA en Littoral :",
+    "answers": {
+      "A": "je suis formé pour intervenir sur le Littoral",
+      "B": "je peux mieux appréhender les missions de prévention, de surveillance et de sauvetage aquatique sur les lieux de baignades situés en milieu naturel",
+      "C": "le BNSSA passé en piscine me suffit largement pour maîtriser ce domaine"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "271",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le SDIS dépêche sur les lieux d'un accident :",
+    "answers": {
+      "A": "Un véhicule de secours aux blessés.",
+      "B": "Un véhicule de secours et d'assistance aux victimes.",
+      "C": "Un véhicule d'assistance de secours et de soins urgent."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "272",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Dans la zone des 300 mètres.",
+    "answers": {
+      "A": "le Préfet maritime est le seul responsable.",
+      "B": "le Préfet maritime peut intervenir en cas de forte pollution.",
+      "C": "le Maire exerce la police des baignades."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "273",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un coefficient de marée :",
+    "answers": {
+      "A": "donne des informations sur la différence de hauteur d'eau entre une marée basse et une marée haute",
+      "B": "est primordiale en méditérranée pour évaluer les risques",
+      "C": "peut conditionner l'action de sauveteurs"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "274",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Dans un établissement de bain d'accès payant :",
+    "answers": {
+      "A": "l'affichage des diplômes est obligatoire et de la carte professionelle est obligatoire.",
+      "B": "l'affichage des diplômes n'est pas obligatoire.",
+      "C": "le contrôle peut s'effectuer sur un site dédié par tout citoyen EAPS"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "275",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Dans une piscine intercommunale et ouverte au public, le POSS :",
+    "answers": {
+      "A": "est obligatoire.",
+      "B": "est un document interne et ne doit pas être affiché.",
+      "C": "n'est pas obligatoire mais recommandé."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "276",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "L'encadrement des bébés nageurs",
+    "answers": {
+      "A": "peut se dérouler sous certaines conditions d’hygiènes et de sécurité",
+      "B": "prévoit une équipe pluridisciplinaire constituée de parents, spécialistes de la natation,...",
+      "C": "peut être surveillée dans un club par un BNSSA"
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "277",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Parmi ces organismes lesquels assurer des formations au SSA LIttoral ou Eaux Intérières pour garantir les compétences des sauveteurs:",
+    "answers": {
+      "A": "tous ceux qui ont un agrément de formation au BNSSA",
+      "B": "les CRS entre autre",
+      "C": "la FNMNS entre autre"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "278",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour pratiquer la chasse sous-marine on peut :",
+    "answers": {
+      "A": "chasser la nuit.",
+      "B": "utiliser un scaphandre autonome.",
+      "C": "pratiquer à partir de 16 ans."
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "279",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Avec un permis mer option côtier, je peux naviguer :",
+    "answers": {
+      "A": "de jour uniquement.",
+      "B": "de nuit uniquement.",
+      "C": "de jour comme de nuit."
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "280",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Qui est habilité à délivrer un test de natation :",
+    "answers": {
+      "A": "le MNS",
+      "B": "le BNSSA",
+      "C": "un SB"
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "281",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "L'organisme qui recense le nombre d'accidents par noyade en France se nomme :",
+    "answers": {
+      "A": "Institut National de Veille Sanitaire",
+      "B": "Santé Publique France",
+      "C": "Institut National de Santé"
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "282",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Je suis sauveteur \"sapeur pompier\" sur les plages :",
+    "answers": {
+      "A": "j'ai donc un contrat de travail",
+      "B": "à la fin de ma mission je peux prétendre au chômage et une couverture de la sécurité sociale",
+      "C": "le statut de SPV, assure le défraiement de mes heures en vacations non imposables"
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "283",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "En surveillance, laquelle de ces affirmations est bonne ?",
+    "answers": {
+      "A": "hydratez vous pour rester vigilants",
+      "B": "surveillance debout, bougez...",
+      "C": "rester sur la chaise haute est ce qu'il y a de mieux"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "284",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Une zone de bain est balisée:",
+    "answers": {
+      "A": "avec des bouées sphériques jaunes.",
+      "B": "avec des bouées cylindriques jaunes.",
+      "C": "Obligatoirement avec des bouées rouges."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "285",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un milieu artificiel concerne :",
+    "answers": {
+      "A": "une piscine publique disposant d’un bassin sportif.",
+      "B": "une piscine aménagée avec une structure flottante sur un étang, lac, plan d’eau.",
+      "C": "un étang aménagé avec un quai en béton."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "286",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La zone de bain :",
+    "answers": {
+      "A": "matérialise les limites de la zone qui est surveillée par les sauveteurs.",
+      "B": "Le Maire est responsable de sa matérialisation.",
+      "C": "lorsqu’elle est signalée par des limites amovibles, le chef de Poste est responsable de sa matérialisation."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "287",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour la sécurité des plongeurs, un club ou une structure professionnelle de plongée doit :",
+    "answers": {
+      "A": "disposer de matériel de secours.",
+      "B": "avoir un directeur de plongée sur place.",
+      "C": "se signaler au moyen du pavillon Afma."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "288",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le circuit du baigneur :",
+    "answers": {
+      "A": "correspond à un test que doit faire un baigneur pour valider un test de nageur",
+      "B": "définit les différentes étapes par lesquelles est invité à passer un baigneur pour limiter la contamination",
+      "C": "guide le baigneur de l’accueil au bord du bassin et vis versa"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "289",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un chef de bassin",
+    "answers": {
+      "A": "est le plus souvent titulaire du titre de MNS",
+      "B": "est responsable de la coordination des surveillants",
+      "C": "exerce exclusivement dans un poste de secours en milieu naturel"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "290",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La météo marine annonce force 10 sur l'échelle de Beaufort :",
+    "answers": {
+      "A": "C'est une tempête.",
+      "B": "C'est un coup de vent.",
+      "C": "Je devrais interdire la baignade en raison du danger"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "291",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les règles et codes de base des surfeurs.",
+    "answers": {
+      "A": "la pratique s'effectue entre les drapeaux rouge et jaune",
+      "B": "le surfeur qui est déjà sur la vague a la priorité",
+      "C": "on doit trouver maximum un surfeur sur la même vague"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "292",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Une piscine privée et réservée aux enfants d'un accueil collectifs de mineurs :",
+    "answers": {
+      "A": "peut être surveillée par un SB.",
+      "B": "peut être surveillée par un BNSSA.",
+      "C": "doit obligatoirement être surveillée par un MNS."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "293",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Qui a autorité pour intervenir en cas de pollution en bordure de plage ?",
+    "answers": {
+      "A": "Le Maire",
+      "B": "Le député de la circonscription",
+      "C": "Le Préfet"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "294",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour pratiquer la planche à voile :",
+    "answers": {
+      "A": "il faut pratiquer de jour uniquement.",
+      "B": "on peut le faire de jour comme de nuit.",
+      "C": "le port du gilet de sauvetage est recommandé."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "295",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Quelle est ce type de mode surveillance ?",
+    "answers": {
+      "A": "zig zag",
+      "B": "zig zag en arc",
+      "C": "aller retour"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "296",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un malaise dû à une exposition prolongée au soleil :",
+    "answers": {
+      "A": "peut avoir des répercussions neurologiques.",
+      "B": "peut être le signe d'une atteinte grave.",
+      "C": "impose au sauveteur de faire boire la personne."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "297",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Parmi ces obligations, lesquelles sont applicables au BNSSA souhaitant exercer en piscine ?",
+    "answers": {
+      "A": "Etre titulaire du certificat de compétence PSE2.",
+      "B": "Le récépissé de déclaration de la préfecture (ou DDCS/DDCSPP)",
+      "C": "la formation continue à jour."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "298",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Soins apportés.",
+    "answers": {
+      "A": "une personne suspectée d’avoir inhalée de l’eau doit être hospitalisée.",
+      "B": "une personne inconsciente qui ne ventile pas doit être placée en PLS.",
+      "C": "Certains malaises ou maladies graves peuvent entraîner une détresse vitale dans l’eau."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "299",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le contrôle de la qualité de l’eau impose que :",
+    "answers": {
+      "A": "un relevé bactériologique doit se faire une fois par mois par un laboratoire agréé",
+      "B": "que l’exploitant doit assurer quotidiennement un contrôle des paramètres physiologiques de l’eau (PH – Chlore – Température).",
+      "C": "ces contrôles se fassent au minimum 5 fois par jour."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "300",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "D’une situation calme, le groupe ou un individu passe à une phase agressive :",
+    "answers": {
+      "A": "mettez vous en retrait.",
+      "B": "demandez discretement le concours de la force publique",
+      "C": "assurez la mise en sécurité des personnes dont vous avez la garde."
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "301",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La pratique du ski nautique",
+    "answers": {
+      "A": "est réservée à la pratqiue de la compétition",
+      "B": "est interdite dans les zones de baignade et dans les zones où la vitesse est limitée.",
+      "C": "il est obligatoire d’emprunter les chenaux de départ et d’arrivée."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "302",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Titulaire d'un diplôme de Surveillant Sauveteur Aquatique, je peux :",
+    "answers": {
+      "A": "surveiller une baignade pour un club de natation.",
+      "B": "surveiller un plan d'eau d'accès payant.",
+      "C": "enseigner contre rémunération la natation en assistance d'un maître-nageur"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "303",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour apporter plus de lisibilité au public, un classement des eaux de baignades est effectué par le Ministère de la Santé :",
+    "answers": {
+      "A": "ce classement comprend 3 indices ABC",
+      "B": "ce classement comprend 4 indices ABCD",
+      "C": "ce classement comprend 5 indices ABCDE"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "304",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Qui détermine la couleur du drapeau ?",
+    "answers": {
+      "A": "L'échelle de Beaufort.",
+      "B": "Le maire de la commune.",
+      "C": "Le chef de poste."
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "305",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour naviguer au-delà de la zone des 300 mètres , un kayac :",
+    "answers": {
+      "A": "doit être une embarcation à structure rigide",
+      "B": "doit être d’une longueur supérieure à 4 mètres et d’une largeur supérieure à 50 cm",
+      "C": "doit être accompagné par un autre navire"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "306",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Combien y a-t-il de CROSS en Méditerranée ?",
+    "answers": {
+      "A": "1",
+      "B": "2",
+      "C": "3"
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "307",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Une juridiction pénale :",
+    "answers": {
+      "A": "répare une infraction au Code Pénal",
+      "B": "prévoit des peines comme des amendes ou emprisonnement, …",
+      "C": "une condamnation pénale peut être prise en charge par une assurance"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "308",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Selon un étude universitaire, le motif le plus élevé de dégradations de la surveillance est :",
+    "answers": {
+      "A": "les distractions (causeries, téléphone, lecture,…).",
+      "B": "l’intrusion de tâches annexes (mise en place de lignes d’eau, renseignements, discipline,…);",
+      "C": "une surveillance inadaptée ou absente (rêveries, absences, position, posture,…)."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "309",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "L’hygiène des piscines comprend notamment :",
+    "answers": {
+      "A": "l’accueil du public et ses règles élémentaires .",
+      "B": "les protocoles de nettoyage et de désinfection",
+      "C": "la qualité et le traitement de l’eau"
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "310",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le Pavillon Bleu d'Europe :",
+    "answers": {
+      "A": "distingue et valorise les communes pour leurs efforts en matière d'équipements pour les plages",
+      "B": "prend en compte des critères d'excellence pour la gestion globale de leur environnement",
+      "C": "ne concerne pas le traitement des eaux usées"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "311",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "L'identification des personnes chargées de la surveillance d'un établissement de bain :",
+    "answers": {
+      "A": "passe par le port d'une tenue dont le haut doit être de couleur \"jaune\", si l'on respecte la norme AFNOR.",
+      "B": "est de la responsabilité de l'exploitant",
+      "C": "passe par le port d'une tenue dont le haut doit être de couleur \"rouge\", si l'on respecte la norme AFNOR."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "312",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lors d'un accident de plongée,",
+    "answers": {
+      "A": "une des raisons peut être une remontée trop rapide.",
+      "B": "il est utile de préciser le nombre de plongeurs dans la palanquée.",
+      "C": "l'administration d'oxygène est déconseillée."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "313",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un SSA qui travaille dans un complexe hôtelier toute l'année :",
+    "answers": {
+      "A": "peut surveiller un bassin en autonomie et sans dérogation.",
+      "B": "la Loi oblige l'hôtelier à faire surveiller son bassin par une personne diplômée",
+      "C": "pour ne pas être soumis à une obligation de surveillance, la piscine doit être réservé exclusivement à la clientèle"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "314",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Avec le BNSSA, je peux :",
+    "answers": {
+      "A": "encadrer des élèves en club et enseigner la natation.",
+      "B": "assurer des cours d'aquagym.",
+      "C": "surveiller en autonomie une piscine ouverte au public."
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "315",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La baignade est surveillée dès lors qu'il y a :",
+    "answers": {
+      "A": "un poste de secours.",
+      "B": "des sauveteurs sur la plage.",
+      "C": "Un drapeau vert sur le mat du poste de secours."
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "316",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Dans une baignade surveillée, l'aménagement d'une zone dite <<petit bain >> :",
+    "answers": {
+      "A": "est obligatoire.",
+      "B": "est souhaitable, dès que possible.",
+      "C": "voit sa profondeur d'eau limitée à 2m."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "317",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le balisage.",
+    "answers": {
+      "A": "Il existe différents types de marques (latérales, dangers isolés, eaux saines, spéciales, cardinales...)",
+      "B": "Les marques latérales peuvent être rouges ou vertes.",
+      "C": "Le sens conventionnel est du port vers la haute mer."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "318",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le CODIS gère les interventions de secours sur :",
+    "answers": {
+      "A": "l'arrondissement.",
+      "B": "le département.",
+      "C": "la région."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "319",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Ce poste de secours est t'il conforme à la nouvelle signalétique des baignades ?",
+    "answers": {
+      "A": "non",
+      "B": "oui",
+      "C": "il manque le badeau rouge et jaune"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "320",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "En surveillance, le téléphone :",
+    "answers": {
+      "A": "peut distraire",
+      "B": "je le laisse au vestiaire",
+      "C": "je peux l'utiliser à la condition que je n'envoi que des sms"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "321",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La pêche aux coquillages :",
+    "answers": {
+      "A": "est libre",
+      "B": "est réglementée",
+      "C": "ne fait l’objet d’aucune veille sanitaire spécifique"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "322",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Sur les plages aménagées des dispositifs de réception des déchets doivent être placés :",
+    "answers": {
+      "A": "tous les 50 mètres",
+      "B": "tous les 100 mètres",
+      "C": "tous les 150 mètres"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "323",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un chef de poste",
+    "answers": {
+      "A": "peut être titulaire du diplôme du BNSSA",
+      "B": "peut être titulaire d'un titre de MNS",
+      "C": "assure le recrutement des sauveteurs"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "324",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les limites de zone de bain :",
+    "answers": {
+      "A": "sont délimitées par des drapeaux Rouge/Jaune.",
+      "B": "déterminent la limite de réglementation du Maire.",
+      "C": "peuvent bouger au cours de la journée."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "325",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un employeur qui recrute un BNSSA inexpérimenté pour surveiller une plage :",
+    "answers": {
+      "A": "ne risque rien car le BNSSA maîtrise tous les risque et moyens mis à sa disposition en milieu naturel",
+      "B": "se doit de vérifier la compétence de son personnel",
+      "C": "peut se fier aux compétences du BNSSA qui à une option Eaux intérieures ou Littoral"
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "326",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Des installations sanitaires doivent être aménagées :",
+    "answers": {
+      "A": "dès que cela est possible",
+      "B": "à proximité de tout point d’eau afin de ne pas avoir de mares stagnantes",
+      "C": "dans les douches"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "327",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le règlement intérieur dans une piscine publique :",
+    "answers": {
+      "A": "est obligatoire",
+      "B": "est conseillé",
+      "C": "doit être affiché au public"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "328",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Concernant la baignade d'un ACM d'enfants en milieu naturel :",
+    "answers": {
+      "A": "pour les enfants de plus de 6 ans, un animateur pour 8 doit être présent dans l'eau.",
+      "B": "les enfants de moins de 6 ans peuvent être à 40 au maximum dans l'eau.",
+      "C": "pour les enfants de moins de 6 ans, un animateur pour 5 doit être présent dans l'eau."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "329",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Au-delà de la bande des 300 m, un plaisancier appelle à l'aide. Les sauveteurs :",
+    "answers": {
+      "A": "ne doivent pas intervenir car c'est de la responsabilité du Préfet maritime.",
+      "B": "doivent porter secours même en dehors de leur zone de surveillance.",
+      "C": "doivent informer le CROSS."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "330",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lors d'une piqûre de vive au pied, le venin étant thermolabile :",
+    "answers": {
+      "A": "vous frottez la piqûre de vive avec du sable.",
+      "B": "vous pouvez conseillez à la personne de marcher dans le sable chaud.",
+      "C": "vous préparez une bassine d'eau chaude."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "331",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La responsabilité civile d'un BNSSA peut être engagée pour une faute considérée comme :",
+    "answers": {
+      "A": "uniquement volontaire.",
+      "B": "uniquement non volontaire.",
+      "C": "volontaire et non volontaire."
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "332",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Sur une commune du littoral, le maire reste responsable de la baignade:",
+    "answers": {
+      "A": "durant toute l'année.",
+      "B": "uniquement pendant la période estivale.",
+      "C": "n'est jamais responsable tant qu'il n'a pas installé de poste de secours."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "333",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour leur sécurité, les pratiquants doivent avoir à leur disposition sur les lieux de plongée :",
+    "answers": {
+      "A": "du matériel d’oxygénothérapie",
+      "B": "un directeur de plongée qui organise l’activité et qui coordonne les secours",
+      "C": "une fusée de détresse"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "334",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un dépôt de plainte pour agression dans l’exercice de ces fonctions peut se faire ?",
+    "answers": {
+      "A": "à la gendarmerie, où à la police",
+      "B": "en écrivant au Procureur de la république.",
+      "C": "à la Police Municipale"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "335",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La déclaration qu'effectue le SSA au préfet du lieu de sa principale activité :",
+    "answers": {
+      "A": "lui permet de travailler sans maître-nageur sauveteur",
+      "B": "ne lui permet pas de travailler en autonomie",
+      "C": "l'autorise à dispenser des cours de natation"
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "336",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Sur une plage, en dehors de la saison estivale, un maire peut interdire la baignade pour être déchargé de sa responsabilité en cas de noyade.",
+    "answers": {
+      "A": "Vrai, car la baignade est interdite.",
+      "B": "Vrai, même si les personnes se baignent à leurs risques et périls.",
+      "C": "Faux, un maire reste responsable de sa plage en toutes circonstances."
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "337",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Sur chaque lieu de baignade.",
+    "answers": {
+      "A": "Il est obligatoire d'avoir un poste de secours.",
+      "B": "La décision d'implantation d'un poste de secours est en premier ressort de la compétence du maire.",
+      "C": "En l'absence de surveillance, la baignade est aux risques et périls de l'usager."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "338",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le CROSS veille :",
+    "answers": {
+      "A": "au respect des règlements maritimes nationaux.",
+      "B": "à la sécurité des gens de la mer.",
+      "C": "au respect de l’arrêté municipal des baignades.."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "339",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les embarcations légères,",
+    "answers": {
+      "A": "sont des bateaux inférieur à 5 mètres, tel que les voiliers de sport légers",
+      "B": "sont des engins motorisés n’entrant pas dans la catégorie des VNM",
+      "C": "Navigation de jour comme de nuit mais uniquement à 2 milles max des côtes"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "340",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Où le POSS doit-il obligatoirement être installé?",
+    "answers": {
+      "A": "Dans tous les établissements de bain d'accès payant.",
+      "B": "Dans les lieux de baignades autorisés et d'accès payant.",
+      "C": "Dans les piscines de copropriétés."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "341",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Il existe, dans la réglementation française, plusieurs catégories de baignades :",
+    "answers": {
+      "A": "Les baignades interdites, aux risques et périls des usagers, autorisées et aménagées.",
+      "B": "Les baignades aux risques et périls des usagers, autorisées et surveillées.",
+      "C": "Les baignades aux risques et périls des usagers, surveillées et non-surveillées."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "342",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un véliplachiste",
+    "answers": {
+      "A": "doit emprunter les chenaux traversiers s’ils existent.",
+      "B": "doit d’avoir un anneau de remorquage sur sa planche",
+      "C": "peut naviguer au delà de 6 milles"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "343",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un VNM (Véhicule Nautique à Moteur) de 100 CV, peut être piloté avec :",
+    "answers": {
+      "A": "le permis de conduire automobile catégorie A.",
+      "B": "le permis de plaisance option côtière.",
+      "C": "le permis de plaisance option côtière extension hauturière."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "344",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour une navigation de plaisance avec un bateau classé de type C.",
+    "answers": {
+      "A": "Je dois naviguer à proximité des côtes et à moins de 6 milles d'un abri.",
+      "B": "Le navire doit pouvoir résister à un vent pouvant aller jusqu'à force 6 et à des vagues de 2 m.",
+      "C": "Les fusées de détresse ne sont pas obligatoires."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "345",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les analyses bactériologiques d'une zone de baignade sont ordonnés par:",
+    "answers": {
+      "A": "Le Maire",
+      "B": "un laboratoire agréé.",
+      "C": "l'Agence Régionale de la Santé."
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "346",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Quels est le poste de surveillance le plus pertinent :",
+    "answers": {
+      "A": "l'utilisation d'une chaise basse",
+      "B": "deux chaises hautes côte à côte",
+      "C": "le déplacement du sauveteur autour du bassin"
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "347",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le CROSS veille 24h/24 les appels de détresse, en VHF, sur:",
+    "answers": {
+      "A": "le canal 16.",
+      "B": "le canal 15.",
+      "C": "le canal 17."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "348",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La réglementation des piscines publics exige :",
+    "answers": {
+      "A": "un apport d’eau neuve de 30 litres / baigneur / jours .",
+      "B": "que le chlore actif dans le bassin soit entre 0,4 et 1,4 mg.",
+      "C": "que le PH de l’eau soit supérieur à 8."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "349",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le surf se pratique:",
+    "answers": {
+      "A": "uniquement dans la zone de baignade.",
+      "B": "uniquement hors de la zone de baignade.",
+      "C": "dans un espace qui peut être délimitée par une flamme verte comportant un disque rouge."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "350",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un surveillant de baignade ACM :",
+    "answers": {
+      "A": "peut organiser une baignade des mineurs sur une plage surveillée.",
+      "B": "peut organiser une baignade de mineurs sur une plage non surveillée.",
+      "C": "peut assurer la surveillance de mineurs qu'en assistance d'un MNS."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "351",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Où le POSS doit-il obligatoirement être affiché ?",
+    "answers": {
+      "A": "dans le vestiaire du personnel.",
+      "B": "dans un lieu visible du public.",
+      "C": "à l’infirmerie"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "352",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour signaler une pollution, la présence d’espèces aquatiques dangereuse, une zone marine ou sous-marine protégée (faune aquatique, récifs,… ) :",
+    "answers": {
+      "A": "on hisse un drapeau rouge.",
+      "B": "on hisse un drapeau violet.",
+      "C": "ce drapeau peut être hissé sur le même mat que celui des conditions de baignades"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "353",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Sur une plage, aménagée et surveillée, on doit trouver obligatoirement :",
+    "answers": {
+      "A": "un panneau journalier d'information.",
+      "B": "un panneau permanent d'information.",
+      "C": "un panneau de l'office de tourisme."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "354",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Sur une plage où il n'y a pas de poste de secours :",
+    "answers": {
+      "A": "la baignade est aux risques et périls des usagers.",
+      "B": "la baignade est autorisée mais il n'y a pas de surveillance.",
+      "C": "le maire est obligée de mettre en place une surveillance."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "355",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour piloter un VNM :",
+    "answers": {
+      "A": "je dois avoir 16 ans",
+      "B": "je dois avoir 18 ans",
+      "C": "je dois avoir un permis"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "356",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les bouées coniques jaunes servent à baliser :",
+    "answers": {
+      "A": "Un chenal traversier",
+      "B": "la limite de la zone de baignade",
+      "C": "le côté gauche d'un chenal traversier lorsque je regarde de la plage."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "357",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Dans le cas d’un traitement d’une eau de piscine publique par filtration :",
+    "answers": {
+      "A": "un pédiluve peut garder de l’eau stagnante.",
+      "B": "une pataugeoire doit être recyclée en 30 minutes",
+      "C": "un bassin dont la profondeur est supérieur à 1,5 m doit être recyclé en 4 heures."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "358",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un surveillant de baignade ACM peut :",
+    "answers": {
+      "A": "travailler seul dans une piscine municipale avec une dérogation préfectorale.",
+      "B": "surveiller uniquement les lieux d'accès gratuits.",
+      "C": "surveiller les accueils collectifs de mineurs."
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "359",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lors d’un accident de plongée subaquatique.",
+    "answers": {
+      "A": "une des raisons peut être une remontée trop rapide.",
+      "B": "les paramètres de durée et de profondeur ne rentrent pas en ligne de compte.",
+      "C": "à l’alerte, il est utile de préciser le nombre de plongeurs dans la palanquée."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "360",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "En milieu naturel, les analyses de la qualité de l'eau doivent être affichées.",
+    "answers": {
+      "A": "non c'est une information confidentielle.",
+      "B": "Oui, au poste de secours, et visible par le public.",
+      "C": "uniquement à l'office du tourisme et en mairie."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "361",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le Préfet",
+    "answers": {
+      "A": "est un élu",
+      "B": "est un fonctionnaire",
+      "C": "est le dépositaire de l'autorité de l'État dans le département"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "362",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Quel indication définissant la qualité d'une eau de baignade est fausse :",
+    "answers": {
+      "A": "non irritante pour les yeux, peau et muqueuses",
+      "B": "pas de changement de couleur",
+      "C": "pas de température inférieure à 16 degré"
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "363",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Qui coordonne les secours en mer ?",
+    "answers": {
+      "A": "Le SDIS.",
+      "B": "Le CROSS.",
+      "C": "La SNSM."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "364",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le Préfet peut prendre la décision d'interdire une baignade :",
+    "answers": {
+      "A": "lorsque le Maire ne respecte pas ses obligations.",
+      "B": "lorsqu'un conflit politique oppose le Maire et le Préfet.",
+      "C": "ne peut pas l'interdire, mais c'est le Maire qui sera responsable devant la justice."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "365",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lors d\"un intervention au delà de la zone surveillée :",
+    "answers": {
+      "A": "je baisse le drapeau si la surveillance ne peux plus être assurée",
+      "B": "je maintien le drapeau si la surveillance peut encore être assurée",
+      "C": "dans tous les cas je baisse le drapeau"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "366",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour le second degré, l'enseignement de la natation est exclusivement assuré par :",
+    "answers": {
+      "A": "un MNS",
+      "B": "un professeur d'EPS",
+      "C": "un ETAPS"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "367",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Qui a autorité pour intervenir dans le cas d'une personne disparue en haute mer ?",
+    "answers": {
+      "A": "Le Maire.",
+      "B": "Le Préfet maritime.",
+      "C": "Le CROSS"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "368",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Une eau de piscine conforme :",
+    "answers": {
+      "A": "ne doit pas contenir de germes pathogènes",
+      "B": "doit être stérilisante",
+      "C": "doit posséder un potentiel de \"destruction\" des germes"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "369",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le POSS en piscine :",
+    "answers": {
+      "A": "doit être affiché dans un endroit visible au public.",
+      "B": "n’est pas obligatoirement affiché.",
+      "C": "recense notamment tous les risques potentiels que peut présenter le lieu où il s’applique."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "370",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "En cas d'intoxication au chlore pur :",
+    "answers": {
+      "A": "il faut évacuer les lieux",
+      "B": "diluer le chlore avec de l'eau",
+      "C": "appeler les secours"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "371",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un kayak de mer qui évolue au delà de 1 mille des côtes :",
+    "answers": {
+      "A": "ne peut évoluer qu'en présence d'une embarcation.",
+      "B": "doit disposer d'un dispositif permettant le remorquage.",
+      "C": "doit obligatoirement être doté d'une réserve de flottabilité."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "372",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les bateaux gonflables et les matelas pneumatiques sont :",
+    "answers": {
+      "A": "uniquement utilisés dans la bande des 300 m.",
+      "B": "ne sont pas considérés comme des engins de plages.",
+      "C": "doivent être utilisés dans le chenal traversier."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "373",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les analyses d'eau en milieu naturel :",
+    "answers": {
+      "A": "peuvent entraîner la fermeture d'une baignade si elles sont mauvaises",
+      "B": "sont effectuées par l'agence régionale de la santé",
+      "C": "sont uniquement réalisées en piscine"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "374",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Une bonne qualité d’eau de piscine s’obtient :",
+    "answers": {
+      "A": "par la filtration.",
+      "B": "par la désinfection de l’eau au chlore.",
+      "C": "par des vidanges mensuelles des bassins."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "375",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Particularité du chlore de piscine :",
+    "answers": {
+      "A": "peut produire des chloramines qui sont dangereuses pour l'homme",
+      "B": "doit être maintenu dans des valeurs entre 0,4 et 1,4 mg/l de chlore actif",
+      "C": "nécessite systématiquement un produit stabilisant"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "376",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Bien voir de près et de loin :",
+    "answers": {
+      "A": "Le champ visuel couvert par un surveillant dans un espace proche est d’environ 60°.",
+      "B": "la réduction du champ visuel passant de 60° à 2° se nomme l’effet tunnel.",
+      "C": "il faut 2 secondes pour que notre champ visuel se réadapte après un effet tunnel."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "377",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le contrôle de la qualité de l'eau consiste à :",
+    "answers": {
+      "A": "vérifier la teneur en chlore",
+      "B": "vérifier la teneur en PH",
+      "C": "vérifier la température"
+    },
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "378",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La FNMNS est :",
+    "answers": {
+      "A": "une association de Maître Nageurs Sauveteurs et de Surveillants Sauveteurs Aquatique",
+      "B": "une organisation professionelle qui assure la défense des MNS et des SSA",
+      "C": "est l'organisation la plus représentative en France"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "379",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Dans un lieu d'accès payant, un SSA doit obligatoirement être déclaré en préfecture :",
+    "answers": {
+      "A": "pour un contrôle d'honorabilité.",
+      "B": "pour un contrôle fichier judiciaire automatisé des auteurs d'infractions sexuelles ou violentes",
+      "C": "pour avoir une carte professionnelle d'éducateur sportif"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "380",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Suite à une noyade dans un lieu surveillé, la responsabilité civile d'un BNSSA :",
+    "answers": {
+      "A": "peut être engagée.",
+      "B": "ne peut jamais être engagée.",
+      "C": "n'est pas engagée si un MNS est présent."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "381",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Dans les conditions de travail du surveillant on peut entendre :",
+    "answers": {
+      "A": "qu'il est plus vigilant s'il change fréquemment de poste",
+      "B": "qu'il récupère plus facilement s'il a des temps de pauses",
+      "C": "qu'il peut cumuler 10 heures de surveillances sans peine"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "382",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour pratiquer le ski nautique:",
+    "answers": {
+      "A": "je dois porter un gilet de sauvetage.",
+      "B": "en rivière, je peux pratiquer n'importe où.",
+      "C": "en mer, je dois pratiquer au-delà de la zone des 300 m."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "383",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un défaut de signalisation d’un danger connu est de nature à engager la responsabilité de la collectivité.",
+    "answers": {
+      "A": "il ne suffit pas que le maire interdise une baignade, il faut que cette interdiction soit connue, délimitée dans l’espace et éventuellement dans le temps et justifiable.",
+      "B": "le maire est investie d'un pouvoir de police spéciale lui permettant de réglementer les plages, et les baignades jusqu'à une limite de 300m en partant du bord.",
+      "C": "sa reponsabilité n'est jamais engagé, il bénéficie d'une protection spéciale"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "384",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Il est possible de se baigner dans les plans d'eau :",
+    "answers": {
+      "A": "qui sont autorisés par le Maire.",
+      "B": "où il n'y a pas de panneau baignade interdite.",
+      "C": "seulement si il y a un poste de secours."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "385",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La planche à voile peut se pratiquer :",
+    "answers": {
+      "A": "dans la bande des 300 m.",
+      "B": "uniquement en dehors de la zone de baignade.",
+      "C": "uniquement en dehors de la bande des 300 m."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "386",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le domaine des compétences du maire :",
+    "answers": {
+      "A": "il se limite aux extrémités de la zone de baignades.",
+      "B": "il s’étend à toute la côte de sa commune.",
+      "C": "il engage sa responsabilité s’il ne réglement pas les zones de baignades"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "387",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Pour vous informer sur la météo marine, vous pouvez :",
+    "answers": {
+      "A": "faire le 112.",
+      "B": "consulter l'application mobile ou le site internet de Météo France.",
+      "C": "écouter le bulletin météo émis par les CROSS et les Sémaphores sur le canal VHF."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "388",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Les analyses d'eau de piscine :",
+    "answers": {
+      "A": "sont obligatoirement affichées.",
+      "B": "s'effectuent tous les deux mois",
+      "C": "sont effectuées sous le contrôle de l'agence régionale de santé."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "389",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le BNSSA :",
+    "answers": {
+      "A": "est un pré requis pour devenir MNS",
+      "B": "est un diplôme qui permet d'animer des séances de natation rémunérées sous la responsabilité du MNS",
+      "C": "peut exercer en autonomie"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "390",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le droit des baignades est de la responsabilité :",
+    "answers": {
+      "A": "du maire.",
+      "B": "du président du syndicat d'eau",
+      "C": "du président d'une communauté de communes."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "391",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "L'assurance recommandée pour un MNS ou un BNSSA dans l'exercice de sa mission est :",
+    "answers": {
+      "A": "la Responsabilité Civile Personnelle",
+      "B": "La Responsabilté Civile Professionelle",
+      "C": "l'Assurance Dommage Familliale"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "392",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La réglementation oblige à une « surveillance constante », on entend par là :",
+    "answers": {
+      "A": "que les surveillants doivent assurer une observation ininterrompue du bassin et des plages dans le but de prévenir les risques et de détecter les accidents.",
+      "B": "que les surveillants doivent assurer une observation ponctuelle du bassin et des plages dans le but de prévenir les risques et de détecter les accidents",
+      "C": "que les surveillants doivent assurer une présence permanente dans l’établissement dans le but de prévenir les risques et de détecter les accidents"
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "393",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le drapeau rouge est hissé.",
+    "answers": {
+      "A": "elle signale que la zone de baignade est interdite et surveillée.",
+      "B": "elle permet au sauveteur de quitter le poste.",
+      "C": "elle peut l’être en présence d’un orage."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "394",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Une assurance en Responsabilité Civile Professionelle :",
+    "answers": {
+      "A": "permet d'assurer la défense d'un MNS ou d'un SSA en cas d'accident grave",
+      "B": "permet d'assurer la défense d'un MNS ou d'un SSA en cas de conflit avec l'employeur",
+      "C": "ne sert à rien, car les victimes sont automatiquement indemnisées par un fond d'assurance"
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "395",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Vous êtes sauveteur isolé, et vous trouvez une personne assise qui se plaint de douleurs dorsales suite à un choc au sortir du toboggan aquatique.",
+    "answers": {
+      "A": "vous assurez une stabilsation du rachis par un maintien tête.",
+      "B": "pour poursuivre le bilan, vous pouvez relacher le maintien tête, si la personne peut rester sans bouger la tête",
+      "C": "vous placez systématiquement un collier cervical en attendant l'arrivée des secours."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "396",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "L'affichage météo au poste de secours comprend entre autre :",
+    "answers": {
+      "A": "Les observations météorologiques du jour",
+      "B": "La durée d'ensoleillement du jour",
+      "C": "Les heures de marées et coefficients du jour"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "397",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "En cas de noyade dans la bande des 300 m, au-delà de leur zone de surveillance, les sauveteurs:",
+    "answers": {
+      "A": "ne doivent pas intervenir car ils quittent leur zone de surveillance.",
+      "B": "doivent intervenir en mettant en oeuvre les moyens dont ils disposent.",
+      "C": "doivent prévenir le CROSS avant de porter secours."
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "398",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Qui a autorité pour intervenir dans le cas d'un bateau immatriculé, à la dérive ?",
+    "answers": {
+      "A": "Le Maire",
+      "B": "Le Préfet du département",
+      "C": "Le Préfet Maritime"
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "399",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un titulaire du permis << eaux intérieures>> :",
+    "answers": {
+      "A": "peut assurer la conduite, en eaux intérieures, d'un bateau de plaisance dont la longueur est limitée à 20 m.",
+      "B": "peut naviguer en mer dans la limite des 300 m.",
+      "C": "est limité à une puissance moteur de 20 CV."
+    },
+    "correctAnswers": [
+      "A"
+    ]
+  },
+  {
+    "id": "400",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Lors d'un traumatisme du rachis survenant dans l'eau en piscine :",
+    "answers": {
+      "A": "il est préférable d'extraire la victime rapidement, et ce même si elle est consciente.",
+      "B": "il est préférable de stabiliser la victime dans l'eau en attendant les secours.",
+      "C": "un des facteurs aggravant peut être l’hypothermie."
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "401",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La formation SSA en Eaux Intérieures s'obtient au bout de :",
+    "answers": {
+      "A": "1 jour",
+      "B": "2 jours",
+      "C": "3 jours"
+    },
+    "correctAnswers": [
+      "B"
+    ]
+  },
+  {
+    "id": "402",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le chlore utilisé en piscine pour le traitement de l'eau :",
+    "answers": {
+      "A": "peut s'avérer très toxique.",
+      "B": "peut être conditionné sous forme liquide, solide ou gazeuse.",
+      "C": "a des propriétés spécifiques pour ne pas brûler au contact avec la peau."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "403",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "En cas de vent de terre important.",
+    "answers": {
+      "A": "Une vigilance particulière doit être observée.",
+      "B": "Il peut exister un signal spécifique en cas de danger lié à la force du vent.",
+      "C": "La flamme rouge doit obligatoirement être hissée."
+    },
+    "correctAnswers": [
+      "A",
+      "B"
+    ]
+  },
+  {
+    "id": "404",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La chasse sous-marine :",
+    "answers": {
+      "A": "est autorisée à partir de 16 ans.",
+      "B": "est autorisée de jour comme de nuit.",
+      "C": "Il est interdit de détenir un fusil chargé hors de l'eau."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "405",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Une interdiction de baignade est affichée uniquement en cas d'eau polluée ?",
+    "answers": {
+      "A": "Vrai, c'est la seule raison.",
+      "B": "Vrai, mais l'affichage peut être fait uniquement à la mairie.",
+      "C": "Faux, d'autres raisons sont possibles."
+    },
+    "correctAnswers": [
+      "C"
+    ]
+  },
+  {
+    "id": "406",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Un véhicule nautique à moteur (VNM) :",
+    "answers": {
+      "A": "a une puissance propulsive dépassant 4 CV.",
+      "B": "peut être conduit sans permis.",
+      "C": "doit contenir dans son équipement un gilet de sauvetage."
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "407",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le stade 4 de la noyade se caractérise par :",
+    "answers": {
+      "A": "un arrêt cardio-respiratoire",
+      "B": "une inconsciente avec des signes de détresse respiratoire",
+      "C": "la nécessité d'une prise en charge médicale"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
+  },
+  {
+    "id": "408",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "La noyade est une asphyxie provoquée soit par l’invasion des voies respiratoires par un liquide, soit par un arrêt cardio - respiratoire réflexe au contact de l’eau…",
+    "answers": {
+      "A": "faux",
+      "B": "on distingue dans cette affirmation la noyade avec inhalation d’eau",
+      "C": "on distingue dans cette affirmation la noyade sans inhalation d’eau"
+    },
+    "correctAnswers": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "id": "409",
+    "tags": [
+      "entrainement"
+    ],
+    "question": "Le tribunal administratif :",
+    "answers": {
+      "A": "gère les litiges entre usagers et pouvoirs publics",
+      "B": "gère les litiges entre employeur et salarié du privé",
+      "C": "sa deuxième juridiction est la cour administrative d'appel"
+    },
+    "correctAnswers": [
+      "A",
+      "C"
+    ]
   }
 ]

@@ -5,22 +5,24 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 export async function Header() {
   return (
-    <header className="sticky top-0 z-40 bg-background/95 backdrop-blur">
-      <div className="mx-auto grid min-h-16 w-full max-w-6xl grid-cols-3 items-center px-4 py-2 md:px-6">
-        <Link
-          href="/"
-          className="justify-self-start font-display text-xl font-bold leading-none text-foreground transition hover:text-accent"
-        >
-          BNSSA QCM
-        </Link>
-
-        <div className="flex justify-center">
-          <StartTrainingButton />
+    <header className="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4 md:px-6">
+        <div className="flex items-center gap-6">
+          <Link
+            href="/"
+            className="flex items-center gap-2 text-sm font-semibold tracking-tight transition-colors hover:text-primary"
+          >
+            BNSSA QCM
+          </Link>
         </div>
 
-        <div className="flex items-center justify-end gap-2">
-          <AuthButtons variant="compact" />
-          <ThemeToggle />
+        <div className="flex flex-1 items-center justify-end gap-4">
+          <nav className="flex items-center gap-4">
+            <StartTrainingButton />
+            <div className="h-4 w-px bg-border hidden sm:block" />
+            <AuthButtons variant="compact" />
+            <ThemeToggle />
+          </nav>
         </div>
       </div>
     </header>
