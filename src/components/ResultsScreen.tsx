@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { m } from "framer-motion";
 import type { QcmData, QuestionResult } from "@/types/qcm";
 import { FaCheckCircle, FaTimesCircle, FaArrowLeft } from "react-icons/fa";
+import { QuestionDetailModal } from "@/components/QuestionDetailModal";
 
 type Props = {
   quiz: QcmData;
@@ -11,7 +13,13 @@ type Props = {
   onHome: () => void;
 };
 
-export function ResultsScreen({ results, onRetry, onHome }: Props) {
+export function ResultsScreen({ quiz, results, onRetry, onHome }: Props) {
+  const [activeResult, setActiveResult] = useState<QuestionResult | null>(
+    null,
+  );
+  const activeQuestion = activeResult
+    ? (quiz.questions.find((q) => q.id === activeResult.questionId) ?? null)
+    : null;
   const score = results.filter((r) => r.correct).length;
   const total = results.length;
   const pct = Math.round((score / total) * 100);
@@ -62,9 +70,11 @@ export function ResultsScreen({ results, onRetry, onHome }: Props) {
           </div>
           <div className="divide-y divide-border">
             {results.map((r, i) => (
-              <div
+              <button
                 key={r.questionId}
-                className="flex items-center justify-between px-4 py-3"
+                type="button"
+                onClick={() => setActiveResult(r)}
+                className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-accent hover:text-accent-foreground"
               >
                 <span className="text-sm font-medium text-foreground">Question {i + 1}</span>
                 <span
@@ -76,7 +86,7 @@ export function ResultsScreen({ results, onRetry, onHome }: Props) {
                     <><FaTimesCircle /> Incorrect</>
                   )}
                 </span>
-              </div>
+              </button>
             ))}
           </div>
         </div>
@@ -97,6 +107,15 @@ export function ResultsScreen({ results, onRetry, onHome }: Props) {
           </button>
         </div>
       </m.div>
+
+      {activeQuestion && activeResult && (
+        <QuestionDetailModal
+          question={activeQuestion}
+          result={activeResult}
+          title={`Question n°${activeQuestion.id}`}
+          onClose={() => setActiveResult(null)}
+        />
+      )}
     </main>
   );
 }

@@ -244,25 +244,30 @@ export default async function ComptePage() {
   const questionStats = buildQuestionStats(allResults);
   const failedQuestionIds = questionStats.map((item) => item.questionId);
   const dailyStats = buildDailyStats(allResults);
-  const recentResults = [...allResults]
-    .sort(
-      (a, b) =>
-        new Date(b.answeredAt ?? 0).getTime() -
-        new Date(a.answeredAt ?? 0).getTime(),
-    )
-    .slice(0, 8);
-  const recentActivityItems: RecentActivityItem[] = recentResults.map(
-    (result, index) => {
-      const question = questionById.get(result.questionId) ?? null;
+  const sortedResults = [...allResults].sort(
+    (a, b) =>
+      new Date(b.answeredAt ?? 0).getTime() -
+      new Date(a.answeredAt ?? 0).getTime(),
+  );
+  const toActivityItem = (
+    result: QuestionResult,
+    index: number,
+  ): RecentActivityItem => {
+    const question = questionById.get(result.questionId) ?? null;
 
-      return {
-        id: `${result.questionId}-${result.answeredAt ?? index}`,
-        question,
-        modeLabel: getQuestionModeLabel(question ?? undefined),
-        dateLabel: formatDate(result.answeredAt),
-        result,
-      };
-    },
+    return {
+      id: `${result.questionId}-${result.answeredAt ?? "na"}-${index}`,
+      question,
+      modeLabel: getQuestionModeLabel(question ?? undefined),
+      dateLabel: formatDate(result.answeredAt),
+      result,
+    };
+  };
+  const allActivityItems: RecentActivityItem[] =
+    sortedResults.map(toActivityItem);
+  const recentActivityItems: RecentActivityItem[] = allActivityItems.slice(
+    0,
+    8,
   );
   const lastActivity = allResults
     .map((result) => result.answeredAt)
@@ -400,7 +405,10 @@ export default async function ComptePage() {
 
         <DailySuccessChart stats={dailyStats} />
 
-        <RecentActivity items={recentActivityItems} />
+        <RecentActivity
+          recentItems={recentActivityItems}
+          allItems={allActivityItems}
+        />
       </div>
     </main>
   );
